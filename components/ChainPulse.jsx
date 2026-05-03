@@ -2,8 +2,7 @@
 // 700ms tick — one chain pulses at a time, cycles through.
 // Ported from prototype/pages-start.jsx (window.ChainPulse).
 
-import React, { useEffect, useState } from 'react';
-import { Ethereum, Solana, Base, Polygon, BNB } from './ChainLogos';
+import { Ethereum, Solana, Base, Polygon, BNB } from './ChainLogos.jsx';
 
 const CHAINS = [
   { Logo: Ethereum, name: 'Ethereum' },
@@ -14,8 +13,8 @@ const CHAINS = [
 ];
 
 export default function ChainPulse() {
-  const [t, setT] = useState(0);
-  useEffect(() => {
+  const [t, setT] = React.useState(0);
+  React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 700);
     return () => clearInterval(id);
   }, []);

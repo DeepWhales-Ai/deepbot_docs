@@ -2,8 +2,6 @@
 // Manual click-through OR auto-play (1300ms per step).
 // Ported from prototype/home-extras.jsx.
 
-import React, { useEffect, useState } from 'react';
-
 const SCRIPT = [
   { from: 'user', t: 'msg', c: 'buy 0.1 eth of pepe' },
   { from: 'dale', t: 'parse', steps: [
@@ -23,10 +21,10 @@ const SCRIPT = [
 ];
 
 export default function TryDale() {
-  const [step, setStep] = useState(0);
-  const [auto, setAuto] = useState(false);
+  const [step, setStep] = React.useState(0);
+  const [auto, setAuto] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (!auto) return;
     if (step >= SCRIPT.length) return;
     const id = setTimeout(() => setStep((s) => Math.min(s + 1, SCRIPT.length)), 1300);

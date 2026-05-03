@@ -2,9 +2,8 @@
 // Reads /data/feature-status.json and renders five sections:
 // Live, Building, Coming (grouped by drops), Planned, Last updated.
 
-import React from 'react';
-import featureStatus from '../data/feature-status.json';
-import LastUpdated from './LastUpdated';
+import featureStatus from '../data/feature-status.jsx';
+import LastUpdated from './LastUpdated.jsx';
 
 const DROP_ORDER = [
   'launch week',

@@ -2,8 +2,6 @@
 // Reads from window.DEEPBOT_BUILDING with sensible defaults.
 // Ported from prototype/home-extras.jsx.
 
-import React from 'react';
-
 const DEFAULTS = {
   updated: '2 hours ago',
   now: [

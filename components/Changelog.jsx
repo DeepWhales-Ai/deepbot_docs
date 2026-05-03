@@ -2,8 +2,7 @@
 // Reads /data/changelog.json. Newest-first. Date in monospace muted, title in
 // Manrope 600, items as a clean bulleted list. No status pills.
 
-import React from 'react';
-import changelog from '../data/changelog.json';
+import changelog from '../data/changelog.jsx';
 
 const fmt = (iso) => {
   if (!iso) return '';

@@ -2,8 +2,7 @@
 // Reads from /data/feature-status.json. If status is `live`, renders nothing
 // (heading reads normally). Otherwise renders a small pill.
 
-import React from 'react';
-import featureStatus from '../data/feature-status.json';
+import featureStatus from '../data/feature-status.jsx';
 
 export default function FeatureStatus({ id }) {
   const f = featureStatus.features?.[id];

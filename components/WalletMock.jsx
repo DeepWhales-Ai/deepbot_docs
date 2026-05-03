@@ -2,8 +2,6 @@
 // Static visual; no animation. Accepts override props for variants.
 // Ported from prototype/pages-wallet.jsx (window.WalletMock).
 
-import React from 'react';
-
 const DEFAULT_TOKENS = [
   { sym: 'DEEPAI', amt: '255.41K', usd: null,        change: null, badge: 'lime',   logo: 'D' },
   { sym: 'BUSD',   amt: '1,200',   usd: '$1,200.00', change: null, badge: 'yellow', logo: 'B' },

@@ -1,8 +1,6 @@
 // Refused / blocked trades, rendered as receipts.
 // Ported from prototype/home-extras.jsx (window.KillLog). Static data.
 
-import React from 'react';
-
 const ITEMS = [
   { token: '$WAGMI',  chain: 'ETH', reason: 'Deployer matched 3 prior rugs',    refused: 1247, ts: '2h ago' },
   { token: '$DOGE2',  chain: 'BNB', reason: 'Honeypot: hidden sell tax 87%',    refused: 412,  ts: '6h ago' },

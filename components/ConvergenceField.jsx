@@ -6,8 +6,6 @@
 //
 // Asset path: image references /images/dale-character.png (the favicon source PNG).
 
-import React, { useEffect, useMemo, useState } from 'react';
-
 const seed = (i) => {
   const x = Math.sin(i * 9301 + 49297) * 43758.5453;
   return x - Math.floor(x);
@@ -24,13 +22,13 @@ const TOKENS = [
 ];
 
 export default function ConvergenceField() {
-  const [tick, setTick] = useState(0);
-  useEffect(() => {
+  const [tick, setTick] = React.useState(0);
+  React.useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 60);
     return () => clearInterval(id);
   }, []);
 
-  const { nodes, clusters } = useMemo(() => {
+  const { nodes, clusters } = React.useMemo(() => {
     const cs = [];
     const clusterCount = 9;
     for (let c = 0; c < clusterCount; c++) {

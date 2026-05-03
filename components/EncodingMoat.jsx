@@ -3,8 +3,6 @@
 // 1100ms tick. Deterministic LCG hash generator.
 // Ported from prototype/home-extras.jsx.
 
-import React, { useEffect, useState } from 'react';
-
 const TOOLS = [
   { name: 'detect_convergence', args: 'token=$PEPE  sources=18  threshold=met' },
   { name: 'scan_contract',      args: 'addr=0x6982…  honeypot=false  blacklist=false' },
@@ -28,8 +26,8 @@ const genHash = (seed) => {
 };
 
 export default function EncodingMoat() {
-  const [t, setT] = useState(0);
-  useEffect(() => {
+  const [t, setT] = React.useState(0);
+  React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 1100);
     return () => clearInterval(id);
   }, []);

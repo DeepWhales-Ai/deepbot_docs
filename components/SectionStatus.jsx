@@ -2,8 +2,7 @@
 // Sits below page heading, above lede. Quiet line of body text linking to
 // /investors/launch-sequence. Renders nothing if every referenced feature is live.
 
-import React from 'react';
-import featureStatus from '../data/feature-status.json';
+import featureStatus from '../data/feature-status.jsx';
 
 const DROP_ORDER = [
   'launch week',

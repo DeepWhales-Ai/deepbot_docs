@@ -3,8 +3,6 @@
 // Drift: 1s setInterval, ±randomized increments, 30s cycle countdown.
 // Ported from prototype/home-extras.jsx (window.CounterWall).
 
-import React, { useEffect, useState } from 'react';
-
 const fmt = (n) => n.toLocaleString('en-US');
 const fmtCompact = (n) => {
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(2) + 'M';
@@ -21,10 +19,10 @@ export default function CounterWall() {
     cycleSec: 30,
   };
 
-  const [vals, setVals] = useState({ communities: 0, signalsPerMonth: 0, traders: 0, cycleSec: 0 });
+  const [vals, setVals] = React.useState({ communities: 0, signalsPerMonth: 0, traders: 0, cycleSec: 0 });
 
   // Mount-anim
-  useEffect(() => {
+  React.useEffect(() => {
     const start = performance.now();
     const dur = 1400;
     let raf;
@@ -45,7 +43,7 @@ export default function CounterWall() {
   }, []);
 
   // Drift
-  useEffect(() => {
+  React.useEffect(() => {
     const id = setInterval(() => {
       setVals((v) => {
         const nextCycle = v.cycleSec <= 0 ? 30 : v.cycleSec - 1;

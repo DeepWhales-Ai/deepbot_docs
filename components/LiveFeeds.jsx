@@ -3,8 +3,6 @@
 // Ported from prototype/pages-start.jsx (window.LiveFeeds).
 // Note: missed from design brief §6's 21-component list; flagged in tier-1-components PR.
 
-import React, { useEffect, useState } from 'react';
-
 const BOBBY_SIGNALS = [
   { sym: 'PEPE',   note: 'coordinated buys · 18 communities' },
   { sym: 'WIF',    note: 'deployer match · prior rug' },
@@ -28,8 +26,8 @@ const DALE_TRADES = [
 ];
 
 export default function LiveFeeds() {
-  const [t, setT] = useState(0);
-  useEffect(() => {
+  const [t, setT] = React.useState(0);
+  React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 1400);
     return () => clearInterval(id);
   }, []);

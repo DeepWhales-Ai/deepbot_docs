@@ -2,8 +2,6 @@
 // `withHead` prop hides title — used when wrapping in PageShouts which has its
 // own PageHead. Ported from prototype/home-extras.jsx.
 
-import React from 'react';
-
 const ITEMS = [
   { kind: 'fact', lead: 'Five years', body: 'watching crypto Telegram. Twenty five thousand groups. The footprint cannot be rebuilt.' },
   { kind: 'fact', lead: 'Sixty eight rug patterns', body: "detected in the mempool. Dale broadcasts a sell with fifteen percent higher gas to land before the rugger's confirmation. No other product does this." },

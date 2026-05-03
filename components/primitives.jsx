@@ -2,8 +2,6 @@
 // Source-of-truth rule (design brief §0.1): class names match the prototype
 // verbatim so styles.css applies without modification.
 
-import React from 'react';
-
 export const Para = ({ children }) => <p className="db-para">{children}</p>;
 export const H2 = ({ id, children }) => <h2 id={id} className="db-h2">{children}</h2>;
 export const H3 = ({ children }) => <h3 className="db-h3">{children}</h3>;

@@ -1,8 +1,6 @@
 // Five chain SVGs in lime monochrome (currentColor for fill).
 // Ported verbatim from prototype/home-extras.jsx.
 
-import React from 'react';
-
 export const Ethereum = ({ size = 28 }) => (
   <svg viewBox="0 0 256 417" width={size} height={size} fill="none">
     <path fill="currentColor" d="M127.961 0l-2.795 9.5v275.668l2.795 2.79 127.962-75.638z" opacity=".85"/>

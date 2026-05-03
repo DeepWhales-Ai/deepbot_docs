@@ -1,8 +1,7 @@
 // Reads `last_updated` from feature-status.json, formats as a human date.
 // Used on /investors/launch-sequence per addendum §5.3.
 
-import React from 'react';
-import featureStatus from '../data/feature-status.json';
+import featureStatus from '../data/feature-status.jsx';
 
 const fmt = (iso) => {
   if (!iso) return 'unknown';
