@@ -1,0 +1,152 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "DeepBot",
+  "logo": {
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#9FCC00",
+    "light": "#CCFF00",
+    "dark": "#9FCC00",
+    "anchors": {
+      "from": "#CCFF00",
+      "to": "#9FCC00"
+    },
+    "background": {
+      "dark": "#0a0a0a",
+      "light": "#fafafa"
+    }
+  },
+  "modeToggle": {
+    "default": "dark",
+    "isHidden": false
+  },
+  "theme": "venus",
+  "topbarLinks": [
+    { "name": "@traderdeepbot", "url": "https://t.me/traderdeepbot" },
+    { "name": "@bobbydeepbot", "url": "https://t.me/bobbydeepbot" },
+    { "name": "@walletdeepbot", "url": "https://t.me/walletdeepbot" }
+  ],
+  "topbarCtaButton": {
+    "name": "Trade now",
+    "url": "https://t.me/traderdeepbot"
+  },
+  "footerSocials": {
+    "twitter": "https://x.com/deepbotai",
+    "telegram": "https://t.me/deepbotai"
+  },
+  "navigation": [
+    {
+      "group": "Start here",
+      "pages": [
+        "home",
+        "three-products",
+        "eight-reasons",
+        "quickstart",
+        "updates",
+        "receipts"
+      ]
+    },
+    {
+      "group": "Dale",
+      "pages": [
+        "dale/overview",
+        "dale/how-it-thinks",
+        "dale/memory",
+        "dale/autonomous",
+        "dale/first-conversation",
+        "dale/tools",
+        "dale/multichain",
+        "dale/safety",
+        "dale/wallet-management",
+        "dale/conversational-trading",
+        "dale/emergency-sell",
+        "dale/community-layer",
+        "dale/response-modes"
+      ]
+    },
+    {
+      "group": "Bobby",
+      "pages": [
+        "bobby/overview",
+        "bobby/network",
+        "bobby/for-projects",
+        "bobby/founders-program"
+      ]
+    },
+    {
+      "group": "Wallet",
+      "pages": [
+        "wallet/overview"
+      ]
+    },
+    {
+      "group": "Platform",
+      "pages": [
+        "platform/convergence",
+        "platform/safety",
+        "platform/multichain-stack",
+        "platform/partnerships"
+      ]
+    },
+    {
+      "group": "The Brain",
+      "pages": [
+        "brain/overview",
+        "brain/layer-1-network",
+        "brain/layer-2-routers",
+        "brain/layer-3-safety",
+        "brain/layer-4-rug",
+        "brain/layer-5-convergence",
+        "brain/layer-6-encoding"
+      ]
+    },
+    {
+      "group": "Token",
+      "pages": [
+        "token/deepai"
+      ]
+    },
+    {
+      "group": "Revenue Sharing",
+      "pages": [
+        "revshare/overview",
+        "revshare/streams",
+        "revshare/phases",
+        "revshare/nfts",
+        "revshare/eligibility",
+        "revshare/calculator",
+        "revshare/claiming"
+      ]
+    },
+    {
+      "group": "Investors",
+      "pages": [
+        "investors/platform-pitch",
+        "investors/launch-sequence",
+        "investors/roadmap"
+      ]
+    },
+    {
+      "group": "Team",
+      "pages": [
+        "team"
+      ]
+    }
+  ],
+  "analytics": {
+    "plausible": {
+      "domain": "docs.deepbot.pro"
+    }
+  },
+  "search": {
+    "prompt": "Search the DeepBot docs"
+  },
+  "feedback": {
+    "thumbsRating": false,
+    "suggestEdit": false,
+    "raiseIssue": false
+  }
+}

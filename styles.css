@@ -1,0 +1,89 @@
+/*
+ * DeepBot docs custom styles.
+ * Source: design brief §5 (palette + typography) + status addendum §4 (status pill spec).
+ * Loaded globally by Mintlify; do not scope to a single page.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --lime: #CCFF00;
+  --lime-secondary: #7CFF00;
+  --lime-glow: rgba(204, 255, 0, 0.08);
+  --bg-0: #0a0a0a;
+  --bg-1: #111315;
+  --bg-2: #1a1c1f;
+  --line: rgba(255, 255, 255, 0.08);
+  --fg: #ffffff;
+  --fg-2: #c4c8cc;
+  --fg-3: #888c92;
+}
+
+body {
+  font-family: 'Manrope', 'Cera Pro', system-ui, -apple-system, sans-serif;
+}
+
+code, pre, .mono {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Typography utilities — kept global per design brief §5 */
+.db-lime {
+  color: var(--lime);
+}
+
+.db-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.95em;
+}
+
+/* Status pill — addendum §4.1 */
+.feature-status-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 8px;
+  margin-left: 12px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.feature-status-pill--building {
+  background: var(--lime-glow);
+  color: var(--lime);
+  border: 1px solid rgba(204, 255, 0, 0.3);
+}
+
+.feature-status-pill--coming,
+.feature-status-pill--planned {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fg-3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Section status banner — addendum §4.2 */
+.section-status-banner {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  margin-bottom: 32px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--fg-3);
+}
+
+.section-status-banner a {
+  color: var(--fg-3);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section-status-banner a:hover {
+  color: var(--lime);
+}
