@@ -1,0 +1,309 @@
+// Shared primitives ported from prototype/primitives.jsx.
+// Source-of-truth rule (design brief §0.1): class names match the prototype
+// verbatim so styles.css applies without modification.
+
+import React from 'react';
+
+export const Para = ({ children }) => <p className="db-para">{children}</p>;
+export const H2 = ({ id, children }) => <h2 id={id} className="db-h2">{children}</h2>;
+export const H3 = ({ children }) => <h3 className="db-h3">{children}</h3>;
+export const Lime = ({ children }) => <span className="db-lime">{children}</span>;
+export const Mono = ({ children }) => <span className="db-mono">{children}</span>;
+export const Lede = ({ children }) => <p className="db-lede">{children}</p>;
+export const Pull = ({ children }) => <div className="db-pull">{children}</div>;
+export const Rule = () => <div className="db-rule" />;
+
+export const Asterisk = ({ note }) => (
+  <sup
+    className="db-asterisk"
+    title={note || 'Ethereum only at launch. Other chains in Phase 2.'}
+    aria-label={note || 'Ethereum only at launch. Other chains in Phase 2.'}
+  >*</sup>
+);
+
+export const Callout = ({ kind = 'info', title, children }) => (
+  <div className={`db-callout db-callout--${kind}`}>
+    {title && <div className="db-callout__title">{title}</div>}
+    <div className="db-callout__body">{children}</div>
+  </div>
+);
+
+export const KeyValueGrid = ({ items }) => {
+  const odd = items.length % 2 === 1;
+  return (
+    <div className="db-kv-grid">
+      {items.map((it, i) => {
+        const isLastOdd = odd && i === items.length - 1;
+        return (
+          <div className={`db-kv${isLastOdd ? ' db-kv--span' : ''}`} key={i}>
+            <div className="db-kv__k">{it.k}</div>
+            <div className="db-kv__v">{it.v}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export const StatRow = ({ items }) => (
+  <div className="db-stat-row">
+    {items.map((it, i) => (
+      <div className="db-stat" key={i}>
+        <div className="db-stat__num">{it.num}</div>
+        <div className="db-stat__label">{it.label}</div>
+      </div>
+    ))}
+  </div>
+);
+
+export const ChainRow = ({ items }) => (
+  <div className="db-chains">
+    {items.map((c, i) => (
+      <div className="db-chain" key={i}>
+        <div className="db-chain__sym">{c.sym}</div>
+        <div className="db-chain__name">{c.name}</div>
+      </div>
+    ))}
+  </div>
+);
+
+export const ChatBubble = ({ from, children, kind }) => (
+  <div className={`db-chat__row db-chat__row--${from}`}>
+    <div className={`db-chat__bubble db-chat__bubble--${from}${kind ? ` db-chat__bubble--${kind}` : ''}`}>
+      {from === 'dale' && <div className="db-chat__sender">Dale</div>}
+      {children}
+    </div>
+  </div>
+);
+
+export const ChatBlock = ({ children }) => <div className="db-chat">{children}</div>;
+
+export const PageHead = ({ eyebrow, title, lede, icon }) => (
+  <>
+    <div className="db-eyebrow">{eyebrow}</div>
+    <h1 className="db-h1">{icon ? <span className="db-icon-square">{icon}</span> : null}{title}</h1>
+    {lede && <p className="db-lede">{lede}</p>}
+  </>
+);
+
+export const Hero = ({ eyebrow, title, blurb }) => (
+  <div className="db-hero">
+    <div className="db-hero__bg">
+      <div className="db-hero__grid" />
+      <div className="db-hero__glow" />
+    </div>
+    <div className="db-hero__content">
+      <div className="db-hero__eyebrow">{eyebrow}</div>
+      <div className="db-hero__title">{title}</div>
+      <div className="db-hero__blurb">{blurb}</div>
+    </div>
+  </div>
+);
+
+export const NumberedList = ({ items }) => (
+  <ol className="db-num-list">
+    {items.map((it, i) => (
+      <li key={i} className="db-num-list__item">
+        <div className="db-num-list__num">{String(i + 1).padStart(2, '0')}</div>
+        <div className="db-num-list__body">
+          {it.title && <div className="db-num-list__title">{it.title}</div>}
+          <div className="db-num-list__text">{it.text}</div>
+        </div>
+      </li>
+    ))}
+  </ol>
+);
+
+export const FeatureGrid = ({ items }) => {
+  const odd = items.length % 2 === 1;
+  return (
+    <div className="db-feat-grid">
+      {items.map((it, i) => {
+        const isLastOdd = odd && i === items.length - 1;
+        return (
+          <div className={`db-feat${isLastOdd ? ' db-feat--span' : ''}`} key={i}>
+            <div className="db-feat__sym">{it.sym}</div>
+            <div className="db-feat__title">{it.title}</div>
+            <div className="db-feat__body">{it.body}</div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export const ModeCard = ({ name, tag, body, sample }) => (
+  <div className="db-mode">
+    <div className="db-mode__head">
+      <div className="db-mode__name">{name}</div>
+      <div className="db-mode__tag">{tag}</div>
+    </div>
+    <div className="db-mode__body">{body}</div>
+    <div className="db-mode__sample">{sample}</div>
+  </div>
+);
+
+// Pill — small status badge ('Live' / 'Coming' / etc.)
+// Independent of FeatureStatus (which reads from feature-status.json);
+// this is a low-level visual badge for partnership cards and inline use.
+export const Pill = ({ status, children }) => {
+  const norm = (status || '').toString().toLowerCase();
+  const cls = norm === 'live' ? 'live' : 'coming';
+  return <span className={`db-pill db-pill--${cls}`}>{children ?? status}</span>;
+};
+
+export const PartnerCard = ({ logo, name, line, status }) => (
+  <div className="db-partner">
+    <div className="db-partner__logo">{logo}</div>
+    <div className="db-partner__main">
+      <div className="db-partner__name">{name}</div>
+      <div className="db-partner__line">{line}</div>
+    </div>
+    <Pill status={status}>{status}</Pill>
+  </div>
+);
+
+export const Partners = ({ items }) => (
+  <div className="db-partners">
+    {items.map((p, i) => <PartnerCard key={i} {...p} />)}
+  </div>
+);
+
+export const ProductCard = ({ sym, name, role, body, cta, onClick, href }) => {
+  const Tag = href ? 'a' : 'button';
+  const props = href ? { href } : { onClick, type: 'button' };
+  return (
+    <Tag className="db-product" {...props}>
+      <div className="db-product__head">
+        <div className="db-product__sym">{sym}</div>
+        <div className="db-product__name">{name}</div>
+        <div className="db-product__role">{role}</div>
+      </div>
+      <div className="db-product__body">{body}</div>
+      <div className="db-product__cta">{cta} →</div>
+    </Tag>
+  );
+};
+
+export const TaglineStrip = ({ kicker, children }) => (
+  <div className="db-tagline-strip">
+    {kicker && <div className="db-tagline-strip__sub">{kicker}</div>}
+    <div className="db-tagline-strip__main">{children}</div>
+  </div>
+);
+
+export const Mark = ({ kind, children }) => (
+  <span className={`db-mark db-mark--${kind}`}>
+    <span className="db-mark__sym">{kind === 'dale' ? 'D' : 'B'}</span>
+    {children}
+  </span>
+);
+
+export const UnifiedPoolFunnel = () => {
+  const inputs = [
+    { sym: 'D', name: 'Dale', line: 'Trading fees' },
+    { sym: '▣', name: 'Wallet', line: 'Trading fees' },
+    { sym: '◧', name: 'Link', line: 'Trading + ad inventory' },
+    { sym: 'B', name: 'Bobby', line: 'Ads, trending, qualification' },
+    { sym: '◎', name: '$DEEPAI DEX', line: '1% of routed volume' },
+    { sym: '◑', name: 'PRO subs', line: '$49 / month from non holders' },
+    { sym: '◆', name: 'Team trading', line: '15% of realized profits' },
+  ];
+  return (
+    <div className="db-funnel">
+      <div className="db-funnel__top">
+        <div className="db-funnel__colhead">EVERY REVENUE SOURCE</div>
+        <div className="db-funnel__inputs">
+          {inputs.map((p, i) => (
+            <div className="db-funnel__input" key={i}>
+              <div className="db-funnel__input-sym">{p.sym}</div>
+              <div className="db-funnel__input-name">{p.name}</div>
+              <div className="db-funnel__input-line">{p.line}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="db-funnel__taper" aria-hidden="true">
+        <svg viewBox="0 0 600 80" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="dbFunnelGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(204, 255, 0,0.04)" />
+              <stop offset="100%" stopColor="rgba(204, 255, 0,0.18)" />
+            </linearGradient>
+          </defs>
+          <path d="M0,0 L600,0 L420,80 L180,80 Z" fill="url(#dbFunnelGrad)" />
+          <path d="M0,0 L600,0 L420,80 L180,80 Z" fill="none" stroke="rgba(204, 255, 0,0.25)" strokeWidth="1" />
+        </svg>
+      </div>
+
+      <div className="db-funnel__pool">
+        <div className="db-funnel__pool-eyebrow">ONE POOL</div>
+        <div className="db-funnel__pool-title">REVENUE SHARE</div>
+        <div className="db-funnel__pool-sub">paid in USDC · monthly snapshot</div>
+      </div>
+
+      <div className="db-funnel__out" aria-hidden="true">
+        <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+          <path d="M100,0 L100,36" stroke="rgba(204, 255, 0,0.5)" strokeWidth="2" />
+          <path d="M88,24 L100,36 L112,24" stroke="rgba(204, 255, 0,0.7)" strokeWidth="2" fill="none" />
+        </svg>
+      </div>
+
+      <div className="db-funnel__holders">
+        <div className="db-funnel__holders-label">$DEEPAI HOLDERS</div>
+        <div className="db-funnel__holders-bar">
+          {Array.from({ length: 24 }).map((_, i) => (
+            <span key={i} className="db-funnel__holder" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const TwoEnginesDiagram = () => (
+  <div className="db-engines">
+    <div className="db-engines__engine db-engines__engine--trading">
+      <div className="db-engines__eyebrow">ENGINE 1</div>
+      <div className="db-engines__title">Trading Volume</div>
+      <div className="db-engines__inputs">
+        <div className="db-engines__input">Traders</div>
+        <div className="db-engines__input">Chains live</div>
+        <div className="db-engines__input">Partner integrations</div>
+      </div>
+      <div className="db-engines__sources">
+        <span>Dale</span><span>·</span><span>Wallet</span><span>·</span><span>Link</span>
+      </div>
+      <div className="db-engines__curve">
+        <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+          <path d="M0,55 Q60,55 100,30 T200,5" stroke="var(--lime)" strokeWidth="2" fill="none" />
+        </svg>
+      </div>
+    </div>
+
+    <div className="db-engines__engine db-engines__engine--intel">
+      <div className="db-engines__eyebrow">ENGINE 2</div>
+      <div className="db-engines__title">Intelligence Monetization</div>
+      <div className="db-engines__inputs">
+        <div className="db-engines__input">Projects applying</div>
+        <div className="db-engines__input">Network audience</div>
+        <div className="db-engines__input">Qualification bar</div>
+      </div>
+      <div className="db-engines__sources">
+        <span>Bobby ad surfaces</span><span>·</span><span>Trending</span><span>·</span><span>Founders Program</span>
+      </div>
+      <div className="db-engines__curve">
+        <svg viewBox="0 0 200 60" preserveAspectRatio="none">
+          <path d="M0,50 C40,50 80,42 120,30 S180,12 200,8" stroke="var(--lime-2)" strokeWidth="2" fill="none" strokeDasharray="2,3" />
+        </svg>
+      </div>
+    </div>
+
+    <div className="db-engines__merge">
+      <div className="db-engines__merge-arrow">↓</div>
+      <div className="db-engines__merge-pool">ONE POOL</div>
+      <div className="db-engines__merge-note">uncorrelated inputs · same destination</div>
+    </div>
+  </div>
+);
