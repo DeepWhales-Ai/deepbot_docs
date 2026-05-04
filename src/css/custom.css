@@ -39,7 +39,14 @@
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.08);
 }
 
-[data-theme='dark'] {
+/* Selector is `html[data-theme='dark']` (not bare `[data-theme='dark']`) so
+   it matches Docusaurus's own `html[data-theme=dark]` specificity (0,1,1).
+   At equal specificity, source order wins — and our customCss loads after
+   Docusaurus's own theme CSS, so these variable overrides take effect.
+   The bare attribute selector lost on specificity, leaving Docusaurus's
+   default --ifm-background-color: #1b1b1d in force — that's what painted
+   the gray scrolling boundary AND the gray navbar. Same root cause, one fix. */
+html[data-theme='dark'] {
   --ifm-color-primary: #CCFF00;
   --ifm-color-primary-dark: #B8E600;
   --ifm-color-primary-darker: #A6CC00;
@@ -48,9 +55,16 @@
   --ifm-color-primary-lighter: #DEFF55;
   --ifm-color-primary-lightest: #EBFF99;
 
-  /* Dark mode: prototype's --bg #0A0A0A. */
-  --ifm-background-color: #0A0A0A;
-  --ifm-background-surface-color: #131313;
+  /* Every Docusaurus surface var collapses to #0A0A0A so anywhere it paints
+     a "background", "surface", "navbar background", or "footer background",
+     the result is the prototype's --bg with no leaks or strips. !important
+     because Docusaurus's bundled CSS sets these in the same matched rule
+     (cssnano merges by selector) and the merge order isn't deterministic. */
+  --ifm-background-color: #0A0A0A !important;
+  --ifm-background-surface-color: #0A0A0A !important;
+  --ifm-navbar-background-color: #0A0A0A !important;
+  --ifm-footer-background-color: #0A0A0A !important;
+
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.85);
 
@@ -62,9 +76,6 @@
   --ifm-menu-color-active: var(--ifm-color-primary);
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.04);
-
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: #0e0e0e;
 
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.12);
 }
