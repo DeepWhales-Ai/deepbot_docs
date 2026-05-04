@@ -4,7 +4,7 @@
 // Per kickoff §8.4: timing is critical to feel — don't "improve" it.
 // Per kickoff §8.6: ported as-is from prototype/pages-start.jsx (window.ConvergenceField).
 //
-// Asset path: image references /images/dale-character.png (the favicon source PNG).
+// Asset path: /img/dale-character.png served from /static/img/ (Docusaurus convention).
 
 import React, { useEffect, useMemo, useState } from 'react';
 const seed = (i) => {
@@ -180,7 +180,7 @@ export function ConvergenceField() {
             <circle cx={targetX} cy={targetY} r={16} />
           </clipPath>
           <image
-            href="/images/dale-character.png"
+            href="/img/dale-character.png"
             x={targetX - 16} y={targetY - 16}
             width="32" height="32"
             clipPath="url(#daleClip)"
