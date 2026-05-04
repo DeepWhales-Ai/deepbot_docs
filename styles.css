@@ -3837,3 +3837,19 @@ body {
 .section-status-banner a:hover {
   color: var(--lime);
 }
+
+/* ===== Sidebar active-item override =====
+   Mintlify v2 default: lime text + fake-bold via text-shadow + lime border.
+   Krypt's call: color-only. Just the lime color, no weight, no border, no bg.
+   Selector: parent <li data-active="true"> wraps the anchor; targeting its
+   anchor and any descendants strips the visual weight without touching the
+   color (which is set on text-primary / dark:text-primary-light Tailwind
+   classes that we leave untouched). */
+li[data-active="true"] > a,
+li[data-active="true"] > a * {
+  text-shadow: none !important;
+  font-weight: 400 !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
