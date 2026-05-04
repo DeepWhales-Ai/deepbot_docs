@@ -107,16 +107,19 @@ const config = {
 
       navbar: {
         title: '',
-        // SVG wordmarks. Both PNGs were byte-identical (white "Deep"
-        // invisible on light bg). The SVG variants split the file:
-        // logo-light = dark "Deep" + muted-lime "Bot" (readable on white);
-        // logo-dark = white "Deep" + lime "Bot" (the prior look).
-        // Web-safe sans (Inter / system-ui fallback) — typography is
-        // approximate; swap in the source typeface when available.
+        // PNG wordmark — clean kerning, correct ® glyph, original
+        // typography. The navbar background is forced #0A0A0A in both
+        // light and dark mode (see custom.css), so the white-Deep +
+        // lime-Bot PNG reads correctly across themes — no light-mode
+        // variant needed at this resolution. The SVG attempt was
+        // backed out: at the displayed 140px width, system-font SVG
+        // rendering looked thin and the ® shrank to a dot. Source
+        // SVGs remain in /static/img/ for future use when the source
+        // typeface is available.
         logo: {
           alt: 'DeepBot',
-          src: 'img/logo-light.svg',
-          srcDark: 'img/logo-dark.svg',
+          src: 'img/logo-dark.png',
+          srcDark: 'img/logo-dark.png',
           width: 140,
         },
         // Per Krypt: no topbar links and no CTA button. Sidebar carries nav.

@@ -61,11 +61,18 @@ function brandifyTextNode(textNode) {
 }
 
 function applyBrandSplit() {
+  // Defensive exclusion: the navbar logo is a separate <img> rendering
+  // the wordmark — never touched by this module's selectors anyway,
+  // but :not() guards make the contract explicit so a future selector
+  // change can't accidentally walk the brand element.
   const targets = document.querySelectorAll(
-    'article header h1, .breadcrumbs__link, .menu__link'
+    'article header h1:not(.navbar__brand *):not(.navbar__logo *), ' +
+    '.breadcrumbs__link:not(.navbar__brand *):not(.navbar__logo *), ' +
+    '.menu__link:not(.navbar__brand *):not(.navbar__logo *)'
   );
   targets.forEach((el) => {
     if (el.getAttribute(BRAND_FLAG)) return;
+    if (el.closest('.navbar__brand, .navbar__logo')) return;
     if (!el.textContent.includes('DeepBot')) return;
 
     // Walk text nodes. Element children stay as-is; only text gets

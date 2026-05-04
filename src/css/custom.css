@@ -158,10 +158,17 @@ main {
   background: #0A0A0A !important;
 }
 
-/* Sidebar pin/unpin toggle — subtle by default, lime hint on hover.
-   Same treatment as Stripe / Resend docs: small, transparent, muted gray
-   icon; only the hover state hints lime. The expandButton that appears
-   on the freed left edge after collapse gets the same treatment. */
+/* Sidebar pin/unpin toggle — subtle but visible at rest, lime hint on
+   hover. Stripe / Resend docs treatment: small icon, no chrome at rest,
+   muted gray icon, lime hint only on hover.
+
+   Specificity note: Docusaurus stamps the button with two Infima classes
+   (.button.button--secondary.button--outline = 0,2,1) which outrank a
+   single-class color selector. We hardcode the SVG fill directly with
+   !important, two levels deep (g + path), so neither Infima nor the
+   inline fill="#7a7a7a" attribute on the <g> wins. The expandButton
+   that surfaces on the freed left edge after collapse gets the same
+   treatment. */
 .collapseSidebarButton_PEFL,
 [class*='collapseSidebarButton'],
 .expandButton_TmdG,
@@ -169,7 +176,6 @@ main {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
-  color: var(--fg-2, rgba(255, 255, 255, 0.45)) !important;
   width: auto !important;
   padding: 8px !important;
   margin: 12px auto !important;
@@ -177,6 +183,31 @@ main {
   justify-content: center !important;
   align-items: center !important;
   box-shadow: none !important;
+  opacity: 1 !important;
+}
+/* Hardcoded fill on SVG paths — bypass the Infima button color cascade
+   that was making `currentColor` resolve to a value too close to the
+   sidebar background to see. */
+.collapseSidebarButton_PEFL svg g,
+.collapseSidebarButton_PEFL svg path,
+[class*='collapseSidebarButton'] svg g,
+[class*='collapseSidebarButton'] svg path,
+.expandButton_TmdG svg g,
+.expandButton_TmdG svg path,
+[class*='expandButton'] svg g,
+[class*='expandButton'] svg path {
+  fill: rgba(255, 255, 255, 0.6) !important;
+  transition: fill 0.15s ease !important;
+}
+.collapseSidebarButton_PEFL:hover svg g,
+.collapseSidebarButton_PEFL:hover svg path,
+[class*='collapseSidebarButton']:hover svg g,
+[class*='collapseSidebarButton']:hover svg path,
+.expandButton_TmdG:hover svg g,
+.expandButton_TmdG:hover svg path,
+[class*='expandButton']:hover svg g,
+[class*='expandButton']:hover svg path {
+  fill: var(--ifm-color-primary, #CCFF00) !important;
 }
 .collapseSidebarButton_PEFL:hover,
 [class*='collapseSidebarButton']:hover,
@@ -184,23 +215,6 @@ main {
 [class*='expandButton']:hover {
   background-color: rgba(204, 255, 0, 0.08) !important;
   border: none !important;
-  color: var(--ifm-color-primary) !important;
-}
-/* Inherit the muted color into the SVG icon (default fill was hard-coded
-   #7a7a7a — we want it to follow `color` so it brightens on hover). */
-.collapseSidebarButton_PEFL svg,
-[class*='collapseSidebarButton'] svg,
-.expandButton_TmdG svg,
-[class*='expandButton'] svg {
-  color: inherit !important;
-}
-.collapseSidebarButton_PEFL svg path,
-[class*='collapseSidebarButton'] svg path,
-.collapseSidebarButton_PEFL svg g,
-[class*='collapseSidebarButton'] svg g,
-.expandButton_TmdG svg path,
-[class*='expandButton'] svg path {
-  fill: currentColor !important;
 }
 
 /* Sidebar active item — color-only, no fake-bold, no border, no background.
