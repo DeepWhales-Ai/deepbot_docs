@@ -3,10 +3,51 @@ title: "For projects"
 sidebar_label: "For projects"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageForProjects` */}
+{/* Source: pages-rest.jsx -> PageBobbyForProjects */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, KeyValueGrid, FeatureGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="BOBBY"
+  title="For projects"
+  lede={<>What a project gets when it qualifies for Bobby. <Lime>Five ad surfaces, locked maximum. Trending earned, not paid.</Lime></>}
+/>
+
+<H2 id="surfaces">The five ad surfaces</H2>
+<Para>
+  Five permanent ad surfaces across the network. Capped at five, by design. Restraint is the
+  product. A surface is never sold to two projects at once and the inventory does not expand
+  to chase revenue.
+</Para>
+<FeatureGrid items={[
+  { sym: "01", title: "Pinned in project rooms",  body: "A pinned slot in qualified project Telegram groups. Single project per room, rotation governed by the network." },
+  { sym: "02", title: "Trending list placement",  body: "Earned position on the public Bobby trending list. Calibrated against real community activity, not paid." },
+  { sym: "03", title: "Cross promo broadcast",    body: "Reach into the broader network through a controlled cross promotion to communities with overlapping audience signal." },
+  { sym: "04", title: "Editorial qualification",  body: "Editorial review and a one time qualification fee. The bar exists so the surfaces stay credible." },
+  { sym: "05", title: "Featured spotlight",       body: "A periodic spotlight slot for projects that clear the qualification bar and the activity floor at the same time." },
+]} />
+
+<H2 id="qualifies">What qualifies</H2>
+<Pull>
+  A project that qualifies for Bobby's surfaces qualifies on the merits.
+</Pull>
+<KeyValueGrid items={[
+  { k: "Real community activity", v: "Sustained, multi source community signal. Not bot farms. Not paid pumpers." },
+  { k: "Clean contract", v: "No honeypot signals. No rugged dev history on the deployer. Standard safety pre check." },
+  { k: "Working product", v: "Something users actually use. The bar is light at v1, but the bar exists." },
+  { k: "Editorial pass", v: "A human pass on the project's basic claims. We do not need a pitch deck. We need the truth to be the truth." },
+]} />
+
+<H2 id="how">How a project applies</H2>
+<KeyValueGrid items={[
+  { k: "Apply", v: "Submit through the project intake. Contract address, group, and a short summary." },
+  { k: "Scan", v: "The network has likely already scanned the project. The intake confirms the read against current state." },
+  { k: "Qualify", v: "Editorial pass. If the project clears, the qualification fee is paid and the slot is scheduled." },
+  { k: "Surface", v: "Placement runs. Performance is reported back to the project. Renewal is conditional on the same bar that earned the slot in the first place." },
+]} />
+
+<Callout kind="info" title="Why the inventory stays capped">
+  Five surfaces is a structural limit, not a sales target. If we expand the inventory to chase
+  revenue, the surfaces lose the credibility that made them worth paying for. The cap protects
+  the product from itself.
+</Callout>

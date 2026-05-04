@@ -3,10 +3,38 @@ title: "Claiming revenue"
 sidebar_label: "Claiming revenue"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageRevClaiming` */}
+{/* Source: pages-rest.jsx -> PageRevClaiming */}
 
-# TODO
+import { PageHead, Para, H2, Mono, NumberedList, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="REVENUE SHARING"
+  title="Claiming revenue"
+  lede="The flow, step by step."
+/>
+
+<H2 id="how">How payouts land</H2>
+<NumberedList items={[
+  { title: "Pool accrues across the month", text: "Trading fees, DEX tax contribution, team trading share, ad revenue, and PRO subs all flow to the same pool throughout the month." },
+  { title: "Random monthly snapshot", text: "A snapshot of eligible holders is taken at a random moment in the month. Eligibility checks against the 100K minimum and the seven day no sell rule." },
+  { title: "Pro rata calculation", text: "Your share is proportional to your balance against the eligible supply (~90.8M, excluding the LP). NFT multipliers apply on top." },
+  { title: "Paid in stablecoin", text: "USDC or USDT, sent directly to your wallet." },
+]} />
+
+<H2 id="dale">Inside Dale</H2>
+<Para>
+  Tell Dale <Mono>show my revenue share</Mono>. Dale surfaces your eligibility
+  status, current accrued share, and the next snapshot window.
+</Para>
+<Callout kind="info" title="Coming soon">
+  The in chat revenue share command is in development and not live yet. Eligibility, snapshots,
+  and payouts continue to run on schedule. The conversational surface inside Dale ships in a
+  future release.
+</Callout>
+
+<H2 id="missed">If you missed a month</H2>
+<KeyValueGrid items={[
+  { k: "Below 100K at snapshot", v: "Not eligible for that month. Move back above 100K to qualify for the next." },
+  { k: "Sold within seven days of snapshot", v: "Forfeits that month. Holding cleanly through the next snapshot reinstates eligibility." },
+  { k: "Wallet changed", v: "Eligibility tracks the wallet, not the user. Use the wallet that holds at snapshot." },
+]} />

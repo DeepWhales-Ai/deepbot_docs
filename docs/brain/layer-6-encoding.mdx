@@ -3,10 +3,56 @@ title: "Layer 6 - Encoding moat"
 sidebar_label: "Layer 6 - Encoding moat"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainEncoding` */}
+{/* Source: pages-brain.jsx -> PageBrainEncoding */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, FeatureGrid, Callout } from '@site/src/components/primitives.jsx';
+import { EncodingDiagram } from '@site/src/components/BrainComponents.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN · LAYER 06"
+  title="The encoding moat"
+  lede="The loop closes here. Bobby's intelligence is encoded for Dale's tool call schema. Other bots cannot read it. The decision to gate the brain to one consumer is the moat."
+/>
+
+<Pull>
+  A competitor could build a buy bot. A competitor could build group infrastructure. What
+  a competitor cannot replicate is the encoding layer, because the encoding layer is not
+  a feature. <Lime>It is the absence of one.</Lime>
+</Pull>
+
+<H2 id="diagram">How the loop closes</H2>
+<EncodingDiagram />
+
+<H2 id="not-an-api">Bobby has no public API for trading bots</H2>
+<Para>
+  No raw contract addresses on a webhook. No RSS. No public real time feed. Trading-grade
+  Bobby intelligence is structured for one downstream consumer's tool call schema and that
+  consumer is Dale.
+</Para>
+<Para>
+  This is not a technical accident. It is a product decision. Selective interoperability,
+  not technical complexity, is what protects this. Anyone could build the API. Nobody else
+  has the network to put through it.
+</Para>
+
+<H2 id="loop">The flywheel this closes</H2>
+<FeatureGrid items={[
+  { sym: "①", title: "Bobby detects", body: "Across thousands of communities, weighted by router tier and convergence." },
+  { sym: "②", title: "Encoded for Dale", body: "Structured as tool call schema. Not a feed. Not an API. A native call surface." },
+  { sym: "③", title: "Dale executes", body: "On the user's terms. Trade outcomes flow back as ground truth." },
+  { sym: "④", title: "Brain learns", body: "Outcomes validate or invalidate the convergence detection. Models sharpen." },
+]} />
+
+<H2 id="why-it-matters">Why it matters to investors</H2>
+<Para>
+  <DeepBot /> is not a trading bot with a community. <Lime>It is a signal infrastructure
+  company with a trading bot as its monetization layer.</Lime> The encoding moat is
+  why the company can have both products and protect both. Other bots see Dale and want to
+  compete. They do not see what Dale is plugged into. Bobby and Dale are not strangers. They
+  are the same brain.
+</Para>
+
+<Callout kind="lime" title="The single most important sentence in this docset">
+  The moat is not the bot. The moat is the brain. The brain is gated to the bot by design.
+</Callout>

@@ -3,10 +3,28 @@ title: "Partnerships"
 sidebar_label: "Partnerships"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PagePartnerships` */}
+{/* Source: pages-rest.jsx -> PagePartnerships */}
 
-# TODO
+import { PageHead, Partners } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="PLATFORM"
+  title="Partnerships"
+  lede="The integrations that make the platform what it is."
+/>
+
+<Partners items={[
+  { logo: "QS", name: "QuickSwap",   line: "DEX integration on Polygon and Layer 2s.", status: "Live" },
+  { logo: "SO", name: "Sonar",       line: "DCA strategy infrastructure powering Dale's recurring orders.", status: "Live" },
+  { logo: "AG", name: "AGG.market",  line: "Prediction markets through Dale. Polymarket, Kalshi, best price routing across venues.", status: "Live" },
+  { logo: "BM", name: "Bubblemaps",  line: "Holder graph and concentration analysis.", status: "Live" },
+  { logo: "OL", name: "Onchain Labs",line: "Fiat onboarding for new traders entering Dale.", status: "Live" },
+  { logo: "ET", name: "Eterna",      line: "Perpetual trading inside Dale. Same wallet, same PIN, same conversation.", status: "Coming" },
+  { logo: "RX", name: "RocketX",     line: "Privacy swaps with cross chain coverage.", status: "Coming" },
+  { logo: "BA", name: "Blockaid",    line: "Address and contract reputation.", status: "Live" },
+]} />
+
+<div style={{marginTop: 24}}>
+  <strong>Eterna perpetuals: <FeatureStatus id="eterna_perps" /></strong>
+</div>

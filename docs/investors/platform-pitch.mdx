@@ -3,10 +3,43 @@ title: "The platform pitch"
 sidebar_label: "The platform pitch"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PagePlatformPitch` */}
+{/* Source: pages-rest.jsx -> PagePlatformPitch */}
 
-# TODO
+import { PageHead, Para, H2, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="INVESTORS"
+  title="The platform pitch"
+  lede="Three products, one brain. Detection that funds execution. Execution that funds detection. A wallet that anchors both."
+/>
+
+<H2 id="thesis">The thesis</H2>
+<Para>
+  Crypto's two open problems are intelligence and execution. The intelligence layer is too
+  noisy for retail. The execution layer is too fragmented for everyone. <DeepBot /> collapses
+  both into one platform with one revenue model.
+</Para>
+
+<H2 id="moat">The moat</H2>
+<Para>
+  Convergence detection is hard to copy. It requires presence in tens of thousands of
+  communities, time series data across cycles, and an encoding layer that prevents
+  third party extraction. Each component takes years. We have built all three.
+</Para>
+
+<H2 id="model">The revenue model</H2>
+<KeyValueGrid items={[
+  { k: "Trading fees", v: "Every Dale execution carries a platform fee. Volume scales with adoption." },
+  { k: "Bobby ad rails", v: "Five surfaces, locked maximum. Earned trust, premium pricing." },
+  { k: "$DEEPAI DEX tax", v: "5% on every $DEEPAI buy and sell. 4% funds the team. 1% routes to the holder pool." },
+  { k: "Team trading profits", v: "15% of realized monthly profits from the team's own trading. Better tools, better trades, more for holders." },
+  { k: "PRO subscriptions", v: "Holders use PRO without paying. Non holders feed 15% of every $49 monthly fee back to the pool." },
+  { k: "Token aligned distribution", v: "40% of trading fees to $DEEPAI holders. Aligned, not extractive." },
+]} />
+
+<H2 id="status">Status</H2>
+<Para>
+  Tier 1 platform documentation lands at public launch. Tier 2 within the first week.
+  Roadmap and partner integrations track on the public roadmap.
+</Para>

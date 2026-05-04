@@ -3,10 +3,50 @@ title: "Layer 2 - Router fingerprints"
 sidebar_label: "Layer 2 - Router fingerprints"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainRouters` */}
+{/* Source: pages-brain.jsx -> PageBrainRouters */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, StatRow, Callout } from '@site/src/components/primitives.jsx';
+import { RouterTierViz } from '@site/src/components/BrainComponents.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN · LAYER 02"
+  title="Router fingerprints"
+  lede="Not who clicks buy, who is the buyer. Nineteen on-chain routers fingerprinted across five chains, tiered by behavior. Smart money convergence is detected here."
+/>
+
+<H2 id="what">What this layer does</H2>
+<Para>
+  Every on-chain buy goes through a router. Routers have fingerprints. Gas patterns, slippage
+  defaults, MEV behavior, calldata signatures. We map those fingerprints to behavioral tiers
+  so the brain can answer the only question that matters: <Lime>is this signal real
+  money or theatre?</Lime>
+</Para>
+
+<StatRow items={[
+  { num: "19", label: "Routers fingerprinted" },
+  { num: "5",  label: "Chains covered" },
+  { num: "3",  label: "Behavioral tiers" },
+]} />
+
+<H2 id="tiers">The three tiers</H2>
+<RouterTierViz />
+
+<H2 id="why-fingerprints">Why fingerprints, not addresses</H2>
+<Para>
+  Wallet based smart money tracking is gameable. Anyone can spin up a fresh wallet. Routers
+  are infrastructure. They cost real engineering and capital to operate, and the way each
+  one signs and routes transactions is functionally a signature. Fingerprints are
+  adversarially expensive to fake.
+</Para>
+
+<H2 id="convergence-input">What this feeds into</H2>
+<Para>
+  Router tier signal is one of the inputs into the convergence engine. A buy from a top-tier
+  aggregator router is weighted differently from a retail-router buy of the same size. The
+  engine never reveals the weighting publicly. <Mono>Twelve herbs and spices.</Mono>
+</Para>
+
+<Callout kind="lime" title="The investor read">
+  A competitor would need to fingerprint every router on every chain, in real time, with
+  adversarial-grade tier classification. None do. The work is the moat.
+</Callout>

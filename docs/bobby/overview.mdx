@@ -3,10 +3,36 @@ title: "What is Bobby"
 sidebar_label: "What is Bobby"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageWhatBobby` */}
+{/* Source: pages-rest.jsx -> PageWhatBobby */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, KeyValueGrid } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="BOBBY"
+  title="What is Bobby"
+  lede={<>Bobby is the project facing product of DeepBot. <Lime>The intelligence network crypto TG runs on.</Lime></>}
+/>
+
+<H2 id="does">What Bobby does for a project</H2>
+<Para>
+  Bobby lives in project Telegram groups. It runs the chat surfaces, the trending lists, the
+  ad rails, and the project side intelligence loop. For a project owner, Bobby is the
+  difference between hoping a community is healthy and seeing what the community actually is.
+</Para>
+
+<H2 id="trust">The trust principle</H2>
+<Pull>
+  We are not a billboard. We are intelligence.
+</Pull>
+<Para>
+  Bobby's value is its restraint. Five ad surfaces, locked maximum. Trending earned, not paid.
+  The network's outputs are calibrated against real activity, not paid placement. A project
+  that qualifies for Bobby's surfaces qualifies on the merits.
+</Para>
+
+<H2 id="qualifies">What qualifies</H2>
+<KeyValueGrid items={[
+  { k: "Real community activity", v: "Sustained, multi source community signal. Not bot farms. Not paid pumpers." },
+  { k: "Clean contract", v: "No honeypot signals. No rugged dev history on the deployer." },
+  { k: "Working product", v: "Something users actually use. The bar is light at v1, but the bar exists." },
+]} />

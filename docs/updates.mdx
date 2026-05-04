@@ -3,10 +3,52 @@ title: "Updates this month"
 sidebar_label: "Updates this month"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageChangelog` */}
+{/* Source: pages-rest.jsx -> PageChangelog. Inline narrative changelog
+    (NOT the addendum's auto-generated <Changelog /> reading from JSON —
+    this is a hand-written timeline of what shipped). */}
 
-# TODO
+import { PageHead, Lime, StatRow } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+export const ENTRIES = [
+  { date: "Apr 24, 2026", tag: "platform", title: "DeepBot positioned as a platform", body: "Two products under one brand. Bobby on the project side. Dale on the trader side. Documentation rebuilt to match." },
+  { date: "Apr 22, 2026", tag: "major", title: "Reasoning model upgrade", body: "Dale's brain swapped for the strongest reasoning model available. Multi step trades collapse from three prompts to one." },
+  { date: "Apr 18, 2026", tag: "major", title: "Emergency Sell live on Ethereum", body: "Mempool grade rug protection. Detects and exits before attackers can land their block. Front runs with 15% higher gas. Confirmed working on real events. Other chains in Phase 2." },
+  { date: "Apr 15, 2026", tag: "fix", title: "Buy confirmation flow", body: "Long running edge case in the buy confirmation pipeline resolved. Trades now flow end to end without intermediate failure." },
+  { date: "Apr 12, 2026", tag: "major", title: "Wallet system unified", body: "Balances accurate and instant across Ethereum, Solana, Base, Polygon, BNB." },
+  { date: "Apr 09, 2026", tag: "major", title: "Personality framework locked", body: "108 rules across 19 sections. Voice consistency at scale." },
+  { date: "Apr 05, 2026", tag: "major", title: "Strategy layer live", body: "DCA, trailing stops, conditional exits. All expressible as sentences." },
+  { date: "Apr 02, 2026", tag: "improvement", title: "Holder scan in scans", body: "Concentration, top-10 share, insider clusters, recent flow. In every token scan." },
+  { date: "Mar 28, 2026", tag: "improvement", title: "Support load to 1%", body: "Dale handles 99% of inbound. Human support reserved for edge cases." },
+];
+
+<PageHead
+  eyebrow="START HERE"
+  title="Updates this month"
+  lede={<>Everything we shipped between <Lime>March 25 and April 25, 2026</Lime>.</>}
+/>
+
+<StatRow items={[
+  { num: "10", label: "Releases" },
+  { num: "5",  label: "Chains live" },
+  { num: "14", label: "Deployments" },
+  { num: "1%", label: "Support load" },
+]} />
+
+<div className="db-changelog">
+  {ENTRIES.map((e, i) => (
+    <div className="db-changelog__entry" key={i}>
+      <div className="db-changelog__rail">
+        <div className="db-changelog__dot" />
+        {i < ENTRIES.length - 1 && <div className="db-changelog__line" />}
+      </div>
+      <div className="db-changelog__main">
+        <div className="db-changelog__meta">
+          <span className="db-changelog__date">{e.date}</span>
+          <span className={`db-changelog__tag db-changelog__tag--${e.tag}`}>{e.tag}</span>
+        </div>
+        <div className="db-changelog__title">{e.title}</div>
+        <div className="db-changelog__body">{e.body}</div>
+      </div>
+    </div>
+  ))}
+</div>

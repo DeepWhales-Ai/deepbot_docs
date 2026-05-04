@@ -3,10 +3,54 @@ title: "Layer 4 - Rug detector"
 sidebar_label: "Layer 4 - Rug detector"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainRug` */}
+{/* Source: pages-brain.jsx -> PageBrainRug */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, StatRow, Callout } from '@site/src/components/primitives.jsx';
+import { RugTierStrip } from '@site/src/components/BrainComponents.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN · LAYER 04"
+  title="Rug detector"
+  lede="Don't get rugged on the way out. Mempool surveillance with dual websockets, twenty two patterns across three tiers. Critical-tier matches auto sell before the rug confirms."
+/>
+
+<H2 id="frame">The frame</H2>
+<Para>
+  Most rug protection is post hoc. X alerts, telegram pings, dashboards. By the time a
+  human reads any of it, the position is zero. The rug detector runs at the mempool layer
+  and the only metric that matters is whether the auto sell lands in the same block as the
+  rug attempt. <Lime>It does.</Lime>
+</Para>
+
+<Pull>
+  Dale will sell your bag before the rug confirms. That is the entire pitch.
+</Pull>
+
+<StatRow items={[
+  { num: "22", label: "Rug patterns tracked" },
+  { num: "2",  label: "Independent websockets" },
+  { num: "T3", label: "Auto sell trigger tier" },
+]} />
+
+<H2 id="tiers">Three tiers</H2>
+<RugTierStrip />
+
+<H2 id="dual-ws">Why two websockets</H2>
+<Para>
+  One websocket is a single point of failure. Two independent websockets, on independent
+  infrastructure, give us redundancy at the latency layer. If the primary lags, the
+  secondary fires. The cost is paying for two. The benefit is a system that does not blink
+  when the primary node operator does.
+</Para>
+
+<H2 id="patterns">The twenty two patterns</H2>
+<Para>
+  Liquidity removal. Ownership transfers to dead. Mint function activated. Tax flipped above
+  threshold. Trading paused. Whitelist edited. Twenty two in total, classified into Watch /
+  Alert / Execute. Specifics live under NDA.
+</Para>
+
+<Callout kind="lime" title="Live in production">
+  Confirmed working on real rug events. Receipts available on request. The kill log on the
+  home page is a live feed of events the rug detector has acted on.
+</Callout>

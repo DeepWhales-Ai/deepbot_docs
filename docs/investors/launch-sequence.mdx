@@ -3,10 +3,139 @@ title: "Launch sequence"
 sidebar_label: "Launch sequence"
 ---
 
-{/* Source: `pages-launch.jsx` -> `PageLaunchSequence` */}
+{/* Source: pages-launch.jsx -> PageLaunchSequence */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, KeyValueGrid, ChatBlock, ChatBubble, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="INVESTORS"
+  title="The launch sequence"
+  lede={<>Launch is not a big bang. <Lime>The platform reveals itself in installments.</Lime></>}
+/>
+
+<Para>
+  Most products ship one thing on launch day and call it done. DeepBot ships in waves. The
+  core is live on day one. Each wave that follows is a real feature, announced as its own
+  beat, with the work already in. Nothing on this page is speculative. Everything is built
+  or scoped. The order is the order things go live.
+</Para>
+
+<Pull>
+  Day one is the floor, not the ceiling. The platform gets bigger every week.
+</Pull>
+
+<H2 id="pre">Pre launch · the runway</H2>
+<Para>
+  The weeks before launch are quiet on the surface and busy underneath. Brand assets
+  finalize. The X account activates. Voice rewrites merge. BotFather metadata updates.
+  Receipts of the safety stack post publicly. Retro onboarding lands so new users land
+  into a clean room.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Brand activation", v: "X account live. Receipts thread begins. The voice the platform speaks in becomes public." },
+  { k: "Voice rewrite merge", v: "The Dale voice across all surfaces (replies, modes, errors) consolidated to one tone." },
+  { k: "BotFather metadata", v: "Telegram bot descriptions, command lists, deep links updated. The first impression matches the product." },
+  { k: "Retro onboarding", v: "New user flow restructured. The first conversation Dale has with you is the one we want you to remember." },
+]} />
+
+<H2 id="day-one">Launch day · the floor</H2>
+<Para>
+  Eleven feature flags flip. Not new code, just the flip. Every one of these has been built
+  and tested. Launch day is the moment they go public.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Dale conversational trading", v: "Ethereum, Solana, Base, Polygon, BNB. 50+ tools. The full natural language trading surface." },
+  { k: "Bobby network surfaces", v: "Project facing trust signals. Founders Program qualification automated." },
+  { k: "Emergency Sell", v: "Live on Ethereum. 68 rug patterns. Mempool monitoring. 15% gas premium to front run a rug transaction." },
+  { k: "Safety pipeline", v: "Blockaid integration on every token Dale surfaces. Continuous safety on every position you hold." },
+  { k: "PIN, Panic PIN, hint word", v: "Three tier security floor. The same gate that protects trades protects every other capability." },
+  { k: "$DEEPAI revenue share", v: "40% trading fee distribution active from day one. 100,000 token threshold. NFT multipliers live." },
+  { k: "Multi chain wallet", v: "One wallet across five chains. Bridging through LI.FI in conversation." },
+  { k: "Tier 1 documentation", v: "Ten pages live at docs.deepbot.pro. The full platform argument is public on the day it launches." },
+]} />
+
+<Pull>
+  Launch is the eleven flips. Everything below is the eleven that follow.
+</Pull>
+
+<H2 id="wave-1">Launch + one week · exit strategies</H2>
+<Para>
+  Dale gains a structured exit layer. Take profit ladders. Trailing stops. Hard floors.
+  DCA out over a defined window. The patterns are not new in trading, they are new for a
+  bot that can apply them in plain language to your specific position.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">
+    On my $TOKEN position, ladder out 25% at 2x, 25% at 3x, hard floor at -20%.
+  </ChatBubble>
+  <ChatBubble from="dale">
+    Set. Three rungs. I'll execute each one when the price hits and tell you immediately.
+    The hard floor is independent. Confirm with PIN.
+  </ChatBubble>
+</ChatBlock>
+
+<H2 id="wave-2">Launch + two weeks · prediction markets</H2>
+<Para>
+  Polymarket and Kalshi through AGG.market. Best price routing across venues. Same wallet,
+  same PIN, same conversation. Dale trades tokens and events from one place. The unified
+  wallet thesis extends past spot.
+</Para>
+
+<H2 id="wave-3">Launch + three weeks · leagues</H2>
+<Para>
+  Five ranks go live. XP starts accruing across every action. Sharp Shooter unlocks 25%
+  referral commission. Whale Hunter unlocks early access to new chains. Legend unlocks
+  custom Dale personality. The community layer begins to feel like a place.
+</Para>
+
+<H2 id="wave-4">Launch + four weeks · streaks, badges, competitions</H2>
+<Para>
+  Twelve plus badge types. Streak tracking with milestone celebrations. The Sprint, the
+  Sniper, Volume Wars, Diamond Hands. The Crown becomes daily. The leaderboard becomes
+  queryable through Dale.
+</Para>
+
+<H2 id="month-2">Launch + two months · full social layer</H2>
+<Para>
+  Win cards generated automatically on profitable trades. Welcome cards minted on signup.
+  Following sharp traders. Copy trading with rule based execution. Paper trading with
+  cross leaderboard visibility. Social messaging through Dale, never as direct DMs. Three
+  tier opt-in. Surprise gifts from the team.
+</Para>
+
+<Pull>
+  At month two, every winning trade becomes marketing material. The community grows on user wins.
+</Pull>
+
+<H2 id="month-3">Launch + three months · $BOBBY token, ecosystem rewards</H2>
+<Para>
+  $BOBBY ships as Bobby's own token, layered into the existing platform economy. Ecosystem
+  rewards unlock for holders across both products. The two engine, one pool architecture
+  gets a second token without changing the unified pool thesis.
+</Para>
+
+<H2 id="ongoing">Ongoing · what gets added when audited</H2>
+<Para>
+  New chains roll out as audits clear. Privacy swaps through RocketX. Eterna for perps.
+  Voice messages in. Voice PIN. Dale voice replies. Bobby Trending Channel as a curated
+  signal funnel. The Dale website widget for non Telegram users. The Mini App for unified
+  wallet UI. Each one is an announcement when it ships, not a promise on this page.
+</Para>
+
+<Callout kind="info" title="How this page updates">
+  When a wave ships, the section above moves into present tense and a new line appears
+  below. Nothing on this page is speculative. The roadmap and the launch sequence are the
+  same document, written from different angles.
+</Callout>
+
+<H2 id="why">Why phased</H2>
+<Para>
+  Three reasons. <Lime>Each wave is its own announcement</Lime>, which means
+  the platform stays in the conversation for months instead of one news cycle. Each wave
+  gets pressure tested before the next one lands, which means quality holds. And the
+  community sees the platform getting stronger every week, which is the kind of momentum
+  you cannot buy.
+</Para>

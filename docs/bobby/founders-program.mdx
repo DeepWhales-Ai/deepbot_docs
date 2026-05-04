@@ -3,10 +3,43 @@ title: "Founders Program"
 sidebar_label: "Founders Program"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageFoundersProgram` */}
+{/* Source: pages-rest.jsx -> PageFoundersProgram */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="BOBBY"
+  title="Founders Program"
+  lede={<>The discount tier for projects that earn the network's trust over time. <Lime>Auto applied. Not negotiated.</Lime></>}
+/>
+
+<H2 id="what">What it is</H2>
+<Para>
+  The Founders Program is a structural discount on Bobby's ad surfaces and qualification fees,
+  applied automatically when a project crosses the trust thresholds the network already
+  measures. There is no application form for the discount itself. There is no salesperson to
+  talk to. The trust is the qualification.
+</Para>
+
+<H2 id="how">How the discount applies</H2>
+<Pull>
+  Earn the trust. The discount applies. That is the entire mechanic.
+</Pull>
+<KeyValueGrid items={[
+  { k: "Sustained activity", v: "A project that maintains real community signal across multiple cycles is recognized by the network and tagged for the program." },
+  { k: "Clean history", v: "No mid cycle rug, no contract change without disclosure, no editorial flags." },
+  { k: "Auto discount", v: "Once the trust thresholds are crossed, the discount is applied to the project's next ad and qualification cycle automatically. The project does not need to ask." },
+  { k: "Renewal", v: "The discount renews on the same basis it was earned. If the trust signal degrades, the discount does too." },
+]} />
+
+<H2 id="why">Why it works this way</H2>
+<Para>
+  Discounts that come from a sales conversation reward negotiation. The Founders Program
+  rewards behavior. The project that builds a real community over time pays less because the
+  network already knows what it is.
+</Para>
+
+<Callout kind="lime" title="No negotiation">
+  Every project on the same trust tier pays the same. No back channel pricing. No founder
+  rates outside the program. The mechanism is the price list.
+</Callout>

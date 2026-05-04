@@ -3,10 +3,40 @@ title: "Layer 3 - Safety scanner stack"
 sidebar_label: "Layer 3 - Safety scanner stack"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainSafety` */}
+{/* Source: pages-brain.jsx -> PageBrainSafety */}
 
-# TODO
+import { PageHead, Para, H2, Lime, FeatureGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN · LAYER 03"
+  title="Safety scanner stack"
+  lede="Don't get rugged on the way in. Four independent safety writers vote on every contract before it's allowed near a user trade. Blockaid leads. Three more agree or veto."
+/>
+
+<H2 id="why-stacked">Why stacked, not single source</H2>
+<Para>
+  Any single safety scanner has blind spots. Stacking four independent providers, with veto
+  rights, eliminates the blind spot of any one. The cost is latency. The benefit is that
+  rugged dev refusals are decided by consensus, not by one vendor that can be social-engineered.
+</Para>
+
+<H2 id="writers">The writers</H2>
+<FeatureGrid items={[
+  { sym: "◢", title: "Blockaid", body: "Live integration. Address and contract reputation. Used as a pre check on every interaction." },
+  { sym: "◣", title: "Honeypot detector", body: "Hidden traps, freeze functions, blacklists, transfer restrictions. Caught before user funds enter." },
+  { sym: "◤", title: "Rugged dev refusal", body: "Wallets connected to past rug events flagged before the trade clears." },
+  { sym: "◥", title: "Contract pattern matcher", body: "Bytecode pattern matching against known scam contracts. Anti clone, anti fork." },
+]} />
+
+<H2 id="vote">Consensus, not majority</H2>
+<Para>
+  Any one writer's veto is enough to refuse a trade. We default safe. False positives are
+  cheap. The user finds another token. False negatives are not. The user is rugged.
+  <Lime> The math is asymmetric and we lean into it.</Lime>
+</Para>
+
+<Callout kind="info" title="Refused, not warned">
+  When the stack refuses a trade, Dale refuses. There is no override. There is no
+  small-print. Twelve herbs and spices doesn't apply here. Refusal is a public safe
+  commitment.
+</Callout>
