@@ -117,7 +117,9 @@ export function ConvergenceField() {
     return { x, y, cx, cy };
   };
 
-  const cycleColor = phase === 'after' ? (token.thr === 'refused' ? '#FF6B6B' : '#CCFF00') : '#CCFF00';
+  // Palette per master brief: lime + dark + gray only. Refused state uses
+  // muted gray (was #FF6B6B in the prototype — red is not in our palette).
+  const cycleColor = phase === 'after' && token.thr === 'refused' ? 'rgba(255, 255, 255, 0.4)' : '#CCFF00';
 
   return (
     <div className="db-converge">

@@ -42,7 +42,9 @@ export function TryDale() {
     <div className="db-trydale">
       <div className="db-trydale__head">
         <div className="db-trydale__brand">
-          <span className="db-trydale__avatar">D</span>
+          <span className="db-trydale__avatar">
+            <img src="/img/dale-character.png" alt="Dale" />
+          </span>
           <div>
             <div className="db-trydale__name">Dale</div>
             <div className="db-trydale__handle">@traderdeepbot · scripted demo</div>

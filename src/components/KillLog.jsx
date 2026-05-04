@@ -16,7 +16,6 @@ export function KillLog() {
     <div className="db-kill">
       <div className="db-kill__head">
         <div className="db-kill__title">
-          <span className="db-kill__skull">⌧</span>
           THIS WEEK, DALE REFUSED TO TRADE
         </div>
         <div className="db-kill__total">

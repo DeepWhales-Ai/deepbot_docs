@@ -163,6 +163,23 @@ body {
   color: rgba(0, 0, 0, 0.32);
 }
 
+/* ===== Avatar/logo image embeds =====
+   When an <img> child is placed inside a circular badge, it must clip and
+   cover. Used by TryDale (Dale character at 32px) and WalletMock (Dale
+   character at 32px on the DEEPAI token row). */
+.db-trydale__avatar,
+.db-walletmock__tok-logo {
+  overflow: hidden;
+}
+.db-trydale__avatar img,
+.db-walletmock__tok-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
 /* ===== Layer 2: Prototype stylesheet (appended below) ===== */
 /* See INLINE-PROTOTYPE-STYLES marker. The build appends styles.css contents
    below this marker via the postinstall script (or a one-time concat). */
@@ -642,7 +659,7 @@ body {
   min-width: 38px;
 }
 .db-feeds__dir--buy { color: var(--lime); }
-.db-feeds__dir--sell, .db-feeds__dir--exit { color: #FF6B6B; }
+.db-feeds__dir--sell, .db-feeds__dir--exit { color: var(--fg-3); }
 .db-feeds__dir--watch, .db-feeds__dir--scan, .db-feeds__dir--dca { color: var(--info); }
 .db-feeds__amt { color: var(--fg); min-width: 70px; }
 .db-feeds__tok { color: var(--lime); font-weight: 700; }
