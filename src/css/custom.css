@@ -158,6 +158,17 @@ main {
   background: #0A0A0A !important;
 }
 
+/* Tighten the Docusaurus article-container chrome. Default Infima
+   .padding-top--md and .padding-bottom--lg add ~3rem of vertical
+   padding around every doc; halving brings the page rhythm in line
+   with Stripe / Linear docs (tight but not cramped). */
+.container.padding-top--md {
+  padding-top: 0.5rem !important;
+}
+.container.padding-bottom--lg {
+  padding-bottom: 1rem !important;
+}
+
 /* Sidebar pin/unpin toggle — subtle but visible at rest, lime hint on
    hover. Stripe / Resend docs treatment: small icon, no chrome at rest,
    muted gray icon, lime hint only on hover.
@@ -1029,8 +1040,8 @@ body {
 
 /* ===== Tagline strip ===== */
 .db-tagline-strip {
-  margin: 28px 0;
-  padding: 24px 28px;
+  margin: 18px 0;
+  padding: 18px 24px;
   border: 1px solid var(--line);
   border-left: 3px solid var(--lime);
   border-radius: 8px;
@@ -1096,7 +1107,7 @@ body {
   margin-bottom: 4px;
 }
 .theme-doc-markdown > header {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .db-eyebrow {
@@ -1106,7 +1117,7 @@ body {
   letter-spacing: 0.12em;
   color: var(--lime);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .db-h1 {
@@ -1138,7 +1149,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin: 44px 0 14px;
+  margin: 28px 0 8px;
   color: var(--fg);
   scroll-margin-top: 80px;
 }
@@ -1146,16 +1157,16 @@ body {
 .db-h3 {
   font-size: 16px;
   font-weight: 700;
-  margin: 0 0 6px;
+  margin: 18px 0 6px;
   color: var(--fg);
   letter-spacing: -0.01em;
 }
 
 .db-para {
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--fg-2);
-  margin: 0 0 16px;
+  margin: 0 0 12px;
   text-wrap: pretty;
 }
 
@@ -2149,11 +2160,11 @@ body {
 
 /* ===== Callouts ===== */
 .db-callout {
-  padding: 16px 18px;
+  padding: 14px 18px;
   border-radius: 8px;
   border-left: 3px solid var(--info);
   background: var(--bg-2);
-  margin: 20px 0;
+  margin: 14px 0;
 }
 .db-callout--lime {
   border-left-color: var(--lime);
@@ -2182,7 +2193,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
-  margin: 20px 0;
+  margin: 14px 0;
 }
 .db-kv {
   background: var(--bg-1);
@@ -2212,7 +2223,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin: 24px 0;
+  margin: 16px 0;
 }
 .db-stat {
   background: var(--bg-1);
@@ -2348,7 +2359,7 @@ body {
   color: var(--fg);
   border-left: 3px solid var(--lime);
   padding: 4px 0 4px 22px;
-  margin: 28px 0;
+  margin: 18px 0;
   text-wrap: pretty;
 }
 
@@ -2418,7 +2429,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;
-  margin: 20px 0;
+  margin: 14px 0;
 }
 .db-chain {
   background: var(--bg-1);
@@ -2710,11 +2721,11 @@ body {
 /* ===== Numbered list ===== */
 .db-num-list {
   list-style: none;
-  margin: 22px 0;
+  margin: 14px 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 .db-num-list__item {
   display: flex;
@@ -2751,7 +2762,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 22px 0;
+  margin: 14px 0;
 }
 .db-feat {
   background: var(--bg-1);

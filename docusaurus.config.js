@@ -9,11 +9,13 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'DeepBot',
   tagline: "We don't predict. We detect.",
-  // Square monogram favicon — the lime "B" on dark, designed to read at
-  // 16x16. Replaces the prior /img/favicon.png which was the full
-  // dale-character.png (1563x1563) and rendered as illegible noise in a
-  // browser tab. SVG path stays crisp at every density.
-  favicon: 'img/favicon.svg',
+  // Multi-resolution favicon generated from dale-character.png (the lime
+  // ring + dark center we use as the brand mark elsewhere on the site).
+  // Pillow rasterizes the 1563x1563 source into 16/32/48/64/96/192/512
+  // PNGs plus a multi-resolution .ico. The lime ring is the recognizable
+  // element at 16x16 — interior detail compresses to a blob, which is
+  // the intended outcome.
+  favicon: 'favicon.ico',
 
   url: 'https://docs.deepbot.pro',
   baseUrl: '/',
@@ -75,6 +77,33 @@ const config = {
       src: 'https://plausible.io/js/script.js',
       defer: true,
       'data-domain': 'docs.deepbot.pro',
+    },
+  ],
+
+  // Favicon link tags — sized PNGs for high-DPI tabs + apple-touch-icon
+  // for iOS home-screen pinning. The siteConfig.favicon above handles
+  // the legacy .ico declaration; these supplement it with the modern
+  // multi-size icon set browsers prefer.
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/img/favicon-16.png' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/img/favicon-32.png' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/img/favicon-192.png' },
+    },
+    {
+      tagName: 'link',
+      attributes: { rel: 'apple-touch-icon', sizes: '180x180', href: '/img/apple-touch-icon.png' },
+    },
+    {
+      tagName: 'meta',
+      attributes: { name: 'theme-color', content: '#0A0A0A' },
     },
   ],
 
