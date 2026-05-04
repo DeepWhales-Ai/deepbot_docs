@@ -15,7 +15,7 @@ import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList
 <Para>
   Most trading bots wait for you to type. Dale waits too, by default. Set autonomous mode and
   Dale stops waiting. The boundary you write is the boundary Dale operates inside. Outside
-  of it, Dale does nothing. Inside of it, Dale watches the same signals Bobby sees and
+  of it, Dale does nothing. Inside of it, Dale acts on convergence signals as they form and
   executes the trades that match what you would have made yourself.
 </Para>
 
@@ -43,7 +43,7 @@ import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList
 <H2 id="how">How it runs</H2>
 <NumberedList items={[
   { title: "Setup is conversational", text: "Tell Dale what you want. Dale confirms the budget, the floor, the chains, the kill phrase. No dashboard. No form. The boundary is in plain language." },
-  { title: "Bobby feeds Dale", text: "Convergence signals from the Bobby network arrive in Dale's loop. Each candidate is checked against your rules. Most are skipped. The ones that fit are entered." },
+  { title: "Convergence feeds Dale", text: "Convergence signals arrive in Dale's loop the moment they form. Each candidate is checked against your rules. Most are skipped. The ones that fit are entered." },
   { title: "Every entry is justified", text: "When Dale takes a trade, the reasoning is logged with the receipt. Which signal fired. Which rules were checked. Which simulation ran. Why this one cleared the floor." },
   { title: "Exits follow your style", text: "Dale closes positions according to the exit pattern you have used historically. Take profit ladders, trailing stops, hard floors. The same way you would have done it manually." },
   { title: "Summaries on a schedule", text: "Every four hours, a digest. Open positions. Closed positions. P&L. Skipped candidates and why. Anything Dale wants you to look at." },
@@ -73,7 +73,7 @@ import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList
   <ChatBubble from="dale">
     Four hours in. Two entries, both Base.
     {'\n\n'}
-    $TURBO 0.08 ETH at 1.92m mcap. Bobby convergence 4 sources. Safety 88. Up 14% currently,
+    $TURBO 0.08 ETH at 1.92m mcap. Convergence 4 sources. Safety 88. Up 14% currently,
     first ladder rung at 2x is set.
     {'\n\n'}
     $BRETT 0.06 ETH at 880k mcap. Velocity spike, four independent groups in twenty minutes.
