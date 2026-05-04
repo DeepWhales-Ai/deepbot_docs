@@ -23,7 +23,7 @@ const NAV = [
   { icon: '↻', label: 'History' },
 ];
 
-export default function WalletMock({
+export function WalletMock({
   balance = '0.5011 ETH',
   fiat = '$1468.86',
   chain = 'ETH',
@@ -98,4 +98,6 @@ export default function WalletMock({
       <div className="db-walletmock__handle" />
     </div>
   );
-}
+};
+
+export default WalletMock;

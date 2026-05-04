@@ -10,6 +10,8 @@ const fmt = (iso) => {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 };
 
-export default function LastUpdated() {
+export function LastUpdated() {
   return <span>{fmt(featureStatus.last_updated)}</span>;
-}
+};
+
+export default LastUpdated;

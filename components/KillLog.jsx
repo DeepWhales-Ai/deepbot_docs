@@ -10,7 +10,7 @@ const ITEMS = [
   { token: '$ELON7',  chain: 'ETH', reason: 'Blacklist function · open',        refused: 891,  ts: '2d ago' },
 ];
 
-export default function KillLog() {
+export function KillLog() {
   const total = ITEMS.reduce((s, x) => s + x.refused, 0);
   return (
     <div className="db-kill">
@@ -42,4 +42,6 @@ export default function KillLog() {
       <div className="db-kill__foot">Trust isn't a callout box. It's a body count.</div>
     </div>
   );
-}
+};
+
+export default KillLog;

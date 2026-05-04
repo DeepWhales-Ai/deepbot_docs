@@ -4,7 +4,7 @@
 
 import featureStatus from '../data/feature-status.jsx';
 
-export default function FeatureStatus({ id }) {
+export function FeatureStatus({ id }) {
   const f = featureStatus.features?.[id];
   if (!f) {
     // Per addendum §8 step 5: do not silently default to live.
@@ -31,4 +31,6 @@ export default function FeatureStatus({ id }) {
       {label}
     </span>
   );
-}
+};
+
+export default FeatureStatus;

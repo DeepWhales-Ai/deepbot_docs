@@ -20,7 +20,7 @@ const SCRIPT = [
   { from: 'dale', t: 'exec', c: 'Executed. 127.4M PEPE in wallet. Stop loss armed at $0.0000113. Will defend.' },
 ];
 
-export default function TryDale() {
+export function TryDale() {
   const [step, setStep] = React.useState(0);
   const [auto, setAuto] = React.useState(false);
 
@@ -132,4 +132,6 @@ export default function TryDale() {
       </div>
     </div>
   );
-}
+};
+
+export default TryDale;

@@ -25,7 +25,7 @@ const DALE_TRADES = [
   { dir: 'SCAN',  amt: '...',        token: '0xb74…',src: 'convo' },
 ];
 
-export default function LiveFeeds() {
+export function LiveFeeds() {
   const [t, setT] = React.useState(0);
   React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 1400);
@@ -69,4 +69,6 @@ export default function LiveFeeds() {
       </div>
     </div>
   );
-}
+};
+
+export default LiveFeeds;

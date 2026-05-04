@@ -21,7 +21,7 @@ const earliestDrop = (drops) => {
   return ranked.length > 0 ? ranked[0].d : drops[0];
 };
 
-export default function SectionStatus({ ids = [] }) {
+export function SectionStatus({ ids = [] }) {
   const features = ids
     .map((id) => featureStatus.features?.[id])
     .filter(Boolean);
@@ -41,4 +41,6 @@ export default function SectionStatus({ ids = [] }) {
       <a href="/investors/launch-sequence">the launch sequence</a>.
     </div>
   );
-}
+};
+
+export default SectionStatus;

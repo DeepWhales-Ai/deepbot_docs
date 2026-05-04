@@ -12,7 +12,7 @@ const CHAINS = [
   { Logo: BNB, name: 'BNB' },
 ];
 
-export default function ChainPulse() {
+export function ChainPulse() {
   const [t, setT] = React.useState(0);
   React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 700);
@@ -35,4 +35,6 @@ export default function ChainPulse() {
       </div>
     </div>
   );
-}
+};
+
+export default ChainPulse;

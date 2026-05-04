@@ -10,7 +10,7 @@ const fmtCompact = (n) => {
   return fmt(n);
 };
 
-export default function CounterWall() {
+export function CounterWall() {
   const targets = (typeof window !== 'undefined' && window.DEEPBOT_STATS) || {};
   const T = {
     communities: targets.communities ?? 26547,
@@ -84,4 +84,6 @@ export default function CounterWall() {
       </div>
     </div>
   );
-}
+};
+
+export default CounterWall;

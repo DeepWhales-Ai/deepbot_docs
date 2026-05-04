@@ -25,7 +25,7 @@ const fmtLaunchDate = (iso) => {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 };
 
-export default function LaunchSequence() {
+export function LaunchSequence() {
   const features = featureStatus.features || {};
   const all = Object.entries(features).map(([id, f]) => ({ id, ...f }));
 
@@ -102,4 +102,6 @@ export default function LaunchSequence() {
       </p>
     </div>
   );
-}
+};
+
+export default LaunchSequence;

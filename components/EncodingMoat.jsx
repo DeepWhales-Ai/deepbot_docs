@@ -25,7 +25,7 @@ const genHash = (seed) => {
   return s;
 };
 
-export default function EncodingMoat() {
+export function EncodingMoat() {
   const [t, setT] = React.useState(0);
   React.useEffect(() => {
     const id = setInterval(() => setT((x) => x + 1), 1100);
@@ -66,4 +66,6 @@ export default function EncodingMoat() {
       <div className="db-moat__caption">Same payload. Two readers. Only one can act on it.</div>
     </div>
   );
-}
+};
+
+export default EncodingMoat;

@@ -39,3 +39,7 @@ desktop.ini
 # Misc
 .cache/
 *.tmp
+
+# Local PR/issue draft scratch files (use to build gh pr/issue create bodies)
+.pr-*.md
+.issue-*.md

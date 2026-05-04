@@ -21,7 +21,7 @@ const TOKENS = [
   { sym: '$POPCAT', sources: 4,  thr: 'refused' },
 ];
 
-export default function ConvergenceField() {
+export function ConvergenceField() {
   const [tick, setTick] = React.useState(0);
   React.useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 60);
@@ -214,4 +214,6 @@ export default function ConvergenceField() {
       </div>
     </div>
   );
-}
+};
+
+export default ConvergenceField;

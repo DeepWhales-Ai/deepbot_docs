@@ -11,7 +11,7 @@ const fmt = (iso) => {
   return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 };
 
-export default function Changelog() {
+export function Changelog() {
   const entries = (changelog.entries || []).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
   if (entries.length === 0) {
     return <p className="db-para">No updates posted yet.</p>;
@@ -31,4 +31,6 @@ export default function Changelog() {
       ))}
     </div>
   );
-}
+};
+
+export default Changelog;

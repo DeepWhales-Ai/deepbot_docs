@@ -13,7 +13,7 @@ const ITEMS = [
   { kind: 'fact', lead: 'Built by three people.', body: 'Mainnet. Real legal entity. Real revenue. Five years of compounding distribution that nobody can buy.' },
 ];
 
-export default function Shouts({ withHead = true }) {
+export function Shouts({ withHead = true }) {
   return (
     <section className="db-shouts">
       {withHead && (
@@ -36,4 +36,6 @@ export default function Shouts({ withHead = true }) {
       </ol>
     </section>
   );
-}
+};
+
+export default Shouts;

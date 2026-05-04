@@ -22,7 +22,7 @@ const DEFAULTS = {
   counter: { beta: 3, design: 2, nda: 1 },
 };
 
-export default function CurrentlyShipping() {
+export function CurrentlyShipping() {
   const data = (typeof window !== 'undefined' && window.DEEPBOT_BUILDING) || DEFAULTS;
   return (
     <div className="db-shipping">
@@ -73,4 +73,6 @@ export default function CurrentlyShipping() {
       </div>
     </div>
   );
-}
+};
+
+export default CurrentlyShipping;
