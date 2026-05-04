@@ -3,10 +3,15 @@ title: "Eight reasons"
 sidebar_label: "Eight reasons"
 ---
 
-{/* Source: `pages-start.jsx` -> `PageShouts` */}
+{/* Source: pages-start.jsx -> PageShouts */}
 
-# TODO
+import { PageHead } from '@site/src/components/primitives.jsx';
+import Shouts from '@site/src/components/Shouts.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="START HERE"
+  title="Eight reasons this is not a bot."
+  lede={<>Things no other product on earth can say. Read top to bottom. Each line is a single statement that, if it were not true, would be a lie.</>}
+/>
+
+<Shouts withHead={false} />
