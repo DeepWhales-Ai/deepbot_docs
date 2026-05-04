@@ -18,12 +18,17 @@ export function FeatureStatus({ id }) {
       </span>
     );
   }
-  if (f.status === 'live') return null;
+  // `shipped` is the CurrentlyShipping-taxonomy synonym for `live` —
+  // both mean "in production," neither warrants a pill on a doc page.
+  if (f.status === 'live' || f.status === 'shipped') return null;
 
   const drops = f.drops ? ` · ${f.drops}` : '';
-  const label = f.status === 'building' ? 'building'
-              : f.status === 'coming'   ? `coming${drops}`
-              : f.status === 'planned'  ? 'planned'
+  const label = f.status === 'building'    ? 'building'
+              : f.status === 'coming'      ? `coming${drops}`
+              : f.status === 'planned'     ? 'planned'
+              : f.status === 'testing'     ? 'testing'
+              : f.status === 'design'      ? 'design'
+              : f.status === 'in_progress' ? 'in progress'
               : f.status;
 
   return (

@@ -1563,7 +1563,9 @@ body {
 }
 .db-shipping__status--testing { background: rgba(95,169,255,0.15); color: var(--info); }
 .db-shipping__status--private-beta { background: rgba(255,181,71,0.15); color: var(--warn); }
+.db-shipping__status--in-progress { background: rgba(255,181,71,0.15); color: var(--warn); }
 .db-shipping__status--shipped { background: var(--lime); color: #000; }
+.db-shipping__status--design { background: rgba(255,255,255,0.06); color: var(--fg-2); border: 1px solid var(--line); }
 .db-shipping__tag { background: rgba(255,255,255,0.06); color: var(--fg-2); border: 1px solid var(--line); }
 .db-shipping__label { color: var(--fg); font-size: 13px; line-height: 1.35; }
 .db-shipping__since, .db-shipping__window {
