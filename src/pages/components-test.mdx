@@ -1,0 +1,255 @@
+---
+title: "Components test"
+description: "Internal: every custom component rendered once with sample props."
+hide_table_of_contents: false
+---
+
+import {
+  Para, H2, H3, Lime, Mono, Lede, Pull, Rule, Asterisk,
+  Callout, KeyValueGrid, StatRow, ChainRow, ChatBlock, ChatBubble,
+  PageHead, Hero, NumberedList, FeatureGrid, ModeCard, Pill,
+  PartnerCard, Partners, ProductCard, TaglineStrip, Mark,
+  UnifiedPoolFunnel, TwoEnginesDiagram
+} from '@site/src/components/primitives.jsx';
+import { Ethereum, Solana, Base, Polygon, BNB } from '@site/src/components/ChainLogos.jsx';
+import CounterWall from '@site/src/components/CounterWall.jsx';
+import ChainPulse from '@site/src/components/ChainPulse.jsx';
+import KillLog from '@site/src/components/KillLog.jsx';
+import Shouts from '@site/src/components/Shouts.jsx';
+import CurrentlyShipping from '@site/src/components/CurrentlyShipping.jsx';
+import TryDale from '@site/src/components/TryDale.jsx';
+import EncodingMoat from '@site/src/components/EncodingMoat.jsx';
+import LiveFeeds from '@site/src/components/LiveFeeds.jsx';
+import ConvergenceField from '@site/src/components/ConvergenceField.jsx';
+import WalletMock from '@site/src/components/WalletMock.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+import SectionStatus from '@site/src/components/SectionStatus.jsx';
+import LaunchSequence from '@site/src/components/LaunchSequence.jsx';
+import LastUpdated from '@site/src/components/LastUpdated.jsx';
+import Changelog from '@site/src/components/Changelog.jsx';
+
+# Components test
+
+Internal review playground per design brief §0.5. Every component rendered
+once with sample props so visual fidelity can be diffed against the prototype
+before any page port begins. Reach this page at `/components-test` directly
+(it is not in the sidebar).
+
+Total: **17 component files, 47+ individual exports** (21 from §6 + 5 from
+addendum §12 + LiveFeeds caught during the source read).
+
+---
+
+## Tier 3 — Typography wrappers
+
+<Lede>This is a Lede paragraph. Used directly under PageHead, larger and lighter than body text.</Lede>
+
+<Para>This is a regular Para paragraph. Body weight, body line-height. The <Lime>Lime</Lime> wrapper highlights brand-relevant phrases. The <Mono>Mono</Mono> wrapper renders monospace for handles, code, on-chain references.</Para>
+
+<Pull>This is a Pull quote. Used for the moment a paragraph carries the page.</Pull>
+
+<H2 id="h2-test">H2 heading with explicit id</H2>
+
+<H3>H3 heading</H3>
+
+<Para>Asterisk note: launch terms only<Asterisk note="Phase 1 only. Other phases will follow." /> apply to qualifying tokens.</Para>
+
+<Rule />
+
+---
+
+## Callouts
+
+<Callout kind="info" title="Info callout">Default. Used for ambient context.</Callout>
+
+<Callout kind="lime" title="Lime callout">Lime accent. Used when the message is a punchline.</Callout>
+
+<Callout kind="warn" title="Warning callout">Warning. Used for sharp-edge user actions.</Callout>
+
+<Callout title="Untitled callout">No title prop — body only.</Callout>
+
+---
+
+## Grids
+
+<H2 id="kv">KeyValueGrid (even count)</H2>
+<KeyValueGrid items={[
+  { k: 'Trading fees', v: '40% of every routed fee flows to $DEEPAI holders' },
+  { k: 'NFT multiplier', v: 'OG, Silver (40 supply), Gold (10 supply)' },
+  { k: 'Snapshot', v: 'Random monthly · 7-day no-sell rule' },
+  { k: 'Payout', v: 'USDC / USDT direct to wallet' },
+]} />
+
+<H2 id="kv-odd">KeyValueGrid (odd count, last spans full width)</H2>
+<KeyValueGrid items={[
+  { k: 'A', v: 'Half-width left' },
+  { k: 'B', v: 'Half-width right' },
+  { k: 'C', v: 'This row spans the full width — last odd item.' },
+]} />
+
+<H2 id="featgrid">FeatureGrid</H2>
+<FeatureGrid items={[
+  { sym: 'D', title: 'Dale', body: 'Conversational trading partner. Multi-chain.' },
+  { sym: 'B', title: 'Bobby', body: 'Intelligence network. Project-facing.' },
+  { sym: '▣', title: 'Wallet', body: 'Self-custody control panel. Phantom-style GUI.' },
+]} />
+
+<H2 id="statrow">StatRow</H2>
+<StatRow items={[
+  { num: '47', label: 'Sources' },
+  { num: '5', label: 'Chains live' },
+  { num: '40%', label: 'Of fees to holders' },
+]} />
+
+<H2 id="chainrow">ChainRow (with ChainLogos)</H2>
+<ChainRow items={[
+  { sym: <Ethereum size={28} />, name: 'Ethereum' },
+  { sym: <Solana size={28} />, name: 'Solana' },
+  { sym: <Base size={28} />, name: 'Base' },
+  { sym: <Polygon size={28} />, name: 'Polygon' },
+  { sym: <BNB size={28} />, name: 'BNB' },
+]} />
+
+---
+
+## Lists & cards
+
+<H2 id="numlist">NumberedList</H2>
+<NumberedList items={[
+  { title: 'Open Telegram, find @traderdeepbot', text: 'Hit Start. That is the entire install step.' },
+  { title: 'Set your PIN', text: 'Four to six digits. Auto-deletes from chat after entry.' },
+  { title: 'Wallets are provisioned automatically', text: 'One wallet per chain. You will never see a key unless you choose to export.' },
+]} />
+
+<H2 id="modecard">ModeCard</H2>
+<ModeCard
+  name="Pro"
+  tag="Default"
+  body="Fast, dense, no hand-holding. Knows what you're trying to do."
+  sample={<Mono>buy 0.5 eth of pepe, stop at -15%</Mono>}
+/>
+
+<H2 id="productcard">ProductCard</H2>
+<div className="db-product-grid db-product-grid--3">
+  <ProductCard sym="D" name="Dale" role="Conversational trader" body="Multi chain trading partner. Understands what you say, executes through over fifty tools." cta="Read the Dale manual" href="/dale/overview" />
+  <ProductCard sym="B" name="Bobby" role="Intelligence network" body="The detection layer crypto Telegram runs on." cta="Read the Bobby manual" href="/bobby/overview" />
+  <ProductCard sym="▣" name="Wallet" role="Self custody panel" body="Telegram native wallet. Phantom style GUI. Same keys as Dale." cta="See the Wallet" href="/wallet/overview" />
+</div>
+
+<H2 id="partner">PartnerCard / Partners</H2>
+<Partners items={[
+  { logo: 'QS', name: 'QuickSwap', line: 'Polygon swap routing', status: 'Live' },
+  { logo: 'SO', name: 'Sonar', line: 'DCA strategies', status: 'Live' },
+  { logo: 'AG', name: 'AGG.market', line: 'Prediction markets', status: 'Coming' },
+  { logo: 'BM', name: 'Bubblemaps', line: 'Holder distribution', status: 'Coming' },
+]} />
+
+<H2 id="pill">Pill (standalone)</H2>
+<Pill status="Live" /> <Pill status="Coming" /> <Pill status="Live">SHIPPED</Pill>
+
+---
+
+## Marks & strips
+
+<H2 id="mark">Mark (Bobby / Dale brand atoms)</H2>
+<Para>
+  Inside <Mark kind="bobby">Bobby's surfaces</Mark> the voice is restrained.
+  Inside <Mark kind="dale">Dale's conversation</Mark> the voice is sharp.
+</Para>
+
+<H2 id="tagline">TaglineStrip</H2>
+<TaglineStrip kicker="The platform">We don't predict. We detect.</TaglineStrip>
+<TaglineStrip>No kicker version.</TaglineStrip>
+
+<H2 id="hero">Hero</H2>
+<Hero eyebrow="WALLET" title="A wallet that lives where you already live." blurb="Telegram native, fully self custody, multi chain. Open it from inside Dale or use it on its own." />
+
+<H2 id="pagehead">PageHead</H2>
+<PageHead eyebrow="START HERE" title="What is DeepBot" lede="DeepBot is a platform with three products. Bobby detects, Dale executes, Wallet holds." />
+
+---
+
+## Chat block
+
+<H2 id="chat">ChatBlock + ChatBubble</H2>
+<ChatBlock>
+  <ChatBubble from="user">buy 0.1 eth of pepe</ChatBubble>
+  <ChatBubble from="dale">Quote ready. 127.4M PEPE for 0.1 ETH on Uniswap V3. Reply YES to execute.</ChatBubble>
+  <ChatBubble from="user">YES</ChatBubble>
+  <ChatBubble from="dale" kind="exec">Executed. Stop loss armable in one sentence.</ChatBubble>
+</ChatBlock>
+
+---
+
+## Diagrams
+
+<H2 id="funnel">UnifiedPoolFunnel</H2>
+<UnifiedPoolFunnel />
+
+<H2 id="engines">TwoEnginesDiagram</H2>
+<TwoEnginesDiagram />
+
+---
+
+## Heavy interactives — animation timing critical (design brief §17.2)
+
+<H2 id="counter">CounterWall — 1400ms mount-anim, 1s drift, 30s cycle</H2>
+<CounterWall />
+
+<H2 id="convergence">ConvergenceField — 60ms tick, 108-tick cycle (~6.5s), four phases</H2>
+<ConvergenceField />
+
+<H2 id="livefeeds">LiveFeeds — 1400ms tick</H2>
+<LiveFeeds />
+
+<H2 id="trydale">TryDale — scripted 6-step demo, 1300ms autoplay</H2>
+<TryDale />
+
+<H2 id="encodingmoat">EncodingMoat — 1100ms tick, deterministic LCG hash generator</H2>
+<EncodingMoat />
+
+<H2 id="currently">CurrentlyShipping — three columns (NOW · NEXT · STEALTH)</H2>
+<CurrentlyShipping />
+
+<H2 id="killlog">KillLog — six rows</H2>
+<KillLog />
+
+<H2 id="chainpulse">ChainPulse — 700ms tick, single-chain pulse cycle</H2>
+<ChainPulse />
+
+<H2 id="shouts">Shouts — eight numbered facts</H2>
+<Shouts />
+
+<H2 id="shouts-no-head">Shouts (withHead=false)</H2>
+<Shouts withHead={false} />
+
+<H2 id="walletmock">WalletMock — phone-frame wallet UI</H2>
+<div className="db-wallet-phoneframe" style={{ maxWidth: 360 }}>
+  <WalletMock />
+</div>
+
+---
+
+## Status system (addendum §4, §5, §6)
+
+<H2 id="featurestatus">FeatureStatus pills (inline)</H2>
+<Para>Live feature (renders nothing): Panic PIN <FeatureStatus id="panic_pin" /></Para>
+<Para>Building: PIN auto-delete <FeatureStatus id="pin_auto_delete" /></Para>
+<Para>Coming: Prediction markets <FeatureStatus id="agg_prediction_markets" /></Para>
+<Para>Planned: Eterna perpetuals <FeatureStatus id="eterna_perps" /></Para>
+<Para>Unknown id (visible warning): Mystery feature <FeatureStatus id="not_a_real_feature_id" /></Para>
+
+<H2 id="sectionstatus">SectionStatus banner</H2>
+<SectionStatus ids={["leagues_xp_ranks", "competitions_six_formats", "the_crown", "leaderboard_masked"]} />
+<Para>Above: rendered banner for the community-layer page (mostly post-launch).</Para>
+<Para>Below: empty when every id resolves to live — renders nothing.</Para>
+<SectionStatus ids={["panic_pin", "private_key_export"]} />
+
+<H2 id="lastupdated">LastUpdated</H2>
+<Para>Last updated: <LastUpdated /></Para>
+
+<H2 id="launchsequence">LaunchSequence — full auto-generated view</H2>
+<LaunchSequence />
+
+<H2 id="changelog">Changelog</H2>
+<Changelog />
