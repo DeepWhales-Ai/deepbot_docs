@@ -189,6 +189,42 @@ body {
   transform: scale(1.18);
 }
 
+/* Re-added in tier-1-pages: the home page's principle hero block uses
+   .db-principle / __kicker / __line / __foot. Originally swept on
+   tier-1-components because no component referenced these stems; now used
+   directly inline by docs/home.mdx. Verbatim from prototype/styles.css. */
+.db-principle {
+  margin: 36px 0 28px;
+  padding: 36px 0 32px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.db-principle__kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  color: var(--lime);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.db-principle__line {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--fg);
+  margin-bottom: 18px;
+}
+.db-principle__line .db-lime { color: var(--lime); }
+.db-principle__foot {
+  font-size: 14px;
+  color: var(--fg-3);
+  letter-spacing: -0.005em;
+  max-width: 520px;
+}
+
 /* ===== Layer 2: Prototype stylesheet (appended below) ===== */
 /* See INLINE-PROTOTYPE-STYLES marker. The build appends styles.css contents
    below this marker via the postinstall script (or a one-time concat). */

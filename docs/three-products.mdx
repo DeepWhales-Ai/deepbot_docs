@@ -3,10 +3,94 @@ title: "Three products, one brain"
 sidebar_label: "Three products, one brain"
 ---
 
-{/* Source: `pages-start.jsx` -> `PageTwoProducts` */}
+{/* Source: pages-start.jsx -> PageTwoProducts (RENAMED).
+    Three-products framing locked per kickoff brief §2: Bobby + Dale + Wallet.
+    The Wallet section was added during the port — content patterned from
+    the existing wallet/overview prototype copy (master brief language).
+    The encoding moat section stays Bobby↔Dale-specific (that bond is
+    structural to those two products); Wallet sits adjacent as the key
+    custody layer. */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, Pull, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="START HERE"
+  title="Three products, one brain"
+  lede={<>The platform story. How Bobby, Dale, and Wallet share intelligence and infrastructure without crossing publicly. Why that matters. Why it is a moat.</>}
+/>
+
+<H2 id="frame">The frame</H2>
+<Para>
+  Most crypto tools are single source. A bot watches a chain. A scanner reads a contract. A
+  signal feed parses X. Each is one input, one perspective, one easy thing to game.
+</Para>
+<Para>
+  DeepBot is built on the opposite premise. The platform's three products operate at three
+  different layers of the market, and they share what each detects. <Lime>Bobby
+  detects from inside thousands of communities. Dale executes from inside the user's
+  conversation. Wallet holds the keys for both.</Lime> Each layer's signal sharpens the next.
+</Para>
+
+<H2 id="bobby-side">The Bobby side</H2>
+<Para>
+  Bobby lives in project Telegram groups. It runs the chat surfaces, the trending lists, the
+  ad rails, and the project side intelligence loop. It sees coordinated activity across
+  communities, in real time, at a scale single channel tools cannot reach.
+</Para>
+
+<H2 id="dale-side">The Dale side</H2>
+<Para>
+  Dale is the trader facing surface. It uses what the platform detects to inform every quote,
+  every scan, every refusal. When a coordinated push fires across communities, Dale sees it
+  before retail does and surfaces it in plain language to the user.
+</Para>
+
+<H2 id="wallet-side">The Wallet side</H2>
+<Para>
+  Wallet is the visual control panel. Telegram native, fully self custody, multi chain. It
+  holds the same private keys Dale signs with, presented through a Phantom style GUI for the
+  moments when you want to look instead of type. <Lime>One wallet. Two interfaces.
+  Pick the one you want today.</Lime>
+</Para>
+<Para>
+  The wallet panel inherits the safety floor from Dale. Same PIN gate. Same auto delete on
+  sensitive messages. Same encrypted key isolation. Open <Mono>@walletdeepbot</Mono> directly
+  or type <Mono>open wallet</Mono> inside Dale. Same wallet, same balance, same history. Just
+  a different door.
+</Para>
+
+<H2 id="encoding">The encoding moat</H2>
+<Pull>
+  The intelligence cannot be extracted without trading through Dale. This is the moat, and
+  it is structural.
+</Pull>
+<Para>
+  Every Bobby alert is encoded for Dale's tool call schema. Not raw contract addresses you
+  can paste anywhere. The intelligence is structured so that only Dale can interpret and
+  execute on it. Other bots see something that looks like noise. Dale sees the trade.
+</Para>
+<Para>
+  If you want the intelligence, you trade through Dale. There is no leakage path. There is
+  no <Mono>subscribe to alerts and execute elsewhere</Mono>. Bobby and Dale are
+  bonded at the data layer in a way the rest of the market cannot replicate without
+  rebuilding five years of distribution from scratch.
+</Para>
+<Para>
+  Every Bobby signal funnels to Dale. Every Dale trade generates fees.
+  Every fee feeds the unified pool that every $DEEPAI holder shares.{' '}
+  <Lime>The flywheel is closed by design.</Lime>
+</Para>
+
+<H2 id="rule">The hard rule</H2>
+<Callout kind="info" title="Bobby and Dale never publicly cross paths">
+  In a project group, Bobby will not advertise Dale. In Dale's conversations, Dale will not
+  reveal the Bobby network as the source of a signal. The brand layer keeps them separate.
+  The platform layer connects them. This document is the only place the connection is stated
+  plainly.
+</Callout>
+<Para>
+  Wallet sits adjacent to that rule rather than under it. It is the key custody layer for
+  both products. Users who arrive through Dale meet Wallet as <Mono>open wallet</Mono>.
+  Users who arrive through <Mono>@walletdeepbot</Mono> never need to meet Dale to use it.
+  The platform meets each user where they are.
+</Para>
