@@ -3,10 +3,36 @@ title: "Wallet management"
 sidebar_label: "Wallet management"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageWallet` */}
+{/* Source: pages-dale.jsx -> PageWallet */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE · WALLET"
+  lede="Create, import, transfer, rename, delete. One wallet view across all five chains."
+/>
+
+<H2 id="create">Create or import</H2>
+<Para>
+  Dale provisions wallets automatically on first message. To import an existing wallet, send
+  Dale the private key in a private message. It is processed in memory, encrypted, and the
+  original message auto deletes from chat.
+</Para>
+
+<H2 id="default">Default wallet for trading</H2>
+<Para>
+  Dale picks the chain by your stated intent and your funds. Set a default chain in settings
+  if you trade one chain ninety percent of the time.
+</Para>
+
+<H2 id="transfer">Transfer assets</H2>
+<ChatBlock>
+  <ChatBubble from="user">send 0.5 eth to 0xabc...123</ChatBubble>
+  <ChatBubble from="dale">Quoted: 0.5 ETH on Ethereum. Gas $4.10. Recipient checks: clean, no rugged dev flags. <Lime>Confirm to send →</Lime></ChatBubble>
+</ChatBlock>
+
+<H2 id="rename">Rename and delete</H2>
+<Para>
+  <Mono>rename wallet 2 to "trading"</Mono>. <Mono>delete wallet 4</Mono>.
+  Plain language. Dale confirms before destroying any keys.
+</Para>

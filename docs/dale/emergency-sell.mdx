@@ -3,10 +3,38 @@ title: "Emergency Sell"
 sidebar_label: "Emergency Sell"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageEmergencySell` */}
+{/* Source: pages-dale.jsx -> PageEmergencySell */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, Callout, KeyValueGrid, ChatBlock, ChatBubble, Asterisk } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE · TRADING"
+  lede="Most rug pulls are visible in the mempool seconds before they land. Emergency Sell watches every pending transaction for every token you hold and reacts before the attacker can land their block."
+/>
+
+<Callout kind="info" title="Ethereum only at launch">
+  Emergency Sell runs on Ethereum mainnet today. Mempool grade exit on Solana, Base, Polygon, and BNB ships in <Lime>Phase 2</Lime>. Every chain still gets the full safety pipeline at entry. The mempool exit door is the part that lights up chain by chain.
+</Callout>
+
+<Pull>
+  Live in production. Confirmed working on real rug events. Already saved users.
+</Pull>
+
+<H2 id="catches">What it catches</H2>
+<KeyValueGrid items={[
+  { k: "LP pulls", v: "Pending removeLiquidity calls trigger an exit ahead of inclusion." },
+  { k: "Tax or fee changes", v: "Pending setTax or setFee calls trigger an exit before the new rate confirms." },
+  { k: "Ownership flips", v: "Re ownership patterns that historically precede malicious upgrades trigger a position review." },
+  { k: "Honeypot upgrades", v: "Proxy upgrades that introduce transfer restrictions trigger an exit before activation." },
+]} />
+
+<ChatBlock>
+  <ChatBubble from="dale" kind="alert">
+    <div><Lime>Emergency Sell triggered. $WAGMI on Ethereum.</Lime></div>
+    <div style={{marginTop: 6}}>Dev wallet broadcast a setTax(99) at block 19847221. Detected in mempool 480ms before inclusion. Front ran with 15% higher gas. Exited your full position to USDC. Receipt 0x7a3f9c.</div>
+  </ChatBubble>
+</ChatBlock>
+
+<Callout kind="lime" title="On by default">
+  Every account gets Emergency Sell. The safety net is the floor, not the ceiling.
+</Callout>

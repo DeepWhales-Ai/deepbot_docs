@@ -3,10 +3,49 @@ title: "What is Dale"
 sidebar_label: "What is Dale"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageWhatDale` */}
+{/* Source: pages-dale.jsx -> PageWhatDale */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, FeatureGrid } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede={<><Lime>Talk. Trade. Done.</Lime> A trading partner that thinks, executes, defends, and remembers. Not a chatbot stapled onto a UI. Not an assistant for crypto.</>}
+/>
+
+<H2 id="is">What Dale is</H2>
+<Para>
+  Dale is the trader facing product of DeepBot. You ask Dale to swap. Dale checks the route,
+  surfaces fees, executes. You ask Dale to watch a launch. Dale watches and pings you. You
+  ask Dale to protect your bag from a rug. Dale watches the mempool and exits before the
+  attacker can.
+</Para>
+
+<H2 id="is-not">What Dale is not</H2>
+<Para>
+  Dale is not an assistant that explains crypto to you. It is not a research tool with a
+  chat box on the side. It is not a generic LLM with a wallet glued on. Dale has tool access,
+  deterministic execution, persistent memory, and a defined voice. The model is the brain.
+  The tools are the hands. The voice is the brand.
+</Para>
+
+<H2 id="feels">What Dale feels like</H2>
+<Pull>
+  It feels like a trading partner who never gets tired, never sleeps, never misses, and
+  never makes a typo.
+</Pull>
+
+<FeatureGrid items={[
+  { sym: "◆", title: "Sharp", body: "No filler. Numbers and reasoning. Refuses honeypots, refuses dangerous trades, says no when no is the right answer." },
+  { sym: "◇", title: "Adaptive", body: "Remembers your size, chains, risk tolerance, voice. Stops asking after the third trade." },
+  { sym: "◈", title: "On your side", body: "No partner aggregator kickbacks. The cheapest path is the path." },
+  { sym: "◉", title: "Calm", body: "Same voice in onboarding as at midnight on a wild market day. Composure is the brand." },
+]} />
+
+<H2 id="coming">Coming after launch</H2>
+<Para>
+  Dale's surface area widens after launch. Voice messages in, Voice PIN authorization, and
+  Dale voice replies. Autonomous trading inside rules you set. <Lime>Prediction
+  markets through AGG.market</Lime>: Polymarket and Kalshi, best price routing,
+  same wallet, same PIN. Token trading and event trading from one conversation. Integration
+  is in progress and will land in the weeks following launch.
+</Para>

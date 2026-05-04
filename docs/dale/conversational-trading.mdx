@@ -3,10 +3,31 @@ title: "Conversational trading"
 sidebar_label: "Conversational trading"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageConvTrading` */}
+{/* Source: pages-dale.jsx -> PageConvTrading */}
 
-# TODO
+import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE · TRADING"
+  lede="Forget order tickets. The interface is a sentence."
+/>
+
+<ChatBlock>
+  <ChatBubble from="user">buy 0.1 eth of pepe, sell half at 2x, stop the rest at -30%</ChatBubble>
+  <ChatBubble from="dale">Quoted 0.1 ETH to 4.2M PEPE, 0.8% slippage. Conditional 50% take profit at 2x, trailing stop on the remainder at -30%. <Lime>Confirm to send →</Lime></ChatBubble>
+</ChatBlock>
+
+<H2 id="threshold">Confirmation thresholds</H2>
+<KeyValueGrid items={[
+  { k: "Above your threshold", v: "Trades over a configurable size require one tap. Default $500." },
+  { k: "Below your threshold", v: "Dale executes immediately. The audit trail still shows the reasoning." },
+  { k: "Conditional orders", v: "Conditions live until they fire or you cancel." },
+  { k: "Override", v: "Dale refuses honeypots by default. You can override. You will see the warning first." },
+]} />
+
+<H2 id="voice">Voice in <FeatureStatus id="voice_messages_in" />, voice PIN <FeatureStatus id="voice_pin" /></H2>
+<Para>
+  PRO unlocks voice messages to Dale and voice authorized PIN. Speak the trade, speak the
+  PIN, hands free. Same routing layer, same safety pipeline, same audit log.
+</Para>

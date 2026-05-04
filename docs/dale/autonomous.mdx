@@ -3,10 +3,123 @@ title: "Autonomous trading"
 sidebar_label: "Autonomous trading"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageAutonomous` */}
+{/* Source: pages-dale.jsx -> PageAutonomous */}
 
-# TODO
+import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList, FeatureGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede={<>You sleep. <Lime>Dale trades.</Lime></>}
+/>
+
+<Para>
+  Most trading bots wait for you to type. Dale waits too, by default. Set autonomous mode and
+  Dale stops waiting. The boundary you write is the boundary Dale operates inside. Outside
+  of it, Dale does nothing. Inside of it, Dale watches the same signals Bobby sees and
+  executes the trades that match what you would have made yourself.
+</Para>
+
+<Pull>
+  Set the rules once. Wake up to a summary. Stop it with a sentence.
+</Pull>
+
+<H2 id="rules">The rules you set</H2>
+<KeyValueGrid items={[
+  { k: "Budget", v: "Total capital Dale is allowed to deploy. Hard cap. Once it is hit, Dale stops opening new positions." },
+  { k: "Per trade cap", v: "Maximum size on any single trade. The same rule you'd give a junior trader at a desk." },
+  { k: "Safety floor", v: "Minimum safety score Dale will accept before entering. Honeypots, blacklists, sell tax flips, deployer history. Anything below the floor is skipped." },
+  { k: "Chains", v: "Which chains Dale is allowed to trade on. Limit to the ones you trust." },
+  { k: "Style match", v: "Dale only enters trades that match your historical pattern. Out of style means out of consideration." },
+  { k: "Kill switch", v: "One sentence to stop everything. \"Dale, stop autonomous.\" All open positions remain. New entries cease." },
+  { k: "Time limit", v: "How long autonomous mode runs before it expires automatically. Default twelve hours. You can extend in chat." },
+]} />
+
+<Callout kind="info" title="Style match is the difference">
+  A bot that scans for any signal will fire constantly and lose. Dale only acts on signals
+  that align with the kind of trade you have historically taken. The same memory layer that
+  warns you when you're off pattern is what governs autonomous mode.
+</Callout>
+
+<H2 id="how">How it runs</H2>
+<NumberedList items={[
+  { title: "Setup is conversational", text: "Tell Dale what you want. Dale confirms the budget, the floor, the chains, the kill phrase. No dashboard. No form. The boundary is in plain language." },
+  { title: "Bobby feeds Dale", text: "Convergence signals from the Bobby network arrive in Dale's loop. Each candidate is checked against your rules. Most are skipped. The ones that fit are entered." },
+  { title: "Every entry is justified", text: "When Dale takes a trade, the reasoning is logged with the receipt. Which signal fired. Which rules were checked. Which simulation ran. Why this one cleared the floor." },
+  { title: "Exits follow your style", text: "Dale closes positions according to the exit pattern you have used historically. Take profit ladders, trailing stops, hard floors. The same way you would have done it manually." },
+  { title: "Summaries on a schedule", text: "Every four hours, a digest. Open positions. Closed positions. P&L. Skipped candidates and why. Anything Dale wants you to look at." },
+]} />
+
+<H2 id="conversation">What it sounds like</H2>
+
+<ChatBlock>
+  <ChatBubble from="user">
+    go autonomous. 2 ETH budget, max 0.15 per trade, safety 80+, eth and base only, 12 hours
+  </ChatBubble>
+  <ChatBubble from="dale">
+    Confirming. Budget 2 ETH. Per trade cap 0.15. Floor: safety 80, no failed honeypot, no
+    blacklist, no deployer rug history. Chains: Ethereum, Base. Window: 12 hours from now.
+    Style match: on. Kill phrase: "Dale, stop autonomous."
+    {'\n\n'}
+    Want me to start?
+  </ChatBubble>
+  <ChatBubble from="user">go</ChatBubble>
+  <ChatBubble from="dale">
+    Live. I'll send the first digest at 4am your local. Sleep well.
+  </ChatBubble>
+</ChatBlock>
+
+<H3>The 4am digest</H3>
+<ChatBlock>
+  <ChatBubble from="dale">
+    Four hours in. Two entries, both Base.
+    {'\n\n'}
+    $TURBO 0.08 ETH at 1.92m mcap. Bobby convergence 4 sources. Safety 88. Up 14% currently,
+    first ladder rung at 2x is set.
+    {'\n\n'}
+    $BRETT 0.06 ETH at 880k mcap. Velocity spike, four independent groups in twenty minutes.
+    Safety 91. Flat so far.
+    {'\n\n'}
+    Skipped 23 candidates. Most common reasons: safety below floor (11), out of style (7),
+    chain not approved (3), per trade cap (2).
+    {'\n\n'}
+    Budget remaining: 1.86 ETH. Time remaining: 8 hours.
+  </ChatBubble>
+</ChatBlock>
+
+<H3>Stopping it</H3>
+<ChatBlock>
+  <ChatBubble from="user">Dale, stop autonomous</ChatBubble>
+  <ChatBubble from="dale">
+    Stopped. Two open positions still active under their exit rules. New entries off. Want a
+    full session summary?
+  </ChatBubble>
+</ChatBlock>
+
+<H2 id="limits">What autonomous won't do</H2>
+<FeatureGrid items={[
+  { sym: "◇", title: "Won't size up on a hot streak", body: "Per trade cap is per trade cap. Three winners in a row does not unlock a bigger fourth." },
+  { sym: "◈", title: "Won't chase outside your style", body: "If you have never bought sub 200K mcap, autonomous Dale won't either. The floor is the trader you have been, not the trader the market is tempting you to become." },
+  { sym: "◉", title: "Won't override safety", body: "A trade that fails the safety floor is skipped no matter how strong the convergence signal is." },
+  { sym: "◢", title: "Won't keep running silently", body: "Time limit is mandatory. Autonomous expires by default. You reenable it consciously, every time." },
+]} />
+
+<H2 id="why">Why this is the difference</H2>
+<Para>
+  Other products call this "copy trading" or "auto buy" or "bot mode" and mean a hardcoded
+  rule that fires on a single trigger. That is a script, not a partner. It will fire on
+  garbage and it will fire while you sleep, exactly the wrong combination.
+</Para>
+<Para>
+  Dale's autonomous mode is the same model that watches your patterns, calibrated by the
+  same memory, run inside the same safety stack, fed by the same intelligence layer that
+  powers the rest of the platform. It is the product, not a feature.
+</Para>
+
+<Pull>
+  Set the rules. Sleep. Wake up to a partner who has been working.
+</Pull>
+
+<Callout kind="info" title="PRO only">
+  Autonomous trading requires PRO. The kill switch and time limit are mandatory and cannot
+  be disabled.
+</Callout>
