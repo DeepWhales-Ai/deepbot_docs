@@ -86,25 +86,12 @@ const config = {
         items: [],
       },
 
+      // Footer reduced to copyright only. Per master brief Part 2 (and the
+      // earlier topbar strip): products do not publicly cross-link from
+      // inside user-flow copy — having all three bot handles + socials in a
+      // global footer would violate that on every page. Just the line,
+      // centered/muted/small — see custom.css for the styling.
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Trade',
-            items: [
-              { label: '@traderdeepbot', href: 'https://t.me/traderdeepbot' },
-              { label: '@bobbydeepbot', href: 'https://t.me/bobbydeepbot' },
-              { label: '@walletdeepbot', href: 'https://t.me/walletdeepbot' },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              { label: 'X / Twitter', href: 'https://x.com/deepbotai' },
-              { label: 'Telegram', href: 'https://t.me/deepbotai' },
-            ],
-          },
-        ],
         copyright: `DeepBot · ${new Date().getFullYear()}`,
       },
 

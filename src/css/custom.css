@@ -140,6 +140,29 @@ body {
   color: var(--ifm-color-primary);
 }
 
+/* Minimal footer — just the copyright line, centered, muted, small.
+   No links, no socials, no titles. Master brief Part 2: products do not
+   publicly cross-link from user-flow copy. */
+.footer {
+  background: transparent !important;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding: 24px 0 !important;
+}
+.footer__bottom {
+  text-align: center !important;
+}
+.footer__copyright {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  opacity: 1;
+}
+[data-theme='light'] .footer__copyright {
+  color: rgba(0, 0, 0, 0.32);
+}
+
 /* ===== Layer 2: Prototype stylesheet (appended below) ===== */
 /* See INLINE-PROTOTYPE-STYLES marker. The build appends styles.css contents
    below this marker via the postinstall script (or a one-time concat). */
