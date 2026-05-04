@@ -3,9 +3,9 @@ node_modules/
 .pnp
 .pnp.js
 
-# Mintlify
-.mintlify/
-mint.lock
+# Docusaurus
+.docusaurus/
+.cache-loader/
 
 # Build output
 .next/
@@ -39,3 +39,7 @@ desktop.ini
 # Misc
 .cache/
 *.tmp
+
+# Local scratch (PR/issue draft bodies passed to gh CLI)
+.pr-*.md
+.issue-*.md
