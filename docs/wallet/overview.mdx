@@ -3,10 +3,182 @@ title: "DeepBot Wallet"
 sidebar_label: "DeepBot Wallet"
 ---
 
-{/* Source: `pages-wallet.jsx` -> `PageDeepBotWallet` */}
+{/* Source: pages-wallet.jsx -> PageDeepBotWallet */}
 
-# TODO
+import {
+  PageHead, Para, H2, Lime, Mono, Pull, Callout,
+  TaglineStrip, KeyValueGrid, ChainRow, Pill,
+} from '@site/src/components/primitives.jsx';
+import { Ethereum, Solana, Base, Polygon, BNB } from '@site/src/components/ChainLogos.jsx';
+import WalletMock from '@site/src/components/WalletMock.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="WALLET"
+  title={<>A wallet that lives <Lime>where you already live.</Lime></>}
+  lede={<>DeepBot Wallet is the third product in the platform. Telegram native, fully self custody, multi chain. Open it from inside Dale or use it on its own. Same keys, two interfaces.</>}
+/>
+
+<div className="db-wallet-hero">
+  <div className="db-wallet-hero__copy">
+    <TaglineStrip kicker="The wallet">
+      One wallet. Two interfaces. Pick the one you want today.
+    </TaglineStrip>
+    <Para>
+      Most in app wallets are custodial illusions. Yours lives on their server. They go down,
+      your money goes with them. <Lime>DeepBot Wallet is the opposite.</Lime>{' '}
+      The private key for every wallet is isolated and exportable on demand. The interface lives
+      inside Telegram. The funds live with you.
+    </Para>
+    <Para>
+      Type <Mono>open wallet</Mono> inside Dale and a Phantom style panel slides
+      up over the chat. Or open <Mono>@walletdeepbot</Mono> directly. Same
+      wallet, same balance, same history. Just a different door.
+    </Para>
+  </div>
+  <div className="db-wallet-hero__device">
+    <div className="db-wallet-phoneframe">
+      <WalletMock />
+    </div>
+  </div>
+</div>
+
+<H2 id="what">What it is</H2>
+<KeyValueGrid items={[
+  { k: "Telegram native", v: "Lives at @walletdeepbot. No app store install. No browser tab. The same surface where you already trade." },
+  { k: "Self custody", v: "A fresh private key is generated for every wallet you create. Keys are isolated per wallet and exportable on demand through a gated flow. Your money is your money." },
+  { k: "Multi chain", v: "Five chains live: Ethereum, Solana, Base, Polygon, BNB. ENS and SNS resolve. LI.FI handles cross chain routing under the hood." },
+  { k: "Phantom style GUI", v: "Hold, send, receive, swap, bridge. Same operations every wallet has. The shape you already know." },
+]} />
+
+<H2 id="dale-relation">How it relates to Dale</H2>
+<Pull>
+  One wallet. Two interfaces. Pick the one you want today.
+</Pull>
+<Para>
+  Dale is the conversational interface to your wallet. Wallet is the visual interface to the
+  same keys. They share state, they share funds, they share history. Choose by the task.
+</Para>
+<div className="db-wallet-modes">
+  <div className="db-wallet-mode">
+    <div className="db-wallet-mode__head">DALE</div>
+    <div className="db-wallet-mode__sub">Conversation</div>
+    <div className="db-wallet-mode__body">
+      Talk to it. Plan trades. Set conditions. Ask about a token. Get safety calls in plain
+      language. Best when you know what you want and want to describe it.
+    </div>
+    <div className="db-wallet-mode__example">
+      <Mono>buy 0.1 eth of pepe, sell half at 2x</Mono>
+    </div>
+  </div>
+  <div className="db-wallet-mode">
+    <div className="db-wallet-mode__head">WALLET</div>
+    <div className="db-wallet-mode__sub">Visual panel</div>
+    <div className="db-wallet-mode__body">
+      Tap, scan, swipe. Receive a payment. Send to a contact. See the full token list at a
+      glance. Best when you want to look, not type.
+    </div>
+    <div className="db-wallet-mode__example">
+      <Mono>open wallet</Mono> · or @walletdeepbot
+    </div>
+  </div>
+</div>
+
+<Callout kind="lime" title="No need to choose">
+  Most users use both. Type when you want to plan a trade. Tap when you want to send a
+  contact ten dollars. The wallet does not care which door you walked through. The keys are
+  the same.
+</Callout>
+
+<H2 id="ops">What it does</H2>
+<KeyValueGrid items={[
+  { k: "Hold", v: "Native and SPL tokens across five chains in one balance view. DEEPAI, ETH, SOL, USDC, every long tail token Dale can quote." },
+  { k: "Send", v: "Address, ENS, SNS, contact name, or Telegram handle. The recipient does not need a DeepBot account to receive." },
+  { k: "Receive", v: "QR code, address, deep link. Same address per chain. Funds land in seconds." },
+  { k: "Swap", v: "Same routing layer Dale uses. Best price across DEXs. The trade executes in the wallet, not the chat." },
+  { k: <>Bridge <Pill status="Coming">Coming</Pill></>, v: "Cross chain via LI.FI. Quote includes the bridge, the swap, the gas, the time estimate. One tap, one signature." },
+  { k: "History", v: "Every transaction across every chain. Filter by token, by direction, by date. Every line links to the explorer." },
+]} />
+
+<H2 id="multichain">Multi chain</H2>
+<Para>
+  Five chains share one wallet view. Switch chains from the chain pill in the top right.
+  Asset list filters automatically. ENS resolves on EVM, SNS resolves on Solana, contact
+  names resolve on either. Send to a name. The wallet picks the right chain.
+</Para>
+<ChainRow items={[
+  { sym: <Ethereum size={28} />, name: "Ethereum" },
+  { sym: <Solana size={28} />, name: "Solana" },
+  { sym: <Base size={28} />, name: "Base" },
+  { sym: <Polygon size={28} />, name: "Polygon" },
+  { sym: <BNB size={28} />, name: "BNB" },
+]} />
+
+<H2 id="security">Security</H2>
+<Para>
+  Same architecture as Dale. Same PIN gate. Same auto delete on sensitive messages. Same
+  encrypted key isolation. The wallet panel inherits the safety floor. <Lime>The PIN
+  you set in Dale is the PIN that gates Wallet.</Lime> One credential, one mental model.
+</Para>
+<KeyValueGrid items={[
+  { k: "Self custody floor", v: "Private keys are generated and stored in encrypted isolation. Operators cannot move funds. The export flow is the only path keys leave the system." },
+  { k: <>PIN gate <FeatureStatus id="panic_pin" /></>, v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
+  { k: <>Private key export <FeatureStatus id="private_key_export" /></>, v: "Exportable through a deliberate, gated flow. The export is not casual. It is the keys to the kingdom and the flow respects that." },
+  { k: "Reliability boundary", v: "Wallet runs on a separate bot from Dale. If one bot has a bad deploy, the other keeps working. Funds are never trapped behind a single uptime line." },
+]} />
+
+<Pull>
+  If DeepBot disappeared tomorrow, your wallet would not.
+</Pull>
+<Para>
+  That is the line most in app wallets cannot say. The private keys you generate are
+  yours. Export them. Import them into MetaMask, Phantom, or any standards compliant
+  wallet. We are an interface to your money. We are not the custodian of it.
+</Para>
+
+<H2 id="why-separate">Why a separate bot</H2>
+<Para>
+  We could have collapsed everything into Dale. We chose not to. Three reasons.
+</Para>
+<KeyValueGrid items={[
+  { k: "Mental separation", v: "Trading is a conversation. Wallet is a control panel. Two products, two doors, two mental models. Clarity beats unification." },
+  { k: "Reliability boundary", v: "Different bot, different process, different deploy cadence. A bug in the trader cannot brick the wallet. A bug in the wallet cannot brick the trader." },
+  { k: "Marketing surface", v: "Wallet is its own product with its own audience. Some users will install Wallet first and never touch Dale. The platform reaches them either way." },
+]} />
+
+<H2 id="roadmap">The unification roadmap</H2>
+<div className="db-wallet-phases">
+  <div className="db-wallet-phase">
+    <div className="db-wallet-phase__tag">PHASE 1 · LIVE</div>
+    <div className="db-wallet-phase__title">Two bots, one balance</div>
+    <div className="db-wallet-phase__body">
+      Dale and Wallet share keys, share state, share history. Open wallet from inside Dale or
+      use the wallet bot directly. Same five chains. Same PIN. Same private keys.
+    </div>
+  </div>
+  <div className="db-wallet-phase">
+    <div className="db-wallet-phase__tag">
+      PHASE 2 · IN PROGRESS <FeatureStatus id="wallet_mini_app_unification" />
+    </div>
+    <div className="db-wallet-phase__title">Cross product flows</div>
+    <div className="db-wallet-phase__body">
+      Send a token from the wallet panel and Dale narrates it back. Plan a trade in Dale and
+      confirm it in the wallet panel. The two interfaces become two views on one ongoing
+      session.
+    </div>
+  </div>
+  <div className="db-wallet-phase">
+    <div className="db-wallet-phase__tag">
+      PHASE 3 · PLANNED <FeatureStatus id="wallet_unified_mini_app" />
+    </div>
+    <div className="db-wallet-phase__title">Wallet first onboarding</div>
+    <div className="db-wallet-phase__body">
+      Users who arrive through the wallet door get a wallet first onboarding. Trading is
+      offered, never required. The platform meets users where they are.
+    </div>
+  </div>
+</div>
+
+<TaglineStrip kicker="The wallet's tagline">
+  A wallet that lives where you already live.
+</TaglineStrip>

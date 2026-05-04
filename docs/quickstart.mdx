@@ -3,10 +3,25 @@ title: "Quickstart for traders"
 sidebar_label: "Quickstart for traders"
 ---
 
-{/* Source: `pages-start.jsx` -> `PageQuickstart` */}
+{/* Source: pages-start.jsx -> PageQuickstart */}
 
-# TODO
+import { PageHead, NumberedList, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="START HERE"
+  title="Quickstart for traders"
+  lede="From zero to first trade in under three minutes. No browser tabs. No copy paste. Your private keys stay isolated unless you choose to export."
+/>
+
+<NumberedList items={[
+  { title: "Open Telegram, find @traderdeepbot", text: "Search for @traderdeepbot or open the t.me link from deepbot.pro. Hit Start. That is the entire install step." },
+  { title: "Set your PIN", text: "Four to six digits. Auto deletes from chat after entry. Required on every trade by default." },
+  { title: "Wallets are provisioned automatically", text: "One wallet per chain. Ethereum, Solana, Base, Polygon, BNB. Each gets its own private key. You will never see a key unless you choose to export." },
+  { title: "Fund with fiat or crypto", text: "Built in fiat onramp for card funding, or paste an address from another wallet. Dale tells you when funds land." },
+  { title: "Tell Dale what you want", text: '"buy 0.1 eth of pepe". "watch base launches with 14+ smart money buys". "DCA $50 into eth weekly."' },
+]} />
+
+<Callout kind="lime" title="No charts. No menus.">
+  If you can describe the trade in your own words, Dale can execute it, defend it, and route
+  it across chains. English, Spanish, Mandarin, Russian, anything you actually think in.
+</Callout>

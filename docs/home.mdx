@@ -4,10 +4,107 @@ sidebar_label: "What is DeepBot"
 slug: /
 ---
 
-{/* Source: `pages-start.jsx` -> `PageHome` */}
+{/* Source: pages-start.jsx -> PageHome */}
 
-# TODO
+import { Lede, Lime, Mono, Para, H2, KeyValueGrid, ProductCard } from '@site/src/components/primitives.jsx';
+import CounterWall from '@site/src/components/CounterWall.jsx';
+import ConvergenceField from '@site/src/components/ConvergenceField.jsx';
+import LiveFeeds from '@site/src/components/LiveFeeds.jsx';
+import TryDale from '@site/src/components/TryDale.jsx';
+import EncodingMoat from '@site/src/components/EncodingMoat.jsx';
+import CurrentlyShipping from '@site/src/components/CurrentlyShipping.jsx';
+import KillLog from '@site/src/components/KillLog.jsx';
+import ChainPulse from '@site/src/components/ChainPulse.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+{/* Live counter wall — sits above everything */}
+<CounterWall />
+
+{/* Hero — the platform tagline. Three-products framing locked per kickoff §2. */}
+<div className="db-principle db-principle--hero">
+  <div className="db-principle__kicker">THE DEEPBOT PLATFORM</div>
+  <div className="db-principle__line">
+    It's a bot. <span className="db-lime">But not.</span>
+  </div>
+  <div className="db-principle__foot">
+    Three products. One brain. One revenue pool. One token.
+  </div>
+</div>
+
+<ConvergenceField />
+
+<LiveFeeds />
+
+{/* Try Dale — the "now I get it" moment */}
+<TryDale />
+
+{/* Encoding moat — visceral */}
+<EncodingMoat />
+
+{/* Currently shipping — keeps the page feeling alive */}
+<CurrentlyShipping />
+
+{/* Kill log — trust as proof */}
+<KillLog />
+
+<ChainPulse />
+
+{/* Calmer body content begins here */}
+<div className="db-eyebrow" style={{ marginTop: 56 }}>START HERE</div>
+<h2 className="db-h1" style={{ marginTop: 4 }}>What is DeepBot</h2>
+
+<Lede>
+  DeepBot is a platform with three products. <Lime>Bobby</Lime>, the
+  intelligence layer, lives in tens of thousands of project communities and detects what is
+  real. <Lime>Dale</Lime>, the trading partner, executes on what users decide
+  to act on, in conversation. <Lime>Wallet</Lime>, the visual control panel,
+  holds the keys for both. Five chains. Self custody. One brain.
+</Lede>
+
+<H2 id="products">The three products</H2>
+<div className="db-product-grid db-product-grid--3">
+  <ProductCard
+    sym="D"
+    name="Dale"
+    role="Conversational trader"
+    body="Multi chain trading partner. Understands what you say, executes through over fifty tools, holds context across sessions."
+    cta="Read the Dale manual"
+    href="/dale/overview"
+  />
+  <ProductCard
+    sym="B"
+    name="Bobby"
+    role="Intelligence network"
+    body="The detection layer crypto Telegram runs on. Multi source, adversarial robust, lives in tens of thousands of communities."
+    cta="Read the Bobby manual"
+    href="/bobby/overview"
+  />
+  <ProductCard
+    sym="▣"
+    name="Wallet"
+    role="Self custody panel"
+    body="Telegram native wallet. Phantom style GUI. Same keys as Dale. Open from inside the chat or use the bot directly."
+    cta="See the Wallet"
+    href="/wallet/overview"
+  />
+</div>
+
+<H2 id="how">How they fit</H2>
+<Para>
+  Bobby is where intelligence is detected. Dale is where intelligence becomes execution. They
+  share a brain. They do not share a face. Project owners read about Bobby. Traders read about
+  Dale. The platform is the union of the two.
+</Para>
+
+<H2 id="who">Who reads what</H2>
+<KeyValueGrid items={[
+  { k: "Traders", v: "Start with Dale. Quickstart, then conversational trading, then safety. Solana flows are documented separately from EVM flows where they differ." },
+  { k: "Project owners", v: "Start with Bobby. What it does for projects, the trust principle, the Founders Program, the five ad surfaces." },
+  { k: "Investors and partners", v: "Start with the platform pitch. The convergence engine page is the moat story. The partnerships index lists who is live and who is next." },
+  { k: "Token holders", v: "$DEEPAI overview, tokenomics, and revenue sharing. Live contract address pulled on every load." },
+]} />
+
+<H2 id="next">What is next</H2>
+<Para>
+  Tier 1 documentation lands at public launch. Tier 2 lands within the first week. Roadmap
+  is canonical and lives at <Mono>/investors/roadmap</Mono>.
+</Para>
