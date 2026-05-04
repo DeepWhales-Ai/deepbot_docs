@@ -158,26 +158,49 @@ main {
   background: #0A0A0A !important;
 }
 
-/* Sidebar pin/unpin toggle — Docusaurus's collapseSidebarButton was in
-   DOM but invisible: bg = #ffffff0d (5% white = imperceptible on dark)
-   AND border = var(--ifm-toc-border-color) which we set to transparent.
-   Force a visible lime-tinted treatment so the affordance is discoverable
-   like Stripe / Resend docs. Same treatment on the expandButton that
-   appears on the freed left edge after collapse. */
+/* Sidebar pin/unpin toggle — subtle by default, lime hint on hover.
+   Same treatment as Stripe / Resend docs: small, transparent, muted gray
+   icon; only the hover state hints lime. The expandButton that appears
+   on the freed left edge after collapse gets the same treatment. */
 .collapseSidebarButton_PEFL,
 [class*='collapseSidebarButton'],
 .expandButton_TmdG,
 [class*='expandButton'] {
-  background-color: rgba(204, 255, 0, 0.06) !important;
-  border: 1px solid rgba(204, 255, 0, 0.25) !important;
-  color: var(--ifm-color-primary) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--fg-2, rgba(255, 255, 255, 0.45)) !important;
+  width: auto !important;
+  padding: 8px !important;
+  margin: 12px auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: none !important;
 }
 .collapseSidebarButton_PEFL:hover,
 [class*='collapseSidebarButton']:hover,
 .expandButton_TmdG:hover,
 [class*='expandButton']:hover {
-  background-color: rgba(204, 255, 0, 0.12) !important;
-  border-color: var(--ifm-color-primary) !important;
+  background-color: rgba(204, 255, 0, 0.08) !important;
+  border: none !important;
+  color: var(--ifm-color-primary) !important;
+}
+/* Inherit the muted color into the SVG icon (default fill was hard-coded
+   #7a7a7a — we want it to follow `color` so it brightens on hover). */
+.collapseSidebarButton_PEFL svg,
+[class*='collapseSidebarButton'] svg,
+.expandButton_TmdG svg,
+[class*='expandButton'] svg {
+  color: inherit !important;
+}
+.collapseSidebarButton_PEFL svg path,
+[class*='collapseSidebarButton'] svg path,
+.collapseSidebarButton_PEFL svg g,
+[class*='collapseSidebarButton'] svg g,
+.expandButton_TmdG svg path,
+[class*='expandButton'] svg path {
+  fill: currentColor !important;
 }
 
 /* Sidebar active item — color-only, no fake-bold, no border, no background.
@@ -1045,6 +1068,23 @@ body {
 .db-mark--bobby .db-mark__sym { background: var(--lime-2); color: #000; }
 
 /* ===== Type ===== */
+/* The auto-H1 from frontmatter is the only H1. PageHead's body renders
+   the eyebrow + lede beneath it. To match the prototype's eyebrow-above-
+   H1 layout, we flex the markdown column and pull the eyebrow above the
+   <header> that holds the auto-H1. All other items keep order:0 and stay
+   in source order. */
+.theme-doc-markdown {
+  display: flex;
+  flex-direction: column;
+}
+.theme-doc-markdown > .db-eyebrow {
+  order: -1;
+  margin-bottom: 4px;
+}
+.theme-doc-markdown > header {
+  margin-bottom: 12px;
+}
+
 .db-eyebrow {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
