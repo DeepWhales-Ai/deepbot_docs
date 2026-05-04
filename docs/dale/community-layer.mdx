@@ -3,10 +3,313 @@ title: "Community layer"
 sidebar_label: "Community layer"
 ---
 
-{/* Source: `pages-social.jsx` -> `PageDaleSocial` */}
+{/* Source: pages-social.jsx -> PageDaleSocial */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, Pull, Callout, KeyValueGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+import SectionStatus from '@site/src/components/SectionStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede={<>Trade alone if you want. <Lime>Or join the community that turns every win into momentum for everyone.</Lime></>}
+/>
+
+<SectionStatus ids={[
+  "leagues_xp_ranks",
+  "competitions_six_formats",
+  "the_crown",
+  "leaderboard_masked",
+  "following_traders",
+  "copy_trading",
+  "paper_trading",
+  "win_cards",
+  "scratch_cards",
+  "streaks_badges",
+  "social_safety_optin",
+]} />
+
+<Para>
+  Most trading bots are solo experiences. You and a chat window. You win alone. You lose
+  alone. The product never gets bigger because nobody else is in the room.
+</Para>
+
+<Para>
+  DeepBot is a community of traders. Dale is the door. Every trade you make happens against
+  a backdrop of every other trader on the platform. Leagues. Leaderboards. The Crown.
+  Following the sharpest traders and seeing what they are actually buying. Sharing wins as
+  cards that build referrals into the design. Competing for prizes that change hands every
+  week.
+</Para>
+
+<Pull>
+  You can ignore the community and trade alone. You can dive in and the platform gets bigger.
+</Pull>
+
+<H2 id="leagues">Leagues <FeatureStatus id="leagues_xp_ranks" /></H2>
+<Para>
+  Five ranks. Earn your way up. Each rank unlocks real perks. XP comes from trades, wins,
+  big wins, streaks, and referrals. Every action that builds the platform earns you XP.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Rookie · 0 XP", v: "Starting point. Full access to trading, scanning, and safety. The community is around you. You are learning the shape of the room." },
+  { k: "Trader · 100 XP", v: "Priority signal delivery. You are a real one now." },
+  { k: "Sharp Shooter · 500 XP", v: "Referral commission jumps from 20% to 25%. Your wins start carrying weight." },
+  { k: "Whale Hunter · 2,000 XP", v: "Early access to new features and chains before public release. The platform trusts you with what's coming next." },
+  { k: "Legend · 10,000 XP", v: "Custom Dale personality. VIP referral commission of 30%. Your name on the wall." },
+]} />
+
+<Pull>
+  Quality earns more than quantity. Even your stop losses count.
+</Pull>
+
+<Para>
+  A 10x hit earns more than ten small trades. A stop loss that protects capital earns XP
+  because using protection is the right move. Dale weaves XP into the conversation, never
+  as a notification.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="dale">
+    Sold $PEPE for +180%. Nice exit. +50 XP, Sniper badge earned. You are 340 XP from Whale Hunter.
+  </ChatBubble>
+</ChatBlock>
+
+<H2 id="crown">The Crown <FeatureStatus id="the_crown" /></H2>
+<Para>
+  One Crown. One holder at a time. Best single day P&L wins it. Loses it to whoever beats
+  it. The Crown is visible. On the leaderboard. On your profile. On every win card you
+  generate while you hold it. The community knows who has the Crown right now. The
+  community knows when it changes hands.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="dale">
+    Someone just beat your daily P&L. The Crown moves. You are the runner up now.
+  </ChatBubble>
+  <ChatBubble from="dale">
+    You just took the Crown. +287% on $TOKEN. Your name is on top of the leaderboard. Defend it.
+  </ChatBubble>
+</ChatBlock>
+
+<Pull>
+  One Crown. Earned daily. The leaderboard never sleeps.
+</Pull>
+
+<H2 id="competitions">Competitions <FeatureStatus id="competitions_six_formats" /></H2>
+<Para>
+  Six rotating formats. Real prizes. Real status. Real reasons to trade harder. Dale
+  announces, tracks, ranks, and pays out. No external tournament platform. The whole loop
+  runs through Dale.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "The Sprint · weekly", v: "Best P&L by Sunday midnight. 0.25 ETH plus a Sprint Champion NFT plus the Crown if you take it from the current holder." },
+  { k: "The Sniper · bi-weekly", v: "Best single trade by percentage gain. Minimum 0.01 ETH position so you can't game it with dust. A trader with 0.02 ETH can beat a whale." },
+  { k: "Volume Wars · monthly", v: "Most ETH moved through DeepBot. 0.5 ETH and a Volume King NFT for first place. The competition pays for itself in fees." },
+  { k: "Diamond Hands · monthly", v: "Best held position. Counterbalances fast trade mentality. Rewards conviction." },
+  { k: "Chain Race · on launch", v: "Triggered when a new chain comes online. Most trades on the new chain in 7 days. Drives adoption immediately." },
+  { k: "Crown Clash · surprise", v: "24 hours. Best P&L takes the Crown plus 0.5 ETH plus a Crown Clash NFT. Triggered by the team. Volume spikes. The Crown changes hands in the most dramatic way possible." },
+]} />
+
+<H2 id="leaderboard">The leaderboard <FeatureStatus id="leaderboard_masked" /></H2>
+<Para>
+  Live. Public. Queryable through Dale. Usernames are masked by default. First three
+  characters plus asterisks. Enough for you to recognize yourself, not enough for strangers
+  to find you elsewhere.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">
+    Who's the best trader today? What are they buying?
+  </ChatBubble>
+  <ChatBubble from="dale">
+    Right now Sha*** is leading with +187% across 23 trades. They have been heavy on Base.
+    Just opened a new position in $TOKEN about an hour ago. Want to see their public history?
+  </ChatBubble>
+</ChatBlock>
+
+<Para>
+  If you opt in to public profile, your full username shows. One sentence to Dale, one
+  sentence back. Change your mind anytime.
+</Para>
+
+<Pull>
+  The market becomes legible through Dale.
+</Pull>
+
+<H2 id="follow">Following sharp traders <FeatureStatus id="following_traders" /></H2>
+<Para>
+  You see someone climbing the leaderboard. You want to know what they are doing. You
+  follow them. You never get their Telegram handle. You never see their identity unless
+  they have opted in. Dale is the router. The followed trader gets a notification that
+  they have a new follower, never knowing who it is.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="dale">
+    Kry*** just bought $TOKEN. Their track record on similar calls: 4 of 5 hit 2x+. Token
+    safety scan: clean. Three other traders you follow are also in. Entry mcap: $480K. Want in?
+  </ChatBubble>
+</ChatBlock>
+
+<Para>
+  Every line in that message is verified. Track record from real trades. Safety scan from
+  Blockaid. Multiple followers in the same name from real positions. Entry mcap from chain.
+</Para>
+
+<Pull>
+  Twitter calls have zero accountability. DeepBot has verified track records.
+</Pull>
+
+<H2 id="copy">Copy trading <FeatureStatus id="copy_trading" /></H2>
+<Para>
+  Following surfaces signals. Copy trading executes on them. You opt in to copy a trader.
+  You set rules. Maximum position size. Minimum safety score. Chains allowed. Kill switch.
+  When they buy something that fits your rules, Dale executes for you within them.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">
+    Copy Kry*** with 0.05 ETH max per trade, ETH and Base only.
+  </ChatBubble>
+  <ChatBubble from="dale">
+    Set. I'll mirror their trades within those rules. PIN required at execution unless you
+    set this to autonomous. Kill switch is one sentence away.
+  </ChatBubble>
+</ChatBlock>
+
+<Para>
+  Same architecture as autonomous trading. Different signal source. The signal source is
+  another human's actual decisions, verified on chain.
+</Para>
+
+<H2 id="paper">Paper trading <FeatureStatus id="paper_trading" /></H2>
+<Para>
+  You don't have to risk real money to enter the leagues. Start with 0.1 ETH of virtual
+  money. Trade against real prices, real markets, real timing. The trades are simulated.
+  The P&L is real tracked. The leaderboard shows you next to live traders, marked as paper,
+  with the killer line: <Lime>If this was live, you'd be #4 overall.</Lime>
+</Para>
+
+<Para>
+  That last line is the conversion trigger. Paper traders see exactly where they would sit
+  on the live leaderboard. The gap between paper and live becomes one tap.
+</Para>
+
+<H2 id="cards">Win cards <FeatureStatus id="win_cards" /></H2>
+<Para>
+  Every winning trade can become a shareable card. Dale offers proactively. The card
+  includes the trade stats, your rank badge, your masked or public username, and a
+  referral link baked into the design. Clean. Shareable. Marketing material that runs on
+  user wins.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="dale">
+    You just hit 5x on $TOKEN. Want me to make you a card? Looks good on Twitter.
+  </ChatBubble>
+</ChatBlock>
+
+<Pull>
+  Every winning trade is marketing material. The community grows on user wins.
+</Pull>
+
+<KeyValueGrid items={[
+  { k: "Single trade card", v: "I just hit 5x on $TOKEN." },
+  { k: "Weekly summary", v: "Top trades, total P&L, win rate." },
+  { k: "Monthly summary", v: "Performance, badges earned, rank progression." },
+  { k: "All time stats", v: "Total trades, lifetime P&L, win rate, longest streak." },
+  { k: "Welcome card", v: "Generated on signup. Includes a referral link. Designed to be shared by the new user before they have made their first trade." },
+]} />
+
+<H2 id="streaks">Streaks and badges <FeatureStatus id="streaks_badges" /></H2>
+<Para>
+  Streak tracking is internal until you hit a milestone, then Dale celebrates. Twelve plus
+  badge types. First Blood (first trade). Sniper (3x+ winner). Whale Hunter (10x+ winner).
+  Streak King (30 days). Diamond Hands (held a position 7 days through volatility). Rug
+  Survivor (Emergency Sell saved you). Crown Bearer (held the Crown for any length of
+  time). Each badge earned is visible on your profile, on your win cards, in the way Dale
+  talks to you.
+</Para>
+
+<Para>
+  Badges are not a checklist. They emerge from how you trade. Trade well, badges follow.
+</Para>
+
+<H2 id="gifts">Surprise gifts from the team <FeatureStatus id="scratch_cards" /></H2>
+<Para>
+  The team can drop NFTs and rewards on top traders without warning. Bronze, Silver, Gold
+  tier NFTs. The good ones have real revenue share value attached. Gifts are not scheduled.
+  Not announced. Not earned by formula. The team decides when someone deserves it. Dale
+  delivers it personally with the user's history attached.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="dale">
+    Congrats on reaching Legend rank. The team is gifting you a Silver NFT worth 3 ETH. It
+    is already in your wallet. This earns you boosted revenue share every month.
+  </ChatBubble>
+</ChatBlock>
+
+<Pull>
+  The team can drop a 3 ETH NFT on you with one sentence to Dale. Surprise is the currency.
+</Pull>
+
+<H2 id="safety-social">Social safety, by design <FeatureStatus id="social_safety_optin" /></H2>
+<Para>
+  Three opt in levels for messaging. Default is closed. Nobody can DM you through Dale
+  unless you choose otherwise.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Closed · default", v: "Nobody can message you. You are on the leaderboard by masked username only." },
+  { k: "Followers only", v: "People who follow you can send you a message through Dale. Not direct Telegram DM. Through Dale." },
+  { k: "Open", v: "Anyone can message you through Dale." },
+]} />
+
+<Para>
+  Messages route through Dale, never as direct Telegram DMs. Dale filters obvious scams,
+  rate limits to prevent spam, and accepts a one sentence permanent block. Real Telegram
+  handles are never exposed unless the user opts in to a public profile. Privacy is the
+  floor. Social is the layer above it.
+</Para>
+
+<H2 id="referrals">Referrals</H2>
+<Para>
+  Three commission tiers, all earned through trading and referring. Bronze starts at 20%.
+  Silver at 10+ active referrals jumps to 25%. Gold at 50+ active referrals goes to 30%.
+  VIP by invite, up to 40%. Forever, not one time. As long as the people you referred keep
+  trading, you keep earning.
+</Para>
+
+<Para>
+  Payouts in USDC on Solana. $50 minimum. 7 day lock period. Dashboard at{' '}
+  <Mono>rewards.deepbot.pro</Mono>. Bot at <Mono>@refdeepbot</Mono>.
+</Para>
+
+<Callout kind="info" title="Dale never pushes referrals">
+  Dale mentions them once per conversation, max, at moments that fit. After a winning trade.
+  When a user is happy with a feature. When a user is close to the next tier. Never during
+  losses. Never during stress. Never more than once per chat.
+</Callout>
+
+<H2 id="connects">How it all connects</H2>
+<Para>
+  Bobby detects what is about to matter across thousands of communities. Dale executes on
+  what users decide. The social layer turns every successful execution into community
+  evidence. Win cards spread. The leaderboard becomes legible. Followers see what sharp
+  traders are buying. Copy traders execute on it. New users land via referrals from cards
+  that real traders shared because they were proud of the win.
+</Para>
+
+<Pull>
+  Bobby detects. Dale executes. The community compounds.
+</Pull>
+
+<Para>
+  Every loop reinforces the others. Bobby's intelligence drives trades. Trades produce
+  cards. Cards drive referrals. Referrals fill leagues. Leagues drive more trades. The
+  whole platform gets stronger every time someone wins. Not a trading bot. Not a community.
+  <Lime> Both, fused.</Lime>
+</Para>

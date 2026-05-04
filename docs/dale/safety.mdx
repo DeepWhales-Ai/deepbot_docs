@@ -3,10 +3,147 @@ title: "Safety and PIN"
 sidebar_label: "Safety and PIN"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageSafety` */}
+{/* Source: pages-dale.jsx -> PageSafety */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, Pull, Callout, NumberedList, KeyValueGrid, FeatureGrid, Asterisk } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+import SectionStatus from '@site/src/components/SectionStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="The risks in crypto trading are real and most products pretend they are not. We built around all of them."
+/>
+
+<SectionStatus ids={["pin_auto_delete", "three_secret_questions", "voice_pin"]} />
+
+<Pull>
+  While you were opening this, Dale scanned every token that launched in the last hour. 94 launched. Dale rejected 91. Found you 1 worth a look.
+</Pull>
+
+<H2 id="threat-model">The threat model</H2>
+<Para>
+  Compromised keys. Malicious contracts. Slippage attacks. A second of inattention that ends
+  with an empty wallet. These are the things that have actually rugged people you know. We
+  designed the platform around the assumption that every one of them is happening to someone
+  right now.
+</Para>
+<Para>
+  Your wallet keys live behind an encryption layer the trading code cannot read. Even when
+  Dale executes a trade, Dale never sees your key. Every PIN you enter <FeatureStatus id="pin_auto_delete" /> auto deletes from
+  the chat after validation, so the sensitive number never sits in your message history.
+  Forget the PIN and three secret questions <FeatureStatus id="three_secret_questions" /> you chose yourself unlock the path back in, all
+  three required, stored as hashes the platform cannot reverse.
+</Para>
+<Para>
+  Every token Dale touches is scanned by Blockaid first. Every panel, every surface, every
+  chain enforces the same PIN gate. There is no bypass route. And if the worst happens,
+  Emergency Sell runs on its own mempool monitor on its own process so the exit door stays
+  open even if everything else is down.
+</Para>
+
+<H2 id="walkthrough">What happens when you press PIN</H2>
+<Para>
+  You ask Dale to swap. Dale builds the route, checks the safety scan, surfaces the fees,
+  and asks you to confirm with PIN. You type four to six digits. The moment you send, three
+  things happen at once.
+</Para>
+
+<NumberedList items={[
+  { title: "Validate", text: "The platform validates the PIN against its hashed record. The hash is what we store. Your PIN is not." },
+  { title: "Delete", text: "The original message you typed is removed from the chat, so the digits never sit in your history." },
+  { title: "Sign", text: "Your encrypted wallet key is unlocked inside the security layer, just long enough to sign the transaction Dale prepared, then sealed again." },
+]} />
+
+<Para>
+  The signed payload broadcasts to chain. Dale reports back. Receipt in, position updated,
+  done.
+</Para>
+
+<Para>
+  If the PIN is wrong, nothing unlocks. The trade does not build. Dale tells you the attempt
+  failed. If the PIN is right but the route became unsafe between when you asked and when
+  you confirmed, Dale aborts before signing and tells you why. Confirmation is not a rubber
+  stamp. It is the last gate.
+</Para>
+
+<Callout kind="lime" title="One gate, every surface">
+  Same flow on the trade panel. Same flow on every chain. Same flow on Emergency Sell, with
+  a tighter timeout. The PIN is the only path through, and the key never leaves the layer
+  that protects it.
+</Callout>
+
+<H2 id="forgot">What happens when you forget your PIN</H2>
+<Para>
+  You say <Mono>I need a PIN reset</Mono>. Dale walks you through the three
+  secret questions you chose yourself at PIN setup. The questions are personal, the answers
+  were yours, and the platform stores only hashes it cannot reverse. All three questions,
+  all three correct. No partial credit. A correct full set unlocks a PIN reset path. Dale
+  asks you to set a new PIN. The new PIN takes effect immediately. The wallet stays locked
+  the entire time, so even during reset, no transaction can move.
+</Para>
+<Para>
+  If you cannot answer the secret questions, the team handles it. Dale flags the case to the
+  admin channel with a verification request. The team checks identity against on chain
+  history, account context, and wallet activity that only the real account holder would
+  know. Once verified, the team resets the PIN and you are notified in the same chat. Your
+  wallet stays locked until then. Funds are safe. Nothing moves.
+</Para>
+
+<Callout kind="default" title="Friction ordering is the security model">
+  Every recovery path has a cost in time, deliberately. The self serve path takes a minute.
+  The human review path takes longer. Easy for the real user, expensive for an attacker,
+  impossible for an attacker without your three answers and the team's verification.
+</Callout>
+
+<H2 id="reset">The two recovery tiers</H2>
+<NumberedList items={[
+  { title: "Tier 1. Three secret questions", text: "Self serve. All three questions answered correctly unlocks a PIN reset path. Hashed answers, no partial credit, no platform side reset." },
+  { title: "Tier 2. Verified human review", text: "Last resort. Team verifies identity against on chain history and account context. Wallet stays locked until verification clears." },
+]} />
+
+<H2 id="panel">The security panel</H2>
+<Para>
+  One menu, three controls. <Mono>Unlock</Mono> for the current session.{' '}
+  <Mono>Change PIN</Mono> when you want to rotate.{' '}
+  <Mono>PIN Settings</Mono> for secret questions and session timeouts. The
+  same panel on every chain. The same gate on every trade.
+</Para>
+
+<H2 id="voice-pin">Voice PIN <FeatureStatus id="voice_pin" /></H2>
+<Para>
+  Authorize a trade by voice. Same gate, different modality. PRO only at launch. Voice
+  message in, voice PIN out, signed transaction back. Useful when typing is not.
+</Para>
+
+<H2 id="runtime">Runtime safety</H2>
+<FeatureGrid items={[
+  { sym: "◢", title: "Blockaid", body: "Live integration. Every token scanned before Dale touches it. Address and contract reputation as a pre check on every interaction." },
+  { sym: "◣", title: "Honeypot pre check", body: "Hidden traps, freeze functions, blacklists, transfer restrictions. Refused without explicit override." },
+  { sym: "◤", title: "Rugged dev refusal", body: "Wallets connected to past rug events flagged before the trade builds." },
+  { sym: <>Emergency Sell <Asterisk /></>, title: "Mempool exit", body: "Dedicated mempool monitoring on dual WSS subscriptions, on its own process. The exit door stays open even when everything else is down. Ethereum at launch, other chains in Phase 2." },
+]} />
+
+<H2 id="continuous">Safety doesn't stop at the buy</H2>
+<Para>
+  Most bots scan a token once at purchase and call it done. Dale watches the whole time you
+  hold. If the deployer raises sell tax mid hold, Dale tells you. If liquidity gets removed,
+  Dale tells you. If the contract gets blacklisted or upgraded into something hostile, Dale
+  tells you. The scan at entry is the floor. <Lime>Continuous monitoring is the
+  ceiling.</Lime>
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Tax and fee mutations", v: "Watched on every chain Dale supports. A change that breaches your tolerance triggers a heads up before the next trade tries to land." },
+  { k: "Liquidity changes", v: "LP additions and removals tracked. A sudden drop on a position you hold gets flagged in the moment." },
+  { k: "Contract upgrades", v: "Proxy upgrades and ownership transfers reviewed against rug patterns. The position gets revalidated automatically." },
+  { k: "Cold wallet on demand", v: "One sentence. Move 80% of my ETH to cold. Dale routes to your designated cold address with the same PIN gate. Combined with Panic PIN, this is the user's protection layer." },
+]} />
+
+<Pull>
+  Most products scan once. Dale never stops watching.
+</Pull>
+
+<Callout kind="lime" title="Trade like a sharp friend">
+  Trade like a sharp friend who trades for a living, on infrastructure that assumes someone
+  is always trying.
+</Callout>

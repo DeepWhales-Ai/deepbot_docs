@@ -3,10 +3,32 @@ title: "Response modes"
 sidebar_label: "Response modes"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageResponseModes` */}
+{/* Source: pages-dale.jsx -> PageResponseModes */}
 
-# TODO
+import { PageHead, ModeCard } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="Newbie, Pro, Express. Dale matches the user."
+/>
+
+<div className="db-modes">
+  <ModeCard
+    name="Newbie"
+    tag="Explanatory"
+    body="Walks through every step. Defines terms. Defaults for the first three trades."
+    sample={'"Slippage is the difference between the price you expect and what you get. For a small trade, 1% is fine. Want me to set it?"'}
+  />
+  <ModeCard
+    name="Pro"
+    tag="Concise"
+    body="No hand holding. Numbers and reasoning. Default after three trades."
+    sample={'"NRG: 14 SM buys, 0 sells, $2.1M LP. 0.5 SOL to $98, 1.4% slippage. Trailing 3x, stop -25%. Send?"'}
+  />
+  <ModeCard
+    name="Express"
+    tag="One line"
+    body="Fastest possible execution. One line in, one line out."
+    sample={'"NRG. 0.5 SOL. ✓ sent. tx 5xKp..."'}
+  />
+</div>

@@ -3,10 +3,187 @@ title: "Dale memory"
 sidebar_label: "Dale memory"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageDaleMemory` */}
+{/* Source: pages-dale.jsx -> PageDaleMemory */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Mono, Pull, Callout, KeyValueGrid, FeatureGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+import SectionStatus from '@site/src/components/SectionStatus.jsx';
+import { MemoryProgression } from '@site/src/components/DaleComponents.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="Most trading bots are amnesiacs. You repeat your slippage tolerance, your chains, your size, your exit style, every single trade. Dale remembers."
+/>
+
+<SectionStatus ids={["memory_pattern_warnings", "memory_introspection", "memory_forget_reset"]} />
+
+<Para>
+  Set up your style on Monday and by Tuesday other bots have forgotten you exist. The product
+  is a calculator with a chat interface. It serves you. It does not know you.
+</Para>
+
+<Para>
+  Dale remembers every trade you make. Every token you have asked about. Every exit you have
+  set, every one that hit, every one that didn't. The chains you trade on most. The size you
+  usually open at. The way you take profit. The phrases you use when you want to act fast.
+  The way you ask about a position when you are nervous about it.
+</Para>
+
+<Pull>
+  The longer you trade with Dale, the more Dale becomes yours.
+</Pull>
+
+<H2 id="remembers">What Dale remembers</H2>
+<KeyValueGrid items={[
+  { k: "Your style", v: "Sizes you typically take. Chains you favor. Slippage tolerance. Exit strategy. Whether you take profit early or ride hard. Whether you cut losses fast or hold through." },
+  { k: "Your portfolio", v: "Every position open and closed. Every entry, every exit, every P&L. Win rate, average gain, worst drawdown." },
+  { k: "Your preferences", v: "How you like Dale to talk to you. Fast confirmations or full breakdowns. Tokens you have followed, wallets you have flagged, projects you watch." },
+  { k: "Your context", v: "Risk profile. Time of day. Whether you are an alpha checker at 2am or a methodical morning trader. Dale has seen the pattern. Dale uses it." },
+]} />
+
+<Pull>
+  Dale doesn't ask twice.
+</Pull>
+
+<Para>
+  If you set your default slippage at 12% three weeks ago, Dale doesn't ask again. If you
+  always take profit at 2x, Dale offers the 2x first. If you have never bought a token under
+  $200K mcap, Dale tells you when one fits the pattern and when one doesn't. The next trade
+  is faster because the last fifty trades happened.
+</Para>
+
+<H2 id="over-time">What it feels like over time</H2>
+<Para>
+  The first few trades, Dale learns. Asks about your style. Confirms your slippage. Walks
+  you through exit options. Useful, but conversational.
+</Para>
+
+<MemoryProgression />
+
+<Para>
+  By trade two hundred Dale is operating the way a real trading partner does. Knows when you
+  are off your normal patterns. Knows when you are oversizing. Knows when you are about to
+  ape into something that doesn't match your style and asks the question gently.
+</Para>
+
+<H2 id="across">Across chains. Across sessions.</H2>
+<Para>
+  Dale's memory is not per chat. It is per user. Switch from Ethereum to Solana mid session,
+  Dale knows your Solana history. Open Dale on a different device a week later, Dale
+  remembers what you were watching last time. Reset your phone, reinstall Telegram, Dale is
+  still there.
+</Para>
+<Para>
+  The memory persists at the platform layer, not the chat layer. Trading happens across
+  surfaces. You ask about a token on Ethereum on Tuesday, you trade it on Base on Friday,
+  you exit on Solana when bridging makes sense. Most bots treat each chain as its own
+  conversation. Dale treats them as one.
+</Para>
+
+<Pull>
+  One memory. Every chain. Every session.
+</Pull>
+
+<H2 id="does-with-it">What Dale does with it</H2>
+<Para>
+  Memory is not a feature on its own. Memory is what makes every other feature work better.
+</Para>
+<FeatureGrid items={[
+  { sym: "◆", title: "Faster trades", body: "Dale skips the questions you have already answered. Slippage, gas preference, default chain. Set once, applied always." },
+  { sym: "◇", title: "Better suggestions", body: "When Bobby flags something, Dale checks it against your patterns. If it fits, Dale shows you. If it doesn't, Dale either skips it or tells you why." },
+  { sym: <>Pattern matched warnings <FeatureStatus id="memory_pattern_warnings" /></>, title: "Better warnings", body: "Knows your normal sizing. Flags trades that are larger than usual. Notes tokens outside your usual mcap range. Calibrated to you, not to a generic risk model." },
+  { sym: "◉", title: "Smarter exits", body: "After a hundred closed trades, Dale knows the exit patterns that have worked for you. Trade 101's suggestion is informed by trades 1 through 100." },
+  { sym: "◢", title: "Continuity", body: "You don't reexplain yourself. Ever. Not after a week, not after a month, not after a year." },
+]} />
+
+<H2 id="language">Your language. Your voice. Your Dale.</H2>
+<Para>
+  Dale detects what language you type in and answers natively. Spanish in, Spanish out.
+  Japanese in, Japanese out. Fifty plus languages from day one. The trading vocabulary, the
+  warnings, the receipts, all translated, not just the surface text.
+</Para>
+
+<Para>
+  You can also tell Dale how to talk. <Mono>talk like an aussie</Mono>.{' '}
+  <Mono>be more serious</Mono>. <Mono>cut the slang</Mono>. The
+  personality persists. It is part of memory. At Legend rank the customization deepens
+  further into a Dale that sounds like itself only with you.
+</Para>
+
+<Pull>
+  Personalized AI that earns the personalization through play.
+</Pull>
+
+<H2 id="notifications">Fair usage by design</H2>
+<Para>
+  Most bots spam users into churn. Dale doesn't. The notification rules are a brand
+  statement made through engineering choices.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Active user", v: "Morning briefing. Signals that match your style. Flash events. Dale talks when there is something to say." },
+  { k: "Inactive 24 hours", v: "One message. Portfolio update plus what you missed. Not a stream." },
+  { k: "Inactive 48 hours plus", v: "Silence. Dale waits for you to come back. No nudges. No hooks." },
+  { k: "When you return", v: "Catch up in one response, not stacked messages. Never 300 unread." },
+  { k: "Autonomous mode", v: "Notifications on every trade, every stop loss, budget alerts, summaries every four hours. Receipts. Short." },
+]} />
+
+<H2 id="control">Privacy and control</H2>
+<Para>
+  Memory is yours. Three controls, all through conversation.
+</Para>
+
+<H2 id="introspection">What do you remember about me <FeatureStatus id="memory_introspection" /></H2>
+<ChatBlock>
+  <ChatBubble from="user">what do you remember about me</ChatBubble>
+  <ChatBubble from="dale">
+    You're on Ethereum, Base, and Solana, mostly. Usually open at 0.05 to 0.1 ETH. Slippage
+    12%. Take 30% off at 2x and trail the rest. Avoid anything under $200K mcap. Win rate
+    this month is 64%. Want the full breakdown?
+  </ChatBubble>
+</ChatBlock>
+
+<H2 id="forget">Forget specific token / reset memory <FeatureStatus id="memory_forget_reset" /></H2>
+<ChatBlock>
+  <ChatBubble from="user">forget that I asked about $WIF</ChatBubble>
+  <ChatBubble from="dale">Done. $WIF history cleared from your memory.</ChatBubble>
+</ChatBlock>
+
+<ChatBlock>
+  <ChatBubble from="user">reset my memory</ChatBubble>
+  <ChatBubble from="dale">
+    This wipes everything I know about you. Trading style, history, preferences. Next time
+    we talk, I won't remember any of it. Confirm?
+  </ChatBubble>
+</ChatBlock>
+
+<Callout kind="info" title="The reset is irreversible">
+  The platform does not retain a backup you cannot delete.
+</Callout>
+
+<Pull>
+  Your memory. Your control. Your reset.
+</Pull>
+
+<H2 id="other-products">What other products do</H2>
+<Para>
+  Most trading bots store nothing about you. The chat is stateless. The product is the same
+  on day one and day one thousand. A few store wallet info and recent trades. None build a
+  real profile. None anticipate. None watch your patterns and warn when you stray. None
+  calibrate suggestions to you specifically.
+</Para>
+<Para>
+  Dale's memory is built into the platform from the first message. It is not a feature added
+  on top. It is the layer underneath every other feature. Most products treat the chat as
+  the product. Dale treats the relationship as the product.
+</Para>
+
+<Pull>
+  Other bots are tools. Dale is a partner.
+</Pull>
+
+<H2 id="closing">The closing line</H2>
+<Para>
+  The first trade with Dale is good.{' '}
+  <Lime>The hundredth trade with Dale is something no other product can offer you.</Lime>
+</Para>

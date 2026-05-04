@@ -3,10 +3,26 @@ title: "Tools Dale uses"
 sidebar_label: "Tools Dale uses"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageDaleTools` */}
+{/* Source: pages-dale.jsx -> PageDaleTools */}
 
-# TODO
+import { PageHead, FeatureGrid } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="Over fifty deterministic, audited tools. The model decides which to call. The tools never hallucinate."
+/>
+
+<FeatureGrid items={[
+  { sym: "◆", title: "Quote engines", body: "Real time DEX aggregator quotes per chain, with simulated execution before quote." },
+  { sym: "◑", title: "Wallet graph", body: "Five year clustered graph. Smart money, insider rings, exchange wallets, bot networks. Continuously reclustered." },
+  { sym: "◒", title: "Mempool monitors", body: "Pending tx watchers per chain feeding Emergency Sell and front run detection." },
+  { sym: "◓", title: "Strategy runners", body: "DCA, trailing stops, conditional exits. Scheduled, monitored, fired by Dale." },
+  { sym: "◢", title: "Honeypot scanner", body: "Every contract scanned before first interaction. Dev callable functions surfaced." },
+  { sym: "◤", title: "Holder scan", body: "Concentration, insider clusters, dev holdings, recent flow. Baked into every scan." },
+  { sym: "◣", title: "Cross chain routers", body: "Bridge plus swap quoted as one decision. Across, LI.FI, native canonical bridges." },
+  { sym: <>Privacy swaps <FeatureStatus id="rocketx_privacy_swaps" /></>, title: "Privacy swaps", body: "Routed through privacy infrastructure on supported chains via RocketX. Same conversation." },
+  { sym: <>Holder distribution <FeatureStatus id="bubblemaps_holder_distribution" /></>, title: "Bubblemaps holder map", body: "Visual holder distribution and cluster overlap, surfaced inline on every scan." },
+  { sym: <>DCA on Polygon and Solana <FeatureStatus id="sonar_polygon_solana" /></>, title: "Sonar DCA expansion", body: "Sonar DCA execution layer expanding from EVM mainnets to Polygon and Solana." },
+  { sym: <>Prediction markets <FeatureStatus id="agg_prediction_markets" /></>, title: "AGG prediction markets", body: "Polymarket and Kalshi via AGG. Best price routing. Same wallet, same PIN. One conversation for tokens and events." },
+]} />

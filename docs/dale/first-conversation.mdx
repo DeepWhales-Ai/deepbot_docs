@@ -3,10 +3,28 @@ title: "First conversation"
 sidebar_label: "First conversation"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageFirstConvo` */}
+{/* Source: pages-dale.jsx -> PageFirstConvo */}
 
-# TODO
+import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="What it looks like when you talk to Dale for the first time."
+/>
+
+<ChatBlock>
+  <ChatBubble from="user">i'm new. show me what you can do</ChatBubble>
+  <ChatBubble from="dale">
+    Welcome. I trade for you across five chains, in the language you speak. I can buy, sell, set stops, run DCA, snipe launches, and protect you from rugs in the mempool. Want to start with: <Lime>(a)</Lime> a small first trade, <Lime>(b)</Lime> a watchlist of trending tokens, or <Lime>(c)</Lime> me explaining everything in detail?
+  </ChatBubble>
+  <ChatBubble from="user">a</ChatBubble>
+  <ChatBubble from="dale">
+    Pick a chain or let me pick. I have your default funds on Base. Suggest starting with $20 in something with healthy flow and no honeypot signals. Want me to surface three candidates?
+  </ChatBubble>
+</ChatBlock>
+
+<H2 id="why">Why this matters</H2>
+<Para>
+  Most platforms hand new users a dashboard with twenty buttons. Dale hands you one prompt.
+  Complexity arrives when you ask for it.
+</Para>

@@ -3,10 +3,26 @@ title: "How Dale thinks"
 sidebar_label: "How Dale thinks"
 ---
 
-{/* Source: `pages-dale.jsx` -> `PageHowDaleThinks` */}
+{/* Source: pages-dale.jsx -> PageHowDaleThinks */}
 
-# TODO
+import { PageHead, Para, H2, NumberedList } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="DALE"
+  lede="The reasoning loop. The model decides which tool to call. The tools never hallucinate."
+/>
+
+<H2 id="loop">The loop</H2>
+<NumberedList items={[
+  { title: "Read intent", text: "You ask in any language you speak. Dale parses the intent, the size, the chain, and the conditions." },
+  { title: "Choose tools", text: "Dale picks from over fifty tools: quote engines, simulators, holder analyzers, mempool watchers, cross chain routers." },
+  { title: "Simulate before commit", text: "Every trade is simulated against the live pool before Dale shows you a quote. Honeypot signals, slippage, gas, all surfaced." },
+  { title: "Surface the reasoning", text: "Dale shows the chain of reasoning. Tools called, candidates considered, candidates ruled out, the final justification." },
+  { title: "Confirm and execute", text: "You confirm. Dale signs and submits. The result lands in chat with a verifiable transaction hash." },
+]} />
+
+<H2 id="audit">Every decision is auditable</H2>
+<Para>
+  Tap any past trade. Dale shows what it considered, what it ruled out, why it picked the
+  route it did. The audit log is permanent and exportable.
+</Para>
