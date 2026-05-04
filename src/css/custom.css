@@ -179,6 +179,15 @@ body {
   display: block;
   border-radius: inherit;
 }
+/* DEEPAI Dale avatar prominence — the source PNG has a lime ring around
+   the bot character, which leaves the actual face small in a 32px circle.
+   Scale up so the character fills more of the badge (the lime ring still
+   peeks at the edges, the bot face dominates). Same trick on the TryDale
+   header avatar for consistency. */
+.db-walletmock__tok-img,
+.db-trydale__avatar img {
+  transform: scale(1.18);
+}
 
 /* ===== Layer 2: Prototype stylesheet (appended below) ===== */
 /* See INLINE-PROTOTYPE-STYLES marker. The build appends styles.css contents
@@ -2345,7 +2354,10 @@ body {
   font-family: 'Manrope', 'Cera Pro', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  /* Bumped from 600px so the 4-row token list (DEEPAI/ETH/BUSD/USDC) fits
+     without the bottom row clipping. Each row is ~48px and the static
+     chrome (top, balance, actions, navbar) takes ~440px. */
+  height: 660px;
   position: relative;
 }
 .db-walletmock__top {
