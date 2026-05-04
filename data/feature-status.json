@@ -1,7 +1,101 @@
 {
-  "last_updated": "2026-05-03",
+  "last_updated": "2026-05-04",
   "launch_date": "2026-05-07",
+  "currently_shipping": {
+    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
+    "now": [
+      "convergence_engine",
+      "dale_escalation_pipeline",
+      "bobby_alert_idempotency_v1",
+      "convergence_weight_tuning",
+      "smart_money_cluster_scoring_v2",
+      "token_metadata_enrichment"
+    ],
+    "next": [
+      "layer_2_dale_memory",
+      "native_emergency_sell_expansion",
+      "bobby_ai_tier_1",
+      "rocketx_integration"
+    ],
+    "stealth": {
+      "private_beta": 2,
+      "stealth_design": 1
+    }
+  },
   "features": {
+    "convergence_engine": {
+      "label": "Convergence engine",
+      "status": "shipped",
+      "shipped_date": "2026-04-28",
+      "date_label": "Apr 28",
+      "summary": "13 source-type tags, 19 routers, 4 chains, MySQL stores, first signals firing live.",
+      "where": []
+    },
+    "dale_escalation_pipeline": {
+      "label": "Dale escalation pipeline",
+      "status": "shipped",
+      "shipped_date": "2026-05-01",
+      "date_label": "May 1",
+      "summary": "Critical-severity auto-page to admin via Go API. 428 copilot tests green, all flag-gated.",
+      "where": []
+    },
+    "bobby_alert_idempotency_v1": {
+      "label": "Bobby alert idempotency v1",
+      "status": "shipped",
+      "shipped_date": "2026-05-02",
+      "date_label": "May 2",
+      "summary": "Server-side unique on (chain, tx_hash, source_type). First-wins. Zero duplicate alert leaks.",
+      "where": []
+    },
+    "convergence_weight_tuning": {
+      "label": "Convergence weight tuning",
+      "status": "testing",
+      "date_label": "14d",
+      "summary": "Correlation, mutual information, GBDT+SHAP across 5yr Bobby data. Signal threshold optimization.",
+      "where": []
+    },
+    "smart_money_cluster_scoring_v2": {
+      "label": "Smart money cluster scoring v2",
+      "status": "design",
+      "date_label": "21d",
+      "summary": "Cross-wallet pattern detection. Splits aggregated bag activity from coordinated entry.",
+      "where": []
+    },
+    "token_metadata_enrichment": {
+      "label": "Token metadata enrichment",
+      "status": "testing",
+      "date_label": "7d",
+      "summary": "Admin commands for project Portal/X/website. Renders on The Board. Behind feature flag.",
+      "where": []
+    },
+    "layer_2_dale_memory": {
+      "label": "Layer 2 Dale memory",
+      "status": "design",
+      "date_label": "Q2",
+      "summary": "Cross-conversation continuity. 5-phase build. Postgres UserMemoryProfile + summarizer + event-driven triggers.",
+      "where": []
+    },
+    "native_emergency_sell_expansion": {
+      "label": "Native Emergency Sell expansion",
+      "status": "in_progress",
+      "date_label": "30 days",
+      "summary": "Polygon, BNB chain coverage. Mempool monitoring extends beyond ETH/Base.",
+      "where": []
+    },
+    "bobby_ai_tier_1": {
+      "label": "Bobby AI Tier 1",
+      "status": "design",
+      "date_label": "Week 1-2 post-launch",
+      "summary": "AdOps admin panel. Manual queue → admin panel → full self-serve.",
+      "where": []
+    },
+    "rocketx_integration": {
+      "label": "RocketX integration",
+      "status": "in_progress",
+      "date_label": "60 days",
+      "summary": "Privacy swaps across 200+ chains. Referral tier active.",
+      "where": []
+    },
     "pin_auto_delete": {
       "label": "PIN auto-delete from chat",
       "status": "building",
