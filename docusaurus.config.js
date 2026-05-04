@@ -9,7 +9,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'DeepBot',
   tagline: "We don't predict. We detect.",
-  favicon: 'img/favicon.png',
+  // Square monogram favicon — the lime "B" on dark, designed to read at
+  // 16x16. Replaces the prior /img/favicon.png which was the full
+  // dale-character.png (1563x1563) and rendered as illegible noise in a
+  // browser tab. SVG path stays crisp at every density.
+  favicon: 'img/favicon.svg',
 
   url: 'https://docs.deepbot.pro',
   baseUrl: '/',
@@ -18,7 +22,14 @@ const config = {
   projectName: 'deepbot_docs',
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+
+  // onBrokenMarkdownLinks moved into markdown.hooks per Docusaurus v3.x
+  // deprecation. Same behavior; just the new home for the hook.
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -27,6 +38,13 @@ const config = {
 
   // No trailing slashes — matches Mintlify-era URLs we used in stubs.
   trailingSlash: false,
+
+  // Client modules run in the browser after hydration. The brandSplit
+  // module rewrites "DeepBot" in H1s and breadcrumbs into the white-Deep
+  // + lime-Bot brand split — surfaces frontmatter strings can't reach.
+  clientModules: [
+    './src/clientModules/brandSplit.js',
+  ],
 
   presets: [
     [
@@ -47,17 +65,16 @@ const config = {
     ],
   ],
 
-  // Plausible analytics. The Mintlify config used integrations.plausible.domain;
-  // here we inject the script tag directly via headTags. Krypt confirmed the
-  // site key is "docs.deepbot.pro" itself (standard Plausible identifier).
-  headTags: [
+  // Plausible analytics — site registered at plausible.io for
+  // docs.deepbot.pro. Pre-launch traffic from deepbot-docs.vercel.app
+  // records under the same site name; the dashboard trims to the
+  // real domain after the CNAME flip. Privacy-first, no cookies,
+  // GDPR-clean — matches the brand voice.
+  scripts: [
     {
-      tagName: 'script',
-      attributes: {
-        defer: 'true',
-        'data-domain': 'docs.deepbot.pro',
-        src: 'https://plausible.io/js/script.js',
-      },
+      src: 'https://plausible.io/js/script.js',
+      defer: true,
+      'data-domain': 'docs.deepbot.pro',
     },
   ],
 
@@ -90,10 +107,16 @@ const config = {
 
       navbar: {
         title: '',
+        // SVG wordmarks. Both PNGs were byte-identical (white "Deep"
+        // invisible on light bg). The SVG variants split the file:
+        // logo-light = dark "Deep" + muted-lime "Bot" (readable on white);
+        // logo-dark = white "Deep" + lime "Bot" (the prior look).
+        // Web-safe sans (Inter / system-ui fallback) — typography is
+        // approximate; swap in the source typeface when available.
         logo: {
           alt: 'DeepBot',
-          src: 'img/logo-light.png',
-          srcDark: 'img/logo-dark.png',
+          src: 'img/logo-light.svg',
+          srcDark: 'img/logo-dark.svg',
           width: 140,
         },
         // Per Krypt: no topbar links and no CTA button. Sidebar carries nav.

@@ -43,3 +43,4 @@ desktop.ini
 # Local scratch (PR/issue draft bodies passed to gh CLI)
 .pr-*.md
 .issue-*.md
+.lighthouse-report.json
