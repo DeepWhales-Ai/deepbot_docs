@@ -42,58 +42,10 @@ body {
 /* ===== Layout ===== */
 .db-app { display: flex; min-height: 100vh; }
 
-/* Grab bar — peeks from the left edge always */
-.db-grabbar {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 60;
-  width: 22px;
-  height: 220px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-left: none;
-  border-radius: 0 6px 6px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 0 18px;
-  cursor: pointer;
-  color: var(--lime);
-  transition: opacity 0.18s ease, transform 0.22s cubic-bezier(.2,.8,.2,1), background 0.18s ease;
-  font-family: 'JetBrains Mono', monospace;
-}
-.db-grabbar:hover {
-  background: var(--bg-2);
-}
-.db-grabbar__dashes {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  align-items: center;
-}
-.db-grabbar__dashes > span {
-  display: block;
-  width: 10px;
-  height: 2px;
-  background: var(--lime);
-  box-shadow: 0 0 8px rgba(204, 255, 0,0.45);
-}
-.db-grabbar__label {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  letter-spacing: 0.32em;
-  font-size: 9px;
-  color: var(--fg-3);
-  text-transform: uppercase;
-}
-.db-grabbar--open {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-50%) translateX(-12px);
-}
+/* Grab bar (.db-grabbar) — REMOVED.
+   The prototype's left-edge vertical "MENU" pull-tab is dropped per Krypt;
+   Mintlify's standard sidebar collapse behavior handles open/close.
+   See git history for the original 51-line block if a future port wants it. */
 
 .db-sidebar {
   width: 280px;
