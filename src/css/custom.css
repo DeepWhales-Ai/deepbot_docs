@@ -39,7 +39,14 @@
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.08);
 }
 
-[data-theme='dark'] {
+/* Selector is `html[data-theme='dark']` (not bare `[data-theme='dark']`) so
+   it matches Docusaurus's own `html[data-theme=dark]` specificity (0,1,1).
+   At equal specificity, source order wins — and our customCss loads after
+   Docusaurus's own theme CSS, so these variable overrides take effect.
+   The bare attribute selector lost on specificity, leaving Docusaurus's
+   default --ifm-background-color: #1b1b1d in force — that's what painted
+   the gray scrolling boundary AND the gray navbar. Same root cause, one fix. */
+html[data-theme='dark'] {
   --ifm-color-primary: #CCFF00;
   --ifm-color-primary-dark: #B8E600;
   --ifm-color-primary-darker: #A6CC00;
@@ -48,9 +55,16 @@
   --ifm-color-primary-lighter: #DEFF55;
   --ifm-color-primary-lightest: #EBFF99;
 
-  /* Dark mode: prototype's --bg #0A0A0A. */
-  --ifm-background-color: #0A0A0A;
-  --ifm-background-surface-color: #131313;
+  /* Every Docusaurus surface var collapses to #0A0A0A so anywhere it paints
+     a "background", "surface", "navbar background", or "footer background",
+     the result is the prototype's --bg with no leaks or strips. !important
+     because Docusaurus's bundled CSS sets these in the same matched rule
+     (cssnano merges by selector) and the merge order isn't deterministic. */
+  --ifm-background-color: #0A0A0A !important;
+  --ifm-background-surface-color: #0A0A0A !important;
+  --ifm-navbar-background-color: #0A0A0A !important;
+  --ifm-footer-background-color: #0A0A0A !important;
+
   --ifm-color-content: #ffffff;
   --ifm-color-content-secondary: rgba(255, 255, 255, 0.85);
 
@@ -63,9 +77,6 @@
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.04);
 
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-footer-background-color: #0e0e0e;
-
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.12);
 }
 
@@ -73,6 +84,100 @@
 body {
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.005em;
+}
+
+/* DeepBot brand wordmark.
+   Used by the <DeepBot /> component everywhere "DeepBot" appears as a
+   styled inline reference. White "Deep" + lime "Bot" + lime "®" if present.
+   Hard rule: the brand never renders as solid lime or solid white. */
+.db-brand {
+  font-weight: inherit;
+}
+.db-brand__deep {
+  color: var(--ifm-color-content);
+}
+.db-brand__bot,
+.db-brand__r {
+  color: var(--ifm-color-primary);
+}
+
+/* Active breadcrumb / sidebar link with the literal "DeepBot" — the
+   string comes from frontmatter so we can't inject the brand component.
+   Override the lime-on-active treatment to white (still emphasized, just
+   not the brand-violating solid lime that paints both "Deep" and "Bot"
+   the same color). */
+.breadcrumbs__link--active {
+  color: var(--ifm-color-content) !important;
+  background: transparent !important;
+}
+
+/* ===== Force #0A0A0A on every chrome surface =====
+   The variable overrides (--ifm-navbar-background-color etc.) work in
+   isolation but Docusaurus's element-level CSS adds shadows, surface
+   colors, and per-class backgrounds that paint OVER them. This block
+   targets the actual selectors directly, with !important, so no
+   slightly-lighter surface ever shows through against the body bg. */
+
+/* Navbar — variable resolved to #0A0A0A but the box-shadow defined on
+   .navbar painted a soft tinted line that read as a slightly lighter bar.
+   Force the bg + kill the shadow + add a hairline border in our line color. */
+.navbar,
+.navbar--fixed-top,
+nav.navbar {
+  background-color: #0A0A0A !important;
+  background: #0A0A0A !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08)) !important;
+}
+
+/* Page wrapper cascade — every Docusaurus content wrapper, plus html and
+   body. Multiple selectors because Docusaurus uses obfuscated class names
+   like docMainContainer_TBSr; the [class*=...] pattern matches both the
+   stable class names and the build-time hashed ones. !important so we win
+   regardless of bundler merge order. */
+html,
+body,
+#__docusaurus,
+.main-wrapper,
+[class*='mainWrapper'],
+.theme-doc-page,
+.theme-doc-page-wrapper,
+[class*='docPage'],
+[class*='docsWrapper'],
+[class*='docMainContainer'],
+[class*='docItemContainer'],
+[class*='docItemCol'],
+article,
+.markdown,
+.theme-doc-markdown,
+.container,
+.row,
+.col,
+main {
+  background-color: #0A0A0A !important;
+  background: #0A0A0A !important;
+}
+
+/* Sidebar pin/unpin toggle — Docusaurus's collapseSidebarButton was in
+   DOM but invisible: bg = #ffffff0d (5% white = imperceptible on dark)
+   AND border = var(--ifm-toc-border-color) which we set to transparent.
+   Force a visible lime-tinted treatment so the affordance is discoverable
+   like Stripe / Resend docs. Same treatment on the expandButton that
+   appears on the freed left edge after collapse. */
+.collapseSidebarButton_PEFL,
+[class*='collapseSidebarButton'],
+.expandButton_TmdG,
+[class*='expandButton'] {
+  background-color: rgba(204, 255, 0, 0.06) !important;
+  border: 1px solid rgba(204, 255, 0, 0.25) !important;
+  color: var(--ifm-color-primary) !important;
+}
+.collapseSidebarButton_PEFL:hover,
+[class*='collapseSidebarButton']:hover,
+.expandButton_TmdG:hover,
+[class*='expandButton']:hover {
+  background-color: rgba(204, 255, 0, 0.12) !important;
+  border-color: var(--ifm-color-primary) !important;
 }
 
 /* Sidebar active item — color-only, no fake-bold, no border, no background.

@@ -9,6 +9,7 @@ import {
   PageHead, Para, H2, Lime, Mono, Pull, Callout,
   TaglineStrip, KeyValueGrid, ChainRow, Pill,
 } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 import { Ethereum, Solana, Base, Polygon, BNB } from '@site/src/components/ChainLogos.jsx';
 import WalletMock from '@site/src/components/WalletMock.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
@@ -16,7 +17,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 <PageHead
   eyebrow="WALLET"
   title={<>A wallet that lives <Lime>where you already live.</Lime></>}
-  lede={<>DeepBot Wallet is the third product in the platform. Telegram native, fully self custody, multi chain. Open it from inside Dale or use it on its own. Same keys, two interfaces.</>}
+  lede={<><DeepBot /> Wallet is the third product in the platform. Telegram native, fully self custody, multi chain. Open it from inside Dale or use it on its own. Same keys, two interfaces.</>}
 />
 
 <div className="db-wallet-hero">
@@ -26,7 +27,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
     </TaglineStrip>
     <Para>
       Most in app wallets are custodial illusions. Yours lives on their server. They go down,
-      your money goes with them. <Lime>DeepBot Wallet is the opposite.</Lime>{' '}
+      your money goes with them. <Lime><DeepBot /> Wallet is the opposite.</Lime>{' '}
       The private key for every wallet is isolated and exportable on demand. The interface lives
       inside Telegram. The funds live with you.
     </Para>
@@ -128,7 +129,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 ]} />
 
 <Pull>
-  If DeepBot disappeared tomorrow, your wallet would not.
+  If <DeepBot /> disappeared tomorrow, your wallet would not.
 </Pull>
 <Para>
   That is the line most in app wallets cannot say. The private keys you generate are

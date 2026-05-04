@@ -8,7 +8,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Start here',
-      collapsed: false,
+      collapsible: true,
+      collapsed: false, // entry point — always open
       items: [
         'home',
         'three-products',
@@ -21,7 +22,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Dale',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'dale/overview',
         'dale/how-it-thinks',
@@ -41,7 +43,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Bobby',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'bobby/overview',
         'bobby/network',
@@ -52,13 +55,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'Wallet',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: ['wallet/overview'],
     },
     {
       type: 'category',
       label: 'Platform',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'platform/convergence',
         'platform/safety',
@@ -69,7 +74,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'The Brain',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'brain/overview',
         'brain/layer-1-network',
@@ -83,13 +89,15 @@ const sidebars = {
     {
       type: 'category',
       label: 'Token',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: ['token/deepai'],
     },
     {
       type: 'category',
       label: 'Revenue Sharing',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'revshare/overview',
         'revshare/streams',
@@ -103,7 +111,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Investors',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: [
         'investors/platform-pitch',
         'investors/launch-sequence',
@@ -113,7 +122,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Team',
-      collapsed: false,
+      collapsible: true,
+      collapsed: true,
       items: ['team'],
     },
   ],

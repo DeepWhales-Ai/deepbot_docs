@@ -66,6 +66,20 @@ const config = {
     ({
       image: 'img/dale-character.png',
 
+      // Sidebar pin/unpin per Krypt — Docusaurus's built-in toggle that
+      // hides the entire sidebar so content goes full-width. Defaults to
+      // false (button hidden); enabling here surfaces the bottom-left
+      // collapse arrow + the expand button when collapsed.
+      // Group-level collapse is handled separately by `collapsible: true`
+      // on each category in sidebars.js. The two behaviors are independent:
+      // groups toggle individually, the whole sidebar toggles via this.
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: false,
+        },
+      },
+
       // Dark default with toggle. Per kickoff §1.4: dark default,
       // toggle available, both modes verified at definition-of-done.
       colorMode: {
