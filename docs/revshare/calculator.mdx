@@ -3,10 +3,49 @@ title: "Calculator"
 sidebar_label: "Calculator"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageRevCalculator` */}
+{/* Source: pages-rest.jsx -> PageRevCalculator */}
 
-# TODO
+import { PageHead, Para, Mono, Pull, Callout, Pill } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="REVENUE SHARING"
+  title={<>Calculator <FeatureStatus id="rev_share_calculator_three_engines" /></>}
+  lede="Plug in your balance. Select your NFTs. See personalized estimates across all four phases."
+/>
+
+<Para>
+  The live calculator runs at <Mono>revenuecalc.deepbot.pro</Mono>. Live ETH
+  price feed from Binance. Real time eligibility check. No fake math.
+</Para>
+
+<Callout kind="info" title="Trading engine only as of May 2026">
+  The calculator currently models the trading-volume engine. Bobby's intelligence-monetization
+  engine is forecast separately on the streams page. Calculator update tracking on the public
+  roadmap.
+</Callout>
+
+<div className="db-calc-card">
+  <div className="db-calc-card__head">
+    <div className="db-calc-card__url">revenuecalc.deepbot.pro</div>
+    <Pill status="Live">Live</Pill>
+  </div>
+  <div className="db-calc-card__body">
+    <div className="db-calc-card__row">
+      <span>Inputs</span><span>$DEEPAI balance · NFT tier · phase</span>
+    </div>
+    <div className="db-calc-card__row">
+      <span>Outputs</span><span>Monthly USDC · pool share % · per phase comparison</span>
+    </div>
+    <div className="db-calc-card__row">
+      <span>Eligibility</span><span>Live check against 100K minimum and seven day no sell</span>
+    </div>
+  </div>
+  <a href="https://revenuecalc.deepbot.pro" target="_blank" rel="noopener" className="db-calc-card__cta">
+    Open calculator →
+  </a>
+</div>
+
+<Pull>
+  Calculate your share at revenuecalc.deepbot.pro.
+</Pull>

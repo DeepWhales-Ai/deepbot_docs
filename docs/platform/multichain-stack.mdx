@@ -3,10 +3,26 @@ title: "Multi chain stack"
 sidebar_label: "Multi chain stack"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageMultiChainStack` */}
+{/* Source: pages-rest.jsx -> PageMultiChainStack */}
 
-# TODO
+import { PageHead, Para, ChainRow, Mono } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="PLATFORM"
+  title="Multi chain stack"
+  lede={<>The chains <DeepBot /> supports today, and how the platform handles them.</>}
+/>
+
+<ChainRow items={[
+  { sym: "ETH",  name: "Ethereum" },
+  { sym: "SOL",  name: "Solana" },
+  { sym: "BASE", name: "Base" },
+  { sym: "BNB",  name: "BNB Chain" },
+]} />
+
+<Para>
+  EVM and Solana run on different transaction models. The platform abstracts the difference.
+  Routing, signing, and recovery are unified at the conversation layer. Native asset handling
+  and chain specific MEV protection are documented under Dale's <Mono>multi chain</Mono> page.
+</Para>

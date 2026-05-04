@@ -3,10 +3,35 @@ title: "NFT multipliers"
 sidebar_label: "NFT multipliers"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageRevNFTs` */}
+{/* Source: pages-rest.jsx -> PageRevNFTs */}
 
-# TODO
+import { PageHead, H2, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="REVENUE SHARING"
+  title="NFT multipliers"
+  lede="Three tiers. Extra pool multipliers on top of the standard token holder share."
+/>
+
+<H2 id="og">OG</H2>
+<KeyValueGrid items={[
+  { k: "Supply", v: "50. Fixed. Earned by the earliest community, not sold." },
+  { k: "Effect", v: "Multiplier on standard pool share." },
+]} />
+
+<H2 id="silver">Silver</H2>
+<KeyValueGrid items={[
+  { k: "Supply", v: "40, fixed." },
+  { k: "Effect", v: "Extra pool divided by 40 holders. Per NFT earnings predictable regardless of token holder count." },
+]} />
+
+<H2 id="gold">Gold</H2>
+<KeyValueGrid items={[
+  { k: "Supply", v: "10, fixed." },
+  { k: "Effect", v: "Extra pool divided by 10 holders. Predictable per NFT earnings." },
+]} />
+
+<Callout kind="lime" title="Why fixed supply matters">
+  The Silver and Gold pools never dilute, regardless of how the token holder pool grows or
+  shrinks. The cap is the cap.
+</Callout>

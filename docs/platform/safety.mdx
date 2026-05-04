@@ -3,10 +3,20 @@ title: "Safety"
 sidebar_label: "Safety"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PagePlatformSafety` */}
+{/* Source: pages-rest.jsx -> PagePlatformSafety */}
 
-# TODO
+import { PageHead, H2, FeatureGrid, Asterisk } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="PLATFORM"
+  title="Safety"
+  lede="Blockaid integration. Scam detection. Honeypot pre checks. The safety net runs under everything Dale does."
+/>
+
+<H2 id="layers">Layers of defense</H2>
+<FeatureGrid items={[
+  { sym: "◢", title: "Blockaid", body: "Live integration. Address and contract reputation, used as a pre check on every interaction." },
+  { sym: "◣", title: "Honeypot detection", body: "Hidden traps, freeze functions, blacklists, transfer restrictions. Surfaced before user funds go in." },
+  { sym: "◤", title: "Rugged dev refusal", body: "Wallets connected to past rug events flagged before the trade." },
+  { sym: <>Emergency Sell <Asterisk /></>, title: "Mempool exit", body: "Mempool grade exit on detected rug events. Live on Ethereum. Other chains in Phase 2." },
+]} />

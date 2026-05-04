@@ -3,10 +3,96 @@ title: "The five streams"
 sidebar_label: "The five streams"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageRevStreams` */}
+{/* Source: pages-rest.jsx -> PageRevStreams */}
 
-# TODO
+import { PageHead, Para, H2, Lime, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="REVENUE SHARING"
+  title="The streams explained"
+  lede="Most tokenized platforms capture one fee stream. $DEEPAI captures every fee the platform produces."
+/>
+
+<Para>
+  The platform monetizes through trading volume, through intelligence sales, through
+  advertising, through subscriptions, and through team trading profits. Every channel routes
+  into the same holder pool.
+</Para>
+
+<H2 id="trading">1 · Trading fees · 40%</H2>
+<Para>
+  The platform charges a 1% fee on every trade routed through the system. Forty percent of
+  every fee goes to the revenue share pool. The remaining ten percent funds community
+  incentives and competitions.
+</Para>
+<Para>
+  This applies across all four products: <Lime>Wallet, Trader, Link, and Bobby</Lime>.
+  Every interface. Every chain. Same router. Same fee. Same pool.
+</Para>
+<KeyValueGrid items={[
+  { k: "At $7M / month volume", v: "1% = $70,000 in fees. 40% to pool = $28,000 / month." },
+  { k: "Scaling driver", v: "Every new user, every new chain, every new product interface compounds this stream." },
+]} />
+<Callout kind="lime" title="The primary stream">
+  This is the stream that scales hardest with adoption. Volume goes up, the pool goes up.
+</Callout>
+
+<H2 id="dex">2 · DEX tax · 1% of $DEEPAI volume</H2>
+<Para>
+  Every $DEEPAI buy and sell carries a 5% on-chain tax. Four percent funds the team
+  operationally. One percent routes to the revenue share pool. This stream is completely
+  independent of platform usage. It is driven by token trading activity.
+</Para>
+<KeyValueGrid items={[
+  { k: "Today", v: "~$100K to $150K / month on-chain volume. Roughly $1,000 to $1,500 / month to the pool at current levels." },
+  { k: "At scale", v: "A 10x in token price often correlates with 20x to 50x in trading volume. Could become the largest of the five streams at full operational scale." },
+]} />
+<Callout kind="info" title="The hidden upside stream">
+  As the platform grows and the token appreciates, on-chain speculation volume historically
+  grows faster than price alone.
+</Callout>
+
+<H2 id="team">3 · Team trading profits · 15%</H2>
+<Para>
+  Fifteen percent of realized monthly profits from the team's own trading flows to the pool.
+  The team trades using Dale's tools. Better tools mean better trades mean more for holders.
+  Incentives aligned.
+</Para>
+
+<H2 id="ads">4 · Ad and trending revenue · 15%</H2>
+<Para>
+  Fifteen percent of gross ad and trending revenue across the entire platform.
+  <Lime> This is the stream that just got bigger.</Lime>
+</Para>
+<KeyValueGrid items={[
+  { k: "Bobby surfaces", v: "Five permanent ad surfaces, qualification fees, editorial slots, and Founders Program revenue all roll in." },
+  { k: "Link inventory", v: "Web interface ad revenue. Conservative starting estimate, scales with web audience." },
+  { k: "Future inventory", v: "Any new ad surface across the platform routes here automatically." },
+]} />
+<Callout kind="lime" title="The diversification stream">
+  In a quiet trading month, this stream can carry the pool. Bobby's monetization scales on
+  project demand, not trader activity.
+</Callout>
+
+<H2 id="pro">5 · PRO subscriptions · 15%</H2>
+<Para>
+  DeepBot PRO is priced at $49 / month. Non holders who want premium features pay this fee.
+  Token holders get PRO features without paying. Fifteen percent of every paying non holder
+  subscription flows to the pool.
+</Para>
+<KeyValueGrid items={[
+  { k: "Sample math at scale", v: "8,000 active wallets × 6% conversion = 480 paid subs × $49 = $23,520 / month gross. 15% to pool = $3,528 / month." },
+  { k: "Compounding", v: "Stream grows with active wallet count. PRO pricing held flat for transparency." },
+]} />
+
+<H2 id="licensing">6 · Bobby intelligence licensing <FeatureStatus id="bobby_intelligence_licensing" /></H2>
+<Para>
+  Reserved for future intelligence licensing arrangements. Data partnerships, project
+  intelligence reports, network access. Currently zero, but the stream exists in the
+  architecture.
+</Para>
+<Callout kind="info" title="In development">
+  Communicated as in development until specific arrangements are public. The unified pool
+  case stands without it.
+</Callout>

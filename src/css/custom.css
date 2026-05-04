@@ -334,6 +334,478 @@ main {
 /* See INLINE-PROTOTYPE-STYLES marker. The build appends styles.css contents
    below this marker via the postinstall script (or a one-time concat). */
 
+
+/* ===== Re-added for tier-3-rest: Inline links (was swept on tier-1-components) ===== */
+/* ===== Inline links inside KV grids ===== */
+.db-link {
+  color: var(--lime);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(204, 255, 0,0.25);
+  transition: border-color .15s, color .15s;
+}
+.db-link:hover {
+  color: var(--lime);
+  border-bottom-color: var(--lime);
+}
+
+
+/* ===== Re-added for tier-3-rest: Calculator card (was swept on tier-1-components) ===== */
+/* ===== Calculator card ===== */
+.db-calc-card {
+  background: linear-gradient(180deg, rgba(204, 255, 0,0.04), rgba(204, 255, 0,0.01));
+  border: 1px solid rgba(204, 255, 0,0.25);
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  margin: 28px 0 24px;
+}
+.db-calc-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.db-calc-card__url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  color: var(--fg-1);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.db-calc-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.db-calc-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 13px;
+}
+.db-calc-card__row > span:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  color: var(--fg-4);
+  font-weight: 700;
+  align-self: center;
+  min-width: 90px;
+}
+.db-calc-card__row > span:last-child {
+  color: var(--fg-2);
+  text-align: right;
+}
+.db-calc-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--lime);
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 8px;
+  letter-spacing: -0.005em;
+  transition: background .15s;
+}
+.db-calc-card__cta:hover {
+  background: var(--lime-2);
+}
+
+
+/* ===== Re-added for tier-3-rest: Changelog (full) (was swept on tier-1-components) ===== */
+/* ===== Changelog ===== */
+.db-changelog {
+  margin: 24px 0;
+}
+.db-changelog__entry {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+.db-changelog__rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+.db-changelog__dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 0 0 4px var(--lime-glow);
+  flex-shrink: 0;
+}
+.db-changelog__line {
+  width: 1px;
+  flex: 1;
+  background: var(--line);
+  margin-top: 8px;
+  min-height: 20px;
+}
+.db-changelog__main { flex: 1; padding-bottom: 4px; }
+.db-changelog__meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.db-changelog__date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.02em;
+}
+.db-changelog__version {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-2);
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg-2);
+}
+.db-changelog__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.db-changelog__tag--major { background: var(--lime); color: #000; }
+.db-changelog__tag--improvement { background: var(--bg-3); color: var(--fg-2); border: 1px solid var(--line); }
+.db-changelog__tag--fix { background: transparent; color: var(--info); border: 1px solid var(--info); opacity: 0.85; }
+.db-changelog__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+  margin-bottom: 6px;
+}
+.db-changelog__body {
+  font-size: 14px;
+  color: var(--fg-2);
+  line-height: 1.6;
+}
+
+
+/* ===== Re-added for tier-3-rest: Brain section (was swept on tier-1-components) ===== */
+/* ============================================================
+   THE BRAIN section
+   ============================================================ */
+
+/* ----- Brain hero (svg backdrop) ----- */
+.db-brainhero {
+  margin: 18px 0 28px;
+  padding: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background:
+    radial-gradient(80% 120% at 50% 100%, rgba(204, 255, 0, 0.04), transparent 60%),
+    var(--surface);
+  overflow: hidden;
+}
+.db-brainhero__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----- Brain stack (clickable layer rows) ----- */
+.db-brainstack {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 30px;
+}
+.db-brainstack__row {
+  display: grid;
+  grid-template-columns: 60px 220px 1fr 32px;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--fg);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  opacity: 0;
+  animation: brainStackIn 0.4s ease forwards;
+}
+@keyframes brainStackIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.db-brainstack__row:hover {
+  border-color: var(--lime);
+  background: rgba(204, 255, 0, 0.03);
+  transform: translateX(2px);
+}
+.db-brainstack__row:hover .db-brainstack__arrow {
+  color: var(--lime);
+  transform: translateX(4px);
+}
+.db-brainstack__row.is-active {
+  border-color: var(--lime);
+  background: rgba(204, 255, 0, 0.05);
+}
+.db-brainstack__num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lime);
+  letter-spacing: 0.08em;
+}
+.db-brainstack__title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.db-brainstack__line {
+  font-size: 14px;
+  color: var(--fg-2);
+}
+.db-brainstack__arrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  color: var(--fg-3);
+  text-align: right;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* ----- Router tier viz ----- */
+.db-routertiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+.db-routertiers__col {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.db-routertiers__head {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lime);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.db-routertiers__bars {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  height: 64px;
+  padding: 4px 0;
+}
+.db-routertiers__bar {
+  flex: 1;
+  background: linear-gradient(to top, rgba(204, 255, 0, 0.5), rgba(204, 255, 0, 0.1));
+  border-radius: 2px;
+  opacity: 0;
+  animation: barRise 0.6s ease forwards;
+}
+@keyframes barRise {
+  from { opacity: 0; transform: scaleY(0.3); transform-origin: bottom; }
+  to   { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+}
+.db-routertiers__line {
+  font-size: 13px;
+  color: var(--fg-2);
+  line-height: 1.5;
+}
+
+/* ----- Rug tier strip ----- */
+.db-rugtier {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+.db-rugtier__cell {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.db-rugtier__cell::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--border);
+}
+.db-rugtier__cell--t1::before { background: rgba(255, 255, 255, 0.25); }
+.db-rugtier__cell--t2::before { background: rgba(255, 200, 0, 0.6); }
+.db-rugtier__cell--t3::before { background: var(--lime); }
+.db-rugtier__num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--fg-3);
+  letter-spacing: 0.12em;
+}
+.db-rugtier__cell--t3 .db-rugtier__num { color: var(--lime); }
+.db-rugtier__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+.db-rugtier__body {
+  font-size: 13px;
+  color: var(--fg-2);
+  line-height: 1.5;
+}
+
+/* ----- Encoding diagram ----- */
+.db-encoding {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 18px;
+  align-items: center;
+  margin: 22px 0 28px;
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.db-encoding__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.db-encoding__node {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+.db-encoding__node--bobby,
+.db-encoding__node--dale {
+  border-color: var(--lime);
+  background: rgba(204, 255, 0, 0.04);
+}
+.db-encoding__sym {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--lime);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(204, 255, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.db-encoding__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--fg);
+}
+.db-encoding__sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  letter-spacing: 0.06em;
+}
+.db-encoding__pipe {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+.db-encoding__pipe-line {
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.db-encoding__pipe-line--alive {
+  background: linear-gradient(to right, transparent, var(--lime), transparent);
+  height: 2px;
+}
+.db-encoding__pipe-line--dead {
+  background: rgba(255, 255, 255, 0.08);
+  height: 1px;
+}
+.db-encoding__pipe-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--lime);
+  background: var(--surface);
+  padding: 2px 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  top: -1px;
+}
+.db-encoding__pipe-label--dead {
+  color: var(--fg-3);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 80, 80, 0.5);
+}
+.db-encoding__ghost {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--fg-3);
+  padding: 8px 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  opacity: 0.4;
+  letter-spacing: 0.04em;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 80, 80, 0.4);
+}
+
+@media (max-width: 980px) {
+  .db-brainstack__row {
+    grid-template-columns: 50px 1fr 24px;
+    grid-template-rows: auto auto;
+  }
+  .db-brainstack__num { grid-row: 1; }
+  .db-brainstack__title { grid-row: 1; grid-column: 2; }
+  .db-brainstack__arrow { grid-row: 1; grid-column: 3; }
+  .db-brainstack__line { grid-row: 2; grid-column: 1 / -1; font-size: 13px; }
+  .db-routertiers,
+  .db-rugtier { grid-template-columns: 1fr; }
+  .db-encoding { grid-template-columns: 1fr; }
+}
+
+
+
 /* INLINE-PROTOTYPE-STYLES */
 /* ===== DeepBot GitBook ===== */
 * { box-sizing: border-box; }

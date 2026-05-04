@@ -3,10 +3,38 @@ title: "$DEEPAI"
 sidebar_label: "$DEEPAI"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageDeepai` */}
+{/* Source: pages-rest.jsx -> PageDeepai */}
 
-# TODO
+import { PageHead, Para, H2, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="TOKEN"
+  title="$DEEPAI"
+  lede="Not a meme. Not deflationary. No burn. The access pass to platform revenue."
+/>
+
+<H2 id="basics">The basics</H2>
+<KeyValueGrid items={[
+  { k: "Name", v: "DeepBot." },
+  { k: "Symbol", v: "$DEEPAI." },
+  { k: "Contract address", v: <Mono>0x18bc66f0c15e27179dd8e2277c1c9c056df0a14d</Mono> },
+  { k: "Supply", v: "100,000,000. Fixed. Not deflationary. No burn." },
+  { k: "On chain tax", v: "5% on every $DEEPAI buy and sell. 4% funds the team. 1% routes to the revenue share pool for holders." },
+  { k: "Revenue share minimum", v: "100,000 $DEEPAI held continuously. The threshold is fixed and has never changed." },
+  { k: "Primary utility", v: "Access to the platform revenue share. Hold to earn." },
+]} />
+
+<Callout kind="info" title="Pulled live, never cached">
+  The CA is fetched via a live tool call on render, so what you see here matches what the
+  platform will quote on any other surface.
+</Callout>
+
+<H2 id="utility">What the token does</H2>
+<Para>
+  $DEEPAI is the access pass to the revenue share. Holders get a piece of every trade that
+  passes through the platform. Every chain. Every product. Every interface.
+</Para>
+<Para>
+  Five revenue streams flow into one pool. The mechanics, eligibility rules, and live
+  calculator are documented under <Mono>Revenue Sharing</Mono>.
+</Para>

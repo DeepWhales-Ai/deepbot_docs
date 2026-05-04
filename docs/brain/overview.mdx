@@ -3,10 +3,42 @@ title: "Six layers, one brain"
 sidebar_label: "Six layers, one brain"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainOverview` */}
+{/* Source: pages-brain.jsx -> PageBrainOverview */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, TaglineStrip } from '@site/src/components/primitives.jsx';
+import { BrainHero, BrainStack } from '@site/src/components/BrainComponents.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN"
+  title={<>Six layers. <Lime>One brain.</Lime></>}
+  lede="DeepBot is a signal infrastructure company with a trading bot as its monetization layer. The infrastructure is six independent layers stacked into one engine. Each layer is its own moat."
+/>
+
+<BrainHero />
+
+<Pull>
+  The moat is not the bot. <Lime>The moat is the brain.</Lime>
+</Pull>
+
+<H2 id="layers">The stack</H2>
+<Para>
+  Tap any layer to read how it works. The first three feed the brain. The next two decide
+  what crosses the threshold from noise into signal. The sixth is what makes the loop closed.
+</Para>
+
+<BrainStack />
+
+<H2 id="why">Why six</H2>
+<Para>
+  A competitor can build a buy bot. A competitor can even build group infrastructure. What a
+  competitor cannot replicate is six independently-defensible layers running in convergence,
+  backed by five years of data, and gated to a single trading consumer by design.
+</Para>
+<Para>
+  Each layer compounds. New chains, new groups, new alert outcomes. Every new input feeds
+  every other layer's accuracy. The brain gets smarter the longer it runs.
+</Para>
+
+<TaglineStrip kicker="Five years deep">
+  We don't predict. We detect.
+</TaglineStrip>

@@ -3,10 +3,56 @@ title: "Layer 5 - Convergence engine"
 sidebar_label: "Layer 5 - Convergence engine"
 ---
 
-{/* Source: `pages-brain.jsx` -> `PageBrainConverge` */}
+{/* Source: pages-brain.jsx -> PageBrainConverge */}
 
-# TODO
+import { PageHead, Para, H2, Lime, TaglineStrip, StatRow, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="THE BRAIN · LAYER 05"
+  title="Convergence engine"
+  lede="A single ping is not an alert. Convergence is. Source weighted, anti manipulation, thirty second scoring cycle. The layer where everything below becomes a decision."
+/>
+
+<H2 id="why">A single ping is not an alert</H2>
+<Para>
+  Most crypto signal products work the same way. One source pings, an alert fires. Spam.
+  Manipulation. Noise. The signal to noise ratio is bad on purpose because volume is what
+  gets monetized.
+</Para>
+<Para>
+  Convergence works differently. A single ping does not become an alert.{' '}
+  <Lime>Convergence does.</Lime> When intelligence from multiple independent
+  sources, weighted for adversarial robustness, agrees that something is happening, and only
+  then, an alert fires.
+</Para>
+
+<TaglineStrip kicker="The principle">
+  Watch behavior, not theatre.
+</TaglineStrip>
+
+<StatRow items={[
+  { num: "30s", label: "Scoring cycle" },
+  { num: "✕",   label: "Volume weight" },
+  { num: "5y",  label: "Footprint depth" },
+]} />
+
+<H2 id="volume">Volume is excluded by design</H2>
+<Para>
+  Volume is the most manipulable input in crypto. Wash trading, paid pumps, automated
+  rotation. The convergence engine does not weight volume into its scoring. Behavior across
+  independent layers is what matters. Theatre is what the engine ignores.
+</Para>
+
+<H2 id="adversarial">Adversarial robust by construction</H2>
+<Para>
+  Manipulators can flood a single channel. They cannot flood every channel at once without
+  leaving a footprint. The footprint is what the engine looks for. The harder a coordinated
+  push tries to look organic, the more visible it becomes to convergence.
+</Para>
+
+<H2 id="recipe">Twelve herbs and spices</H2>
+<Callout kind="info" title="We do not reveal the methodology in detail">
+  Bobby's value is in being the one place that sees this picture. If we explained how, the
+  picture stops being ours. Specifics live in investor and grants surfaces, under NDA where
+  warranted, never in public docs.
+</Callout>

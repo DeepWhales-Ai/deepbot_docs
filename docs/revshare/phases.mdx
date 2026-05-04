@@ -3,10 +3,68 @@ title: "The four phases"
 sidebar_label: "The four phases"
 ---
 
-{/* Source: `pages-rest.jsx` -> `PageRevPhases` */}
+{/* Source: pages-rest.jsx -> PageRevPhases */}
 
-# TODO
+import { PageHead, Para, H2, Lime, Pull, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
-Page port pending. Per design brief section 17.1, this page will be ported
-following the per-page workflow: read source, screenshot prototype, build MDX,
-diff visually and textually, verify checklist 17.4.
+<PageHead
+  eyebrow="REVENUE SHARING"
+  title="The four phases"
+  lede="The revenue share scales with the platform. We do not pretend otherwise."
+/>
+
+<Pull>
+  We are in Phase 1. $150K monthly volume. 250 wallets. The pool is modest. The pool is
+  also real.
+</Pull>
+
+<H2 id="phase1">Phase 1 · Now</H2>
+<KeyValueGrid items={[
+  { k: "Monthly volume", v: "$150K" },
+  { k: "Active wallets", v: "250" },
+  { k: "Coverage", v: "ETH chain primary." },
+  { k: "Pool", v: <Lime>~$3,490 / month</Lime> },
+]} />
+
+<H2 id="phase2">Phase 2 · Early growth</H2>
+<KeyValueGrid items={[
+  { k: "Monthly volume", v: "$7M" },
+  { k: "Active wallets", v: "2,500" },
+  { k: "Coverage", v: "All four EVM chains live (ETH, Base, BNB, Polygon). Solana adds further. Web interface live with ad inventory." },
+  { k: "Pool", v: <Lime>~$49,800 / month</Lime> },
+]} />
+
+<H2 id="phase3">Phase 3 · Mid scale</H2>
+<KeyValueGrid items={[
+  { k: "Monthly volume", v: "$25M" },
+  { k: "Active wallets", v: "8,000" },
+  { k: "Coverage", v: "Compounding growth. Bobby driving acquisition at scale." },
+  { k: "Pool", v: <Lime>~$164,400 / month</Lime> },
+]} />
+
+<H2 id="full">Phase 4 · Full operations</H2>
+<KeyValueGrid items={[
+  { k: "Monthly volume", v: "$75M" },
+  { k: "Active wallets", v: "20,000" },
+  { k: "Coverage", v: "Multi chain mature. Web ad inventory at scale. Token appreciation feeding DEX tax stream." },
+  { k: "Pool", v: <Lime>~$454,000 / month</Lime> },
+]} />
+
+<Callout kind="info" title="For reference">
+  $75M / month is approximately 19% of Maestro's current scale. Not impossible. Grounded in
+  what multi chain platforms with real retention have demonstrated.
+</Callout>
+
+<H2 id="eth-note">A note on ETH price</H2>
+<Para>
+  Three of the five streams (trading fees, DEX tax, team trading profits) are collected
+  in ETH and converted to USD for distribution. The live calculator at
+  <Mono> revenuecalc.deepbot.pro </Mono> auto-adjusts all ETH denominated
+  figures using the live Binance feed. If ETH rises, earnings rise proportionally without
+  any change to the underlying fee structure.
+</Para>
+
+<Pull>
+  The numbers are projections, not promises. The infrastructure is live, the growth plan is
+  funded, the math is on the calculator. Decide for yourself.
+</Pull>
