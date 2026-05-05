@@ -1949,6 +1949,56 @@ body {
 .db-moat__divider { display: none; }
 }
 
+/* Mobile polish at 390px-class viewports. Component class is .db-moat (the
+   brief refers to .db-encmoat — same component, older naming).
+   Three issues addressed:
+     1. Title imbalance — "WHAT OTHER BOTS SEE" wrapped to 2 lines while
+        "WHAT DALE SEES" stayed on 1, reading as broken vs confident.
+        Both shrink to 11px / 0.5px tracking so each fits on one line.
+     2. Right-edge clipping — 0x+40-char hashes, tool-args strings, and the
+        bottom verdict strip overflowed. Fonts step down + tool-args wrap.
+     3. Blind pane height — 8 hash rows ate vertical real estate without
+        adding meaning. Capped to 4 on mobile; same point in less space. */
+@media (max-width: 480px) {
+  .db-moat { padding: 18px 16px 20px; }
+
+  .db-moat__title { gap: 12px; }
+  .db-moat__title-l,
+  .db-moat__title-r {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .db-moat__pane { padding: 14px 14px; min-height: 0; gap: 6px; }
+
+  .db-moat__hash {
+    font-size: 9.5px;
+    letter-spacing: 0;
+  }
+  .db-moat__pane--blind .db-moat__hash:nth-of-type(n+5) { display: none; }
+
+  .db-moat__tool { padding: 4px 0; }
+  .db-moat__tool-name { font-size: 11px; }
+  .db-moat__tool-args {
+    font-size: 10px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .db-moat__verdict {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .db-moat__caption {
+    margin-top: 24px;
+    font-size: 13px;
+  }
+}
+
 /* ===== Kill log ===== */
 .db-kill {
   margin: 36px 0 28px;
