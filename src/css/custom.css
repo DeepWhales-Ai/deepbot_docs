@@ -3531,3 +3531,112 @@ li[data-active="true"] > a * {
   background-color: transparent !important;
   background-image: none !important;
 }
+
+/* ===== Local search (@easyops-cn/docusaurus-search-local) =====
+   The plugin renders its trigger as `.navbar__search-input` styled like a
+   real input. Default skin is Docusaurus blue/light — overridden here to
+   match the lime-on-dark palette. Selectors target both the navbar trigger
+   and the search modal/results pane. */
+.navbar__search-input {
+  background-color: #131313;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23CCFF00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><line x1='21' y1='21' x2='16.65' y2='16.65'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--fg-2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding-left: 32px;
+  height: 34px;
+  width: 200px;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.navbar__search-input::placeholder {
+  color: var(--fg-3);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.04em;
+}
+.navbar__search-input:hover {
+  border-color: var(--lime-dim);
+}
+.navbar__search-input:focus,
+.navbar__search-input:focus-visible {
+  outline: none;
+  border-color: var(--lime);
+  box-shadow: 0 0 0 3px var(--lime-glow);
+}
+
+/* Plugin's keyboard-shortcut hint (the small "Ctrl+K" / "⌘K" badge) */
+.search-bar-detached .navbar__search-input,
+.aa-DetachedFormContainer .navbar__search-input {
+  width: 100%;
+}
+
+/* Plugin's search results dropdown — match dark surfaces, lime hits */
+.search-result-match {
+  color: var(--lime);
+  background-color: transparent;
+  font-weight: 600;
+}
+[class^="searchResult"] mark,
+[class*=" searchResult"] mark {
+  color: var(--lime);
+  background-color: rgba(204, 255, 0, 0.08);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+.dropdown-menu {
+  background-color: var(--bg-1);
+  border: 1px solid var(--line);
+}
+
+/* Mobile: shrink the trigger so it fits next to the wordmark + hamburger */
+@media (max-width: 996px) {
+  .navbar__search-input {
+    width: 36px;
+    padding-left: 0;
+    background-position: center;
+    color: transparent;
+  }
+  .navbar__search-input::placeholder {
+    color: transparent;
+  }
+  .navbar__search-input:focus {
+    width: 180px;
+    padding-left: 32px;
+    background-position: 10px center;
+    color: var(--fg-2);
+  }
+}
+
+/* ===== CounterWall — mobile 2x2 grid =====
+   Default layout is a 4-up flex row with vertical separators. At 390px the
+   row crushes: the "2.84M" suffix wraps off, "SCORING CYCLE" clips, labels
+   wrap onto two lines unevenly. Switch to a 2x2 grid at <=768px so each
+   stat has room to breathe. Separators hidden in grid mode — column gap
+   replaces them. */
+@media (max-width: 768px) {
+  .db-counters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 12px;
+    padding: 18px 18px;
+  }
+  .db-counters__item {
+    flex: none;
+    padding: 0;
+  }
+  .db-counters__sep {
+    display: none;
+  }
+  .db-counters__num {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+  .db-counters__label {
+    font-size: 11px;
+    line-height: 1.3;
+    letter-spacing: 0.14em;
+  }
+}
