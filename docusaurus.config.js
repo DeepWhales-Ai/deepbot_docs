@@ -67,6 +67,24 @@ const config = {
     ],
   ],
 
+  // Local search — @easyops-cn/docusaurus-search-local builds a Lunr index
+  // at build time and serves it from the static bundle. No Algolia signup,
+  // no third-party network call. hashed:true cache-busts the index file so
+  // search updates ship with each deploy. docsRouteBasePath:'/' matches our
+  // root-served docs; without it the indexer scopes to the default /docs.
+  plugins: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en'],
+        indexBlog: false,
+        docsRouteBasePath: '/',
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
+  ],
+
   // Plausible analytics — site registered at plausible.io for
   // docs.deepbot.pro. Pre-launch traffic from deepbot-docs.vercel.app
   // records under the same site name; the dashboard trims to the
@@ -170,10 +188,10 @@ const config = {
         additionalLanguages: ['bash', 'json', 'jsx', 'tsx'],
       },
 
-      // Algolia disabled — Mintlify search is gone; Docusaurus uses local
-      // search via @easyops-cn/docusaurus-search-local plugin if needed,
-      // or DocSearch (free tier requires apply). Defer search config until
-      // post-launch per kickoff §1.5 spirit (built-in only, no Algolia wire).
+      // Search wired via @easyops-cn/docusaurus-search-local (see `plugins`
+      // above). Local Lunr index, no third-party. The plugin swizzles the
+      // SearchBar slot into the navbar automatically, so no `items` entry
+      // is needed here. Cmd/Ctrl+K shortcut is provided by the plugin.
     }),
 };
 
