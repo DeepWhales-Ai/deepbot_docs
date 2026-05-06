@@ -5,7 +5,7 @@ sidebar_label: "Convergence engine"
 
 {/* Source: pages-rest.jsx -> PageConvergence */}
 
-import { PageHead, Para, H2, Lime, TaglineStrip, Callout } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Callout } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="PLATFORM"
@@ -26,9 +26,10 @@ import { PageHead, Para, H2, Lime, TaglineStrip, Callout } from '@site/src/compo
   then, an alert fires.
 </Para>
 
-<TaglineStrip kicker="The principle">
-  Watch behavior, not theatre.
-</TaglineStrip>
+<div className="db-faded-box">
+  <div className="db-faded-box__line">Watch behavior, not <Lime>theatre.</Lime></div>
+  <div className="db-faded-box__close">The principle</div>
+</div>
 
 <H2 id="volume">Volume is excluded by design</H2>
 <Para>

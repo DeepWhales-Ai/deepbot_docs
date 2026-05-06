@@ -5,7 +5,7 @@ sidebar_label: "Six layers, one brain"
 
 {/* Source: pages-brain.jsx -> PageBrainOverview */}
 
-import { PageHead, Para, H2, Lime, Pull, TaglineStrip } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, TaglineStrip } from '@site/src/components/primitives.jsx';
 import { BrainHero, BrainStack } from '@site/src/components/BrainComponents.jsx';
 
 <PageHead
@@ -16,9 +16,9 @@ import { BrainHero, BrainStack } from '@site/src/components/BrainComponents.jsx'
 
 <BrainHero />
 
-<Pull>
-  The moat is not the bot. <Lime>The moat is the brain.</Lime>
-</Pull>
+<div className="db-faded-box">
+  <div className="db-faded-box__line">The moat is not the bot. <Lime>The moat is the brain.</Lime></div>
+</div>
 
 <H2 id="layers">The stack</H2>
 <Para>

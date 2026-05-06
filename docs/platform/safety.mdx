@@ -5,13 +5,20 @@ sidebar_label: "Safety"
 
 {/* Source: pages-rest.jsx -> PagePlatformSafety */}
 
-import { PageHead, H2, FeatureGrid, Asterisk } from '@site/src/components/primitives.jsx';
+import { PageHead, H2, Lime, FeatureGrid, Asterisk } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="PLATFORM"
   title="Safety"
   lede="Blockaid integration. Scam detection. Honeypot pre checks. The safety net runs under everything Dale does."
 />
+
+<div className="db-faded-box">
+  <div className="db-faded-box__line">
+    The risks in crypto trading are real and most products pretend they are not.{' '}
+    <Lime>We built around all of them.</Lime>
+  </div>
+</div>
 
 <H2 id="layers">Layers of defense</H2>
 <FeatureGrid items={[
