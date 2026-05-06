@@ -8,7 +8,6 @@ slug: /
 
 import { Lede, Lime, Mono, Para, H2, KeyValueGrid, ProductCard } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
-import CounterWall from '@site/src/components/CounterWall.jsx';
 import ConvergenceField from '@site/src/components/ConvergenceField.jsx';
 import LiveFeeds from '@site/src/components/LiveFeeds.jsx';
 import TryDale from '@site/src/components/TryDale.jsx';
@@ -16,9 +15,6 @@ import EncodingMoat from '@site/src/components/EncodingMoat.jsx';
 import CurrentlyShipping from '@site/src/components/CurrentlyShipping.jsx';
 import KillLog from '@site/src/components/KillLog.jsx';
 import ChainPulse from '@site/src/components/ChainPulse.jsx';
-
-{/* Live counter wall — sits above everything */}
-<CounterWall />
 
 {/* Hero — the platform tagline. Three-products framing locked per kickoff §2. */}
 <div className="db-principle db-principle--hero">
@@ -31,7 +27,16 @@ import ChainPulse from '@site/src/components/ChainPulse.jsx';
   </div>
 </div>
 
+<Lede>
+  The <Lime>convergence engine</Lime>. Real-time multi-source detection.{' '}
+  <Lime>Nineteen routers</Lime> fingerprinted, <Lime>four safety scanners</Lime> stacked,
+  one <Lime>thirty second scoring cycle</Lime>. Volume is excluded by design. Manipulation
+  filtered out by construction. One ping is not an alert. <Lime>Convergence is.</Lime>
+</Lede>
+
 <ConvergenceField />
+
+<div className="db-converge-annot">30s SCORING CYCLE</div>
 
 <LiveFeeds />
 

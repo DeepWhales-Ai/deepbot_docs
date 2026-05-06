@@ -115,6 +115,17 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
   message in, voice PIN out, signed transaction back. Useful when typing is not.
 </Para>
 
+<H2 id="encryption">How encryption works</H2>
+<KeyValueGrid items={[
+  { k: "Key encryption", v: "Private keys encrypted with AES-256-GCM. The encryption layer is isolated from the trading code path." },
+  { k: "PIN with Panic PIN", v: "Every wallet is PIN-protected. A separate Panic PIN looks like a normal unlock and silently empties wallets to a cold address you set. Built for the moment a stranger forces your phone open." },
+  { k: "PIN auto-delete", v: "PIN auto-deletes from chat history after entry. The sensitive number never sits in message history." },
+  { k: "Three secret questions", v: "Identity reset uses three secret questions you choose yourself. Hashes only, all three required, no salesperson, no support backdoor." },
+  { k: "Chain-first PIN gate", v: "PIN gate fires before chain branch. Same security on every chain, EVM and Solana, all three security levels." },
+  { k: "Mempool rug protection", v: "Dual independent websocket subscriptions monitor 13 attack pattern categories and roughly 68 attack selectors in real time." },
+  { k: "Blockaid scanning", v: "Real-time Blockaid scan on every token before trade. Address and contract reputation as a pre check on every interaction." },
+]} />
+
 <H2 id="runtime">Runtime safety</H2>
 <FeatureGrid items={[
   { sym: "◢", title: "Blockaid", body: "Live integration. Every token scanned before Dale touches it. Address and contract reputation as a pre check on every interaction." },

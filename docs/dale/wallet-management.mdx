@@ -12,6 +12,11 @@ import { PageHead, Para, H2, Lime, Mono, ChatBlock, ChatBubble } from '@site/src
   lede="Create, import, transfer, rename, delete. One wallet view across all five chains."
 />
 
+<ChatBlock>
+  <ChatBubble from="user">send 0.5 eth to 0xabc...123</ChatBubble>
+  <ChatBubble from="dale">Quoted: 0.5 ETH on Ethereum. Gas $4.10. Recipient checks: clean, no rugged dev flags. <Lime>Confirm to send →</Lime></ChatBubble>
+</ChatBlock>
+
 <H2 id="create">Create or import</H2>
 <Para>
   Dale provisions wallets automatically on first message. To import an existing wallet, send
@@ -26,10 +31,11 @@ import { PageHead, Para, H2, Lime, Mono, ChatBlock, ChatBubble } from '@site/src
 </Para>
 
 <H2 id="transfer">Transfer assets</H2>
-<ChatBlock>
-  <ChatBubble from="user">send 0.5 eth to 0xabc...123</ChatBubble>
-  <ChatBubble from="dale">Quoted: 0.5 ETH on Ethereum. Gas $4.10. Recipient checks: clean, no rugged dev flags. <Lime>Confirm to send →</Lime></ChatBubble>
-</ChatBlock>
+<Para>
+  Plain language. Address, ENS, contact name, or Telegram handle. Dale quotes gas, runs
+  recipient safety checks, and asks to confirm before signing. Sample dialogue at the top
+  of this page.
+</Para>
 
 <H2 id="rename">Rename and delete</H2>
 <Para>

@@ -15,6 +15,15 @@ import { MemoryProgression } from '@site/src/components/DaleComponents.jsx';
   lede="Most trading bots are amnesiacs. You repeat your slippage tolerance, your chains, your size, your exit style, every single trade. Dale remembers."
 />
 
+<ChatBlock>
+  <ChatBubble from="user">what do you remember about me</ChatBubble>
+  <ChatBubble from="dale">
+    You're on Ethereum, Base, and Solana, mostly. Usually open at 0.05 to 0.1 ETH. Slippage
+    12%. Take 30% off at 2x and trail the rest. Avoid anything under $200K mcap. Win rate
+    this month is 64%. Want the full breakdown?
+  </ChatBubble>
+</ChatBlock>
+
 <SectionStatus ids={["memory_pattern_warnings", "memory_introspection", "memory_forget_reset"]} />
 
 <Para>
@@ -134,14 +143,10 @@ import { MemoryProgression } from '@site/src/components/DaleComponents.jsx';
 </Para>
 
 <H2 id="introspection">What do you remember about me <FeatureStatus id="memory_introspection" /></H2>
-<ChatBlock>
-  <ChatBubble from="user">what do you remember about me</ChatBubble>
-  <ChatBubble from="dale">
-    You're on Ethereum, Base, and Solana, mostly. Usually open at 0.05 to 0.1 ETH. Slippage
-    12%. Take 30% off at 2x and trail the rest. Avoid anything under $200K mcap. Win rate
-    this month is 64%. Want the full breakdown?
-  </ChatBubble>
-</ChatBlock>
+<Para>
+  Ask Dale what it knows. The full profile comes back: chains you trade most, your typical
+  size, slippage tolerance, exit style, win rate. Sample dialogue at the top of this page.
+</Para>
 
 <H2 id="forget">Forget specific token / reset memory <FeatureStatus id="memory_forget_reset" /></H2>
 <ChatBlock>
