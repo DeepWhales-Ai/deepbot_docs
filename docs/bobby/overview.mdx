@@ -5,7 +5,7 @@ sidebar_label: "What is Bobby"
 
 {/* Source: pages-rest.jsx -> PageWhatBobby */}
 
-import { PageHead, Para, H2, Lime, Pull, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, KeyValueGrid } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="BOBBY"
@@ -21,9 +21,9 @@ import { PageHead, Para, H2, Lime, Pull, KeyValueGrid } from '@site/src/componen
 </Para>
 
 <H2 id="trust">The trust principle</H2>
-<Pull>
-  We are not a billboard. We are intelligence.
-</Pull>
+<div className="db-faded-box">
+  <div className="db-faded-box__line">We are not a billboard. We are <Lime>intelligence.</Lime></div>
+</div>
 <Para>
   Bobby's value is its restraint. Five ad surfaces, locked maximum. Trending earned, not paid.
   The network's outputs are calibrated against real activity, not paid placement. A project

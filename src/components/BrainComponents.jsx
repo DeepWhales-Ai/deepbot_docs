@@ -39,21 +39,42 @@ export const BrainStack = ({ activeId }) => {
 };
 
 // Animated brain motif. Six concentric layers stacking, with the alert pulse
-// climbing through them and exiting as an encoded tool call. 90ms tick,
-// ~5.4s cycle.
+// climbing through them and exiting as an encoded tool call.
+//
+// Hero variant on /brain/overview: slower deliberate ring cycle (~6s),
+// secondary inner-glow pulse on the center node at a different cadence
+// for layered breath, dramatic perimeter fade so outer rings dissolve
+// instead of hard-cropping, staggered signal-in dots with prime-offset
+// phases (no lockstep). Larger SVG canvas for hero presence.
+//
+// 100ms tick, 60-step ring cycle = 6s. Center node breathes on a 30-step
+// cycle (3s) at a different prime offset so the two cycles never align.
+// Signal dots use individual offsets per dot so arrivals stagger.
 export const BrainHero = () => {
   const [tick, setTick] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setTick((t) => t + 1), 90);
+    const id = setInterval(() => setTick((t) => t + 1), 100);
     return () => clearInterval(id);
   }, []);
 
   const rings = [0, 1, 2, 3, 4, 5];
-  const phase = (tick % 60) / 60;
+  // Ring lit-cycle: 60 ticks @ 100ms = 6s deliberate.
+  const ringCycle = 60;
+  const phase = (tick % ringCycle) / ringCycle;
+
+  // Center node inner-glow on a separate 30-tick cycle (3s). The two
+  // cadences don't align, producing a layered breath the eye doesn't
+  // count out.
+  const centerPhase = (tick % 30) / 30;
+  const centerGlow = 0.5 + 0.5 * Math.sin(centerPhase * Math.PI * 2);
+
+  // Signal-in dots: stagger arrival via prime-offset individual phases.
+  // Each dot has its own period so they don't tick in lockstep.
+  const dotPeriods = [17, 23, 19, 29, 25];
 
   return (
     <div className="db-brainhero">
-      <svg viewBox="0 0 720 320" className="db-brainhero__svg">
+      <svg viewBox="0 0 720 320" className="db-brainhero__svg" preserveAspectRatio="xMidYMid meet">
         <defs>
           <radialGradient id="brain-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#CCFF00" stopOpacity="0.25" />
@@ -65,6 +86,11 @@ export const BrainHero = () => {
             <stop offset="50%" stopColor="#CCFF00" stopOpacity="1" />
             <stop offset="100%" stopColor="#CCFF00" stopOpacity="0" />
           </linearGradient>
+          {/* Center node inner-glow — secondary pulse on its own cadence. */}
+          <radialGradient id="brain-center-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#CCFF00" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#CCFF00" stopOpacity="0" />
+          </radialGradient>
         </defs>
 
         <circle cx="360" cy="160" r="155" fill="url(#brain-glow)" />
@@ -73,21 +99,28 @@ export const BrainHero = () => {
           const r = 30 + i * 18;
           const litRing = Math.floor(phase * 6);
           const isLit = i === litRing;
+          // Outer rings fade dramatically — opacity drops with index so
+          // the perimeter dissolves into dark instead of cropping. Lit
+          // ring keeps full strength to read as the active layer.
+          const outerFade = isLit ? 1 : Math.max(0.06, 0.22 - i * 0.03);
           return (
             <circle
               key={i}
               cx="360" cy="160" r={r}
               fill="none"
-              stroke={isLit ? '#CCFF00' : 'rgba(255,255,255,0.18)'}
+              stroke={isLit ? '#CCFF00' : 'rgba(255,255,255,1)'}
+              strokeOpacity={outerFade}
               strokeWidth={isLit ? '1.5' : '1'}
               strokeDasharray={i % 2 === 0 ? '' : '3 5'}
-              style={{ transition: 'stroke 0.2s ease' }}
+              style={{ transition: 'stroke 0.3s ease, stroke-opacity 0.3s ease' }}
             />
           );
         })}
 
         {[40, 80, 120, 160, 200].map((y, i) => {
-          const opacity = 0.3 + (Math.sin((tick + i * 8) / 12) + 1) * 0.25;
+          // Each dot ticks on its own period so arrivals stagger.
+          const period = dotPeriods[i];
+          const opacity = 0.25 + (Math.sin((tick + i * 11) / period * Math.PI) + 1) * 0.3;
           return (
             <circle key={i} cx={70 + i * 12} cy={y + 30} r="2.5" fill="#CCFF00" opacity={opacity} />
           );
@@ -96,8 +129,10 @@ export const BrainHero = () => {
         <line x1="160" y1="160" x2="320" y2="160" stroke="url(#brain-line)" strokeWidth="1" opacity={phase > 0.2 && phase < 0.8 ? 0.7 : 0.15} />
         <line x1="400" y1="160" x2="640" y2="160" stroke="url(#brain-line)" strokeWidth="1.5" opacity={phase > 0.7 ? 0.9 : 0.1} />
 
+        {/* Center node with secondary inner-glow pulse */}
+        <circle cx="360" cy="160" r={22 + centerGlow * 10} fill="url(#brain-center-glow)" opacity={0.4 + centerGlow * 0.4} />
         <circle cx="360" cy="160" r="6" fill="#CCFF00" />
-        <circle cx="360" cy="160" r="14" fill="none" stroke="#CCFF00" strokeWidth="1" opacity="0.5" />
+        <circle cx="360" cy="160" r={14 + centerGlow * 2} fill="none" stroke="#CCFF00" strokeWidth="1" opacity={0.4 + centerGlow * 0.3} />
 
         <text x="60" y="30" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="rgba(255,255,255,0.55)" letterSpacing="0.1em">SIGNALS_IN</text>
         <text x="640" y="30" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="#CCFF00" letterSpacing="0.1em" textAnchor="end">TOOL_CALL_OUT</text>
@@ -156,6 +191,13 @@ export const RouterTierViz = () => {
 
 // The encoding moat: Bobby raw → encoder → Dale tool call. Other consumers
 // (raw API, RSS, webhook) shown as silhouetted dead-ends.
+//
+// Reads in three beats:
+//   1. Bobby produces raw intelligence (left card)
+//   2. Encoded → schema → only Dale can read it (center, primary line)
+//      "WHAT THIS IS NOT" group below shows the doors that don't exist
+//   3. Dale acts on it. Everything else is locked out (right card +
+//      "DOORS CLOSED TO" labeled ghost group)
 export const EncodingDiagram = () => (
   <div className="db-encoding">
     <div className="db-encoding__col">
@@ -170,14 +212,17 @@ export const EncodingDiagram = () => (
       <div className="db-encoding__pipe-line db-encoding__pipe-line--alive">
         <span className="db-encoding__pipe-label">ENCODE → tool_call schema</span>
       </div>
-      <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
-        <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_public_api</span>
-      </div>
-      <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
-        <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_rss</span>
-      </div>
-      <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
-        <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_webhook</span>
+      <div className="db-encoding__pipe-group">
+        <div className="db-encoding__pipe-grouplabel">What this is not</div>
+        <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
+          <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_public_api</span>
+        </div>
+        <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
+          <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_rss</span>
+        </div>
+        <div className="db-encoding__pipe-line db-encoding__pipe-line--dead">
+          <span className="db-encoding__pipe-label db-encoding__pipe-label--dead">no_webhook</span>
+        </div>
       </div>
     </div>
 
@@ -187,9 +232,12 @@ export const EncodingDiagram = () => (
         <div className="db-encoding__name">Dale</div>
         <div className="db-encoding__sub">Acts on it</div>
       </div>
-      <div className="db-encoding__ghost">other bots</div>
-      <div className="db-encoding__ghost">competitor scrapers</div>
-      <div className="db-encoding__ghost">third party feeds</div>
+      <div className="db-encoding__ghost-group">
+        <div className="db-encoding__ghost-grouplabel">Doors closed to</div>
+        <div className="db-encoding__ghost">other bots</div>
+        <div className="db-encoding__ghost">competitor scrapers</div>
+        <div className="db-encoding__ghost">third party feeds</div>
+      </div>
     </div>
   </div>
 );
