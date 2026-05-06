@@ -5,7 +5,7 @@ sidebar_label: "NFT multipliers"
 
 {/* Source: pages-rest.jsx -> PageRevNFTs */}
 
-import { PageHead, H2, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
+import { PageHead, Callout } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="REVENUE SHARING"
@@ -13,23 +13,59 @@ import { PageHead, H2, KeyValueGrid, Callout } from '@site/src/components/primit
   lede="Three tiers. Extra pool multipliers on top of the standard token holder share."
 />
 
-<H2 id="og">OG</H2>
-<KeyValueGrid items={[
-  { k: "Supply", v: "50. Fixed. Earned by the earliest community, not sold." },
-  { k: "Effect", v: "Multiplier on standard pool share." },
-]} />
+<div className="db-tier-hero">
+  <div className="db-tier-hero__line">
+    Three tiers. Fixed supply. Permanent multipliers on top of standard token holder revenue.
+  </div>
+  <div className="db-tier-hero__close">
+    The Silver and Gold pools never dilute. The cap is the cap.
+  </div>
+</div>
 
-<H2 id="silver">Silver</H2>
-<KeyValueGrid items={[
-  { k: "Supply", v: "40, fixed." },
-  { k: "Effect", v: "Extra pool divided by 40 holders. Per NFT earnings predictable regardless of token holder count." },
-]} />
+<div className="db-tier-card db-tier-card--og" id="og">
+  <div className="db-tier-card__name">OG</div>
+  <div className="db-tier-card__credential">Earned by the earliest community. Not sold.</div>
+  <div className="db-tier-card__detail">
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Supply</div>
+      <div className="db-tier-card__cell-v">50. Fixed.</div>
+    </div>
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Effect</div>
+      <div className="db-tier-card__cell-v">Multiplier on standard pool share.</div>
+    </div>
+  </div>
+</div>
 
-<H2 id="gold">Gold</H2>
-<KeyValueGrid items={[
-  { k: "Supply", v: "10, fixed." },
-  { k: "Effect", v: "Extra pool divided by 10 holders. Predictable per NFT earnings." },
-]} />
+<div className="db-tier-card db-tier-card--silver" id="silver">
+  <div className="db-tier-card__name">Silver</div>
+  <div className="db-tier-card__credential">Predictable per-NFT yield. Forty cap.</div>
+  <div className="db-tier-card__detail">
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Supply</div>
+      <div className="db-tier-card__cell-v">40. Fixed.</div>
+    </div>
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Effect</div>
+      <div className="db-tier-card__cell-v">Extra pool divided by 40 holders. Per NFT earnings predictable regardless of token holder count.</div>
+    </div>
+  </div>
+</div>
+
+<div className="db-tier-card db-tier-card--gold" id="gold">
+  <div className="db-tier-card__name">Gold</div>
+  <div className="db-tier-card__credential">Highest multiplier. Ten cap.</div>
+  <div className="db-tier-card__detail">
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Supply</div>
+      <div className="db-tier-card__cell-v">10. Fixed.</div>
+    </div>
+    <div className="db-tier-card__cell">
+      <div className="db-tier-card__cell-k">Effect</div>
+      <div className="db-tier-card__cell-v">Extra pool divided by 10 holders. Predictable per NFT earnings.</div>
+    </div>
+  </div>
+</div>
 
 <Callout kind="lime" title="Why fixed supply matters">
   The Silver and Gold pools never dilute, regardless of how the token holder pool grows or
