@@ -9,40 +9,47 @@ import { PageHead, Para, H2, Pull, KeyValueGrid, ChainRow } from '@site/src/comp
 
 <PageHead
   eyebrow="DALE"
-  lede="Ethereum, Solana, Base, Polygon, BNB. One conversation. One position view. Native asset handling per chain."
+  lede="Solana, Ethereum, Base, BNB, Polygon. One conversation. One position view. Native asset handling per chain."
 />
 
 <ChainRow items={[
-  { sym: "ETH",   name: "Ethereum" },
   { sym: "SOL",   name: "Solana" },
+  { sym: "ETH",   name: "Ethereum" },
   { sym: "BASE",  name: "Base" },
-  { sym: "MATIC", name: "Polygon" },
   { sym: "BNB",   name: "BNB Chain" },
+  { sym: "MATIC", name: "Polygon" },
 ]} />
+
+<H2 id="solana">Solana coverage</H2>
+<Para>
+  Solana coverage runs deep. Jupiter for routing. Raydium, Orca, and Meteora for pool depth.
+  pump.fun listener for early activity. Sniper bot patterns surface in convergence signals
+  alongside community intelligence. Same Dale, same conversation, same wallet keys.
+</Para>
 
 <H2 id="native">Native asset handling</H2>
 <Para>
-  EVM chains share a wallet model and a transaction model. Solana does not. Dale abstracts
-  the difference. You ask Dale to send SOL or to send ETH. Dale signs the right way for the
-  right chain.
+  Solana has its own keypair model and its own transaction model. EVM chains share one. Dale
+  abstracts the difference. You ask Dale to send SOL or to send ETH. Dale signs the right way
+  for the right chain.
 </Para>
 
 <KeyValueGrid items={[
-  { k: "EVM (ETH, Base, Polygon, BNB)", v: "One private key works across all four chains. Same address per chain. Gas paid in the chain's native asset." },
   { k: "Solana", v: "Independent keypair. SPL token semantics. Priority fees, not gas. Jito routing for MEV protection." },
+  { k: "EVM (ETH, Base, BNB, Polygon)", v: "One private key works across all four chains. Same address per chain. Gas paid in the chain's native asset." },
   { k: "Cross chain orders", v: "Bridge plus swap quoted as one plan. Dale picks the bridge by size, latency, and risk." },
 ]} />
 
 <H2 id="coming">Chain roadmap</H2>
 <Para>
-  Currently live: Ethereum, Solana, Base, Polygon, BNB. Five chains, one wallet, one
+  Currently live: Solana, Ethereum, Base, BNB, Polygon. Five chains, one wallet, one
   conversation. New chains roll out as audits clear. Each new chain triggers a Chain Race
   competition automatically. Most trades on the new chain in seven days wins. Adoption is
   built into the launch.
 </Para>
 
 <KeyValueGrid items={[
-  { k: "Live", v: "Ethereum, Solana, Base, Polygon, BNB. Full safety pipeline, PIN gate, conversational trading on every chain." },
+  { k: "Live", v: "Solana, Ethereum, Base, BNB, Polygon. Full safety pipeline, PIN gate, conversational trading on every chain." },
   { k: "On the way", v: "Avalanche (grant pending). Arbitrum. Each integration ships when audit and routing infrastructure are both ready, not before." },
   { k: "Beyond", v: "Additional chains evaluated by trading volume, liquidity depth, audit availability, and routing partner coverage. The list grows. The bar does not move." },
 ]} />
