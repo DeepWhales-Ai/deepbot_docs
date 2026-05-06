@@ -1,6 +1,7 @@
-// DeepBot docs sidebar — same 47 entries as the Mintlify-era docs.json
-// navigation, ordered identically. 10 groups + 1 hidden Internal slot for
-// the components-test page.
+// DeepBot docs sidebar.
+// Top-level order: Start here, Dale, Wallet, Platform, The Brain, Token,
+// Revenue Sharing, Bobby, Investors, Team.
+// Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -12,11 +13,10 @@ const sidebars = {
       collapsed: false, // entry point — always open
       items: [
         'home',
+        'quickstart',
         'three-products',
         'eight-reasons',
-        'quickstart',
         'updates',
-        'receipts',
       ],
     },
     {
@@ -26,30 +26,18 @@ const sidebars = {
       collapsed: true,
       items: [
         'dale/overview',
+        'dale/first-conversation',
         'dale/how-it-thinks',
         'dale/memory',
-        'dale/autonomous',
-        'dale/first-conversation',
-        'dale/tools',
         'dale/multichain',
-        'dale/safety',
-        'dale/wallet-management',
         'dale/conversational-trading',
-        'dale/emergency-sell',
+        'dale/wallet-management',
+        'dale/tools',
+        'dale/safety',
+        'dale/autonomous',
         'dale/community-layer',
         'dale/response-modes',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Bobby',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        'bobby/overview',
-        'bobby/network',
-        'bobby/for-projects',
-        'bobby/founders-program',
+        'dale/emergency-sell',
       ],
     },
     {
@@ -106,6 +94,18 @@ const sidebars = {
         'revshare/eligibility',
         'revshare/calculator',
         'revshare/claiming',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Bobby',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'bobby/overview',
+        'bobby/network',
+        'bobby/for-projects',
+        'bobby/founders-program',
       ],
     },
     {
