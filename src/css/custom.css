@@ -37,6 +37,18 @@
   --ifm-link-hover-color: var(--ifm-color-primary-dark);
 
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.08);
+
+  /* Phase A spacing tightening — backstop for vanilla <h2>/<h3>/<p> tags
+     Docusaurus emits (the auto-H1 from frontmatter, sidebar nodes, etc.).
+     Our primitives use .db-h2 / .db-h3 / .db-para directly with their own
+     margins (tightened in this same pass); these vars catch the rest. */
+  --ifm-h1-margin-bottom: 0.5rem;
+  --ifm-h2-margin-top: 1.6rem;
+  --ifm-h2-margin-bottom: 0.5rem;
+  --ifm-h3-margin-top: 1.2rem;
+  --ifm-h3-margin-bottom: 0.4rem;
+  --ifm-paragraph-margin-bottom: 0.85rem;
+  --ifm-leading: 1.55;
 }
 
 /* Selector is `html[data-theme='dark']` (not bare `[data-theme='dark']`) so
@@ -365,8 +377,8 @@ main {
    tier-1-components because no component referenced these stems; now used
    directly inline by docs/home.mdx. Verbatim from prototype/styles.css. */
 .db-principle {
-  margin: 36px 0 28px;
-  padding: 36px 0 32px;
+  margin: 24px 0 20px;
+  padding: 26px 0 22px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   text-align: left;
@@ -1167,7 +1179,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin: 28px 0 8px;
+  margin: 22px 0 6px;
   color: var(--fg);
   scroll-margin-top: 80px;
 }
@@ -1175,7 +1187,7 @@ body {
 .db-h3 {
   font-size: 16px;
   font-weight: 700;
-  margin: 18px 0 6px;
+  margin: 14px 0 4px;
   color: var(--fg);
   letter-spacing: -0.01em;
 }
@@ -1184,7 +1196,7 @@ body {
   font-size: 15px;
   line-height: 1.65;
   color: var(--fg-2);
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   text-wrap: pretty;
 }
 
@@ -1451,8 +1463,8 @@ body {
   display: flex;
   align-items: stretch;
   gap: 0;
-  margin: -8px 0 28px;
-  padding: 24px 28px;
+  margin: -8px 0 18px;
+  padding: 18px 24px;
   background: linear-gradient(180deg, #0e0e0e 0%, #0a0a0a 100%);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -1503,8 +1515,8 @@ body {
 
 /* ===== Currently shipping ===== */
 .db-shipping {
-  margin: 28px 0 36px;
-  padding: 20px 22px 22px;
+  margin: 20px 0 26px;
+  padding: 18px 22px 20px;
   background: var(--bg-1);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -2412,7 +2424,7 @@ body {
   color: var(--fg);
   font-weight: 500;
   letter-spacing: -0.005em;
-  margin: 0 0 24px;
+  margin: 0 0 18px;
   text-wrap: pretty;
 }
 
@@ -2429,7 +2441,7 @@ body {
   color: var(--fg);
   border-left: 3px solid var(--lime);
   padding: 4px 0 4px 22px;
-  margin: 18px 0;
+  margin: 14px 0;
   text-wrap: pretty;
 }
 
@@ -2832,7 +2844,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 14px 0;
+  margin: 10px 0;
 }
 .db-feat {
   background: var(--bg-1);
@@ -3198,6 +3210,19 @@ body {
      chrome (top, balance, actions, navbar) takes ~440px. */
   height: 660px;
   position: relative;
+  /* Lime ambient glow on the showpiece — subtle pulse on the box-shadow
+     only, not on the phone. 3.5s cycle, opacity oscillates 0.10 -> 0.20.
+     Pure CSS, no JS. Reference: high-end product page hero device with
+     ambient lighting (Stripe checkout demo, Apple product pages). */
+  box-shadow: 0 0 40px rgba(204, 255, 0, 0.15);
+  animation: db-walletmock-glow 3.5s ease-in-out infinite;
+}
+@keyframes db-walletmock-glow {
+  0%, 100% { box-shadow: 0 0 40px rgba(204, 255, 0, 0.10); }
+  50%      { box-shadow: 0 0 50px rgba(204, 255, 0, 0.20); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-walletmock { animation: none; }
 }
 .db-walletmock__top {
   background: #15191e;
@@ -3598,6 +3623,43 @@ li[data-active="true"] > a * {
   border-color: transparent !important;
   background-color: transparent !important;
   background-image: none !important;
+}
+
+/* ===== CTA button — lime-bordered (outlined) variant =====
+   Used on partnerships (external Telegram link) and revshare overview /
+   streams (internal calculator link). Distinct from .db-calc-card__cta
+   which is a solid lime fill on a CTA card. The bordered variant reads
+   as a real button without competing with surrounding content. */
+.db-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 24px;
+  padding: 12px 20px;
+  background: rgba(204, 255, 0, 0.04);
+  border: 1px solid var(--lime);
+  border-radius: 8px;
+  color: var(--lime);
+  font-family: 'Manrope', 'Cera Pro', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.db-cta-button:hover {
+  background: var(--lime);
+  color: #000;
+  text-decoration: none;
+}
+.db-cta-button::after {
+  content: '→';
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  transition: transform 0.15s ease;
+}
+.db-cta-button:hover::after {
+  transform: translateX(2px);
 }
 
 /* ===== Local search (@easyops-cn/docusaurus-search-local) =====
