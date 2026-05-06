@@ -38,16 +38,17 @@
 
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.08);
 
-  /* Spacing — middle ground between original airy and the over-tightened
-     Phase A pass. Roughly 60% back toward airy. Backstop for vanilla
-     <h2>/<h3>/<p> tags Docusaurus emits (auto-H1 from frontmatter,
-     sidebar nodes, etc.). Our primitives use .db-h2 / .db-h3 / .db-para
-     with their own margins; these vars catch everything else. */
+  /* Spacing — Stripe / Linear section rhythm. Each H2 lands with visible
+     breath above. The 60%-back pass was still too tight; previous "airy"
+     was actually closer to right. Backstop for vanilla <h2>/<h3>/<p>
+     tags Docusaurus emits (auto-H1, sidebar nodes, etc.). Our primitives
+     use .db-h2 / .db-h3 / .db-para with their own margins (tracked to
+     match these vars in the same pass). */
   --ifm-h1-margin-bottom: 0.6rem;
-  --ifm-h2-margin-top: 2.4rem;
-  --ifm-h2-margin-bottom: 1rem;
-  --ifm-h3-margin-top: 1.6rem;
-  --ifm-h3-margin-bottom: 0.5rem;
+  --ifm-h2-margin-top: 3rem;
+  --ifm-h2-margin-bottom: 1.2rem;
+  --ifm-h3-margin-top: 2rem;
+  --ifm-h3-margin-bottom: 0.6rem;
   --ifm-paragraph-margin-bottom: 1rem;
   --ifm-leading: 1.55;
 }
@@ -378,8 +379,8 @@ main {
    tier-1-components because no component referenced these stems; now used
    directly inline by docs/home.mdx. Verbatim from prototype/styles.css. */
 .db-principle {
-  margin: 30px 0 24px;
-  padding: 30px 0 26px;
+  margin: 35px 0 28px;
+  padding: 35px 0 30px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   text-align: left;
@@ -1180,7 +1181,7 @@ body {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.015em;
-  margin: 26px 0 7px;
+  margin: 36px 0 10px;
   color: var(--fg);
   scroll-margin-top: 80px;
 }
@@ -1188,7 +1189,7 @@ body {
 .db-h3 {
   font-size: 16px;
   font-weight: 700;
-  margin: 16px 0 5px;
+  margin: 24px 0 7px;
   color: var(--fg);
   letter-spacing: -0.01em;
 }
@@ -1464,8 +1465,8 @@ body {
   display: flex;
   align-items: stretch;
   gap: 0;
-  margin: -8px 0 22px;
-  padding: 22px 26px;
+  margin: -8px 0 25px;
+  padding: 25px 28px;
   background: linear-gradient(180deg, #0e0e0e 0%, #0a0a0a 100%);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -1516,8 +1517,8 @@ body {
 
 /* ===== Currently shipping ===== */
 .db-shipping {
-  margin: 24px 0 32px;
-  padding: 19px 22px 21px;
+  margin: 28px 0 37px;
+  padding: 22px 22px 24px;
   background: var(--bg-1);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -2442,7 +2443,7 @@ body {
   color: var(--fg);
   border-left: 3px solid var(--lime);
   padding: 4px 0 4px 22px;
-  margin: 16px 0;
+  margin: 20px 0;
   text-wrap: pretty;
 }
 
@@ -2845,7 +2846,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 12px 0;
+  margin: 14px 0;
 }
 .db-feat {
   background: var(--bg-1);
@@ -3166,16 +3167,16 @@ body {
 }
 .db-wallet-hero__copy { min-width: 0; }
 /* Ambient lime tint behind the phone — radial gradient that fades to
-   transparent. Layer 3 of the wallet showpiece treatment. The phone
-   frame sits on top of this; together they read as ambient lighting
-   illuminating the device. Pure background, no animation. */
+   transparent. Layer 3 of the wallet showpiece treatment. Dialed back
+   from 0.08/60% to 0.04/65% — the previous version read as "phone is
+   on fire" rather than "phone is alive." */
 .db-wallet-hero__device {
   display: flex;
   justify-content: center;
   background: radial-gradient(
     ellipse at center,
-    rgba(204, 255, 0, 0.08) 0%,
-    transparent 60%
+    rgba(204, 255, 0, 0.04) 0%,
+    transparent 65%
   );
 }
 @media (max-width: 980px) {
@@ -3207,23 +3208,26 @@ body {
   overflow: hidden;
   position: relative;
   filter:
-    drop-shadow(0 0 80px rgba(204, 255, 0, 0.35))
-    drop-shadow(0 0 40px rgba(204, 255, 0, 0.5));
+    drop-shadow(0 0 40px rgba(204, 255, 0, 0.18))
+    drop-shadow(0 0 20px rgba(204, 255, 0, 0.28));
   animation: db-wallet-phone-breathe 3.5s ease-in-out infinite;
   will-change: filter, transform;
 }
+/* Dialed back ~30% from the previous "on fire" intensity. Still visibly
+   glowing at glance, pulses calmly, doesn't dominate the page. Scale
+   bumped down 1.015 -> 1.012 to match the calmer feel. */
 @keyframes db-wallet-phone-breathe {
   0%, 100% {
     filter:
-      drop-shadow(0 0 60px rgba(204, 255, 0, 0.25))
-      drop-shadow(0 0 30px rgba(204, 255, 0, 0.4));
+      drop-shadow(0 0 40px rgba(204, 255, 0, 0.18))
+      drop-shadow(0 0 20px rgba(204, 255, 0, 0.28));
     transform: scale(1);
   }
   50% {
     filter:
-      drop-shadow(0 0 100px rgba(204, 255, 0, 0.45))
-      drop-shadow(0 0 50px rgba(204, 255, 0, 0.65));
-    transform: scale(1.015);
+      drop-shadow(0 0 70px rgba(204, 255, 0, 0.3))
+      drop-shadow(0 0 35px rgba(204, 255, 0, 0.45));
+    transform: scale(1.012);
   }
 }
 @media (prefers-reduced-motion: reduce) {
