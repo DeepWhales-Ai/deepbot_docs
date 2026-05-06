@@ -1,19 +1,23 @@
 {
-  "last_updated": "2026-05-04",
-  "launch_date": "2026-05-07",
+  "last_updated": "2026-05-06",
+  "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
     "now": [
+      "solana_execution",
+      "solana_convergence",
       "convergence_engine",
+      "multichain_pin_gate",
+      "dale_forget_me",
       "dale_escalation_pipeline",
       "bobby_alert_idempotency_v1",
       "convergence_weight_tuning",
-      "smart_money_cluster_scoring_v2",
-      "token_metadata_enrichment"
+      "token_metadata_enrichment",
+      "smart_money_cluster_scoring_v2"
     ],
     "next": [
-      "layer_2_dale_memory",
       "native_emergency_sell_expansion",
+      "layer_2_dale_memory",
       "bobby_ai_tier_1",
       "rocketx_integration"
     ],
@@ -23,6 +27,38 @@
     }
   },
   "features": {
+    "solana_execution": {
+      "label": "Solana execution",
+      "status": "shipped",
+      "shipped_date": "2026-05-11",
+      "date_label": "May 11",
+      "summary": "Native Solana execution alongside Ethereum, Base, BSC, and Polygon. Jupiter routing, multi-DEX coverage, self-custody import.",
+      "where": []
+    },
+    "solana_convergence": {
+      "label": "Solana convergence",
+      "status": "shipped",
+      "shipped_date": "2026-05-11",
+      "date_label": "May 11",
+      "summary": "Convergence engine extends to Solana. pump.fun listener, Jupiter routing telemetry, Raydium and Orca and Meteora pool signals, sniper bot activity surfacing in convergence.",
+      "where": []
+    },
+    "multichain_pin_gate": {
+      "label": "Multi-chain PIN gate",
+      "status": "shipped",
+      "shipped_date": "2026-05-05",
+      "date_label": "May",
+      "summary": "Chain-first PIN enforcement. PIN gate fires before chain branch, all networks, all security levels.",
+      "where": []
+    },
+    "dale_forget_me": {
+      "label": "Dale ephemeral memory wipe",
+      "status": "shipped",
+      "shipped_date": "2026-05-05",
+      "date_label": "May",
+      "summary": "/forget_me wipes Dale's ephemeral conversation memory on demand. Self-served, no support ticket needed.",
+      "where": []
+    },
     "convergence_engine": {
       "label": "Convergence engine",
       "status": "shipped",
