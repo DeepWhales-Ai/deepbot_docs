@@ -169,24 +169,30 @@ main {
   padding-bottom: 1rem !important;
 }
 
-/* Sidebar pin/unpin toggle — subtle but visible at rest, lime hint on
-   hover. Stripe / Resend docs treatment: small icon, no chrome at rest,
-   muted gray icon, lime hint only on hover.
+/* Sidebar collapse / expand toggle — second visibility pass.
+   Prior fix landed an SVG fill of rgba(255,255,255,0.6) which read as
+   too dim against #0A0A0A; the control was effectively invisible at rest
+   and only surfaced on hover-hunt. Reference target: Stripe docs collapse
+   toggle. Visible-but-unobtrusive at rest, lime on hover.
+
+   Bumped: SVG fill 0.6 to 0.85, button gets a faint chip background
+   and 1px outline at rest so it reads as a button without hovering.
+   Hover stays lime (background, border, icon).
 
    Specificity note: Docusaurus stamps the button with two Infima classes
    (.button.button--secondary.button--outline = 0,2,1) which outrank a
-   single-class color selector. We hardcode the SVG fill directly with
-   !important, two levels deep (g + path), so neither Infima nor the
-   inline fill="#7a7a7a" attribute on the <g> wins. The expandButton
-   that surfaces on the freed left edge after collapse gets the same
-   treatment. */
+   single-class color selector. SVG fill hardcoded with !important two
+   levels deep (g + path) so neither Infima nor the inline fill="#7a7a7a"
+   attribute on the <g> wins. expandButton (the small button on the freed
+   left edge after collapse) gets the same treatment. */
 .collapseSidebarButton_PEFL,
 [class*='collapseSidebarButton'],
 .expandButton_TmdG,
 [class*='expandButton'] {
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 6px !important;
   width: auto !important;
   padding: 8px !important;
   margin: 12px auto !important;
@@ -195,10 +201,8 @@ main {
   align-items: center !important;
   box-shadow: none !important;
   opacity: 1 !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease !important;
 }
-/* Hardcoded fill on SVG paths — bypass the Infima button color cascade
-   that was making `currentColor` resolve to a value too close to the
-   sidebar background to see. */
 .collapseSidebarButton_PEFL svg g,
 .collapseSidebarButton_PEFL svg path,
 [class*='collapseSidebarButton'] svg g,
@@ -207,8 +211,17 @@ main {
 .expandButton_TmdG svg path,
 [class*='expandButton'] svg g,
 [class*='expandButton'] svg path {
-  fill: rgba(255, 255, 255, 0.6) !important;
+  fill: rgba(255, 255, 255, 0.85) !important;
   transition: fill 0.15s ease !important;
+}
+.collapseSidebarButton_PEFL:hover,
+[class*='collapseSidebarButton']:hover,
+.expandButton_TmdG:hover,
+[class*='expandButton']:hover {
+  background: rgba(204, 255, 0, 0.10) !important;
+  background-color: rgba(204, 255, 0, 0.10) !important;
+  border: 1px solid var(--lime) !important;
+  border-color: var(--lime) !important;
 }
 .collapseSidebarButton_PEFL:hover svg g,
 .collapseSidebarButton_PEFL:hover svg path,
@@ -218,14 +231,19 @@ main {
 .expandButton_TmdG:hover svg path,
 [class*='expandButton']:hover svg g,
 [class*='expandButton']:hover svg path {
-  fill: var(--ifm-color-primary, #CCFF00) !important;
+  fill: var(--lime) !important;
 }
-.collapseSidebarButton_PEFL:hover,
-[class*='collapseSidebarButton']:hover,
-.expandButton_TmdG:hover,
-[class*='expandButton']:hover {
-  background-color: rgba(204, 255, 0, 0.08) !important;
-  border: none !important;
+
+/* Mobile: the sidebar collapse button is desktop-only ergonomics. On
+   mobile Docusaurus exposes the sidebar via a hamburger pattern and the
+   collapse-rail control becomes redundant + breaks touch flow. Hide it. */
+@media (max-width: 768px) {
+  .collapseSidebarButton_PEFL,
+  [class*='collapseSidebarButton'],
+  .expandButton_TmdG,
+  [class*='expandButton'] {
+    display: none !important;
+  }
 }
 
 /* Sidebar active item — color-only, no fake-bold, no border, no background.
