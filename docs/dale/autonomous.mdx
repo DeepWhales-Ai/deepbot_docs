@@ -12,6 +12,23 @@ import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList
   lede={<>You sleep. <Lime>Dale trades.</Lime></>}
 />
 
+<ChatBlock>
+  <ChatBubble from="user">
+    go autonomous. 2 ETH budget, max 0.15 per trade, safety 80+, eth and base only, 12 hours
+  </ChatBubble>
+  <ChatBubble from="dale">
+    Confirming. Budget 2 ETH. Per trade cap 0.15. Floor: safety 80, no failed honeypot, no
+    blacklist, no deployer rug history. Chains: Ethereum, Base. Window: 12 hours from now.
+    Style match: on. Kill phrase: "Dale, stop autonomous."
+    {'\n\n'}
+    Want me to start?
+  </ChatBubble>
+  <ChatBubble from="user">go</ChatBubble>
+  <ChatBubble from="dale">
+    Live. I'll send the first digest at 4am your local. Sleep well.
+  </ChatBubble>
+</ChatBlock>
+
 <Para>
   Most trading bots wait for you to type. Dale waits too, by default. Set autonomous mode and
   Dale stops waiting. The boundary you write is the boundary Dale operates inside. Outside
@@ -50,23 +67,10 @@ import { PageHead, Para, H2, H3, Lime, Pull, Callout, KeyValueGrid, NumberedList
 ]} />
 
 <H2 id="conversation">What it sounds like</H2>
-
-<ChatBlock>
-  <ChatBubble from="user">
-    go autonomous. 2 ETH budget, max 0.15 per trade, safety 80+, eth and base only, 12 hours
-  </ChatBubble>
-  <ChatBubble from="dale">
-    Confirming. Budget 2 ETH. Per trade cap 0.15. Floor: safety 80, no failed honeypot, no
-    blacklist, no deployer rug history. Chains: Ethereum, Base. Window: 12 hours from now.
-    Style match: on. Kill phrase: "Dale, stop autonomous."
-    {'\n\n'}
-    Want me to start?
-  </ChatBubble>
-  <ChatBubble from="user">go</ChatBubble>
-  <ChatBubble from="dale">
-    Live. I'll send the first digest at 4am your local. Sleep well.
-  </ChatBubble>
-</ChatBlock>
+<Para>
+  Setup is one sentence. Sample dialogue at the top of this page. Once it's running,
+  Dale narrates digests on a schedule.
+</Para>
 
 <H3>The 4am digest</H3>
 <ChatBlock>

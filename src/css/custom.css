@@ -3143,14 +3143,20 @@ body {
 /* ===== Memory progression — 3 trade snapshots ===== */
 
 /* ===== Shouts — manifesto block ===== */
+/* ===== Eight reasons — flagship panels =====
+   Each reason renders as its own showcase panel with a large lime
+   number as graphic element, prominent lead phrase, and clean body
+   copy. Subtle lime-tinted gradient on hover. Generous vertical
+   rhythm — the page is allowed to be longer because each reason
+   is a hook. Reference target: Stripe pricing panels, Linear
+   feature sections. */
 .db-shouts {
-  margin: 64px 0 56px;
-  padding: 48px 0 56px;
+  margin: 64px 0 64px;
+  padding: 48px 0 0;
   border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
 }
 .db-shouts__head {
-  margin-bottom: 36px;
+  margin-bottom: 48px;
   max-width: 720px;
 }
 .db-shouts__eyebrow {
@@ -3176,51 +3182,89 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 .db-shouts__row {
+  position: relative;
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 24px;
-  align-items: baseline;
-  padding: 22px 0;
+  grid-template-columns: 96px 1fr;
+  gap: 28px;
+  align-items: start;
+  padding: 36px 28px 36px 0;
   border-top: 1px solid var(--line-soft);
+  transition: background-color 0.2s ease;
+}
+.db-shouts__row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--lime), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.db-shouts__row:hover::before {
+  opacity: 0.35;
+}
+.db-shouts__row:hover {
+  background:
+    radial-gradient(60% 100% at 0% 50%, rgba(204, 255, 0, 0.025), transparent 70%);
 }
 .db-shouts__row:first-child {
   border-top: 0;
 }
 .db-shouts__num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  color: var(--fg-4);
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 56px;
   font-weight: 700;
-  padding-top: 8px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--lime);
+  padding-top: 4px;
+  font-variant-numeric: tabular-nums;
 }
 .db-shouts__line {
   margin: 0;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   letter-spacing: -0.005em;
   font-weight: 400;
   color: var(--fg-2);
   text-wrap: pretty;
+  display: block;
 }
 .db-shouts__lead {
+  display: block;
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
   color: var(--fg);
-  font-weight: 600;
+  margin-bottom: 10px;
 }
 .db-shouts__lead--lime {
   color: var(--lime);
 }
 .db-shouts__body {
+  display: block;
   color: var(--fg-2);
-  font-weight: 500;
+  font-weight: 400;
 }
 @media (max-width: 720px) {
-.db-shouts__title { font-size: 30px; }
-.db-shouts__row { grid-template-columns: 36px 1fr; gap: 14px; }
-.db-shouts__line { font-size: 15px; }
-.db-shouts__num { font-size: 10px; padding-top: 5px; }
+  .db-shouts { padding-top: 36px; }
+  .db-shouts__head { margin-bottom: 32px; }
+  .db-shouts__title { font-size: 30px; }
+  .db-shouts__row {
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+    padding: 26px 0;
+  }
+  .db-shouts__num { font-size: 36px; }
+  .db-shouts__line { font-size: 15px; }
+  .db-shouts__lead { font-size: 18px; margin-bottom: 8px; }
 }
 
 /* Asterisk for chain-availability disclaimers */
@@ -3775,6 +3819,21 @@ li[data-active="true"] > a * {
   transform: translateX(2px);
 }
 
+/* Convergence annotation — small "30s SCORING CYCLE" caption sitting
+   visually below the ConvergenceField on home. Replaces the data point
+   that lived in the now-removed CounterWall. */
+.db-converge-annot {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: var(--lime);
+  text-align: center;
+  margin: -8px 0 28px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
 /* ===== Faded-box signature block — site-wide signal element =====
    Recognizable lime-fade box that marks "this is the key claim of
    this page." One per page, by discipline. Lime border-left + radial
@@ -4081,16 +4140,16 @@ li[data-active="true"] > a * {
 .markdown h2,
 article.markdown h2,
 .db-h2 {
-  margin-top: 3.5rem !important;
-  margin-bottom: 1.25rem !important;
+  margin-top: 2.8rem !important;
+  margin-bottom: 1rem !important;
 }
 .theme-doc-markdown h3,
 .markdown > h3,
 .markdown h3,
 article.markdown h3,
 .db-h3 {
-  margin-top: 2.25rem !important;
-  margin-bottom: 0.85rem !important;
+  margin-top: 1.8rem !important;
+  margin-bottom: 0.7rem !important;
 }
 
 /* Paragraph immediately after H2/H3 — top margin 0 so the H2's
@@ -4113,20 +4172,20 @@ article.markdown h3,
   margin-bottom: 1rem !important;
 }
 
-/* Lede — bigger breath after the page hero before the first H2. */
+/* Lede — breath after the page hero before the first H2. */
 .db-lede {
-  margin-bottom: 2.5rem !important;
+  margin-bottom: 2rem !important;
 }
 
-/* Section containers — distinct from preceding body copy. Brief floor
-   is 2.5rem (40px). FeatureGrid, Callout, principle blocks, shipping
-   strip all read as their own beat. Counters skipped (it has -8px
-   intentional pull-up after CounterWall on home). */
+/* Section containers — distinct from preceding body copy. Floor 2rem
+   (32px) so FeatureGrid, Callout, principle blocks, shipping strip
+   all read as their own beat. Counters skipped (it has -8px
+   intentional pull-up). */
 .db-feat-grid,
 .db-callout,
 .db-principle,
 .db-shipping {
-  margin-top: 2.5rem !important;
+  margin-top: 2rem !important;
 }
 
 /* ===== Local search (@easyops-cn/docusaurus-search-local) =====
