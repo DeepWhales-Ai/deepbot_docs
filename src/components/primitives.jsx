@@ -68,7 +68,12 @@ export const ChainRow = ({ items }) => (
 export const ChatBubble = ({ from, children, kind }) => (
   <div className={`db-chat__row db-chat__row--${from}`}>
     <div className={`db-chat__bubble db-chat__bubble--${from}${kind ? ` db-chat__bubble--${kind}` : ''}`}>
-      {from === 'dale' && <div className="db-chat__sender">Dale</div>}
+      {from === 'dale' && (
+        <div className="db-chat__sender">
+          Dale
+          <span className="db-chat__live-dot" aria-hidden="true" />
+        </div>
+      )}
       {children}
     </div>
   </div>
