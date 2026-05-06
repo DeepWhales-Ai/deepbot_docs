@@ -3698,6 +3698,256 @@ li[data-active="true"] > a * {
   transform: translateX(2px);
 }
 
+/* ===== Token page hero (/token/deepai) =====
+   Reframes $DEEPAI as the access pass before the basics table lands.
+   Uses the same lime-on-dark palette and cera/manrope rhythm as
+   .db-principle and .db-lede. Three-line vertical structure: big claim
+   line, supporting body, single closing pull. */
+.db-token-hero {
+  margin: 32px 0 36px;
+  padding: 28px 28px 24px;
+  background: linear-gradient(180deg, #0e0e0e 0%, #0a0a0a 100%);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--lime);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.db-token-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(204, 255, 0, 0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+.db-token-hero__line {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: clamp(24px, 3.2vw, 32px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin-bottom: 16px;
+}
+.db-token-hero__body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  margin-bottom: 14px;
+  text-wrap: pretty;
+  max-width: 640px;
+}
+.db-token-hero__close {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--lime);
+  text-transform: uppercase;
+}
+
+/* ===== NFT tier cards (/revshare/nfts) =====
+   Three escalating accents: OG (standard line), Silver (brighter line),
+   Gold (brightest + subtle glow). Replaces the flat KV-grid spec sheet
+   with credentialed cards that read as prestige tiers. */
+.db-tier-hero {
+  margin: 28px 0 32px;
+  padding: 22px 26px;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.db-tier-hero__line {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  text-wrap: pretty;
+}
+.db-tier-hero__close {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--lime);
+  text-transform: uppercase;
+}
+.db-tier-card {
+  margin: 18px 0;
+  padding: 22px 24px 24px;
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-left-width: 3px;
+  border-left-color: var(--line);
+  border-radius: 10px;
+  position: relative;
+  transition: border-left-color 0.15s ease, box-shadow 0.15s ease;
+}
+.db-tier-card__name {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.db-tier-card__credential {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin-bottom: 18px;
+}
+.db-tier-card__detail {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px 24px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.db-tier-card__cell-k {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--fg-4);
+  margin-bottom: 4px;
+}
+.db-tier-card__cell-v {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+/* Escalating accents — palette only, no new colors */
+.db-tier-card--og {
+  border-left-color: var(--lime-dim);
+}
+.db-tier-card--og .db-tier-card__credential {
+  color: var(--lime-dim);
+}
+.db-tier-card--silver {
+  border-left-color: var(--lime);
+  background: linear-gradient(180deg, rgba(204, 255, 0, 0.02) 0%, var(--bg-1) 60%);
+}
+.db-tier-card--silver .db-tier-card__credential {
+  color: var(--lime);
+}
+.db-tier-card--gold {
+  border-left-color: var(--lime);
+  background: linear-gradient(180deg, rgba(204, 255, 0, 0.04) 0%, var(--bg-1) 70%);
+  box-shadow: 0 0 0 1px var(--lime), 0 0 32px rgba(204, 255, 0, 0.10);
+}
+.db-tier-card--gold .db-tier-card__name {
+  color: var(--lime);
+}
+.db-tier-card--gold .db-tier-card__credential {
+  color: var(--lime);
+}
+@media (max-width: 600px) {
+  .db-tier-card__detail { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* ===== Streams page grid (/revshare/streams) =====
+   Five-card flagship infographic above the H2 detail sections. 5-up on
+   desktop, 2-2-1 on tablet, 1-per-row on mobile. */
+.db-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 24px 0 24px;
+}
+.db-stream-card {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 18px;
+  position: relative;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.db-stream-card:hover {
+  border-color: var(--lime-dim);
+  transform: translateY(-1px);
+}
+.db-stream-card__num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--lime);
+  margin-bottom: 10px;
+}
+.db-stream-card__name {
+  font-family: 'Cera Pro', 'Manrope', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.db-stream-card__source {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--fg-3);
+  margin-bottom: 12px;
+  text-wrap: pretty;
+  min-height: 2.8em;
+}
+.db-stream-card__tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--lime);
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+}
+@media (max-width: 1100px) {
+  .db-stream-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Last card spans both columns to land 2-2-1 */
+  .db-stream-grid .db-stream-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 600px) {
+  .db-stream-grid {
+    grid-template-columns: 1fr;
+  }
+  .db-stream-grid .db-stream-card:last-child {
+    grid-column: auto;
+  }
+  .db-stream-card__source { min-height: 0; }
+}
+
+/* Page-scoped tightening for the streams page only — gaps reduced ~25%
+   from the global locked values. Streams is a flagship infographic page
+   that reads as a list; the global comfortable rhythm is too loose here.
+   Wrapper class: <div className="streams-page"> in MDX. */
+.streams-page .db-h2,
+.streams-page.theme-doc-markdown h2,
+.theme-doc-markdown .streams-page h2 {
+  margin-top: 2.65rem !important;
+  margin-bottom: 0.95rem !important;
+}
+.streams-page .db-callout,
+.streams-page .db-feat-grid {
+  margin-top: 1.85rem !important;
+}
+.streams-page .db-cta-button {
+  margin: 14px 0 24px;
+}
+
 /* ===== Locked content-heading spacing — Stripe/Linear rhythm =====
    Three prior passes failed to move H2 margin-top in computed style:
      1. Phase A bumped --ifm-h2-margin-top (var Infima doesn't read).

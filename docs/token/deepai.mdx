@@ -5,13 +5,22 @@ sidebar_label: "$DEEPAI"
 
 {/* Source: pages-rest.jsx -> PageDeepai */}
 
-import { PageHead, Para, H2, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="TOKEN"
   title="$DEEPAI"
   lede="Not a meme. Not deflationary. No burn. The access pass to platform revenue."
 />
+
+<div className="db-token-hero">
+  <div className="db-token-hero__line"><Lime>$DEEPAI</Lime> is the access pass to platform revenue.</div>
+  <div className="db-token-hero__body">
+    Hold the token. Hold a share of every trade, every ad, every subscription, every chain.
+    Five revenue streams. One pool. Paid in USDC. Receipts on chain.
+  </div>
+  <div className="db-token-hero__close">Just yield, by design.</div>
+</div>
 
 <H2 id="basics">The basics</H2>
 <KeyValueGrid items={[
@@ -38,3 +47,7 @@ import { PageHead, Para, H2, Mono, KeyValueGrid, Callout } from '@site/src/compo
   Five revenue streams flow into one pool. The mechanics, eligibility rules, and live
   calculator are documented under <Mono>Revenue Sharing</Mono>.
 </Para>
+
+<a href="/revshare/overview" className="db-cta-button">
+  See the revenue model
+</a>
