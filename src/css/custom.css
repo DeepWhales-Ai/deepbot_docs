@@ -38,19 +38,22 @@
 
   --docusaurus-highlighted-code-line-bg: rgba(204, 255, 0, 0.08);
 
-  /* Spacing — Stripe / Linear section rhythm. Each H2 lands with visible
-     breath above. The 60%-back pass was still too tight; previous "airy"
-     was actually closer to right. Backstop for vanilla <h2>/<h3>/<p>
-     tags Docusaurus emits (auto-H1, sidebar nodes, etc.). Our primitives
-     use .db-h2 / .db-h3 / .db-para with their own margins (tracked to
-     match these vars in the same pass). */
-  --ifm-h1-margin-bottom: 0.6rem;
-  --ifm-h2-margin-top: 3rem;
-  --ifm-h2-margin-bottom: 1.2rem;
-  --ifm-h3-margin-top: 2rem;
-  --ifm-h3-margin-bottom: 0.6rem;
+  /* Spacing vars removed in this pass.
+
+     Why: Phase A added --ifm-h2-margin-top etc. assuming Infima's
+     content-heading rule reads them. It does NOT — Infima's rule is
+     `.markdown > h2 { margin-top: calc(var(--ifm-h2-vertical-rhythm-top)
+     * var(--ifm-leading)) }`. The Infima vars I had been bumping were
+     dead code.
+
+     Worse: --ifm-leading: 1.55 (unitless) broke that calc — `2 * 1.55`
+     = `3.1` (unitless), which is an invalid length, so the H2's
+     margin-top fell back to 0. Section-after-paragraph spacing was
+     functionally zero across every page since Phase A.
+
+     The selector rules below this :root block lock H2/H3/paragraph
+     spacing with !important, independent of any Infima var. */
   --ifm-paragraph-margin-bottom: 1rem;
-  --ifm-leading: 1.55;
 }
 
 /* Selector is `html[data-theme='dark']` (not bare `[data-theme='dark']`) so
@@ -3693,6 +3696,70 @@ li[data-active="true"] > a * {
 }
 .db-cta-button:hover::after {
   transform: translateX(2px);
+}
+
+/* ===== Locked content-heading spacing — Stripe/Linear rhythm =====
+   Three prior passes failed to move H2 margin-top in computed style:
+     1. Phase A bumped --ifm-h2-margin-top (var Infima doesn't read).
+     2. The same pass set --ifm-leading: 1.55 (unitless), which broke
+        Infima's h2 calc into an invalid length, defaulting to 0.
+     3. .db-h2 (specificity 0,1,0) loses to .markdown > h2 (0,1,1).
+
+   Locking with !important per Krypt direction. Selector list covers
+   every wrapper Docusaurus uses (.theme-doc-markdown, .markdown,
+   article.markdown) plus our .db-h2/.db-h3 primitives so any element
+   in the cascade gets the same spacing. */
+.theme-doc-markdown h2,
+.markdown > h2,
+.markdown h2,
+article.markdown h2,
+.db-h2 {
+  margin-top: 3.5rem !important;
+  margin-bottom: 1.25rem !important;
+}
+.theme-doc-markdown h3,
+.markdown > h3,
+.markdown h3,
+article.markdown h3,
+.db-h3 {
+  margin-top: 2.25rem !important;
+  margin-bottom: 0.85rem !important;
+}
+
+/* Paragraph immediately after H2/H3 — top margin 0 so the H2's
+   margin-bottom controls the gap (no margin-collapse double-up). */
+.theme-doc-markdown h2 + p,
+.theme-doc-markdown h3 + p,
+.markdown h2 + p,
+.markdown h3 + p,
+.db-h2 + .db-para,
+.db-h3 + .db-para {
+  margin-top: 0 !important;
+}
+
+/* Body paragraph: margin-bottom 1rem. Docusaurus default is the same
+   when --ifm-paragraph-margin-bottom is set; locking with !important
+   so .db-para shorthand and other resets can't reduce it. */
+.theme-doc-markdown p,
+.markdown p,
+.db-para {
+  margin-bottom: 1rem !important;
+}
+
+/* Lede — bigger breath after the page hero before the first H2. */
+.db-lede {
+  margin-bottom: 2.5rem !important;
+}
+
+/* Section containers — distinct from preceding body copy. Brief floor
+   is 2.5rem (40px). FeatureGrid, Callout, principle blocks, shipping
+   strip all read as their own beat. Counters skipped (it has -8px
+   intentional pull-up after CounterWall on home). */
+.db-feat-grid,
+.db-callout,
+.db-principle,
+.db-shipping {
+  margin-top: 2.5rem !important;
 }
 
 /* ===== Local search (@easyops-cn/docusaurus-search-local) =====
