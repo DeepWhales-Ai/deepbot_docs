@@ -33,6 +33,7 @@ function lookupItems(ids = []) {
     .map((id) => {
       const f = featureStatus.features?.[id];
       if (!f) return null;
+      const docPath = Array.isArray(f.where) && f.where[0] ? `/${f.where[0]}` : '';
       return {
         id,
         label: f.label,
@@ -40,9 +41,21 @@ function lookupItems(ids = []) {
         statusDisplay: STATUS_DISPLAY[f.status] || f.status.toUpperCase(),
         dateLabel: f.date_label || f.shipped_date || f.target_date || '',
         summary: f.summary || '',
+        href: docPath,
       };
     })
     .filter(Boolean);
+}
+
+function Label({ label, summary, href }) {
+  if (href) {
+    return (
+      <a className="db-shipping__label db-shipping__label--link" title={summary} href={href}>
+        {label}
+      </a>
+    );
+  }
+  return <span className="db-shipping__label" title={summary}>{label}</span>;
 }
 
 export function CurrentlyShipping() {
@@ -70,7 +83,7 @@ export function CurrentlyShipping() {
               <span className={`db-shipping__status db-shipping__status--${x.status.replace(/_/g, '-')}`}>
                 {x.statusDisplay}
               </span>
-              <span className="db-shipping__label" title={x.summary}>{x.label}</span>
+              <Label label={x.label} summary={x.summary} href={x.href} />
               <span className="db-shipping__since">{x.dateLabel}</span>
             </div>
           ))}
@@ -83,7 +96,7 @@ export function CurrentlyShipping() {
               <span className={`db-shipping__status db-shipping__status--${x.status.replace(/_/g, '-')}`}>
                 {x.statusDisplay}
               </span>
-              <span className="db-shipping__label" title={x.summary}>{x.label}</span>
+              <Label label={x.label} summary={x.summary} href={x.href} />
               <span className="db-shipping__window">{x.dateLabel}</span>
             </div>
           ))}

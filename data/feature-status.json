@@ -1,12 +1,11 @@
 {
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-07",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
     "now": [
       "solana_execution",
       "solana_convergence",
-      "convergence_engine",
       "multichain_pin_gate",
       "dale_forget_me",
       "dale_escalation_pipeline",
@@ -16,6 +15,7 @@
       "smart_money_cluster_scoring_v2"
     ],
     "next": [
+      "deepbot_link",
       "native_emergency_sell_expansion",
       "layer_2_dale_memory",
       "bobby_ai_tier_1",
@@ -131,6 +131,13 @@
       "date_label": "60 days",
       "summary": "Privacy swaps across 200+ chains. Referral tier active.",
       "where": []
+    },
+    "deepbot_link": {
+      "label": "DeepBot LINK",
+      "status": "in_progress",
+      "date_label": "Soon",
+      "summary": "Web interface for the platform. Same brain, browser-native. trade.deepbot.pro.",
+      "where": ["deepbot-link"]
     },
     "pin_auto_delete": {
       "label": "PIN auto-delete from chat",
