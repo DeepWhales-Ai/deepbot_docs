@@ -4349,20 +4349,66 @@ article.markdown h3,
 }
 
 /* DeepBot LINK, frame for the trade.deepbot.pro graphic.
-   Static <img> is always rendered (the fallback). The wrapper layers
-   a subtle lime pulse on top, gated by prefers-reduced-motion. */
+   Layout: HeroHeatmap animation banner on top, static <img> below.
+   The wrapper layers a subtle lime pulse on top of both, gated by
+   prefers-reduced-motion. */
 .db-deepbot-link-graphic {
   position: relative;
   margin: 24px 0 28px;
   border-radius: 8px;
   overflow: hidden;
   line-height: 0;
+  background: #050505;
 }
 .db-deepbot-link-graphic > img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0;
+}
+
+.db-heatmap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  gap: 4px;
+  padding: 16px;
+  aspect-ratio: 36 / 9;
+  background: #050505;
+  border-bottom: 1px solid rgba(204, 255, 0, 0.18);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 35%, rgba(0, 0, 0, 0.4) 90%);
+          mask-image: radial-gradient(ellipse at 50% 50%, black 35%, rgba(0, 0, 0, 0.4) 90%);
+}
+.db-heatmap__cell {
+  border-radius: 2px;
+  transition: background 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.db-heatmap__label {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: rgba(10, 10, 5, 0.85);
+  line-height: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .db-heatmap__cell {
+    transition: none;
+  }
+}
+@media (max-width: 640px) {
+  .db-heatmap {
+    aspect-ratio: 12 / 5;
+    padding: 10px;
+    gap: 2px;
+  }
+  .db-heatmap__label { display: none; }
 }
 .db-deepbot-link-graphic::after {
   content: "";
