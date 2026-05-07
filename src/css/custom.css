@@ -4338,3 +4338,22 @@ article.markdown h3,
     letter-spacing: 0.14em;
   }
 }
+
+/* DeepBot Link — placeholder frame for the trade.deepbot.pro graphic.
+   Replace with an <img> when the asset lands. Animation deferred until then. */
+.db-deepbot-link-graphic {
+  margin: 24px 0 28px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 12px,
+      rgba(255, 255, 255, 0.02) 12px,
+      rgba(255, 255, 255, 0.02) 13px
+    );
+}
+

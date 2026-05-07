@@ -1,6 +1,6 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, Wallet, Platform, The Brain, Token,
-// Revenue Sharing, Bobby, Investors, Team.
+// Top-level order: Start here, Dale, Wallet, DeepBot Link, Platform, The Brain,
+// Token, Revenue Sharing, Bobby, Investors, Team.
 // Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -46,6 +46,13 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: ['wallet/overview'],
+    },
+    {
+      type: 'category',
+      label: 'DeepBot Link',
+      collapsible: true,
+      collapsed: true,
+      items: ['deepbot-link/overview'],
     },
     {
       type: 'category',
