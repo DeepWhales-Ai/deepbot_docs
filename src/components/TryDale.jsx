@@ -1,4 +1,4 @@
-// Embedded Dale demo — scripted 6-step trade flow.
+// Embedded Dale demo: scripted 6-step trade flow.
 // Manual click-through OR auto-play (1300ms per step).
 // Ported from prototype/home-extras.jsx.
 

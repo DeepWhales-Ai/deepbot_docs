@@ -1,4 +1,4 @@
-// Inline status pill — addendum §4.1.
+// Inline status pill, addendum §4.1.
 // Reads from /data/feature-status.json. If status is `live`, renders nothing
 // (heading reads normally). Otherwise renders a small pill.
 
@@ -12,14 +12,14 @@ export function FeatureStatus({ id }) {
     return (
       <span
         className="feature-status-pill feature-status-pill--coming"
-        title={`FeatureStatus id="${id}" not in feature-status.json — add it before merge.`}
+        title={`FeatureStatus id="${id}" not in feature-status.json. Add it before merge.`}
       >
         ?{id}
       </span>
     );
   }
-  // `shipped` is the CurrentlyShipping-taxonomy synonym for `live` —
-  // both mean "in production," neither warrants a pill on a doc page.
+  // `shipped` is the CurrentlyShipping-taxonomy synonym for `live`.
+  // Both mean "in production," neither warrants a pill on a doc page.
   if (f.status === 'live' || f.status === 'shipped') return null;
 
   const drops = f.drops ? ` · ${f.drops}` : '';

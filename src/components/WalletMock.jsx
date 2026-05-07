@@ -23,9 +23,9 @@ const CHAIN_LOGOS = {
 // Source SVG paths verbatim; only the brand fill colors removed so our parent
 // `color: var(--lime)` paints them. Same treatment as ChainLogos.
 //
-// USDC — official Centre/Circle mark (the two outer "C" arcs + the inner $
+// USDC: official Centre/Circle mark (the two outer "C" arcs + the inner $
 // symbol). Source: cryptocurrency-icons npm package, color/usdc.svg.
-// Each <path> gets fill="currentColor" explicitly — relying on SVG-level
+// Each <path> gets fill="currentColor" explicitly. Relying on SVG-level
 // fill inheritance was rendering yellow in some browsers (Krypt confirmed).
 const UsdcLogo = () => (
   <svg viewBox="0 0 32 32" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
@@ -34,10 +34,10 @@ const UsdcLogo = () => (
   </svg>
 );
 
-// BUSD — official Binance diamond/star: four parallelogram diamonds arranged
+// BUSD: official Binance diamond/star: four parallelogram diamonds arranged
 // around a central point. Source: cryptologos.cc binance-usd-busd-logo.svg.
 // Each <path> gets fill="currentColor" explicitly (was rendering yellow when
-// only the SVG-level fill was set — same fix as USDC above).
+// only the SVG-level fill was set; same fix as USDC above).
 const BusdLogo = () => (
   <svg viewBox="0 0 336.41 337.42" width="22" height="22" xmlns="http://www.w3.org/2000/svg">
     <path fill="currentColor" d="M168.2.71l41.5,42.5L105.2,147.71l-41.5-41.5Z" />
@@ -47,7 +47,7 @@ const BusdLogo = () => (
   </svg>
 );
 
-// DEEPAI uses the Dale character image — same source as ConvergenceField
+// DEEPAI uses the Dale character image, same source as ConvergenceField
 // and TryDale. The character IS the brand for our token.
 const DeepaiLogo = () => (
   <img src="/img/dale-character.png" alt="DEEPAI" className="db-walletmock__tok-img" />
@@ -82,11 +82,11 @@ const NAV = [
 ];
 
 // Props:
-//   balance — primary top line (USD total of the multi-asset portfolio)
-//   fiat    — secondary top line (ETH equivalent, or any subtitle)
-//   chain   — active chain pill ticker (ETH, SOL, BASE, MATIC, BNB)
-//   walletName — small wallet pill label
-//   tokens  — override DEFAULT_TOKENS if needed
+//   balance: primary top line (USD total of the multi-asset portfolio)
+//   fiat: secondary top line (ETH equivalent, or any subtitle)
+//   chain: active chain pill ticker (ETH, SOL, BASE, MATIC, BNB)
+//   walletName: small wallet pill label
+//   tokens: override DEFAULT_TOKENS if needed
 // Defaults reflect a believable trader portfolio: per-token USD values sum
 // to the top-line total. Override when this mock appears in different page
 // contexts that need a different snapshot.

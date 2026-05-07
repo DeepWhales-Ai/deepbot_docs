@@ -1,5 +1,5 @@
 // Eight-reasons manifesto block.
-// `withHead` prop hides title — used when wrapping in PageShouts which has its
+// `withHead` prop hides title, used when wrapping in PageShouts which has its
 // own PageHead. Ported from prototype/home-extras.jsx.
 
 const ITEMS = [

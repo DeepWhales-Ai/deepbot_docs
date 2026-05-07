@@ -1,4 +1,4 @@
-// Two scrolling tickers — Bobby intelligence (left) + Dale execution (right).
+// Two scrolling tickers: Bobby intelligence (left) + Dale execution (right).
 // 1400ms tick, 4-row window, fade-in opacity.
 // Ported from prototype/pages-start.jsx (window.LiveFeeds).
 // Note: missed from design brief §6's 21-component list; flagged in tier-1-components PR.
