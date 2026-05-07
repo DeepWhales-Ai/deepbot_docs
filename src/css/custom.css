@@ -1034,8 +1034,15 @@ body {
 .db-product-grid--3 {
   grid-template-columns: 1fr 1fr 1fr;
 }
+.db-product-grid--4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 @media (max-width: 980px) {
 .db-product-grid--3 { grid-template-columns: 1fr; }
+.db-product-grid--4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+.db-product-grid--4 { grid-template-columns: 1fr; }
 }
 .db-product {
   background: var(--bg-1);
@@ -4341,7 +4348,7 @@ article.markdown h3,
   }
 }
 
-/* DeepBot Link, frame for the trade.deepbot.pro graphic.
+/* DeepBot LINK, frame for the trade.deepbot.pro graphic.
    Static <img> is always rendered (the fallback). The wrapper layers
    a subtle lime pulse on top, gated by prefers-reduced-motion. */
 .db-deepbot-link-graphic {

@@ -17,7 +17,7 @@ import CurrentlyShipping from '@site/src/components/CurrentlyShipping.jsx';
 import KillLog from '@site/src/components/KillLog.jsx';
 import ChainPulse from '@site/src/components/ChainPulse.jsx';
 
-{/* Hero: the platform tagline. Three-products framing locked per kickoff §2. */}
+{/* Hero: the platform tagline. Four-products framing: Bobby, Dale, Wallet, DeepBot LINK. */}
 <div className="db-principle db-principle--hero">
   <div className="db-principle__kicker">THE DEEPBOT PLATFORM</div>
   <div className="db-principle__line">
@@ -63,15 +63,16 @@ import ChainPulse from '@site/src/components/ChainPulse.jsx';
 <h2 className="db-h1" style={{ marginTop: 56 }}>What is <DeepBot /></h2>
 
 <Lede>
-  <DeepBot /> is a platform with three products. <Lime>Bobby</Lime>, the
+  <DeepBot /> is a platform with four products. <Lime>Bobby</Lime>, the
   intelligence layer, lives in tens of thousands of project communities and detects what is
   real. <Lime>Dale</Lime>, the trading partner, executes on what users decide
   to act on, in conversation. <Lime>Wallet</Lime>, the visual control panel,
-  holds the keys for both. Five chains. Self custody. One brain.
+  holds the keys. <Lime><DeepBot /> LINK</Lime>, the web surface, makes all of
+  it accessible in a browser. Five chains. Self custody. One brain.
 </Lede>
 
-<H2 id="products">The three products</H2>
-<div className="db-product-grid db-product-grid--3">
+<H2 id="products">The four products</H2>
+<div className="db-product-grid db-product-grid--4">
   <ProductCard
     sym="D"
     name="Dale"
@@ -95,6 +96,14 @@ import ChainPulse from '@site/src/components/ChainPulse.jsx';
     body="Telegram native wallet. Phantom style GUI. Same keys as Dale. Open from inside the chat or use the bot directly."
     cta="See the Wallet"
     href="/wallet/overview"
+  />
+  <ProductCard
+    sym="L"
+    name={<><DeepBot /> LINK</>}
+    role="Web surface"
+    body="Browser native. The full product family from one login. Native charts, Pulse and signal feeds, portfolio, alerts, trading."
+    cta={<>See <DeepBot /> LINK</>}
+    href="/deepbot-link"
   />
 </div>
 
