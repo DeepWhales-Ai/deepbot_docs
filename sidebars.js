@@ -1,5 +1,5 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, Wallet, DeepBot Link, Platform, The Brain,
+// Top-level order: Start here, Dale, Wallet, DeepBot LINK, Platform, The Brain,
 // Token, Revenue Sharing, Bobby, Investors, Team.
 // Within each section, items reflect a reading order (not source order).
 
@@ -49,7 +49,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'DeepBot Link',
+      label: 'DeepBot LINK',
       collapsible: true,
       collapsed: true,
       items: ['deepbot-link/overview'],

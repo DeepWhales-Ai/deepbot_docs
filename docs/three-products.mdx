@@ -1,22 +1,23 @@
 ---
-title: "Three products, one brain"
-sidebar_label: "Three products, one brain"
+title: "Four products, one brain"
+sidebar_label: "Four products, one brain"
 ---
 
 {/* Source: pages-start.jsx -> PageTwoProducts (RENAMED).
-    Three-products framing locked per kickoff brief §2: Bobby + Dale + Wallet.
+    Four-products framing: Bobby + Dale + Wallet + DeepBot LINK.
+    Slug stays /three-products to preserve SEO and external links.
     The Wallet section was added during the port; content patterned from
     the existing wallet/overview prototype copy (master brief language).
     The encoding moat section stays Bobby↔Dale-specific (that bond is
     structural to those two products); Wallet sits adjacent as the key
-    custody layer. */}
+    custody layer; DeepBot LINK is the web surface across all of it. */}
 
 import { PageHead, Para, H2, Lime, Mono, Pull, Callout } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 
 <PageHead
-  title="Three products, one brain"
-  lede={<>The platform story. How Bobby, Dale, and Wallet share intelligence and infrastructure without crossing publicly. Why that matters. Why it is a moat.</>}
+  title="Four products, one brain"
+  lede={<>The platform story. How Bobby, Dale, Wallet, and <DeepBot /> LINK share intelligence and infrastructure without crossing publicly. Why that matters. Why it is a moat.</>}
 />
 
 <H2 id="frame">The frame</H2>
@@ -25,10 +26,11 @@ import DeepBot from '@site/src/components/DeepBot.jsx';
   signal feed parses X. Each is one input, one perspective, one easy thing to game.
 </Para>
 <Para>
-  <DeepBot /> is built on the opposite premise. The platform's three products operate at three
+  <DeepBot /> is built on the opposite premise. The platform's four products operate at four
   different layers of the market, and they share what each detects. <Lime>Bobby
   detects from inside the communities it watches. Dale executes from inside the user's
-  conversation. Wallet holds the keys for both.</Lime> Each layer's signal sharpens the next.
+  conversation. Wallet holds the keys. <DeepBot /> LINK makes all of it accessible in a
+  browser.</Lime> Each layer's signal sharpens the next.
 </Para>
 
 <H2 id="bobby-side">The Bobby side</H2>
@@ -57,6 +59,15 @@ import DeepBot from '@site/src/components/DeepBot.jsx';
   sensitive messages. Same encrypted key isolation. Open <Mono>@walletdeepbot</Mono> directly
   or type <Mono>open wallet</Mono> inside Dale. Same wallet, same balance, same history. Just
   a different door.
+</Para>
+
+<H2 id="link-side">The <DeepBot /> LINK side</H2>
+<Para>
+  <DeepBot /> LINK is the web layer. Browser native, account driven, every product on the
+  platform accessible from one login. Native charts, Pulse and signal feeds, portfolio,
+  alerts, trading. Half open by design. Public surfaces stay public. Account surfaces stay
+  yours. The same convergence engine, the same encrypted keys, on a different surface.
+  trade.deepbot.pro. Building now.
 </Para>
 
 <H2 id="encoding">The encoding moat</H2>
