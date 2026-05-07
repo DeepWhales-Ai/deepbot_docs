@@ -7,6 +7,7 @@ hide_title: true
 
 import { Para, Lede } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
+import HeroHeatmap from '@site/src/components/HeroHeatmap.jsx';
 
 <div className="db-principle db-principle--hero">
   <div className="db-principle__kicker">COMING SOON</div>
@@ -18,9 +19,10 @@ import DeepBot from '@site/src/components/DeepBot.jsx';
   </div>
 </div>
 
-{/* Graphic asset lives at static/img/deepbot-link.png. Pulse animation is
-    layered via the wrapper; the inner <img> is the static fallback. */}
+{/* Heatmap animation banner on top, static screenshot below. Both inside
+    the same wrapper, which layers the lime pulse outline over both. */}
 <div className="db-deepbot-link-graphic">
+  <HeroHeatmap />
   <img
     src="/img/deepbot-link.png"
     alt="DeepBot LINK web interface, trade.deepbot.pro"
