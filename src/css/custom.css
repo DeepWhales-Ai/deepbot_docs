@@ -4339,21 +4339,47 @@ article.markdown h3,
   }
 }
 
-/* DeepBot Link — placeholder frame for the trade.deepbot.pro graphic.
-   Replace with an <img> when the asset lands. Animation deferred until then. */
+/* DeepBot Link — frame for the trade.deepbot.pro graphic.
+   Static <img> is always rendered (the fallback). The wrapper layers
+   a subtle lime pulse on top, gated by prefers-reduced-motion. */
 .db-deepbot-link-graphic {
+  position: relative;
   margin: 24px 0 28px;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px dashed var(--line);
   border-radius: 8px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 12px,
-      rgba(255, 255, 255, 0.02) 12px,
-      rgba(255, 255, 255, 0.02) 13px
-    );
+  overflow: hidden;
+  line-height: 0;
+}
+.db-deepbot-link-graphic > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.db-deepbot-link-graphic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.18) inset,
+              0 0 24px rgba(204, 255, 0, 0);
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .db-deepbot-link-graphic::after {
+    animation: db-deepbot-link-pulse 3s ease-in-out infinite;
+  }
+}
+@keyframes db-deepbot-link-pulse {
+  0%, 100% {
+    opacity: 0;
+    box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.10) inset,
+                0 0 0 rgba(204, 255, 0, 0);
+  }
+  50% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.30) inset,
+                0 0 28px rgba(204, 255, 0, 0.18);
+  }
 }
 
