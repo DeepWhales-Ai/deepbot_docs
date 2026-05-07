@@ -4178,7 +4178,7 @@ li[data-active="true"] > a * {
 .markdown h2,
 article.markdown h2,
 .db-h2 {
-  margin-top: 3rem !important;
+  margin-top: 2rem !important;
   margin-bottom: 1rem !important;
 }
 .theme-doc-markdown h3,
