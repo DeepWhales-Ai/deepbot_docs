@@ -1,4 +1,4 @@
-// Brand-split client module — applies the DeepBot brand treatment
+// Brand-split client module, applies the DeepBot brand treatment
 // (white "Deep" + lime "Bot") to surfaces Docusaurus generates from
 // plain-string frontmatter: the auto-H1 inside <article><header><h1>
 // and every breadcrumb link.
@@ -62,7 +62,7 @@ function brandifyTextNode(textNode) {
 
 function applyBrandSplit() {
   // Defensive exclusion: the navbar logo is a separate <img> rendering
-  // the wordmark — never touched by this module's selectors anyway,
+  // the wordmark, never touched by this module's selectors anyway,
   // but :not() guards make the contract explicit so a future selector
   // change can't accidentally walk the brand element.
   const targets = document.querySelectorAll(

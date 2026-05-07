@@ -1,4 +1,4 @@
-// Section banner — addendum §4.2.
+// Section banner, addendum §4.2.
 // Sits below page heading, above lede. Quiet line of body text linking to
 // /investors/launch-sequence. Renders nothing if every referenced feature is live.
 

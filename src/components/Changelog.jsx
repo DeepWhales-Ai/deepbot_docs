@@ -1,4 +1,4 @@
-// Date-stamped narrative — addendum §6.3.
+// Date-stamped narrative, addendum §6.3.
 // Reads /data/changelog.json. Newest-first. Date in monospace muted, title in
 // Manrope 600, items as a clean bulleted list. No status pills.
 

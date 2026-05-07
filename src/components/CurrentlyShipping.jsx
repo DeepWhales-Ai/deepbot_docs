@@ -1,4 +1,4 @@
-// Currently shipping strip — three columns NOW · NEXT · STEALTH.
+// Currently shipping strip: three columns NOW · NEXT · STEALTH.
 // Source of truth: /data/feature-status.json (currently_shipping block
 // indexes into the features dict). Update workflow:
 // /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md.
@@ -9,7 +9,7 @@
 //   design      → muted gray pill, time horizon (date_label)
 //   in_progress → amber pill, target window (date_label)
 //
-// Stealth column shows counts only — no item rows, no labels.
+// Stealth column shows counts only, no item rows, no labels.
 // Counts live under currently_shipping.stealth as { key: count } pairs;
 // keys map to display strings via STEALTH_LABELS below.
 

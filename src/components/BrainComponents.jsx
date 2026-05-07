@@ -1,4 +1,4 @@
-// Brain section page-specific components — ported verbatim from
+// Brain section page-specific components, ported verbatim from
 // prototype/pages-brain.jsx. Used only by /brain/* pages, deferred from
 // tier-1-components per kickoff scoping.
 
@@ -86,7 +86,7 @@ export const BrainHero = () => {
             <stop offset="50%" stopColor="#CCFF00" stopOpacity="1" />
             <stop offset="100%" stopColor="#CCFF00" stopOpacity="0" />
           </linearGradient>
-          {/* Center node inner-glow — secondary pulse on its own cadence. */}
+          {/* Center node inner-glow: secondary pulse on its own cadence. */}
           <radialGradient id="brain-center-glow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#CCFF00" stopOpacity="0.9" />
             <stop offset="100%" stopColor="#CCFF00" stopOpacity="0" />
@@ -99,7 +99,7 @@ export const BrainHero = () => {
           const r = 30 + i * 18;
           const litRing = Math.floor(phase * 6);
           const isLit = i === litRing;
-          // Outer rings fade dramatically — opacity drops with index so
+          // Outer rings fade dramatically; opacity drops with index so
           // the perimeter dissolves into dark instead of cropping. Lit
           // ring keeps full strength to read as the active layer.
           const outerFade = isLit ? 1 : Math.max(0.06, 0.22 - i * 0.03);

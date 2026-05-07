@@ -10,7 +10,7 @@ const sidebars = {
       type: 'category',
       label: 'Start here',
       collapsible: true,
-      collapsed: false, // entry point — always open
+      collapsed: false, // entry point, always open
       items: [
         'home',
         'quickstart',

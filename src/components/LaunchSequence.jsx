@@ -1,4 +1,4 @@
-// Auto-generated launch sequence view — addendum §5.
+// Auto-generated launch sequence view, addendum §5.
 // Reads /data/feature-status.json and renders five sections:
 // Live, Building, Coming (grouped by drops), Planned, Last updated.
 

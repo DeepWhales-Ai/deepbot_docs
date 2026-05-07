@@ -6,7 +6,7 @@
 // React tree.
 //
 // Page titles in frontmatter are plain strings and feed Docusaurus's H1 +
-// breadcrumb. Those can't accept a component — they're handled by CSS
+// breadcrumb. Those can't accept a component, so they're handled by CSS
 // (.breadcrumbs__link--active forced to white instead of lime, so the
 // active breadcrumb at least doesn't paint the entire word lime).
 

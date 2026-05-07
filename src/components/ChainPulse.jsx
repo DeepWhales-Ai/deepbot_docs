@@ -1,5 +1,5 @@
 // Five-chain breathing pulse strip.
-// 700ms tick — one chain pulses at a time, cycles through.
+// 700ms tick: one chain pulses at a time, cycles through.
 // Ported from prototype/pages-start.jsx (window.ChainPulse).
 
 import React, { useEffect, useState } from 'react';

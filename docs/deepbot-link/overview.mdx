@@ -17,11 +17,14 @@ import { Para, Lede } from '@site/src/components/primitives.jsx';
   </div>
 </div>
 
-{/* TODO: DeepBot Link graphic — Krypt has the asset. Drop into static/img/
-    and replace this placeholder with an <img> + the db-deepbot-link-graphic
-    class so the static frame renders. Animation intentionally omitted until
-    the asset is in. */}
-<div className="db-deepbot-link-graphic" aria-hidden="true" />
+{/* Graphic asset lives at static/img/deepbot-link.png. Pulse animation is
+    layered via the wrapper; the inner <img> is the static fallback. */}
+<div className="db-deepbot-link-graphic">
+  <img
+    src="/img/deepbot-link.png"
+    alt="DeepBot Link web interface, trade.deepbot.pro"
+  />
+</div>
 
 <Lede>
   Type. Trade. Track. In a browser.

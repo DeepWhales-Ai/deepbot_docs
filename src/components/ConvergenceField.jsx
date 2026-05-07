@@ -1,7 +1,7 @@
-// Convergence Theatre — the hardest interactive in the prototype.
+// Convergence Theatre, the hardest interactive in the prototype.
 // Phases per cycle (~6.5s = 108 ticks @ 60ms):
-//   0.00–0.45 ambient · 0.45–0.65 building · 0.65–0.78 converge · 0.78–1.00 after
-// Per kickoff §8.4: timing is critical to feel — don't "improve" it.
+//   0.00 to 0.45 ambient · 0.45 to 0.65 building · 0.65 to 0.78 converge · 0.78 to 1.00 after
+// Per kickoff §8.4: timing is critical to feel; don't "improve" it.
 // Per kickoff §8.6: ported as-is from prototype/pages-start.jsx (window.ConvergenceField).
 //
 // Asset path: /img/dale-character.png served from /static/img/ (Docusaurus convention).
@@ -118,7 +118,7 @@ export function ConvergenceField() {
   };
 
   // Palette per master brief: lime + dark + gray only. Refused state uses
-  // muted gray (was #FF6B6B in the prototype — red is not in our palette).
+  // muted gray (was #FF6B6B in the prototype; red is not in our palette).
   const cycleColor = phase === 'after' && token.thr === 'refused' ? 'rgba(255, 255, 255, 0.4)' : '#CCFF00';
 
   return (

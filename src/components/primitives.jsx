@@ -150,7 +150,7 @@ export const ModeCard = ({ name, tag, body, sample }) => (
   </div>
 );
 
-// Pill — small status badge ('Live' / 'Coming' / etc.)
+// Pill: small status badge ('Live' / 'Coming' / etc.)
 // Independent of FeatureStatus (which reads from feature-status.json);
 // this is a low-level visual badge for partnership cards and inline use.
 export const Pill = ({ status, children }) => {

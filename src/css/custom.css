@@ -1,8 +1,8 @@
 /**
- * DeepBot — Docusaurus custom CSS.
+ * DeepBot, Docusaurus custom CSS.
  *
  * Two layers:
- *   1. Infima variable overrides — mapping Docusaurus chrome (sidebar, nav,
+ *   1. Infima variable overrides, mapping Docusaurus chrome (sidebar, nav,
  *      body, links) to the DeepBot lime palette and dark background.
  *   2. The full prototype stylesheet (2,542 lines, swept of unused .db-* on
  *      tier-1-components) appended below, providing every component-level
@@ -41,12 +41,12 @@
   /* Spacing vars removed in this pass.
 
      Why: Phase A added --ifm-h2-margin-top etc. assuming Infima's
-     content-heading rule reads them. It does NOT — Infima's rule is
+     content-heading rule reads them. It does NOT, Infima's rule is
      `.markdown > h2 { margin-top: calc(var(--ifm-h2-vertical-rhythm-top)
      * var(--ifm-leading)) }`. The Infima vars I had been bumping were
      dead code.
 
-     Worse: --ifm-leading: 1.55 (unitless) broke that calc — `2 * 1.55`
+     Worse: --ifm-leading: 1.55 (unitless) broke that calc, `2 * 1.55`
      = `3.1` (unitless), which is an invalid length, so the H2's
      margin-top fell back to 0. Section-after-paragraph spacing was
      functionally zero across every page since Phase A.
@@ -58,10 +58,10 @@
 
 /* Selector is `html[data-theme='dark']` (not bare `[data-theme='dark']`) so
    it matches Docusaurus's own `html[data-theme=dark]` specificity (0,1,1).
-   At equal specificity, source order wins — and our customCss loads after
+   At equal specificity, source order wins, and our customCss loads after
    Docusaurus's own theme CSS, so these variable overrides take effect.
    The bare attribute selector lost on specificity, leaving Docusaurus's
-   default --ifm-background-color: #1b1b1d in force — that's what painted
+   default --ifm-background-color: #1b1b1d in force, that's what painted
    the gray scrolling boundary AND the gray navbar. Same root cause, one fix. */
 html[data-theme='dark'] {
   --ifm-color-primary: #CCFF00;
@@ -118,7 +118,7 @@ body {
   color: var(--ifm-color-primary);
 }
 
-/* Active breadcrumb / sidebar link with the literal "DeepBot" — the
+/* Active breadcrumb / sidebar link with the literal "DeepBot", the
    string comes from frontmatter so we can't inject the brand component.
    Override the lime-on-active treatment to white (still emphasized, just
    not the brand-violating solid lime that paints both "Deep" and "Bot"
@@ -135,7 +135,7 @@ body {
    targets the actual selectors directly, with !important, so no
    slightly-lighter surface ever shows through against the body bg. */
 
-/* Navbar — variable resolved to #0A0A0A but the box-shadow defined on
+/* Navbar, variable resolved to #0A0A0A but the box-shadow defined on
    .navbar painted a soft tinted line that read as a slightly lighter bar.
    Force the bg + kill the shadow + add a hairline border in our line color. */
 .navbar,
@@ -147,7 +147,7 @@ nav.navbar {
   border-bottom: 1px solid var(--line, rgba(255, 255, 255, 0.08)) !important;
 }
 
-/* Page wrapper cascade — every Docusaurus content wrapper, plus html and
+/* Page wrapper cascade, every Docusaurus content wrapper, plus html and
    body. Multiple selectors because Docusaurus uses obfuscated class names
    like docMainContainer_TBSr; the [class*=...] pattern matches both the
    stable class names and the build-time hashed ones. !important so we win
@@ -186,7 +186,7 @@ main {
   padding-bottom: 1rem !important;
 }
 
-/* Sidebar collapse / expand toggle — second visibility pass.
+/* Sidebar collapse / expand toggle, second visibility pass.
    Prior fix landed an SVG fill of rgba(255,255,255,0.6) which read as
    too dim against #0A0A0A; the control was effectively invisible at rest
    and only surfaced on hover-hunt. Reference target: Stripe docs collapse
@@ -263,7 +263,7 @@ main {
   }
 }
 
-/* Sidebar active item — color-only, no fake-bold, no border, no background.
+/* Sidebar active item, color-only, no fake-bold, no border, no background.
    Same intent as the Mintlify-era rule on tier-1-components. */
 [data-theme='dark'] .menu__link--active,
 .menu__link--active {
@@ -278,7 +278,7 @@ main {
   background: var(--ifm-menu-color-background-hover) !important;
 }
 
-/* Section status banner + feature status pill — addendum §4 */
+/* Section status banner + feature status pill, addendum §4 */
 .feature-status-pill {
   display: inline-flex;
   align-items: center;
@@ -328,7 +328,7 @@ main {
   color: var(--ifm-color-primary);
 }
 
-/* Minimal footer — just the copyright line, centered, muted, small.
+/* Minimal footer, just the copyright line, centered, muted, small.
    No links, no socials, no titles. Master brief Part 2: products do not
    publicly cross-link from user-flow copy. */
 .footer {
@@ -367,7 +367,7 @@ main {
   display: block;
   border-radius: inherit;
 }
-/* DEEPAI Dale avatar prominence — the source PNG has a lime ring around
+/* DEEPAI Dale avatar prominence, the source PNG has a lime ring around
    the bot character, which leaves the actual face small in a 32px circle.
    Scale up so the character fills more of the badge (the lime ring still
    peeks at the edges, the bot face dominates). Same trick on the TryDale
@@ -911,7 +911,7 @@ main {
   position: relative;
   top: -1px;
 }
-/* Pronounced strikethrough — thicker line, lime-dim color so the
+/* Pronounced strikethrough, thicker line, lime-dim color so the
    strike reads as "this door is closed" not as random red noise. */
 .db-encoding__pipe-label--dead {
   color: var(--fg-3);
@@ -994,7 +994,7 @@ html, body { margin: 0; padding: 0; }
   --radius: 8px;
 }
 
-/* dark theme only — light mode is not v1 per brief */
+/* dark theme only, light mode is not v1 per brief */
 
 body {
   font-family: 'Cera Pro', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1011,7 +1011,7 @@ body {
 
 /* ===== Layout ===== */
 
-/* Grab bar (.db-grabbar) — REMOVED.
+/* Grab bar (.db-grabbar), REMOVED.
    The prototype's left-edge vertical "MENU" pull-tab is dropped per Krypt;
    Mintlify's standard sidebar collapse behavior handles open/close.
    See git history for the original 51-line block if a future port wants it. */
@@ -2063,14 +2063,14 @@ body {
 }
 
 /* Mobile polish at 390px-class viewports. Component class is .db-moat (the
-   brief refers to .db-encmoat — same component, older naming).
+   brief refers to .db-encmoat, same component, older naming).
    Three issues addressed:
-     1. Title imbalance — "WHAT OTHER BOTS SEE" wrapped to 2 lines while
+     1. Title imbalance, "WHAT OTHER BOTS SEE" wrapped to 2 lines while
         "WHAT DALE SEES" stayed on 1, reading as broken vs confident.
         Both shrink to 11px / 0.5px tracking so each fits on one line.
-     2. Right-edge clipping — 0x+40-char hashes, tool-args strings, and the
+     2. Right-edge clipping, 0x+40-char hashes, tool-args strings, and the
         bottom verdict strip overflowed. Fonts step down + tool-args wrap.
-     3. Blind pane height — 8 hash rows ate vertical real estate without
+     3. Blind pane height, 8 hash rows ate vertical real estate without
         adding meaning. Capped to 4 on mobile; same point in less space. */
 @media (max-width: 480px) {
   .db-moat { padding: 18px 16px 20px; }
@@ -2584,7 +2584,7 @@ body {
   position: relative;
   transition: box-shadow 0.18s ease, border-color 0.18s ease;
 }
-/* USER bubble — lighter dark on transparent white, subtle outline,
+/* USER bubble, lighter dark on transparent white, subtle outline,
    faint inner highlight on top edge for depth. Right-aligned. */
 .db-chat__bubble--user {
   background: rgba(255, 255, 255, 0.04);
@@ -2596,7 +2596,7 @@ body {
   letter-spacing: -0.005em;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
-/* DALE bubble — lime-tinted radial gradient from top-left corner +
+/* DALE bubble, lime-tinted radial gradient from top-left corner +
    lime-alpha border. Hover adds soft outer glow. Left-aligned. */
 .db-chat__bubble--dale {
   background:
@@ -3178,14 +3178,14 @@ body {
 
 /* ----- Encoding diagram ----- */
 
-/* ===== Memory progression — 3 trade snapshots ===== */
+/* ===== Memory progression, 3 trade snapshots ===== */
 
-/* ===== Shouts — manifesto block ===== */
-/* ===== Eight reasons — flagship panels =====
+/* ===== Shouts, manifesto block ===== */
+/* ===== Eight reasons, flagship panels =====
    Each reason renders as its own showcase panel with a large lime
    number as graphic element, prominent lead phrase, and clean body
    copy. Subtle lime-tinted gradient on hover. Generous vertical
-   rhythm — the page is allowed to be longer because each reason
+   rhythm, the page is allowed to be longer because each reason
    is a hook. Reference target: Stripe pricing panels, Linear
    feature sections. */
 .db-shouts {
@@ -3328,9 +3328,9 @@ body {
   margin: 24px 0 36px;
 }
 .db-wallet-hero__copy { min-width: 0; }
-/* Ambient lime tint behind the phone — radial gradient that fades to
+/* Ambient lime tint behind the phone, radial gradient that fades to
    transparent. Layer 3 of the wallet showpiece treatment. Dialed back
-   from 0.08/60% to 0.04/65% — the previous version read as "phone is
+   from 0.08/60% to 0.04/65%, the previous version read as "phone is
    on fire" rather than "phone is alive." */
 .db-wallet-hero__device {
   display: flex;
@@ -3346,12 +3346,12 @@ body {
 .db-wallet-hero__device { margin-top: 8px; }
 }
 
-/* Phone frame — three-layer wallet showpiece treatment.
+/* Phone frame, three-layer wallet showpiece treatment.
    Layer 1: outer aura. Stacked drop-shadows with high alpha + generous
             blur. Visible at rest, not faint.
    Layer 2: pulse. 3.5s breath cycle on the drop-shadow stack and a 1.5%
             scale on the frame. Subtle but alive.
-   Layer 3: ambient bg tint on .db-wallet-hero__device (above) — the
+   Layer 3: ambient bg tint on .db-wallet-hero__device (above), the
             radial that makes the glow feel like it's lighting up the
             surrounding space.
    Note: drop-shadow filter renders OUTSIDE the element (unlike box-shadow
@@ -3593,7 +3593,7 @@ body {
   flex-shrink: 0;
 }
 .db-walletmock__tok-logo--lime { background: #CCFF00; color: #0a0a0a; }
-/* Stablecoin badge — palette-compliant: dark surface, lime SVG outline.
+/* Stablecoin badge, palette-compliant: dark surface, lime SVG outline.
    Replaces the old yellow (BUSD) and blue (USDC) brand colors per master
    brief: lime + dark + gray only. */
 .db-walletmock__tok-logo--mono {
@@ -3601,7 +3601,7 @@ body {
   color: var(--lime);
   border: 1px solid rgba(204, 255, 0, 0.25);
 }
-/* Legacy aliases — kept so any consumer passing the old `badge` value keeps
+/* Legacy aliases, kept so any consumer passing the old `badge` value keeps
    rendering, just visually consistent with the new mono treatment. */
 .db-walletmock__tok-logo--yellow,
 .db-walletmock__tok-logo--blue {
@@ -3751,9 +3751,9 @@ body {
 }
 
 /* ===== Status system additions (addendum section 4) ===== */
-/* Tokens used: --lime, --lime-glow, --fg-3, --line — all defined in :root above. */
+/* Tokens used: --lime, --lime-glow, --fg-3, --line, all defined in :root above. */
 
-/* Status pill — addendum §4.1 */
+/* Status pill, addendum §4.1 */
 .feature-status-pill {
   display: inline-flex;
   align-items: center;
@@ -3782,7 +3782,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Section status banner — addendum §4.2 */
+/* Section status banner, addendum §4.2 */
 .section-status-banner {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -3820,7 +3820,7 @@ li[data-active="true"] > a * {
   background-image: none !important;
 }
 
-/* ===== CTA button — lime-bordered (outlined) variant =====
+/* ===== CTA button, lime-bordered (outlined) variant =====
    Used on partnerships (external Telegram link) and revshare overview /
    streams (internal calculator link). Distinct from .db-calc-card__cta
    which is a solid lime fill on a CTA card. The bordered variant reads
@@ -3857,7 +3857,7 @@ li[data-active="true"] > a * {
   transform: translateX(2px);
 }
 
-/* Convergence annotation — small "30s SCORING CYCLE" caption sitting
+/* Convergence annotation, small "30s SCORING CYCLE" caption sitting
    visually below the ConvergenceField on home. Replaces the data point
    that lived in the now-removed CounterWall. */
 .db-converge-annot {
@@ -3872,7 +3872,7 @@ li[data-active="true"] > a * {
   opacity: 0.85;
 }
 
-/* ===== Faded-box signature block — site-wide signal element =====
+/* ===== Faded-box signature block, site-wide signal element =====
    Recognizable lime-fade box that marks "this is the key claim of
    this page." One per page, by discipline. Lime border-left + radial
    fade from a corner into dark. Used on /dale/overview, /bobby/overview,
@@ -4040,7 +4040,7 @@ li[data-active="true"] > a * {
   color: var(--fg-2);
   text-wrap: pretty;
 }
-/* Escalating accents — palette only, no new colors */
+/* Escalating accents, palette only, no new colors */
 .db-tier-card--og {
   border-left-color: var(--lime-dim);
 }
@@ -4144,7 +4144,7 @@ li[data-active="true"] > a * {
   .db-stream-card__source { min-height: 0; }
 }
 
-/* Page-scoped tightening for the streams page only — gaps reduced ~25%
+/* Page-scoped tightening for the streams page only, gaps reduced ~25%
    from the global locked values. Streams is a flagship infographic page
    that reads as a list; the global comfortable rhythm is too loose here.
    Wrapper class: <div className="streams-page"> in MDX. */
@@ -4162,7 +4162,7 @@ li[data-active="true"] > a * {
   margin: 14px 0 24px;
 }
 
-/* ===== Locked content-heading spacing — Stripe/Linear rhythm =====
+/* ===== Locked content-heading spacing, Stripe/Linear rhythm =====
    Three prior passes failed to move H2 margin-top in computed style:
      1. Phase A bumped --ifm-h2-margin-top (var Infima doesn't read).
      2. The same pass set --ifm-leading: 1.55 (unitless), which broke
@@ -4190,7 +4190,7 @@ article.markdown h3,
   margin-bottom: 0.7rem !important;
 }
 
-/* Paragraph immediately after H2/H3 — top margin 0 so the H2's
+/* Paragraph immediately after H2/H3, top margin 0 so the H2's
    margin-bottom controls the gap (no margin-collapse double-up). */
 .theme-doc-markdown h2 + p,
 .theme-doc-markdown h3 + p,
@@ -4210,7 +4210,7 @@ article.markdown h3,
   margin-bottom: 1rem !important;
 }
 
-/* Lede — single-owner spacing. The H2's margin-top owns the inter-section
+/* Lede, single-owner spacing. The H2's margin-top owns the inter-section
    gap; the lede contributes 0 so the gap doesn't double. The flex column
    wrapper on .theme-doc-markdown disables margin-collapse, which is why
    any non-zero lede-mb stacks additively with the H2-mt instead of
@@ -4219,7 +4219,7 @@ article.markdown h3,
   margin-bottom: 0 !important;
 }
 
-/* Section containers — distinct from preceding body copy. Floor 2rem
+/* Section containers, distinct from preceding body copy. Floor 2rem
    (32px) so FeatureGrid, Callout, principle blocks, shipping strip
    all read as their own beat. Counters skipped (it has -8px
    intentional pull-up). */
@@ -4232,7 +4232,7 @@ article.markdown h3,
 
 /* ===== Local search (@easyops-cn/docusaurus-search-local) =====
    The plugin renders its trigger as `.navbar__search-input` styled like a
-   real input. Default skin is Docusaurus blue/light — overridden here to
+   real input. Default skin is Docusaurus blue/light, overridden here to
    match the lime-on-dark palette. Selectors target both the navbar trigger
    and the search modal/results pane. */
 .navbar__search-input {
@@ -4272,7 +4272,7 @@ article.markdown h3,
   width: 100%;
 }
 
-/* Plugin's search results dropdown — match dark surfaces, lime hits */
+/* Plugin's search results dropdown, match dark surfaces, lime hits */
 .search-result-match {
   color: var(--lime);
   background-color: transparent;
@@ -4309,11 +4309,11 @@ article.markdown h3,
   }
 }
 
-/* ===== CounterWall — mobile 2x2 grid =====
+/* ===== CounterWall, mobile 2x2 grid =====
    Default layout is a 4-up flex row with vertical separators. At 390px the
    row crushes: the "2.84M" suffix wraps off, "SCORING CYCLE" clips, labels
    wrap onto two lines unevenly. Switch to a 2x2 grid at <=768px so each
-   stat has room to breathe. Separators hidden in grid mode — column gap
+   stat has room to breathe. Separators hidden in grid mode, column gap
    replaces them. */
 @media (max-width: 768px) {
   .db-counters {
@@ -4339,21 +4339,47 @@ article.markdown h3,
   }
 }
 
-/* DeepBot Link — placeholder frame for the trade.deepbot.pro graphic.
-   Replace with an <img> when the asset lands. Animation deferred until then. */
+/* DeepBot Link, frame for the trade.deepbot.pro graphic.
+   Static <img> is always rendered (the fallback). The wrapper layers
+   a subtle lime pulse on top, gated by prefers-reduced-motion. */
 .db-deepbot-link-graphic {
+  position: relative;
   margin: 24px 0 28px;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 1px dashed var(--line);
   border-radius: 8px;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 12px,
-      rgba(255, 255, 255, 0.02) 12px,
-      rgba(255, 255, 255, 0.02) 13px
-    );
+  overflow: hidden;
+  line-height: 0;
+}
+.db-deepbot-link-graphic > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.db-deepbot-link-graphic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.18) inset,
+              0 0 24px rgba(204, 255, 0, 0);
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .db-deepbot-link-graphic::after {
+    animation: db-deepbot-link-pulse 3s ease-in-out infinite;
+  }
+}
+@keyframes db-deepbot-link-pulse {
+  0%, 100% {
+    opacity: 0;
+    box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.10) inset,
+                0 0 0 rgba(204, 255, 0, 0);
+  }
+  50% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 1px rgba(204, 255, 0, 0.30) inset,
+                0 0 28px rgba(204, 255, 0, 0.18);
+  }
 }
 

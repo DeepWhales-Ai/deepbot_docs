@@ -1,4 +1,4 @@
-// Dale section page-specific components — ported from
+// Dale section page-specific components, ported from
 // prototype/pages-dale.jsx. Used only by /dale/* pages.
 
 import React from 'react';
