@@ -12,6 +12,7 @@ const sidebars = {
       collapsible: true,
       collapsed: false, // entry point, always open
       items: [
+        'new-to-crypto',
         'home',
         'quickstart',
         'three-products',
