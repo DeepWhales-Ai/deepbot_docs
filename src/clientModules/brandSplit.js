@@ -3,12 +3,17 @@
 // plain-string frontmatter: the auto-H1 inside <article><header><h1>
 // and every breadcrumb link.
 //
-// Why a client module instead of a swizzle: the alternative is forking
-// DocItem and DocBreadcrumbs/Items wholesale, which couples us to
-// Docusaurus internals and breaks on minor version bumps. This module
-// runs once per route, walks two well-defined selectors, and rewrites
-// the matching text nodes. ~30 lines, decoupled, identical visual
-// outcome.
+// Sidebar links are NOT handled here. React owns the .menu__link
+// subtree, so an imperative DOM patch is blown away by reconciliation
+// on the next render (active state flip, hover, route change). The
+// sidebar uses a wrap swizzle of DocSidebarItem/Link and Category
+// (see src/theme/DocSidebarItem/) which renders the brand spans as
+// real React children. No race, no flash.
+//
+// H1 and breadcrumb still go through this module: their labels come
+// from plain-string frontmatter that Docusaurus renders inside theme
+// components we are not swizzling, and those subtrees do not reconcile
+// on routine in-docs navigation, so the post-hoc patch is durable.
 //
 // Caveat: SSR HTML still ships plain "DeepBot" text. The brand split
 // applies after hydration. Acceptable: H1 text remains semantically
@@ -67,8 +72,7 @@ function applyBrandSplit() {
   // change can't accidentally walk the brand element.
   const targets = document.querySelectorAll(
     'article header h1:not(.navbar__brand *):not(.navbar__logo *), ' +
-    '.breadcrumbs__link:not(.navbar__brand *):not(.navbar__logo *), ' +
-    '.menu__link:not(.navbar__brand *):not(.navbar__logo *)'
+    '.breadcrumbs__link:not(.navbar__brand *):not(.navbar__logo *)'
   );
   targets.forEach((el) => {
     if (el.getAttribute(BRAND_FLAG)) return;
