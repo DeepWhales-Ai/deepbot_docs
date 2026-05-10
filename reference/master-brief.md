@@ -340,7 +340,7 @@ DeepBot
 │
 ├── Token
 │   ├── $DEEPAI overview
-│   ├── Tokenomics (5%/5% tax, NOT deflationary)
+│   ├── Tokenomics (0%/0% tax, NOT deflationary)
 │   ├── Contract address
 │   └── 40% trading fee distribution
 │
