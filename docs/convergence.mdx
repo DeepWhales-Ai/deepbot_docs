@@ -1,0 +1,96 @@
+---
+title: "Convergence Scoring"
+sidebar_label: "Convergence Scoring"
+slug: /convergence
+---
+
+import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="PLATFORM"
+  title="Convergence Scoring"
+  lede={<>We don't predict. <Lime>We detect.</Lime></>}
+/>
+
+<Para>
+  Convergence is how DeepBot identifies which tokens are getting attention across the network
+  right now. It is not a price prediction. It is not a buy signal. It's a real-time read on
+  what is converging across independent data streams.
+</Para>
+
+<H2 id="pillars">The four pillars</H2>
+<Para>
+  Every token gets scored across four signals. Each pillar fills as evidence accumulates.
+</Para>
+
+<FeatureGrid items={[
+  {
+    sym: "◢",
+    title: "Group signals",
+    body: "Community attention. When a token starts appearing across independent Telegram groups, something is converging.",
+  },
+  {
+    sym: "◣",
+    title: "Router signals",
+    body: "Trader execution. When trades start flowing through aggregators like 1inch, Maestro, and others, real money is moving — not just chatter.",
+  },
+  {
+    sym: "◤",
+    title: "Onchain signals",
+    body: "Smart-wallet movement and accumulation patterns. Wallets with track records position before crowds.",
+  },
+  {
+    sym: "◥",
+    title: "Safety signals",
+    body: "Risk patterns. Honeypot detection, owner functions, tax mutability, liquidity concentration. The safety pillar can downgrade a score even when the others run hot.",
+  },
+]} />
+
+<H2 id="score">Reading the score</H2>
+<Para>
+  Tokens score 0 to 100 in the display layer.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "🔥  80 to 100", v: "Hot. Top-of-network convergence right now." },
+  { k: "⚡  60 to 79",  v: "Rising. Building across multiple pillars." },
+  { k: "📈  40 to 59",  v: "Active. Some pillars firing, others quiet." },
+  { k: "👀  20 to 39",  v: "Watching. Early signal, low volume." },
+  { k: "💤  0 to 19",   v: "Cold. Background noise level." },
+]} />
+
+<H2 id="safety-badge">The safety badge</H2>
+<Para>
+  DeepBot scans every token through Blockaid, an independent safety service. The badge tells
+  you what Blockaid returned at scan time.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "✅  Passed Blockaid",     v: "No risk patterns detected at scan time." },
+  { k: "⚠️  Blockaid Warning",    v: "Risk patterns present. Read details before trading." },
+  { k: "🚮  Blockaid Spam",       v: "Marked as spam." },
+  { k: "🚫  Blockaid Malicious",  v: "Confirmed malicious patterns." },
+]} />
+
+<Callout kind="warn" title="This is point-in-time">
+  Tokens can change between scans. The deployer can ratchet taxes, drain liquidity, or modify
+  the contract. Always recheck before sizing up.
+</Callout>
+
+<H2 id="moat">What we don't tell you</H2>
+<Para>
+  Some details of how Bobby's network detects convergence stay private. That includes how
+  groups are weighted, how signal strength is measured, which routers we monitor, and which
+  patterns we track. <Lime>This is the moat. The data is the product.</Lime>
+</Para>
+<Para>
+  What you get is the output: a score, the pillar breakdown, the safety status. What we keep
+  is the method.
+</Para>
+
+<H2 id="important">Important</H2>
+<Callout kind="info" title="Detection layer, not a recommendation">
+  High convergence does not mean a token will go up. It means many independent signals are
+  pointing at it right now. Use that as one input. Do your own work on the rest. Nothing on
+  this page is financial advice.
+</Callout>
