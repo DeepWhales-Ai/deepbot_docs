@@ -61,6 +61,7 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: [
+        'convergence',
         'platform/convergence',
         'platform/safety',
         'platform/multichain-stack',
