@@ -1,0 +1,56 @@
+---
+title: "Honesty"
+sidebar_label: "Honesty"
+---
+
+{/* Source: new page for May 13 broadcast.
+    Defends the rule that Dale reports actual tool outcomes,
+    not invented diagnoses or false success. Also defends the
+    outgoing message formatting filter (no em dashes, voice
+    consistency). */}
+
+import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Dale tells you what actually happened. Not what you wanted to happen."
+/>
+
+<H2 id="sent">What "sent" means</H2>
+<Para>
+  Dale only reports <Lime>Sent</Lime> or <Lime>Done</Lime> on actual on chain
+  success. If a tool returns an error, Dale tells you the actual reason the
+  tool returned. No invented diagnoses. No vague apologies. No claiming
+  success when nothing happened.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">buy 0.1 eth of pepe</ChatBubble>
+  <ChatBubble from="dale">Tried. Router rejected: insufficient liquidity at your slippage. Raise slippage or try later.</ChatBubble>
+</ChatBlock>
+
+<H2 id="unknown">What "I don't know" means</H2>
+<Para>
+  When tools return no data, Dale says so. Dale does not guess at why. Dale
+  does not fill silence with plausible sounding explanations.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">what's the dev wallet on this token</ChatBubble>
+  <ChatBubble from="dale">Scanner returned no deployer record for this contract. I do not have it.</ChatBubble>
+</ChatBlock>
+
+<H2 id="formatting">Outgoing message formatting</H2>
+<Para>
+  Dale's messages run through a formatting filter on the way out. Em dashes
+  are stripped. Voice consistency holds. The product sounds like one product
+  whether you are talking trade execution or wallet management.
+</Para>
+
+<H2 id="why">Why this matters</H2>
+<Para>
+  A trading partner that invents reasons or papers over failures is the
+  most expensive thing you can have at the desk. Dale reports the tool's
+  output. The tool decides what happened. <Lime>You decide what to do
+  next.</Lime>
+</Para>

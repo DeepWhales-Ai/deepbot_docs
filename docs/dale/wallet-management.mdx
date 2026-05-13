@@ -1,44 +1,116 @@
 ---
-title: "Wallet management"
-sidebar_label: "Wallet management"
+title: "Native wallet operations"
+sidebar_label: "Native wallets"
 ---
 
-{/* Source: pages-dale.jsx -> PageWallet */}
+{/* Source: rewritten for May 14 EVM wallet drop. Covers every native wallet
+    command surface across Dale (sends, creates, imports, balances, defaults,
+    export). Solana sends are queued; wallet management for Solana is live. */}
 
-import { PageHead, Para, H2, Lime, Mono, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <PageHead
-  eyebrow="DALE · WALLET"
-  lede="Create, import, transfer, rename, delete. One wallet view across all five chains."
+  eyebrow="DALE · WALLETS"
+  lede="Plain English wallet management. No slash commands. No menus. You say what you want, Dale does it. Multi chain. Self custody. Same conversation, same wallet keys."
 />
 
 <ChatBlock>
-  <ChatBubble from="user">send 0.5 eth to 0xabc...123</ChatBubble>
-  <ChatBubble from="dale">Quoted: 0.5 ETH on Ethereum. Gas $4.10. Recipient checks: clean, no rugged dev flags. <Lime>Confirm to send →</Lime></ChatBubble>
+  <ChatBubble from="user">send 30% of my eth to 0xabc...123</ChatBubble>
+  <ChatBubble from="dale">Sending 30% of your ETH (0.45 ETH) on Ethereum to 0xabc...123. Gas $4.10. <Lime>Confirm to send →</Lime></ChatBubble>
 </ChatBlock>
 
-<H2 id="create">Create or import</H2>
+<H2 id="sending">Sending assets</H2>
 <Para>
-  Dale provisions wallets automatically on first message. To import an existing wallet, send
-  Dale the private key in a private message. It is processed in memory, encrypted, and the
-  original message auto deletes from chat.
+  Dale handles every variant the same way. Token plus amount, percentage of
+  holdings, USD value, wallet label, or any address on the chain.
 </Para>
 
-<H2 id="default">Default wallet for trading</H2>
+<KeyValueGrid items={[
+  { k: "By token and amount", v: <Mono>send 0.5 eth to my cold wallet</Mono> },
+  { k: "By percentage", v: <Mono>send 30% of my deepai to 0xabc...</Mono> },
+  { k: "By USD value", v: <Mono>send $500 of ETH to Trading</Mono> },
+  { k: "By wallet label", v: <Mono>send 100 USDC to my Sniper wallet</Mono> },
+  { k: "To external address", v: <Mono>send 0.5 sol to [solana address]</Mono> },
+]} />
+
+<ChatBlock>
+  <ChatBubble from="user">send $500 of eth to Trading</ChatBubble>
+  <ChatBubble from="dale">Resolving Trading wallet → 0x9f2...c41 on Ethereum. $500 = 0.073 ETH at current price. Gas $3.80. <Lime>Confirm to send →</Lime></ChatBubble>
+</ChatBlock>
+
+<ChatBlock>
+  <ChatBubble from="user">send 100 usdc to my sniper wallet</ChatBubble>
+  <ChatBubble from="dale">Sniper resolves to your Base wallet 0x4ab...77e. Sending 100 USDC on Base. Gas $0.02. <Lime>Confirm to send →</Lime></ChatBubble>
+</ChatBlock>
+
+<H2 id="creating">Creating wallets</H2>
 <Para>
-  Dale picks the chain by your stated intent and your funds. Set a default chain in settings
-  if you trade one chain ninety percent of the time.
+  Tell Dale which chain and what to call it. <Mono>create me a Base wallet called Sniper</Mono>{' '}
+  provisions a fresh wallet on Base with that label. Same shape for Ethereum, BSC,
+  Base, Polygon, and Solana. Default chain assignment follows the chain you
+  named.
 </Para>
 
-<H2 id="transfer">Transfer assets</H2>
+<ChatBlock>
+  <ChatBubble from="user">create me a base wallet called Sniper</ChatBubble>
+  <ChatBubble from="dale">Created. Sniper · Base · 0x4ab...77e. Default chain set to Base for this wallet. <Lime>Fund to start trading →</Lime></ChatBubble>
+</ChatBlock>
+
+<H2 id="importing">Importing private keys</H2>
 <Para>
-  Plain language. Address, ENS, contact name, or Telegram handle. Dale quotes gas, runs
-  recipient safety checks, and asks to confirm before signing. Sample dialogue at the top
-  of this page.
+  Send Dale the key in a private message with a label.{' '}
+  <Mono>import this key as my Trading wallet</Mono> and paste below. Dale detects
+  chain from key format automatically. EVM secp256k1 and Solana Ed25519 are both
+  supported. The key is encrypted on receipt and the original message{' '}
+  <Lime>auto deletes from chat</Lime> after processing.
 </Para>
 
-<H2 id="rename">Rename and delete</H2>
+<H2 id="balances">Balance queries</H2>
+<KeyValueGrid items={[
+  { k: <Mono>what's my eth balance</Mono>, v: "Native token balance plus USD value." },
+  { k: <Mono>show me my deepai</Mono>, v: "Token balance across every wallet that holds it, with USD valuation." },
+  { k: <Mono>how much do I have in my Sniper wallet</Mono>, v: "Full wallet view. Every token, USD value, totals." },
+]} />
+
+<ChatBlock>
+  <ChatBubble from="user">how much do I have in my sniper wallet</ChatBubble>
+  <ChatBubble from="dale">{`Sniper · Base
+0.42 ETH · $1,540
+2,400 USDC · $2,400
+85,000 DEEPAI · $1,275
+-----------
+Total · $5,215`}</ChatBubble>
+</ChatBlock>
+
+<H2 id="default">Default wallet switching</H2>
 <Para>
-  <Mono>rename wallet 2 to "trading"</Mono>. <Mono>delete wallet 4</Mono>.
-  Plain language. Dale confirms before destroying any keys.
+  <Mono>use my Trading wallet by default</Mono>. Dale switches the active wallet
+  for trades and sends without needing per message specs. Switch back at any
+  time. The default applies to the chain the wallet sits on.
 </Para>
+
+<H2 id="export">Private key export</H2>
+<Para>
+  Export runs through <Mono>@walletdeepbot</Mono>, not through the Dale chat. Two
+  step confirm. The key displays once and{' '}
+  <Lime>auto deletes from the chat</Lime> after display. The sensitive number
+  never sits in your message history.
+</Para>
+
+<H2 id="status">Chain status</H2>
+<Para>
+  Where each surface stands today.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "EVM sends (ETH, BSC, Base, Polygon)", v: <Lime>Live</Lime> },
+  { k: "Solana wallet management (create, import, balance)", v: <Lime>Live</Lime> },
+  { k: "Solana on chain sends", v: <FeatureStatus id="solana_sends" /> },
+]} />
+
+<Callout kind="lime" title="One conversation, every chain">
+  The same sentence works whether your wallet is on Ethereum, Base, BSC,
+  Polygon, or Solana. Dale picks the chain by the wallet you named or the chain
+  the token lives on. You never have to switch surfaces.
+</Callout>

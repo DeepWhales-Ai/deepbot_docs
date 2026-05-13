@@ -1,0 +1,60 @@
+---
+title: "The /trade panel"
+sidebar_label: "/trade panel"
+---
+
+{/* Source: new page for May 14 panel update.
+    Captures the panel surface as a sibling to conversational trading.
+    Same routing layer, same PIN gate, different door. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE · PANEL"
+  lede="A tap surface for the moments you want to look, not type. Same router, same PIN gate, every chain Dale supports."
+/>
+
+<H2 id="what">What it is</H2>
+<Para>
+  The <Mono>/trade</Mono> panel is the visual control surface for the same
+  routing layer Dale uses in conversation. Open it with <Mono>/trade</Mono>{' '}
+  inside Dale. Send, swap, create wallets, review balances, and access
+  strategies without typing the request.
+</Para>
+
+<H2 id="chains">Chains and assets</H2>
+<KeyValueGrid items={[
+  { k: "EVM sends and swaps", v: "Ethereum, BSC, Base, Polygon. Native asset plus every token Dale can quote." },
+  { k: "Solana sends and swaps", v: <>SOL and SPL token sends are <Lime>live in the panel</Lime>. Jupiter routing under the hood.</> },
+  { k: "Solana wallet creation", v: "Create a Solana wallet directly from the panel. Same flow as Dale, same key custody, exportable on demand." },
+  { k: "Cross chain", v: "Bridge plus swap quoted as one plan. The panel surfaces the full route before signing." },
+]} />
+
+<H2 id="pin">PIN parity</H2>
+<Para>
+  Every send from the panel runs through the same PIN gate as Dale in
+  conversation. The threshold you set in chat applies in the panel. The PIN
+  unlocks the same session. There is no separate panel only credential, and
+  there is no panel only bypass.
+</Para>
+
+<H2 id="strategies">Strategies and Auto Buy</H2>
+<Para>
+  Strategies and Auto Buy are surfaced higher in the panel menu. Take profit
+  ladders, trailing stops, hard floors, and conditional entries are accessible
+  in one step from the top level. The placement matches how often the
+  controls are used.
+</Para>
+
+<H2 id="feed">The new pairs feed</H2>
+<Para>
+  The pairs feed in the panel shows fresh launches across the chains you have
+  enabled. Tap any row to scan, then trade or skip. The feed is live across
+  EVM and Solana.
+</Para>
+
+<Callout kind="lime" title="One product, two doors">
+  Whatever you can ask Dale, you can do in the panel. Whatever you do in the
+  panel, Dale narrates back when you return to the chat. Same router. Same
+  keys. Same gate.
+</Callout>

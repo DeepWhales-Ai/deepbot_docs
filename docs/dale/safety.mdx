@@ -41,6 +41,30 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
   open even if everything else is down.
 </Para>
 
+<H2 id="threshold">The PIN threshold</H2>
+<Para>
+  The PIN gate runs on USD value, not native units. You set the threshold in
+  dollars. Default is <Lime>$1000</Lime>. Trades below your threshold execute
+  without re prompt once you have unlocked the session. Trades at or above the
+  threshold prompt for PIN.
+</Para>
+<Para>
+  Change it any time. <Mono>set my pin threshold to $500</Mono>.{' '}
+  <Mono>set my pin threshold to 0</Mono> means PIN required on every
+  transaction.
+</Para>
+
+<H2 id="reprompt">How re prompts work</H2>
+<Para>
+  PIN unlocks a session. Within the session, sub threshold trades execute
+  without re asking. The moment a trade crosses your threshold mid session,
+  Dale re prompts for PIN before it builds the route.
+</Para>
+<Para>
+  Fast trades stay fast at small sizes. The gate locks the second real money is
+  moving.
+</Para>
+
 <H2 id="walkthrough">What happens when you press PIN</H2>
 <Para>
   You ask Dale to swap. Dale builds the route, checks the safety scan, surfaces the fees,
@@ -107,6 +131,21 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
   <Mono>Change PIN</Mono> when you want to rotate.{' '}
   <Mono>PIN Settings</Mono> for secret questions and session timeouts. The
   same panel on every chain. The same gate on every trade.
+</Para>
+
+<H2 id="private-keys">Private key handling</H2>
+<Para>
+  Private keys never sit in chat history. When you import a key or export one,
+  the message <Lime>auto deletes from chat</Lime> after processing. The
+  sensitive number never persists where it could be screenshotted or leaked.
+  Export runs through <Mono>@walletdeepbot</Mono> with a two step confirm.
+</Para>
+
+<H2 id="deletion">Deletion safety</H2>
+<Para>
+  Wallet deletion is two step. Dale confirms exactly what is about to be
+  removed and waits for explicit go ahead. Wallets that still hold funds
+  require an additional acknowledgement before the keys are destroyed.
 </Para>
 
 <H2 id="voice-pin">Voice PIN <FeatureStatus id="voice_pin" /></H2>
