@@ -9,7 +9,7 @@ const ITEMS = [
   { kind: 'fact', lead: 'Dale trades while you sleep.', body: 'Set a budget, a per trade cap, a safety floor, the chains, the kill switch. Wake up to a summary. Stop it with a sentence.', lime: true },
   { kind: 'fact', lead: 'Phone in pocket.', body: 'Voice in. Voice PIN. Done. The whole trade happens without taking the phone out.' },
   { kind: 'fact', lead: 'Continuous safety.', body: 'Other bots scan once at purchase. Dale watches the token the entire time you hold it. If the deployer raises tax, blacklists, or pulls liquidity, you are notified before the price moves.' },
-  { kind: 'fact', lead: 'Forty percent of trading fees', body: 'go to $DEEPAI holders every month. Five streams, one pool, transparent math, paid in USDC. Receipts on chain.' },
+  { kind: 'fact', lead: 'Forty percent of trading fees', body: 'go to $DEEPAI holders every month. Four streams, one pool, transparent math, paid in USDC. Receipts on chain.' },
   { kind: 'fact', lead: 'Built by three people.', body: 'Mainnet. Real legal entity. Real revenue. The longest-running compounding distribution in the category, and nobody can buy it.' },
 ];
 

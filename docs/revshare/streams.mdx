@@ -1,9 +1,12 @@
 ---
-title: "The five streams"
-sidebar_label: "The five streams"
+title: "The four streams"
+sidebar_label: "The four streams"
 ---
 
-{/* Source: pages-rest.jsx -> PageRevStreams */}
+{/* Source: pages-rest.jsx -> PageRevStreams.
+    DEX tax removed in May 2026: $DEEPAI on-chain tax went to 0/0.
+    The stream that was tied to token volume is gone. Four streams now,
+    plus the reserved Bobby intelligence licensing line. */}
 
 import { PageHead, Para, H2, Lime, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
@@ -17,9 +20,9 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 <div className="streams-page">
 
 <Para>
-  The platform monetizes through trading volume, through intelligence sales, through
-  advertising, through subscriptions, and through team trading profits. Every channel routes
-  into the same holder pool.
+  The platform monetizes through trading volume, through advertising, through
+  subscriptions, and through team trading profits. Every channel routes into
+  the same holder pool. There is no on chain tax on $DEEPAI itself.
 </Para>
 
 <div className="db-stream-grid">
@@ -31,24 +34,18 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   </div>
   <div className="db-stream-card">
     <div className="db-stream-card__num">2</div>
-    <div className="db-stream-card__name">DEX tax</div>
-    <div className="db-stream-card__source">5% on $DEEPAI volume · 1% to pool</div>
-    <div className="db-stream-card__tag">Hidden upside</div>
-  </div>
-  <div className="db-stream-card">
-    <div className="db-stream-card__num">3</div>
     <div className="db-stream-card__name">Team profits</div>
     <div className="db-stream-card__source">15% of realized monthly trading P&amp;L</div>
     <div className="db-stream-card__tag">Aligned</div>
   </div>
   <div className="db-stream-card">
-    <div className="db-stream-card__num">4</div>
+    <div className="db-stream-card__num">3</div>
     <div className="db-stream-card__name">Ads &amp; trending</div>
     <div className="db-stream-card__source">15% of platform-wide ad revenue</div>
     <div className="db-stream-card__tag">Diversifier</div>
   </div>
   <div className="db-stream-card">
-    <div className="db-stream-card__num">5</div>
+    <div className="db-stream-card__num">4</div>
     <div className="db-stream-card__name">PRO subs</div>
     <div className="db-stream-card__source">15% of $49/mo non-holder subs</div>
     <div className="db-stream-card__tag">Compounding</div>
@@ -77,28 +74,14 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   This is the stream that scales hardest with adoption. Volume goes up, the pool goes up.
 </Callout>
 
-<H2 id="dex">2 · DEX tax · 1% of $DEEPAI volume</H2>
-<Para>
-  Every $DEEPAI buy and sell carries a 0% on-chain tax. This stream is completely
-  independent of platform usage. It is driven by token trading activity.
-</Para>
-<KeyValueGrid items={[
-  { k: "Floor", v: "Pre-scale on-chain volume produces a modest pool contribution. The stream exists and routes correctly even at low volume. Live numbers are tracked on the public roadmap." },
-  { k: "At scale", v: "A 10x in token price often correlates with 20x to 50x in trading volume. Could become the largest of the five streams at full operational scale." },
-]} />
-<Callout kind="info" title="The hidden upside stream">
-  As the platform grows and the token appreciates, on-chain speculation volume historically
-  grows faster than price alone.
-</Callout>
-
-<H2 id="team">3 · Team trading profits · 15%</H2>
+<H2 id="team">2 · Team trading profits · 15%</H2>
 <Para>
   Fifteen percent of realized monthly profits from the team's own trading flows to the pool.
   The team trades using Dale's tools. Better tools mean better trades mean more for holders.
   Incentives aligned.
 </Para>
 
-<H2 id="ads">4 · Ad and trending revenue · 15%</H2>
+<H2 id="ads">3 · Ad and trending revenue · 15%</H2>
 <Para>
   Fifteen percent of gross ad and trending revenue across the entire platform.
   <Lime> This is the stream that just got bigger.</Lime>
@@ -113,7 +96,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   project demand, not trader activity.
 </Callout>
 
-<H2 id="pro">5 · PRO subscriptions · 15%</H2>
+<H2 id="pro">4 · PRO subscriptions · 15%</H2>
 <Para>
   DeepBot PRO is priced at $49 / month. Non holders who want premium features pay this fee.
   Token holders get PRO features without paying. Fifteen percent of every paying non holder
@@ -124,7 +107,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   { k: "Compounding", v: "Stream grows with active wallet count. PRO pricing held flat for transparency." },
 ]} />
 
-<H2 id="licensing">6 · Bobby intelligence licensing <FeatureStatus id="bobby_intelligence_licensing" /></H2>
+<H2 id="licensing">5 · Bobby intelligence licensing <FeatureStatus id="bobby_intelligence_licensing" /></H2>
 <Para>
   Reserved for future intelligence licensing arrangements. Data partnerships, project
   intelligence reports, network access. Bobby does not license to third parties. The

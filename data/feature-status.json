@@ -1,9 +1,15 @@
 {
-  "last_updated": "2026-05-07",
+  "last_updated": "2026-05-13",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
     "now": [
+      "evm_native_wallets",
+      "solana_wallet_management",
+      "usd_pin_threshold",
+      "trade_panel_solana",
+      "dale_honesty_rules",
+      "deepai_zero_tax",
       "solana_execution",
       "solana_convergence",
       "multichain_pin_gate",
@@ -15,6 +21,12 @@
       "smart_money_cluster_scoring_v2"
     ],
     "next": [
+      "solana_sends",
+      "trade_settlement_check",
+      "swap_address_validation",
+      "native_slippage_in_chat",
+      "cold_wallet_setup_patch",
+      "genesis_cohort",
       "deepbot_link",
       "native_emergency_sell_expansion",
       "layer_2_dale_memory",
@@ -27,6 +39,96 @@
     }
   },
   "features": {
+    "evm_native_wallets": {
+      "label": "EVM native wallet operations",
+      "status": "shipped",
+      "shipped_date": "2026-05-14",
+      "date_label": "May 14",
+      "summary": "Send, create, import, balance, export across Ethereum, BSC, Base, and Polygon. Plain English. Multi chain conversation flow.",
+      "where": ["dale/wallet-management"]
+    },
+    "solana_wallet_management": {
+      "label": "Solana wallet management",
+      "status": "shipped",
+      "shipped_date": "2026-05-14",
+      "date_label": "May 14",
+      "summary": "Create, import, label, and switch Solana wallets via Dale or panel. SOL sends shipping in next update.",
+      "where": ["dale/wallet-management"]
+    },
+    "usd_pin_threshold": {
+      "label": "USD-based PIN threshold",
+      "status": "shipped",
+      "shipped_date": "2026-05-14",
+      "date_label": "May 14",
+      "summary": "PIN gate runs on USD value, user-settable. Default $1000. Set to 0 for PIN on every trade.",
+      "where": ["dale/safety"]
+    },
+    "dale_honesty_rules": {
+      "label": "Dale honesty rules",
+      "status": "shipped",
+      "shipped_date": "2026-05-13",
+      "date_label": "May",
+      "summary": "Dale reports actual tool outcomes. No invented diagnoses. Em dash filter on outgoing messages.",
+      "where": ["dale/honesty"]
+    },
+    "deepai_zero_tax": {
+      "label": "$DEEPAI zero tax",
+      "status": "shipped",
+      "shipped_date": "2026-05-13",
+      "date_label": "May",
+      "summary": "Buy/sell tax updated to 0/0 on chain. No fees on entering or exiting the token.",
+      "where": ["token/deepai"]
+    },
+    "trade_panel_solana": {
+      "label": "/trade panel Solana support",
+      "status": "shipped",
+      "shipped_date": "2026-05-14",
+      "date_label": "May 14",
+      "summary": "SOL sends, SPL token sends, Solana wallet creation from /trade panel. PIN gated.",
+      "where": ["dale/trade-panel"]
+    },
+    "genesis_cohort": {
+      "label": "Genesis Cohort recognition",
+      "status": "in_progress",
+      "date_label": "Launching shortly",
+      "summary": "Awakening attendees get priority routing, 3 months DeepBot PRO automatic, Genesis-only feedback channel. Effective date pending.",
+      "where": ["dale/genesis-cohort"]
+    },
+    "solana_sends": {
+      "label": "Solana on-chain sends",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "Native SOL and SPL token sends from Dale. EVM sends shipped May 14, Solana sends queued.",
+      "where": ["dale/wallet-management"]
+    },
+    "trade_settlement_check": {
+      "label": "Trade execution settlement check",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "On-chain settlement verification before reporting trade success.",
+      "where": []
+    },
+    "swap_address_validation": {
+      "label": "Swap engine address validation",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "Pre-flight address validation on every swap to catch typos and lookalike addresses before signing.",
+      "where": []
+    },
+    "native_slippage_in_chat": {
+      "label": "Native slippage controls in chat",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "Set and adjust slippage per trade in conversation, no menu surface needed.",
+      "where": ["dale/conversational-trading"]
+    },
+    "cold_wallet_setup_patch": {
+      "label": "Cold wallet setup patch",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "Smoother cold wallet provisioning and panic PIN cold address designation.",
+      "where": ["dale/safety"]
+    },
     "solana_execution": {
       "label": "Solana execution",
       "status": "shipped",
