@@ -1,0 +1,63 @@
+---
+title: "Shotgun"
+sidebar_label: "Overview"
+---
+
+{/* Source: new section. Shotgun is the automated buyer that reads
+    platform signal feeds and executes when configured rules match.
+    PRO feature. ETH only today. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+
+<PageHead
+  eyebrow="PRO"
+  lede="Automated trading. You set the rules. Shotgun executes when they match."
+/>
+
+<H2 id="what">What Shotgun does</H2>
+<Para>
+  Shotgun automatically buys tokens when the platform's signal feeds match your
+  configured rules. No watching charts. No chasing alerts. You define what good
+  looks like, Shotgun fires when good shows up.
+</Para>
+
+<H2 id="three">Three feeds, three Shotguns</H2>
+<Para>
+  Three Shotgun variants, each reading a different signal source.
+</Para>
+
+<KeyValueGrid items={[
+  { k: <><Lime>Blue</Lime></>, v: <>Reads the New Pairs feed. Fresh launches that pass safety filtering. Includes a prediction score on every alert. <a className="db-link" href="/shotgun/blue">Read more →</a></> },
+  { k: <><Lime>Trend</Lime></>, v: <>Reads the Trend feed. Tokens with active social signal that pass safety filtering. <a className="db-link" href="/shotgun/trend">Read more →</a></> },
+  { k: <><Lime>Smart Wallets</Lime></>, v: <>Returning via the convergence engine. Coming in the next iteration of the platform. <a className="db-link" href="/shotgun/smart-wallets">Read more →</a></> },
+]} />
+
+<H2 id="config">What you configure</H2>
+<Para>
+  Per Shotgun variant: which wallet executes, how much per buy, slippage
+  tolerance, gas ceiling, market cap range, and any take profit, stop loss, or
+  trailing stop loss attached to every buy.
+</Para>
+<Para>
+  Every Shotgun buy runs through the <Lime>same PIN gate</Lime> as a manual
+  trade. Same safety floors. Same Emergency Sell coverage post buy.
+</Para>
+
+<H2 id="chains">Where it runs</H2>
+<Para>
+  ETH only today. As convergence extends to other chains, Shotgun extends with
+  it.
+</Para>
+
+<H2 id="setup">Setup <FeatureStatus id="dale_shotgun_setup" /></H2>
+<Para>
+  UI today via the <Mono>/trade</Mono> panel. Dale conversational setup ships
+  in the next update.
+</Para>
+
+<Callout kind="lime" title="Rules in, trades out">
+  Shotgun is the rule based layer. You write the rules once. The platform
+  watches every signal that comes through and fires only on the shapes you
+  asked for.
+</Callout>
