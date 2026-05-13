@@ -4,6 +4,10 @@
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
     "now": [
+      "shotgun_blue",
+      "shotgun_trend",
+      "trailing_stop_loss",
+      "signal_wins_channel",
       "evm_native_wallets",
       "solana_wallet_management",
       "usd_pin_threshold",
@@ -21,6 +25,8 @@
       "smart_money_cluster_scoring_v2"
     ],
     "next": [
+      "dale_shotgun_setup",
+      "shotgun_smart_wallets",
       "solana_sends",
       "trade_settlement_check",
       "swap_address_validation",
@@ -39,6 +45,48 @@
     }
   },
   "features": {
+    "shotgun_blue": {
+      "label": "Shotgun Blue",
+      "status": "shipped",
+      "date_label": "Live",
+      "summary": "Automated buys from the New Pairs feed. PRO feature, ETH only, prediction-scored alerts.",
+      "where": ["shotgun/blue"]
+    },
+    "shotgun_trend": {
+      "label": "Shotgun Trend",
+      "status": "shipped",
+      "date_label": "Live",
+      "summary": "Automated buys from the Trend feed. PRO feature, ETH only, sentiment-classified alerts.",
+      "where": ["shotgun/trend"]
+    },
+    "trailing_stop_loss": {
+      "label": "Trailing stop loss",
+      "status": "shipped",
+      "date_label": "Live",
+      "summary": "Three-tick confirmation, peak-anchored threshold, wick recovery resets. Locks gains as price extends.",
+      "where": ["dale/stop-loss-and-trailing"]
+    },
+    "signal_wins_channel": {
+      "label": "Signal Wins channel",
+      "status": "shipped",
+      "date_label": "Live",
+      "summary": "Public milestone channel celebrating PRO alert wins. @deepbotwins.",
+      "where": ["shotgun/channels"]
+    },
+    "dale_shotgun_setup": {
+      "label": "Dale Shotgun setup",
+      "status": "in_progress",
+      "date_label": "Next update",
+      "summary": "Conversational Shotgun configuration via Dale. Today setup runs through the /trade panel.",
+      "where": ["shotgun/overview"]
+    },
+    "shotgun_smart_wallets": {
+      "label": "Shotgun Smart Wallets",
+      "status": "in_progress",
+      "date_label": "Returning via convergence",
+      "summary": "Auto buy from smart wallet activity, weighted through the convergence engine.",
+      "where": ["shotgun/smart-wallets"]
+    },
     "evm_native_wallets": {
       "label": "EVM native wallet operations",
       "status": "shipped",

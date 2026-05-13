@@ -1,0 +1,53 @@
+---
+title: "Channels"
+sidebar_label: "Channels"
+---
+
+{/* Source: The signal feeds Shotgun reads.
+    Two PRO feeds (New Pairs, Trend) and one public wins feed (Signal Wins). */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="SHOTGUN · PRO"
+  lede="The signal feeds Shotgun reads. Two PRO feeds, one public wins feed."
+/>
+
+<H2 id="new-pairs">New Pairs</H2>
+<Para>
+  The Ethereum new pair detector. Catches every token at the moment liquidity
+  is added on chain. Filters through Blockaid safety scanning, honeypot
+  detection, and contract risk checks before any alert publishes.
+</Para>
+<Para>
+  Available to PRO subscribers. Powers <Lime>Shotgun Blue</Lime>.
+</Para>
+
+<H2 id="trend">Trend</H2>
+<Para>
+  The cross channel trending detector. Surfaces tokens with sentiment weighted,
+  multi source activity. Sentiment classification, risk level, Blockaid
+  scoring, market data, and quick links on every alert.
+</Para>
+<Para>
+  Available to PRO subscribers. Powers <Lime>Shotgun Trend</Lime>.
+</Para>
+
+<H2 id="signal-wins">Signal Wins</H2>
+<Para>
+  The public wins feed. When alerts from the New Pairs or Trend feeds hit
+  milestone returns, they get posted here.
+</Para>
+<Para>
+  This is the celebratory channel. Bundle detection at launch, Blockaid
+  safety scoring, automatic honeypot handling, milestone tracking from
+  effective entry price, mega celebrations on 1000x and 2000x.
+</Para>
+<Para>
+  Anyone can join. Find it at <Mono>@deepbotwins</Mono>.
+</Para>
+
+<Callout kind="lime" title="Signals private, wins public">
+  The signals themselves are PRO. The wins are public. Signal Wins is the
+  proof feed for the PRO channels, not a substitute for them.
+</Callout>

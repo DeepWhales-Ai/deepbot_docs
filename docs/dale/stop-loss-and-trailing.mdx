@@ -1,0 +1,102 @@
+---
+title: "Stop loss & trailing"
+sidebar_label: "Stop loss & trailing"
+---
+
+{/* Source: new page documenting hard stop loss vs trailing stop loss.
+    Two scenario tables drive the explanation.
+    Three-tick confirmation noted. */}
+
+import { PageHead, Para, H2, H3, Lime, Mono } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Two ways to protect a position. Hard stop loss locks the floor from entry. Trailing stop loss locks gains from the peak."
+/>
+
+<H2 id="hard">Hard stop loss</H2>
+<Para>
+  Fixed loss percentage from your entry price. Triggers once the token drops
+  that percentage below your entry. Sells the position.
+</Para>
+<Para>
+  <Mono>Entry $1.00, hard stop loss 30%.</Mono><br />
+  <Mono>Threshold: $0.70.</Mono><br />
+  <Mono>Price drops to $0.70 or below → sells.</Mono>
+</Para>
+<Para>
+  The floor is fixed. It does not move with price.
+</Para>
+
+<H2 id="trailing">Trailing stop loss</H2>
+<Para>
+  Loss percentage from the highest price the token has reached since you
+  entered. The peak updates as the token climbs. The trigger threshold rides
+  up with it.
+</Para>
+<Para>
+  This protects gains automatically without you having to keep moving the
+  stop.
+</Para>
+
+<H3>Scenario: price rises then crashes</H3>
+<Para>
+  50% trailing stop loss. Entry $1.00.
+</Para>
+
+| Tick | Price | Peak | Threshold (peak × 0.5) | Trigger? |
+|------|-------|------|------------------------|----------|
+| 1 | $1.00 | $1.00 | $0.50 | No |
+| 2 | $1.50 | $1.50 | $0.75 | No |
+| 3 | $2.00 | $2.00 | $1.00 | No |
+| 4 | $1.80 | $2.00 | $1.00 | No |
+| 5 | $1.00 | $2.00 | $1.00 | Sell |
+
+<Para>
+  Tick 5 fires because the peak was $2.00 and price has dropped 50% from that
+  peak. Even though $1.00 is your original entry price, the trigger is
+  calculated against the peak, not the entry.
+</Para>
+
+<H3>Scenario: dip and recovery</H3>
+<Para>
+  50% trailing stop loss. Entry $1.00.
+</Para>
+
+| Tick | Price | Peak | Threshold | Trigger? |
+|------|-------|------|-----------|----------|
+| 1 | $1.00 | $1.00 | $0.50 | No |
+| 2 | $3.00 | $3.00 | $1.50 | No |
+| 3 | $1.60 | $3.00 | $1.50 | No |
+| 4 | $1.50 | $3.00 | $1.50 | Sell |
+
+<Para>
+  Price tripled, then fell back to $1.50, exactly the 50% trailing threshold
+  off the $3.00 peak. <Lime>The trailing stop locks in the gain.</Lime> You
+  exit at $1.50 against an entry of $1.00, even though the peak was $3.00.
+</Para>
+
+<H2 id="confirmation">Confirmation behaviour</H2>
+<Para>
+  Trailing stops use a <Lime>three tick confirmation</Lime> before firing.
+  Price has to stay at or below the threshold for three consecutive checks.
+  Wick recoveries reset the count.
+</Para>
+<Para>
+  This protects against a single bad print triggering an unnecessary sell.
+</Para>
+
+<H2 id="how">How to use them</H2>
+<Para>
+  Hard stop loss works for any position where you have a clear "this trade is
+  invalidated below X" line.
+</Para>
+<Para>
+  Trailing stop loss works for trending positions where you want to ride the
+  move but lock gains automatically as price extends.
+</Para>
+<Para>
+  Both attach to Shotgun buys. Both can be set on manual buys through the{' '}
+  <Mono>/trade</Mono> panel. Dale conversational setup is part of the
+  standard exit toolkit.
+</Para>

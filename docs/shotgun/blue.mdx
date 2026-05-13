@@ -1,0 +1,66 @@
+---
+title: "Blue"
+sidebar_label: "Blue"
+---
+
+{/* Source: Shotgun Blue. Reads the New Pairs feed.
+    Prediction-scored alerts. ETH only. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="SHOTGUN · PRO"
+  lede="Auto buy from the New Pairs feed. Every fresh launch, scored and filtered, before retail finds it."
+/>
+
+<H2 id="feed">The feed</H2>
+<Para>
+  The New Pairs feed surfaces tokens at the moment liquidity is first added on
+  chain. The platform watches every factory contract on Ethereum and catches
+  each new pool as it lands.
+</Para>
+<Para>
+  Most new pairs go to zero in hours. That is why the feed runs through safety
+  scoring before anything reaches Shotgun.
+</Para>
+
+<H2 id="score">The prediction score</H2>
+<Para>
+  Every alert in the Blue feed carries a prediction score. Format:
+</Para>
+
+<div className="db-quote">
+  <Mono>63 green / 37 red</Mono>
+</div>
+
+<Para>
+  The score is built from historical pattern matching against years of new
+  pair outcomes. <Lime>Green weighting</Lime> means the launch matches
+  patterns of tokens that survived. <Lime>Red weighting</Lime> flags patterns
+  associated with rugs, traps, and immediate fails.
+</Para>
+<Para>
+  Higher green is not a guarantee. It is a probabilistic edge based on how
+  this launch shape has performed in the past.
+</Para>
+
+<H2 id="config">What you configure</H2>
+<KeyValueGrid items={[
+  { k: "Wallet", v: "Which wallet executes the buys." },
+  { k: "Buy amount", v: "Size per alert. Fixed amount or a percentage of the wallet." },
+  { k: "Slippage and gas", v: "Slippage tolerance and a gas ceiling. Alerts above the ceiling are skipped." },
+  { k: "Market cap range", v: "Minimum and maximum market cap window. Alerts outside the window are skipped." },
+  { k: "Minimum prediction score", v: "Only fire on alerts at or above your threshold." },
+  { k: "Exit attachments", v: "Take profit tiers, stop loss, trailing stop loss. Attached to every buy automatically." },
+]} />
+
+<H2 id="chains">Where it runs</H2>
+<Para>
+  ETH only.
+</Para>
+
+<Callout kind="lime" title="Score gates volume">
+  The minimum prediction score is the lever that decides how often Blue fires.
+  Lower it and Blue fires on more alerts. Raise it and Blue waits for cleaner
+  shapes.
+</Callout>

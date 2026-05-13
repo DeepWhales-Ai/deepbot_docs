@@ -1,0 +1,64 @@
+---
+title: "Trend"
+sidebar_label: "Trend"
+---
+
+{/* Source: Shotgun Trend. Reads the cross-channel Trend feed.
+    Sentiment + risk + Blockaid + market data. ETH only. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="SHOTGUN · PRO"
+  lede="Auto buy from the Trend feed. Tokens with active social signal, filtered through safety, ready to execute on."
+/>
+
+<H2 id="feed">The feed</H2>
+<Para>
+  The Trend feed surfaces tokens generating cross channel activity across
+  crypto Telegram. Sentiment scoring, risk classification, Blockaid safety,
+  market cap, holder counts, and liquidity status all roll into each alert.
+</Para>
+<Para>
+  The same restraint applies as Blue: theatre is filtered out before anything
+  reaches Shotgun. Volume alone is not enough. Coordinated, multi source
+  behaviour is the signal.
+</Para>
+
+<H2 id="alert">Alert shape</H2>
+<Para>
+  Every alert carries:
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Sentiment classification", v: "Direction and weighting of the social signal." },
+  { k: "Risk level", v: <><Lime>Degen</Lime>, <Lime>High</Lime>, or <Lime>Standard</Lime>.</> },
+  { k: "Blockaid safety score", v: "Address and contract reputation as a pre check on every alert." },
+  { k: "Market cap", v: "Captured at alert time and at current." },
+  { k: "Liquidity profile", v: "Holder count, locked liquidity, burned liquidity." },
+  { k: "Taxes", v: "Buy tax and sell tax at the moment of the alert." },
+]} />
+
+<Para>
+  No prediction score on Trend. That layer lives on Blue.
+</Para>
+
+<H2 id="config">What you configure</H2>
+<KeyValueGrid items={[
+  { k: "Wallet", v: "Which wallet executes the buys." },
+  { k: "Buy amount", v: "Size per alert. Fixed amount or a percentage of the wallet." },
+  { k: "Slippage and gas", v: "Slippage tolerance and a gas ceiling. Alerts above the ceiling are skipped." },
+  { k: "Market cap range", v: "Minimum and maximum market cap window." },
+  { k: "Risk filter", v: "Skip Degen if you prefer Standard only. Skip Standard if you only want Degen. Your call." },
+  { k: "Exit attachments", v: "Take profit tiers, stop loss, trailing stop loss. Attached to every buy." },
+]} />
+
+<H2 id="chains">Where it runs</H2>
+<Para>
+  ETH only.
+</Para>
+
+<Callout kind="lime" title="Risk gates volume">
+  The risk filter is the lever that decides how often Trend fires. Standard
+  only is a quiet Shotgun. Degen included is a loud one.
+</Callout>
