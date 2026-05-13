@@ -5,7 +5,7 @@ sidebar_label: "Revenue calculator"
 
 {/* Source: pages-rest.jsx -> PageRevCalculator */}
 
-import { PageHead, Para, Mono, Pull, Callout, Pill } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Mono, Pull, Callout, Pill, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <PageHead
@@ -49,3 +49,21 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 <Pull>
   Calculate your share at revenuecalc.deepbot.pro.
 </Pull>
+
+<H2 id="nft-toggles">What the NFT toggles mean</H2>
+<Para>
+  Three NFT toggles on the calculator. Each affects the estimate differently.
+  The labels read as follows:
+</Para>
+
+<KeyValueGrid items={[
+  { k: "OG NFT", v: "1.5x on all revenue. The only NFT that multiplies your overall share across every stream." },
+  { k: "Silver NFT", v: "Slice of specific streams. Splits a private slice of advertisement revenue, Premium Bot subscription fees, and Team Purchase profits between 40 holders." },
+  { k: "Gold NFT", v: "Slice of specific streams, 500k min. Splits a larger private slice across the same streams between only 10 holders. Activation requires holding 500,000+ $DEEPAI." },
+]} />
+
+<Callout kind="info" title="Different mechanics, different math">
+  OG multiplies. Silver and Gold are slices. Stack them if you hold more than
+  one. Read the <a className="db-link" href="/revshare/nfts">NFT multipliers</a>{' '}
+  page for the full breakdown.
+</Callout>

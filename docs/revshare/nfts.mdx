@@ -3,71 +3,111 @@ title: "NFT multipliers"
 sidebar_label: "NFT multipliers"
 ---
 
-{/* Source: pages-rest.jsx -> PageRevNFTs */}
+{/* Source: rewritten to clarify the hierarchy.
+    OG is the only NFT that multiplies overall revenue share.
+    Silver and Gold are private slices of specific revenue streams,
+    not multipliers on the standard pool. All three sold out, secondary only. */}
 
-import { PageHead, Callout } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="REVENUE SHARING"
-  title="NFT multipliers"
-  lede="Three tiers. Extra pool multipliers on top of the standard token holder share."
+  lede="Three NFTs. One king."
 />
 
-<div className="db-tier-hero">
-  <div className="db-tier-hero__line">
-    Three tiers. Fixed supply. Permanent multipliers on top of standard token holder revenue.
-  </div>
-  <div className="db-tier-hero__close">
-    The Silver and Gold pools never dilute. The cap is the cap.
-  </div>
-</div>
+<H2 id="og">OG DeepBot NFT, the multiplier</H2>
+<Para>
+  50 supply, all sold within 24 hours of mint. Secondary market only.
+</Para>
+<Para>
+  OG is the only NFT that multiplies your overall revenue share. Hold OG,
+  every revenue stream you qualify for gets boosted <Lime>1.5x across the
+  board</Lime>. Trading fees, ad revenue, subscriptions, team profits, all of
+  it.
+</Para>
+<Para>
+  If you want the revenue multiplier, OG is the only path.
+</Para>
 
-<div className="db-tier-card db-tier-card--og" id="og">
-  <div className="db-tier-card__name">OG</div>
-  <div className="db-tier-card__credential">Earned by the earliest community. Not sold.</div>
-  <div className="db-tier-card__detail">
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Supply</div>
-      <div className="db-tier-card__cell-v">50. Fixed.</div>
-    </div>
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Effect</div>
-      <div className="db-tier-card__cell-v">Multiplier on standard pool share.</div>
-    </div>
-  </div>
-</div>
+<H2 id="gold">Gold Dale 4D NFT, the elite slice</H2>
+<Para>
+  10 supply, all sold. Secondary market only.
+</Para>
+<Para>
+  Gold does not multiply your existing revenue share. Gold gives you a private
+  slice of specific revenue streams, split between only 10 holders:
+</Para>
+<ul>
+  <li>10% of all advertisement revenue</li>
+  <li>10% of Premium Bot subscription revenue</li>
+  <li>5% of Team Purchase profits</li>
+</ul>
+<Para>
+  Split 10 ways. Each Gold holder earns a meaningful piece of each stream.
+</Para>
 
-<div className="db-tier-card db-tier-card--silver" id="silver">
-  <div className="db-tier-card__name">Silver</div>
-  <div className="db-tier-card__credential">Predictable per-NFT yield. Forty cap.</div>
-  <div className="db-tier-card__detail">
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Supply</div>
-      <div className="db-tier-card__cell-v">40. Fixed.</div>
-    </div>
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Effect</div>
-      <div className="db-tier-card__cell-v">Extra pool divided by 40 holders. Per NFT earnings predictable regardless of token holder count.</div>
-    </div>
-  </div>
-</div>
+<Para>
+  Gold also unlocks:
+</Para>
+<ul>
+  <li>Governance access (vote on roadmap, partnerships, marketing)</li>
+  <li>Faster alerts than any other user</li>
+  <li>100% discount on all future premium features</li>
+  <li>Quarterly Gold only competitions</li>
+  <li>Quarterly bonus drops (one random Gold holder each quarter)</li>
+  <li>Premium VIP event access</li>
+</ul>
 
-<div className="db-tier-card db-tier-card--gold" id="gold">
-  <div className="db-tier-card__name">Gold</div>
-  <div className="db-tier-card__credential">Highest multiplier. Ten cap.</div>
-  <div className="db-tier-card__detail">
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Supply</div>
-      <div className="db-tier-card__cell-v">10. Fixed.</div>
-    </div>
-    <div className="db-tier-card__cell">
-      <div className="db-tier-card__cell-k">Effect</div>
-      <div className="db-tier-card__cell-v">Extra pool divided by 10 holders. Predictable per NFT earnings.</div>
-    </div>
-  </div>
-</div>
+<Para>
+  <Lime>Activation requires holding 500,000+ $DEEPAI.</Lime>
+</Para>
 
-<Callout kind="lime" title="Why fixed supply matters">
-  The Silver and Gold pools never dilute, regardless of how the token holder pool grows or
-  shrinks. The cap is the cap.
-</Callout>
+<H2 id="silver">Silver Dale 4D NFT, the elevated slice</H2>
+<Para>
+  40 supply, all sold. Secondary market only.
+</Para>
+<Para>
+  Silver does not multiply your existing revenue share. Silver gives you a
+  private slice of specific revenue streams, split between 40 holders:
+</Para>
+<ul>
+  <li>5% of all advertisement revenue</li>
+  <li>5% of Premium Bot subscription fees</li>
+  <li>2.5% of Team Purchase profits</li>
+</ul>
+<Para>
+  Split 40 ways. Smaller per NFT than Gold, but still substantial.
+</Para>
+
+<Para>
+  Silver also unlocks:
+</Para>
+<ul>
+  <li>Priority access to new features and beta testing</li>
+  <li>20% discount on future premium features</li>
+  <li>Silver only quarterly competitions</li>
+  <li>Future airdrops and partnership token eligibility</li>
+</ul>
+
+<H2 id="hierarchy">Why the hierarchy matters</H2>
+<Para>
+  OG is the multiplier across everything. Silver and Gold are private slices
+  of specific streams. Different mechanics, different math, different access
+  tiers.
+</Para>
+<Para>
+  If you only buy one DeepBot NFT, the multiplier path runs through OG.
+</Para>
+
+<H2 id="requirements">Common requirements</H2>
+<Para>
+  Every NFT holder needs to hold 100,000+ $DEEPAI to claim any revenue share.
+  NFT benefits stack on top of the standard holder share, they do not replace
+  it.
+</Para>
+
+<H2 id="availability">Availability</H2>
+<Para>
+  All three collections are sold out. None are available to mint directly.
+  Acquisition is via <Lime>secondary market only</Lime>.
+</Para>
