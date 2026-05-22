@@ -38,6 +38,7 @@ const sidebars = {
         'dale/trade-panel',
         'dale/safety',
         'dale/stop-loss-and-trailing',
+        'dale/prediction-markets',
         'dale/autonomous',
         'dale/community-layer',
         'dale/response-modes',

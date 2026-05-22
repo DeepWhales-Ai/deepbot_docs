@@ -26,6 +26,40 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   { k: "Override", v: "Dale refuses honeypots by default. You can override. You will see the warning first." },
 ]} />
 
+<H2 id="chains">Chain switching</H2>
+<Para>
+  "switch to solana", "trade on base", "use ethereum". Dale switches the
+  active chain for the conversation. Same plain English pattern as everything
+  else.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">switch to base</ChatBubble>
+  <ChatBubble from="dale">Active chain is now Base. Quotes, balances, and sends route through Base until you switch again.</ChatBubble>
+</ChatBlock>
+
+<H2 id="slippage">Slippage controls</H2>
+<Para>
+  "set slippage to 5", "use 2% slippage on this", "what's my slippage". Dale
+  reads and writes slippage tolerance per trade or as your default.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">what's my slippage</ChatBubble>
+  <ChatBubble from="dale">Default slippage is 2%. Say "set slippage to 5" to move the default, or set it on a single trade when you confirm.</ChatBubble>
+</ChatBlock>
+
+<H2 id="gas">Gas preferences</H2>
+<Para>
+  "set gas to fast", "what gas am I on", "use standard gas". Gas preference
+  adjusts the same way.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">set gas to fast</ChatBubble>
+  <ChatBubble from="dale">Gas preference set to fast. EVM trades will price gas for quicker inclusion.</ChatBubble>
+</ChatBlock>
+
 <H2 id="voice">Voice in <FeatureStatus id="voice_messages_in" />, voice PIN <FeatureStatus id="voice_pin" /></H2>
 <Para>
   PRO unlocks voice messages to Dale and voice authorized PIN. Speak the trade, speak the

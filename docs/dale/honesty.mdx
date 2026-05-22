@@ -40,6 +40,23 @@ import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble } from '@site/src/compo
   <ChatBubble from="dale">Scanner returned no deployer record for this contract. I do not have it.</ChatBubble>
 </ChatBlock>
 
+<H2 id="tools-fail">When tools fail</H2>
+<Para>
+  When a tool returns an error, Dale surfaces the actual reason. Not
+  "something went wrong." Not "please try again later." The real reason the
+  tool returned.
+</Para>
+
+<ChatBlock>
+  <ChatBubble from="user">buy 1 eth of pepe</ChatBubble>
+  <ChatBubble from="dale">Tried. Router rejected: token tax exceeds your slippage tolerance (token tax 12%, your slippage 2%). Raise slippage or skip this one.</ChatBubble>
+</ChatBlock>
+
+<Para>
+  That's the contract. If Dale could find out why something failed, Dale
+  tells you why.
+</Para>
+
 <H2 id="formatting">Outgoing message formatting</H2>
 <Para>
   Dale's messages run through a formatting filter on the way out. Em dashes
