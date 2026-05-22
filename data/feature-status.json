@@ -43,7 +43,6 @@
       "genesis_cohort",
       "native_emergency_sell_expansion",
       "layer_2_dale_memory",
-      "bobby_ai_tier_1",
       "rocketx_integration",
       "automated_buying",
       "hyperliquid_integration"
@@ -276,13 +275,6 @@
       "status": "in_progress",
       "date_label": "30 days",
       "summary": "Polygon, BNB chain coverage. Mempool monitoring extends beyond ETH/Base.",
-      "where": []
-    },
-    "bobby_ai_tier_1": {
-      "label": "Bobby AI Tier 1",
-      "status": "design",
-      "date_label": "Week 1-2 post-launch",
-      "summary": "AdOps admin panel. Manual queue → admin panel → full self-serve.",
       "where": []
     },
     "rocketx_integration": {
