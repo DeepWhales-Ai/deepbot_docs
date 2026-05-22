@@ -1,9 +1,14 @@
 {
-  "last_updated": "2026-05-13",
+  "last_updated": "2026-05-22",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
     "now": [
+      "chain_switching_chat",
+      "slippage_in_chat",
+      "gas_prefs_in_chat",
+      "auto_explain_failures",
+      "dale_admin_tier_0",
       "shotgun_blue",
       "shotgun_trend",
       "trailing_stop_loss",
@@ -25,19 +30,23 @@
       "smart_money_cluster_scoring_v2"
     ],
     "next": [
+      "agg_prediction_markets",
+      "deepbot_link",
       "dale_shotgun_setup",
-      "shotgun_smart_wallets",
+      "solana_stability_sprint",
+      "dale_admin_phase_2",
       "solana_sends",
+      "shotgun_smart_wallets",
       "trade_settlement_check",
       "swap_address_validation",
-      "native_slippage_in_chat",
       "cold_wallet_setup_patch",
       "genesis_cohort",
-      "deepbot_link",
       "native_emergency_sell_expansion",
       "layer_2_dale_memory",
       "bobby_ai_tier_1",
-      "rocketx_integration"
+      "rocketx_integration",
+      "automated_buying",
+      "hyperliquid_integration"
     ],
     "stealth": {
       "private_beta": 2,
@@ -76,8 +85,8 @@
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
       "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "Conversational Shotgun configuration via Dale. Today setup runs through the /trade panel.",
+      "date_label": "Next sprint",
+      "summary": "Conversational Shotgun configuration via Dale. ETH alert channels first.",
       "where": ["shotgun/overview"]
     },
     "shotgun_smart_wallets": {
@@ -145,8 +154,8 @@
     "solana_sends": {
       "label": "Solana on-chain sends",
       "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "Native SOL and SPL token sends from Dale. EVM sends shipped May 14, Solana sends queued.",
+      "date_label": "Next sprint",
+      "summary": "Native SOL and SPL token sends from Dale chat. Currently routed via /trade panel.",
       "where": ["dale/wallet-management"]
     },
     "trade_settlement_check": {
@@ -163,11 +172,12 @@
       "summary": "Pre-flight address validation on every swap to catch typos and lookalike addresses before signing.",
       "where": []
     },
-    "native_slippage_in_chat": {
-      "label": "Native slippage controls in chat",
-      "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "Set and adjust slippage per trade in conversation, no menu surface needed.",
+    "slippage_in_chat": {
+      "label": "Slippage controls in chat",
+      "status": "shipped",
+      "shipped_date": "2026-05-22",
+      "date_label": "May",
+      "summary": "Read and set slippage tolerance via conversation. Per trade or as default.",
       "where": ["dale/conversational-trading"]
     },
     "cold_wallet_setup_patch": {
@@ -285,8 +295,8 @@
     "deepbot_link": {
       "label": "DeepBot LINK",
       "status": "in_progress",
-      "date_label": "Soon",
-      "summary": "Web interface for the platform. Same brain, browser-native. trade.deepbot.pro.",
+      "date_label": "This week",
+      "summary": "Type. Trade. Track. In a browser.",
       "where": ["deepbot-link"]
     },
     "pin_auto_delete": {
@@ -325,10 +335,11 @@
       "where": ["dale/memory"]
     },
     "agg_prediction_markets": {
-      "label": "Prediction markets via AGG",
-      "status": "coming",
-      "drops": "post-launch week 2",
-      "where": ["dale/tools"]
+      "label": "Prediction markets (AGG.market)",
+      "status": "in_progress",
+      "date_label": "Activating shortly",
+      "summary": "Polymarket and Kalshi access through Dale. Discovery layer first. Trading flow follows.",
+      "where": ["dale/prediction-markets"]
     },
     "private_key_export": {
       "label": "Private key export",
@@ -468,6 +479,66 @@
       "label": "Bobby intelligence licensing (Stream 6)",
       "status": "planned",
       "where": ["revshare/streams"]
+    },
+    "chain_switching_chat": {
+      "label": "Chain switching in chat",
+      "status": "shipped",
+      "shipped_date": "2026-05-22",
+      "date_label": "May",
+      "summary": "Switch active chain via conversation. Ethereum, Solana, Base, BSC, Polygon. No menu hop needed.",
+      "where": ["dale/conversational-trading"]
+    },
+    "gas_prefs_in_chat": {
+      "label": "Gas preferences in chat",
+      "status": "shipped",
+      "shipped_date": "2026-05-22",
+      "date_label": "May",
+      "summary": "Read and adjust gas preferences via conversation. No /trade panel hop.",
+      "where": ["dale/conversational-trading"]
+    },
+    "auto_explain_failures": {
+      "label": "Auto-explain on tool failures",
+      "status": "shipped",
+      "shipped_date": "2026-05-22",
+      "date_label": "May",
+      "summary": "When a tool errors, Dale surfaces the actual reason in plain English. No invented diagnoses, no vague apologies.",
+      "where": ["dale/honesty"]
+    },
+    "dale_admin_tier_0": {
+      "label": "Dale Admin Tier 0",
+      "status": "shipped",
+      "shipped_date": "2026-05-22",
+      "date_label": "May",
+      "summary": "Group admin layer for Dale. Tier 0 foundation live. Phase 2 expansion in design.",
+      "where": []
+    },
+    "solana_stability_sprint": {
+      "label": "Solana stability sprint",
+      "status": "in_progress",
+      "date_label": "Active",
+      "summary": "Solana flow audit, market cap fix, convergence engine extending to Solana, send transaction size refinement.",
+      "where": []
+    },
+    "dale_admin_phase_2": {
+      "label": "Dale Admin Phase 2",
+      "status": "in_progress",
+      "date_label": "Sizing",
+      "summary": "Group admin expansion beyond Tier 0 foundation.",
+      "where": []
+    },
+    "automated_buying": {
+      "label": "Automated buying",
+      "status": "design",
+      "date_label": "Design",
+      "summary": "Dale executes pre-configured buys autonomously against user-defined conditions. Risk controls and monitoring under design.",
+      "where": ["dale/autonomous"]
+    },
+    "hyperliquid_integration": {
+      "label": "Hyperliquid integration",
+      "status": "design",
+      "date_label": "Design",
+      "summary": "Perps trading via Hyperliquid. Chain adapter and routing under design.",
+      "where": []
     }
   }
 }
