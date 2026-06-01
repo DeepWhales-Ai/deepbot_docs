@@ -1,0 +1,62 @@
+---
+title: "Affiliate program"
+sidebar_label: "Overview"
+---
+
+import { PageHead, Para, H2, Lime, Mono, Pull, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="AFFILIATE PROGRAM"
+  lede="Refer traders to DeepBot. Earn lifetime commission on the fees their trades generate. Paid in USDC on Solana."
+/>
+
+<Pull>
+  Your referrals trade. You earn. For as long as they trade.
+</Pull>
+
+<H2 id="how">How it works</H2>
+<Para>
+  Every DeepBot user has a referral link. Share it. When someone signs up
+  through your link, they're tied to you for life. Every time they trade
+  through DeepBot, you earn a cut of the platform fee on that trade.
+</Para>
+<Para>
+  Commissions are paid in USDC on Solana, settled to a wallet you choose.
+  There is no claim window to miss. Earnings accrue continuously and pay out
+  on the program schedule.
+</Para>
+
+<H2 id="ladder">The ladder</H2>
+<Para>
+  Five public tiers plus invite-only and custom rates. The base rate is{' '}
+  <Lime>20%</Lime>. The top public tier is <Lime>35%</Lime>. Beast Mode is
+  invite-only at <Lime>45%</Lime>. KOL and high-volume custom deals run up to{' '}
+  <Lime>50%</Lime>.
+</Para>
+<Para>
+  Tiers are earned by referring active monthly traders. Once you reach a
+  tier, you stay there. Tiers only ever go up.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Lifetime commissions", v: "Your referral is yours for as long as they trade. Not 30 days. Not 12 months. Lifetime." },
+  { k: "Five public tiers", v: "Bronze, Silver, Gold, Platinum, Beast Mode. Plus KOL and high-volume custom rates." },
+  { k: "USDC on Solana", v: "Paid in stablecoin to a Solana wallet you choose. No DEEPAI required." },
+  { k: "Live dashboard", v: "Referrals, earnings, and tier status at rewards.deepbot.pro." },
+]} />
+
+<Callout kind="info" title="Independent of the revenue share">
+  Affiliate commissions are paid from platform fees and are separate from the
+  $DEEPAI revenue share. You can hold $DEEPAI and earn revenue share. You can
+  refer traders and earn affiliate commission. You can do both. They do not
+  cannibalize each other.
+</Callout>
+
+<H2 id="quick-links">Quick links</H2>
+<KeyValueGrid items={[
+  { k: <a className="db-link" href="/affiliate-program/getting-started">Getting started</a>, v: "Get your link. Share it. First commission lands." },
+  { k: <a className="db-link" href="/affiliate-program/commissions">Commissions</a>, v: "The five tier ladder and how each tier unlocks." },
+  { k: <a className="db-link" href="/affiliate-program/dashboard">Dashboard</a>, v: "Referrals, earnings, and tier status at rewards.deepbot.pro." },
+  { k: <a className="db-link" href="/affiliate-program/payouts">Payouts</a>, v: "USDC on Solana. Schedule, wallet, settlement." },
+  { k: <a className="db-link" href="/affiliate-program/faq">FAQ</a>, v: "Common questions. Edge cases. What counts." },
+]} />

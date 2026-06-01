@@ -14,8 +14,8 @@ export const Rule = () => <div className="db-rule" />;
 export const Asterisk = ({ note }) => (
   <sup
     className="db-asterisk"
-    title={note || 'Ethereum only at launch. Other chains in Phase 2.'}
-    aria-label={note || 'Ethereum only at launch. Other chains in Phase 2.'}
+    title={note || 'Ethereum only.'}
+    aria-label={note || 'Ethereum only.'}
   >*</sup>
 );
 

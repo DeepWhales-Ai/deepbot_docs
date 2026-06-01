@@ -1,51 +1,23 @@
 {
-  "last_updated": "2026-05-22",
+  "last_updated": "2026-06-01",
   "launch_date": "2026-05-11",
   "currently_shipping": {
-    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Update both this index and the underlying feature entry when an item ships or moves between sections. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the weekly cadence.",
+    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across shipped + in_progress. Not a changelog. When a new item ships, remove the older / lower-impact one. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
     "now": [
-      "chain_switching_chat",
-      "slippage_in_chat",
-      "gas_prefs_in_chat",
-      "auto_explain_failures",
-      "dale_admin_tier_0",
-      "shotgun_blue",
-      "shotgun_trend",
-      "trailing_stop_loss",
-      "signal_wins_channel",
-      "evm_native_wallets",
-      "solana_wallet_management",
-      "usd_pin_threshold",
-      "trade_panel_solana",
-      "dale_honesty_rules",
-      "deepai_zero_tax",
-      "solana_execution",
-      "solana_convergence",
-      "multichain_pin_gate",
-      "dale_forget_me",
-      "dale_escalation_pipeline",
-      "bobby_alert_idempotency_v1",
-      "convergence_weight_tuning",
-      "token_metadata_enrichment",
-      "smart_money_cluster_scoring_v2"
+      "affiliate_program",
+      "specialist_routing",
+      "dale_memory_layer",
+      "trade_safety_gate",
+      "onboarding_dale",
+      "blockaid_three_state",
+      "tool_surface_112"
     ],
     "next": [
       "agg_prediction_markets",
+      "hyperliquid_integration",
       "deepbot_link",
-      "dale_shotgun_setup",
-      "solana_stability_sprint",
-      "dale_admin_phase_2",
-      "solana_sends",
-      "shotgun_smart_wallets",
-      "trade_settlement_check",
-      "swap_address_validation",
-      "cold_wallet_setup_patch",
-      "genesis_cohort",
-      "native_emergency_sell_expansion",
-      "layer_2_dale_memory",
-      "rocketx_integration",
-      "automated_buying",
-      "hyperliquid_integration"
+      "coingecko_partnership",
+      "more_specialists_welcome_wizard"
     ],
     "stealth": {
       "private_beta": 2,
@@ -53,38 +25,115 @@
     }
   },
   "features": {
-    "shotgun_blue": {
-      "label": "Shotgun Blue",
+    "affiliate_program": {
+      "label": "Affiliate program",
       "status": "shipped",
+      "shipped_date": "2026-06-01",
       "date_label": "Live",
-      "summary": "Automated buys from the New Pairs feed. PRO feature, ETH only, prediction-scored alerts.",
-      "where": ["shotgun/blue"]
+      "summary": "Five tier ladder with lifetime referrals, USDC payouts on Solana, dashboard at rewards.deepbot.pro.",
+      "where": ["affiliate-program/overview"]
     },
-    "shotgun_trend": {
-      "label": "Shotgun Trend",
+    "specialist_routing": {
+      "label": "Specialist routing",
       "status": "shipped",
+      "shipped_date": "2026-06-01",
       "date_label": "Live",
-      "summary": "Automated buys from the Trend feed. PRO feature, ETH only, sentiment-classified alerts.",
-      "where": ["shotgun/trend"]
+      "summary": "Dale routes your intent to the right specialist. Trading, research, wallet, and safety paths.",
+      "where": ["dale/specialist-routing"]
     },
-    "trailing_stop_loss": {
-      "label": "Trailing stop loss",
+    "dale_memory_layer": {
+      "label": "Persistent memory",
       "status": "shipped",
+      "shipped_date": "2026-06-01",
       "date_label": "Live",
-      "summary": "Three-tick confirmation, peak-anchored threshold, wick recovery resets. Locks gains as price extends.",
-      "where": ["dale/stop-loss-and-trailing"]
+      "summary": "Trading profile builds quietly. Ask Dale to remember, ask Dale to forget. Sharpens over time.",
+      "where": ["dale/memory"]
     },
-    "signal_wins_channel": {
-      "label": "Signal Wins channel",
+    "trade_safety_gate": {
+      "label": "Trade safety gate",
       "status": "shipped",
+      "shipped_date": "2026-06-01",
       "date_label": "Live",
-      "summary": "Public milestone channel celebrating PRO alert wins. @deepbotwins.",
-      "where": ["shotgun/channels"]
+      "summary": "A precondition runs before every real-money trade. Every state changing action carries an audit trail.",
+      "where": ["dale/trade-safety-gate"]
+    },
+    "onboarding_dale": {
+      "label": "Onboarding via Dale",
+      "status": "shipped",
+      "shipped_date": "2026-06-01",
+      "date_label": "Live",
+      "summary": "Legal acceptance and wallet creation complete in chat. No detour to a website.",
+      "where": ["dale/first-conversation"]
+    },
+    "blockaid_three_state": {
+      "label": "Blockaid three-state safety",
+      "status": "shipped",
+      "shipped_date": "2026-06-01",
+      "date_label": "Live",
+      "summary": "Safe, flagged with warning, or malicious. Coverage includes Solana.",
+      "where": ["dale/safety"]
+    },
+    "tool_surface_112": {
+      "label": "112 tool surface",
+      "status": "shipped",
+      "shipped_date": "2026-06-01",
+      "date_label": "Live",
+      "summary": "Dale's deterministic tool surface expanded to 112.",
+      "where": ["dale/tools"]
+    },
+    "agg_prediction_markets": {
+      "label": "Prediction markets",
+      "status": "in_progress",
+      "date_label": "Final integration steps",
+      "summary": "Polymarket and Kalshi access through Dale. Discovery layer first. Trading flow follows.",
+      "where": ["dale/prediction-markets"]
+    },
+    "hyperliquid_integration": {
+      "label": "Hyperliquid perps",
+      "status": "in_progress",
+      "date_label": "In progress",
+      "summary": "Perps trading via Hyperliquid.",
+      "where": []
+    },
+    "deepbot_link": {
+      "label": "DeepBot LINK",
+      "status": "in_progress",
+      "date_label": "In build",
+      "summary": "Type. Trade. Track. In a browser.",
+      "where": ["deepbot-link"]
+    },
+    "coingecko_partnership": {
+      "label": "CoinGecko",
+      "status": "in_progress",
+      "date_label": "In progress",
+      "summary": "CoinGecko partnership in progress.",
+      "where": []
+    },
+    "more_specialists_welcome_wizard": {
+      "label": "More specialists and welcome wizard",
+      "status": "in_progress",
+      "date_label": "Rolling out",
+      "summary": "Additional intent specialists and a guided welcome wizard.",
+      "where": []
+    },
+    "genesis_cohort": {
+      "label": "Genesis Cohort recognition",
+      "status": "in_progress",
+      "date_label": "Launching shortly",
+      "summary": "Awakening attendees get priority routing, 3 months DeepBot PRO automatic, Genesis-only feedback channel.",
+      "where": ["dale/genesis-cohort"]
+    },
+    "solana_sends": {
+      "label": "Solana on-chain sends",
+      "status": "in_progress",
+      "date_label": "Rolling out",
+      "summary": "Native SOL and SPL token sends from Dale chat.",
+      "where": ["dale/wallet-management"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
       "status": "in_progress",
-      "date_label": "Next sprint",
+      "date_label": "Rolling out",
       "summary": "Conversational Shotgun configuration via Dale. ETH alert channels first.",
       "where": ["shotgun/overview"]
     },
@@ -95,212 +144,16 @@
       "summary": "Auto buy from smart wallet activity, weighted through the convergence engine.",
       "where": ["shotgun/smart-wallets"]
     },
-    "evm_native_wallets": {
-      "label": "EVM native wallet operations",
-      "status": "shipped",
-      "shipped_date": "2026-05-14",
-      "date_label": "May 14",
-      "summary": "Send, create, import, balance, export across Ethereum, BSC, Base, and Polygon. Plain English. Multi chain conversation flow.",
-      "where": ["dale/wallet-management"]
-    },
-    "solana_wallet_management": {
-      "label": "Solana wallet management",
-      "status": "shipped",
-      "shipped_date": "2026-05-14",
-      "date_label": "May 14",
-      "summary": "Create, import, label, and switch Solana wallets via Dale or panel. SOL sends shipping in next update.",
-      "where": ["dale/wallet-management"]
-    },
-    "usd_pin_threshold": {
-      "label": "USD-based PIN threshold",
-      "status": "shipped",
-      "shipped_date": "2026-05-14",
-      "date_label": "May 14",
-      "summary": "PIN gate runs on USD value, user-settable. Default $1000. Set to 0 for PIN on every trade.",
-      "where": ["dale/safety"]
-    },
-    "dale_honesty_rules": {
-      "label": "Dale honesty rules",
-      "status": "shipped",
-      "shipped_date": "2026-05-13",
-      "date_label": "May",
-      "summary": "Dale reports actual tool outcomes. No invented diagnoses. Em dash filter on outgoing messages.",
-      "where": ["dale/honesty"]
-    },
-    "deepai_zero_tax": {
-      "label": "$DEEPAI zero tax",
-      "status": "shipped",
-      "shipped_date": "2026-05-13",
-      "date_label": "May",
-      "summary": "Buy/sell tax updated to 0/0 on chain. No fees on entering or exiting the token.",
-      "where": ["token/deepai"]
-    },
-    "trade_panel_solana": {
-      "label": "/trade panel Solana support",
-      "status": "shipped",
-      "shipped_date": "2026-05-14",
-      "date_label": "May 14",
-      "summary": "SOL sends, SPL token sends, Solana wallet creation from /trade panel. PIN gated.",
-      "where": ["dale/trade-panel"]
-    },
-    "genesis_cohort": {
-      "label": "Genesis Cohort recognition",
-      "status": "in_progress",
-      "date_label": "Launching shortly",
-      "summary": "Awakening attendees get priority routing, 3 months DeepBot PRO automatic, Genesis-only feedback channel. Effective date pending.",
-      "where": ["dale/genesis-cohort"]
-    },
-    "solana_sends": {
-      "label": "Solana on-chain sends",
-      "status": "in_progress",
-      "date_label": "Next sprint",
-      "summary": "Native SOL and SPL token sends from Dale chat. Currently routed via /trade panel.",
-      "where": ["dale/wallet-management"]
-    },
-    "trade_settlement_check": {
-      "label": "Trade execution settlement check",
-      "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "On-chain settlement verification before reporting trade success.",
-      "where": []
-    },
-    "swap_address_validation": {
-      "label": "Swap engine address validation",
-      "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "Pre-flight address validation on every swap to catch typos and lookalike addresses before signing.",
-      "where": []
-    },
-    "slippage_in_chat": {
-      "label": "Slippage controls in chat",
-      "status": "shipped",
-      "shipped_date": "2026-05-22",
-      "date_label": "May",
-      "summary": "Read and set slippage tolerance via conversation. Per trade or as default.",
-      "where": ["dale/conversational-trading"]
-    },
-    "cold_wallet_setup_patch": {
-      "label": "Cold wallet setup patch",
-      "status": "in_progress",
-      "date_label": "Next update",
-      "summary": "Smoother cold wallet provisioning and panic PIN cold address designation.",
-      "where": ["dale/safety"]
-    },
-    "solana_execution": {
-      "label": "Solana execution",
-      "status": "shipped",
-      "shipped_date": "2026-05-11",
-      "date_label": "May 11",
-      "summary": "Native Solana execution alongside Ethereum, Base, BSC, and Polygon. Jupiter routing, multi-DEX coverage, self-custody import.",
-      "where": []
-    },
-    "solana_convergence": {
-      "label": "Solana convergence",
-      "status": "shipped",
-      "shipped_date": "2026-05-11",
-      "date_label": "May 11",
-      "summary": "Convergence engine extends to Solana. pump.fun listener, Jupiter routing telemetry, Raydium and Orca and Meteora pool signals, sniper bot activity surfacing in convergence.",
-      "where": []
-    },
-    "multichain_pin_gate": {
-      "label": "Multi-chain PIN gate",
-      "status": "shipped",
-      "shipped_date": "2026-05-05",
-      "date_label": "May",
-      "summary": "Chain-first PIN enforcement. PIN gate fires before chain branch, all networks, all security levels.",
-      "where": []
-    },
-    "dale_forget_me": {
-      "label": "Dale ephemeral memory wipe",
-      "status": "shipped",
-      "shipped_date": "2026-05-05",
-      "date_label": "May",
-      "summary": "/forget_me wipes Dale's ephemeral conversation memory on demand. Self-served, no support ticket needed.",
-      "where": []
-    },
-    "convergence_engine": {
-      "label": "Convergence engine",
-      "status": "shipped",
-      "shipped_date": "2026-04-28",
-      "date_label": "Apr 28",
-      "summary": "13 source-type tags, 19 routers, 4 chains, MySQL stores, first signals firing live.",
-      "where": []
-    },
-    "dale_escalation_pipeline": {
-      "label": "Dale escalation pipeline",
-      "status": "shipped",
-      "shipped_date": "2026-05-01",
-      "date_label": "May 1",
-      "summary": "Critical-severity auto-page to admin via Go API. 428 copilot tests green, all flag-gated.",
-      "where": []
-    },
-    "bobby_alert_idempotency_v1": {
-      "label": "Bobby alert idempotency v1",
-      "status": "shipped",
-      "shipped_date": "2026-05-02",
-      "date_label": "May 2",
-      "summary": "Server-side unique on (chain, tx_hash, source_type). First-wins. Zero duplicate alert leaks.",
-      "where": []
-    },
-    "convergence_weight_tuning": {
-      "label": "Convergence weight tuning",
-      "status": "testing",
-      "date_label": "14d",
-      "summary": "Correlation, mutual information, GBDT+SHAP across 5yr Bobby data. Signal threshold optimization.",
-      "where": []
-    },
-    "smart_money_cluster_scoring_v2": {
-      "label": "Smart money cluster scoring v2",
-      "status": "design",
-      "date_label": "21d",
-      "summary": "Cross-wallet pattern detection. Splits aggregated bag activity from coordinated entry.",
-      "where": []
-    },
-    "token_metadata_enrichment": {
-      "label": "Token metadata enrichment",
-      "status": "testing",
-      "date_label": "7d",
-      "summary": "Admin commands for project Portal/X/website. Renders on The Board. Behind feature flag.",
-      "where": []
-    },
-    "layer_2_dale_memory": {
-      "label": "Layer 2 Dale memory",
-      "status": "design",
-      "date_label": "Q2",
-      "summary": "Cross-conversation continuity. 5-phase build. Postgres UserMemoryProfile + summarizer + event-driven triggers.",
-      "where": []
-    },
-    "native_emergency_sell_expansion": {
-      "label": "Native Emergency Sell expansion",
-      "status": "in_progress",
-      "date_label": "30 days",
-      "summary": "Polygon, BNB chain coverage. Mempool monitoring extends beyond ETH/Base.",
-      "where": []
-    },
-    "rocketx_integration": {
-      "label": "RocketX integration",
-      "status": "in_progress",
-      "date_label": "60 days",
-      "summary": "Privacy swaps across 200+ chains. Referral tier active.",
-      "where": []
-    },
-    "deepbot_link": {
-      "label": "DeepBot LINK",
-      "status": "in_progress",
-      "date_label": "This week",
-      "summary": "Type. Trade. Track. In a browser.",
-      "where": ["deepbot-link"]
-    },
     "pin_auto_delete": {
       "label": "PIN auto-delete from chat",
       "status": "building",
-      "drops": "launch week",
+      "date_label": "Rolling out",
       "where": ["dale/safety"]
     },
     "three_secret_questions": {
       "label": "Three secret questions identity reset",
       "status": "building",
-      "drops": "launch week",
+      "date_label": "Rolling out",
       "where": ["dale/safety"]
     },
     "panic_pin": {
@@ -308,40 +161,33 @@
       "status": "live",
       "where": ["dale/safety", "wallet/overview"]
     },
-    "memory_pattern_warnings": {
-      "label": "Pattern-matched memory warnings",
-      "status": "building",
-      "drops": "post-launch week 1",
-      "where": ["dale/memory"]
-    },
-    "memory_introspection": {
-      "label": "What do you remember about me",
-      "status": "building",
-      "drops": "post-launch week 1",
-      "where": ["dale/memory"]
-    },
-    "memory_forget_reset": {
-      "label": "Forget specific token / reset memory",
-      "status": "building",
-      "drops": "post-launch week 1",
-      "where": ["dale/memory"]
-    },
-    "agg_prediction_markets": {
-      "label": "Prediction markets (AGG.market)",
-      "status": "in_progress",
-      "date_label": "Activating shortly",
-      "summary": "Polymarket and Kalshi access through Dale. Discovery layer first. Trading flow follows.",
-      "where": ["dale/prediction-markets"]
-    },
     "private_key_export": {
       "label": "Private key export",
       "status": "live",
       "where": ["wallet/overview"]
     },
+    "memory_pattern_warnings": {
+      "label": "Pattern-matched memory warnings",
+      "status": "building",
+      "date_label": "Rolling out",
+      "where": ["dale/memory"]
+    },
+    "memory_introspection": {
+      "label": "What do you remember about me",
+      "status": "building",
+      "date_label": "Rolling out",
+      "where": ["dale/memory"]
+    },
+    "memory_forget_reset": {
+      "label": "Forget specific token / reset memory",
+      "status": "building",
+      "date_label": "Rolling out",
+      "where": ["dale/memory"]
+    },
     "wallet_mini_app_unification": {
       "label": "Wallet Mini App launching from Dale (Phase 2)",
       "status": "building",
-      "drops": "post-launch week 1",
+      "date_label": "Rolling out",
       "where": ["wallet/overview"]
     },
     "wallet_unified_mini_app": {
@@ -352,97 +198,24 @@
     "voice_messages_in": {
       "label": "Voice messages to Dale (PRO)",
       "status": "coming",
-      "drops": "post-launch month 1",
+      "date_label": "In design",
       "where": ["dale/conversational-trading"]
     },
     "voice_pin": {
       "label": "Voice PIN authorization (PRO)",
       "status": "coming",
-      "drops": "post-launch month 1",
+      "date_label": "In design",
       "where": ["dale/safety", "dale/conversational-trading"]
-    },
-    "dale_website_widget": {
-      "label": "Dale on deepbot.pro web widget",
-      "status": "building",
-      "drops": "launch week",
-      "where": []
     },
     "bobby_trending_channel": {
       "label": "Bobby Trending Channel (curated feed)",
       "status": "planned",
       "where": ["bobby/network"]
     },
-    "leagues_xp_ranks": {
-      "label": "Leagues, XP, and ranks (Rookie to Legend)",
-      "status": "coming",
-      "drops": "post-launch week 3",
-      "where": ["dale/community-layer"]
-    },
-    "competitions_six_formats": {
-      "label": "Six competition formats",
-      "status": "coming",
-      "drops": "post-launch week 3",
-      "where": ["dale/community-layer"]
-    },
-    "the_crown": {
-      "label": "The Crown (daily P&L holder)",
-      "status": "coming",
-      "drops": "post-launch week 3",
-      "where": ["dale/community-layer"]
-    },
-    "leaderboard_masked": {
-      "label": "Leaderboard with masked usernames",
-      "status": "coming",
-      "drops": "post-launch week 3",
-      "where": ["dale/community-layer"]
-    },
-    "following_traders": {
-      "label": "Follow other traders",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "copy_trading": {
-      "label": "Copy trading",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "paper_trading": {
-      "label": "Paper trading with virtual ETH",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "win_cards": {
-      "label": "Win cards (shareable images)",
-      "status": "coming",
-      "drops": "post-launch week 3",
-      "where": ["dale/community-layer"]
-    },
-    "scratch_cards": {
-      "label": "Scratch cards (random rewards)",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "streaks_badges": {
-      "label": "Streaks and badges",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "social_safety_optin": {
-      "label": "Social safety opt-in messaging levels",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/community-layer"]
-    },
-    "rocketx_privacy_swaps": {
-      "label": "RocketX privacy swaps",
-      "status": "coming",
-      "drops": "post-launch month 1",
-      "where": ["dale/tools"]
+    "bobby_intelligence_licensing": {
+      "label": "Bobby intelligence licensing (Stream 6)",
+      "status": "planned",
+      "where": ["revshare/streams"]
     },
     "eterna_perps": {
       "label": "Eterna perpetuals",
@@ -452,85 +225,86 @@
     "bubblemaps_holder_distribution": {
       "label": "Bubblemaps holder distribution view",
       "status": "coming",
-      "drops": "post-launch week 1",
+      "date_label": "Rolling out",
       "where": ["dale/tools"]
     },
     "sonar_polygon_solana": {
       "label": "Sonar DCA on Polygon and Solana",
       "status": "coming",
-      "drops": "post-launch month 1",
+      "date_label": "Rolling out",
       "where": ["dale/tools"]
     },
     "rev_share_calculator_three_engines": {
       "label": "Rev share calculator with Bobby + Wallet revenue inputs",
       "status": "building",
-      "drops": "post-launch week 1",
+      "date_label": "Rolling out",
       "where": ["revshare/calculator"]
     },
-    "bobby_intelligence_licensing": {
-      "label": "Bobby intelligence licensing (Stream 6)",
-      "status": "planned",
-      "where": ["revshare/streams"]
+    "leagues_xp_ranks": {
+      "label": "Leagues, XP, and ranks (Rookie to Legend)",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "chain_switching_chat": {
-      "label": "Chain switching in chat",
-      "status": "shipped",
-      "shipped_date": "2026-05-22",
-      "date_label": "May",
-      "summary": "Switch active chain via conversation. Ethereum, Solana, Base, BSC, Polygon. No menu hop needed.",
-      "where": ["dale/conversational-trading"]
+    "competitions_six_formats": {
+      "label": "Six competition formats",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "gas_prefs_in_chat": {
-      "label": "Gas preferences in chat",
-      "status": "shipped",
-      "shipped_date": "2026-05-22",
-      "date_label": "May",
-      "summary": "Read and adjust gas preferences via conversation. No /trade panel hop.",
-      "where": ["dale/conversational-trading"]
+    "the_crown": {
+      "label": "The Crown (daily P&L holder)",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "auto_explain_failures": {
-      "label": "Auto-explain on tool failures",
-      "status": "shipped",
-      "shipped_date": "2026-05-22",
-      "date_label": "May",
-      "summary": "When a tool errors, Dale surfaces the actual reason in plain English. No invented diagnoses, no vague apologies.",
-      "where": ["dale/honesty"]
+    "leaderboard_masked": {
+      "label": "Leaderboard with masked usernames",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "dale_admin_tier_0": {
-      "label": "Dale Admin Tier 0",
-      "status": "shipped",
-      "shipped_date": "2026-05-22",
-      "date_label": "May",
-      "summary": "Group admin layer for Dale. Tier 0 foundation live. Phase 2 expansion in design.",
-      "where": []
+    "following_traders": {
+      "label": "Follow other traders",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "solana_stability_sprint": {
-      "label": "Solana stability sprint",
-      "status": "in_progress",
-      "date_label": "Active",
-      "summary": "Solana flow audit, market cap fix, convergence engine extending to Solana, send transaction size refinement.",
-      "where": []
+    "copy_trading": {
+      "label": "Copy trading",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "dale_admin_phase_2": {
-      "label": "Dale Admin Phase 2",
-      "status": "in_progress",
-      "date_label": "Sizing",
-      "summary": "Group admin expansion beyond Tier 0 foundation.",
-      "where": []
+    "paper_trading": {
+      "label": "Paper trading with virtual ETH",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "automated_buying": {
-      "label": "Automated buying",
-      "status": "design",
-      "date_label": "Design",
-      "summary": "Dale executes pre-configured buys autonomously against user-defined conditions. Risk controls and monitoring under design.",
-      "where": ["dale/autonomous"]
+    "win_cards": {
+      "label": "Win cards (shareable images)",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     },
-    "hyperliquid_integration": {
-      "label": "Hyperliquid integration",
-      "status": "design",
-      "date_label": "Design",
-      "summary": "Perps trading via Hyperliquid. Chain adapter and routing under design.",
-      "where": []
+    "scratch_cards": {
+      "label": "Scratch cards (random rewards)",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
+    },
+    "streaks_badges": {
+      "label": "Streaks and badges",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
+    },
+    "social_safety_optin": {
+      "label": "Social safety opt-in messaging levels",
+      "status": "coming",
+      "date_label": "Rolling out",
+      "where": ["dale/community-layer"]
     }
   }
 }

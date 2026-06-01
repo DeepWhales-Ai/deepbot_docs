@@ -14,7 +14,7 @@ import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@s
 
 <Para>
   Convergence is how DeepBot identifies which tokens are getting attention across the network
-  right now. It is not a price prediction. It is not a buy signal. It's a real-time read on
+  right now. It is not a price prediction. It is not a buy signal. It's a live read on
   what is converging across independent data streams.
 </Para>
 
@@ -32,7 +32,7 @@ import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@s
   {
     sym: "◣",
     title: "Router signals",
-    body: "Trader execution. When trades start flowing through aggregators like 1inch, Maestro, and others, real money is moving — not just chatter.",
+    body: "Trader execution. When trades start flowing through aggregators like 1inch, Maestro, and others, real money is moving, not just chatter.",
   },
   {
     sym: "◤",
@@ -61,15 +61,15 @@ import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@s
 
 <H2 id="safety-badge">The safety badge</H2>
 <Para>
-  DeepBot scans every token through Blockaid, an independent safety service. The badge tells
-  you what Blockaid returned at scan time.
+  DeepBot scans every token through Blockaid, an independent safety service. Coverage
+  includes Solana. The badge tells you what Blockaid returned at scan time. A token comes
+  back as safe, flagged with warning, or malicious.
 </Para>
 
 <KeyValueGrid items={[
-  { k: "✅  Passed Blockaid",     v: "No risk patterns detected at scan time." },
-  { k: "⚠️  Blockaid Warning",    v: "Risk patterns present. Read details before trading." },
-  { k: "🚮  Blockaid Spam",       v: "Marked as spam." },
-  { k: "🚫  Blockaid Malicious",  v: "Confirmed malicious patterns." },
+  { k: "✅  Safe",                v: "No risk patterns detected at scan time." },
+  { k: "⚠️  Flagged with warning", v: "Risk patterns present. Read details before trading." },
+  { k: "🚫  Malicious",           v: "Confirmed malicious patterns." },
 ]} />
 
 <Callout kind="warn" title="This is point-in-time">

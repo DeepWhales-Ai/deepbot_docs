@@ -5,12 +5,16 @@ sidebar_label: "First conversation"
 
 {/* Source: pages-dale.jsx -> PageFirstConvo */}
 
-import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Pull, KeyValueGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="DALE"
   lede="What it looks like when you talk to Dale for the first time."
 />
+
+<Pull>
+  If you can talk, you can <Lime>trade.</Lime>
+</Pull>
 
 <ChatBlock>
   <ChatBubble from="user">i'm new. show me what you can do</ChatBubble>
@@ -22,6 +26,17 @@ import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble } from '@site/src/compo
     Pick a chain or let me pick. I have your default funds on Base. Suggest starting with $20 in something with healthy flow and no honeypot signals. Want me to surface three candidates?
   </ChatBubble>
 </ChatBlock>
+
+<H2 id="onboarding">The onboarding flow</H2>
+<Para>
+  Onboarding runs through Dale. No separate flow. No site to bounce to. You enter @traderdeepbot, Dale greets you, and the welcome flow walks you into a working wallet without leaving the chat.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Legal acceptance", v: "Confirm in chat. The legal step is acknowledged the way every other action is, in conversation, with a clear record." },
+  { k: "Wallet creation", v: "Created in chat. Dale generates the wallet, surfaces the PIN setup, and walks the secret questions and Panic PIN setup." },
+  { k: "First trade ready", v: "By the end of the welcome flow you have a funded path to a first trade. No detour to a website. No second app." },
+]} />
 
 <H2 id="why">Why this matters</H2>
 <Para>
