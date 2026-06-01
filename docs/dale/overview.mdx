@@ -5,11 +5,11 @@ sidebar_label: "What is Dale"
 
 {/* Source: pages-dale.jsx -> PageWhatDale */}
 
-import { PageHead, Para, H2, Lime, Pull, FeatureGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="DALE"
-  lede={<>Dale is built to make crypto trading effortless for anyone. No commands. No syntax. Plain English in. Trade out. Multi-chain execution across Ethereum, Solana, Base, BNB, and Polygon. Powered by the convergence engine. The longest-running community intelligence in the category behind every decision. Detection, not prediction. You move when you decide.</>}
+  lede={<>Dale is built to make crypto trading effortless for anyone. No commands. No syntax. Plain English in. Trade out. Multi chain execution across Ethereum, Solana, Base, BNB, and Polygon. Powered by the convergence engine. The longest running community intelligence in the category behind every decision. Detection, not prediction. You move when you decide.</>}
 />
 
 <div className="db-faded-box">
@@ -37,11 +37,10 @@ import { PageHead, Para, H2, Lime, Pull, FeatureGrid } from '@site/src/component
   { sym: "◉", title: "Calm", body: "Same voice in onboarding as at midnight on a wild market day. Composure is the brand." },
 ]} />
 
-<H2 id="coming">Coming after launch</H2>
-<Para>
-  Dale's surface area widens after launch. Voice messages in, Voice PIN authorization, and
-  Dale voice replies. Autonomous trading inside rules you set. <Lime>Prediction
-  markets through AGG.market</Lime>: Polymarket and Kalshi, best price routing,
-  same wallet, same PIN. Token trading and event trading from one conversation. Integration
-  is in progress and will land in the weeks following launch.
-</Para>
+<H2 id="coming">What's coming</H2>
+<KeyValueGrid items={[
+  { k: "Prediction markets", v: "Final integration steps in progress." },
+  { k: "Hyperliquid perps", v: "In progress." },
+  { k: "DeepBot LINK", v: "In build." },
+  { k: "More specialists and welcome wizard", v: "Rolling out." },
+]} />

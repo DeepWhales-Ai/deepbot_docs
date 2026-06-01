@@ -1,6 +1,6 @@
 // DeepBot docs sidebar.
 // Top-level order: Start here, Dale, DeepBot Wallet, Shotgun, DeepBot LINK, Platform,
-// The Brain, Token, Revenue Sharing, Bobby, Investors, Team.
+// The Brain, Token, Affiliate Program, Revenue Sharing, Bobby, Investors, Team.
 // Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -37,6 +37,8 @@ const sidebars = {
         'dale/tools',
         'dale/trade-panel',
         'dale/safety',
+        'dale/trade-safety-gate',
+        'dale/specialist-routing',
         'dale/stop-loss-and-trailing',
         'dale/prediction-markets',
         'dale/autonomous',
@@ -107,6 +109,20 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: ['token/deepai'],
+    },
+    {
+      type: 'category',
+      label: 'Affiliate Program',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'affiliate-program/overview',
+        'affiliate-program/getting-started',
+        'affiliate-program/commissions',
+        'affiliate-program/dashboard',
+        'affiliate-program/payouts',
+        'affiliate-program/faq',
+      ],
     },
     {
       type: 'category',

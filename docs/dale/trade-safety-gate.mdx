@@ -1,0 +1,19 @@
+---
+title: "Trade safety gate"
+sidebar_label: "Trade safety gate"
+---
+
+import { PageHead, Para, H2 } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="A precondition runs before every real-money trade. Every state changing action carries an audit trail."
+/>
+
+<H2 id="how">How the gate works</H2>
+<Para>
+  A precondition runs before every real-money trade. Every state changing action carries an audit trail.
+</Para>
+<Para>
+  If a trade doesn't pass the precondition, it doesn't happen. If it passes, the action is logged before execution, so what got asked, what got confirmed, and what got sent are all on record.
+</Para>

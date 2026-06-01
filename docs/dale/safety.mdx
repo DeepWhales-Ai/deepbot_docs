@@ -35,8 +35,9 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
   three required, stored as hashes the platform cannot reverse.
 </Para>
 <Para>
-  Every token Dale touches is scanned by Blockaid first. Every panel, every surface, every
-  chain enforces the same PIN gate. There is no bypass route. And if the worst happens,
+  Every token Dale touches is scanned by Blockaid first. A token comes back as safe,
+  flagged with warning, or malicious. Coverage includes Solana. Every panel, every surface,
+  every chain enforces the same PIN gate. There is no bypass route. And if the worst happens,
   Emergency Sell runs on its own mempool monitor on its own process so the exit door stays
   open even if everything else is down.
 </Para>
@@ -158,19 +159,19 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
 <KeyValueGrid items={[
   { k: "Key encryption", v: "Private keys encrypted with AES-256-GCM. The encryption layer is isolated from the trading code path." },
   { k: "PIN with Panic PIN", v: "Every wallet is PIN-protected. A separate Panic PIN looks like a normal unlock and silently empties wallets to a cold address you set. Built for the moment a stranger forces your phone open." },
-  { k: "PIN auto-delete", v: "PIN auto-deletes from chat history after entry. The sensitive number never sits in message history." },
+  { k: "PIN auto delete", v: "PIN deletes from chat history after entry. The sensitive number never sits in message history." },
   { k: "Three secret questions", v: "Identity reset uses three secret questions you choose yourself. Hashes only, all three required, no salesperson, no support backdoor." },
   { k: "Chain-first PIN gate", v: "PIN gate fires before chain branch. Same security on every chain, EVM and Solana, all three security levels." },
   { k: "Mempool rug protection", v: "Dual independent websocket subscriptions monitor 13 attack pattern categories and roughly 68 attack selectors in real time." },
-  { k: "Blockaid scanning", v: "Real-time Blockaid scan on every token before trade. Address and contract reputation as a pre check on every interaction." },
+  { k: "Blockaid scanning", v: "Live Blockaid scan on every token before trade. A token comes back as safe, flagged with warning, or malicious. Coverage includes Solana." },
 ]} />
 
 <H2 id="runtime">Runtime safety</H2>
 <FeatureGrid items={[
-  { sym: "◢", title: "Blockaid", body: "Live integration. Every token scanned before Dale touches it. Address and contract reputation as a pre check on every interaction." },
+  { sym: "◢", title: "Blockaid", body: "Live integration. Every token scanned before Dale touches it. A token comes back as safe, flagged with warning, or malicious. Coverage includes Solana." },
   { sym: "◣", title: "Honeypot pre check", body: "Hidden traps, freeze functions, blacklists, transfer restrictions. Refused without explicit override." },
   { sym: "◤", title: "Rugged dev refusal", body: "Wallets connected to past rug events flagged before the trade builds." },
-  { sym: "◥", title: <>Emergency Sell <Asterisk /></>, body: "Dedicated mempool monitoring on dual WSS subscriptions, on its own process. The exit door stays open even when everything else is down. Ethereum at launch, other chains in Phase 2." },
+  { sym: "◥", title: <>Emergency Sell <Asterisk /></>, body: "Dedicated mempool monitoring on dual WSS subscriptions, on its own process. The exit door stays open even when everything else is down. Ethereum only." },
 ]} />
 
 <H2 id="continuous">Safety doesn't stop at the buy</H2>

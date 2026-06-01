@@ -1,0 +1,47 @@
+---
+title: "Payouts"
+sidebar_label: "Payouts"
+---
+
+import { PageHead, Para, H2, Lime, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="AFFILIATE PROGRAM"
+  lede="Paid in USDC on Solana. Settled to a wallet you choose."
+/>
+
+<H2 id="how">How payouts work</H2>
+<Para>
+  Affiliate commissions accrue continuously as your referrals trade. Pending
+  balance updates in the dashboard in near real time. On the program payout
+  schedule, the pending balance settles to your designated Solana wallet as
+  USDC.
+</Para>
+<Para>
+  There is no claim window to miss. Earnings do not expire. If your wallet
+  is set and the network is up, your payout lands.
+</Para>
+
+<H2 id="settings">Payout settings</H2>
+<KeyValueGrid items={[
+  { k: "Stablecoin", v: "USDC on Solana." },
+  { k: "Destination", v: "A Solana wallet you set in the dashboard. Change it whenever you want; the next settlement honors the latest setting." },
+  { k: "Schedule", v: "Program defined and posted in the dashboard. Pending balance is visible the whole time." },
+  { k: "Threshold", v: "Minimum payout threshold is published in the dashboard. Below the threshold, balance carries to the next cycle." },
+  { k: "Fees", v: "DeepBot covers Solana network fees on payout settlement. You receive the gross amount." },
+]} />
+
+<H2 id="independent">Independent of $DEEPAI revenue share</H2>
+<Para>
+  Affiliate commissions are paid from platform fees and settle as USDC on
+  Solana. The $DEEPAI revenue share is a separate pool with its own
+  eligibility and claim flow. Holding $DEEPAI does not change your affiliate
+  payout, and earning affiliate commission does not change your revenue
+  share.
+</Para>
+
+<Callout kind="info" title="Wallet not set? Balance still accrues">
+  Commission keeps accumulating even if you haven't set a payout wallet. The
+  pending balance is visible in the dashboard. When you set the wallet, the
+  next scheduled settlement clears the balance to it.
+</Callout>

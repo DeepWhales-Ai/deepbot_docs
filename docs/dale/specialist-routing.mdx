@@ -1,0 +1,29 @@
+---
+title: "Specialist routing"
+sidebar_label: "Specialist routing"
+---
+
+import { PageHead, Para, H2, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Dale routes your intent to the right specialist. You don't think about it. Dale picks the right tool for the job."
+/>
+
+<H2 id="how">How it works</H2>
+<Para>
+  Dale routes your intent to the right specialist. A buy request goes to the trading path. A question about a token goes to research. A wallet operation goes to the wallet path. You don't think about it. Dale picks the right tool for the job.
+</Para>
+
+<H2 id="paths">What gets routed where</H2>
+<KeyValueGrid items={[
+  { k: "Trading intents", v: "Buy, sell, swap, set a stop, set a DCA. Routed to the trading path. Quote, simulate, confirm, sign, execute." },
+  { k: "Research intents", v: "What is this token. Who holds it. What did the wallet graph say. Routed to research. Tools surface data, not opinions." },
+  { k: "Wallet intents", v: "Send, create, import, label, switch, export. Routed to the wallet path. PIN gate fires where it should." },
+  { k: "Safety intents", v: "PIN setup, Panic PIN, secret questions, cold address. Routed to the safety path. Same gate, every chain." },
+]} />
+
+<H2 id="why">Why it matters to you</H2>
+<Para>
+  You speak in plain English. Dale figures out what you want. The right tools run, in the right order, with the right safety floor for what you asked. Every intent gets the specialist that knows it best.
+</Para>

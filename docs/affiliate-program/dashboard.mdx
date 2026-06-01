@@ -1,0 +1,42 @@
+---
+title: "Dashboard"
+sidebar_label: "Dashboard"
+---
+
+import { PageHead, Para, H2, Lime, Mono, KeyValueGrid, Callout } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="AFFILIATE PROGRAM"
+  lede="Referrals, earnings, and tier status live at rewards.deepbot.pro."
+/>
+
+<H2 id="access">How to sign in</H2>
+<Para>
+  Go to <Mono>rewards.deepbot.pro</Mono>. Sign in with the same Telegram
+  account you use for Dale. The dashboard pairs to your DeepBot identity, so
+  every referral, every trade, every commission is tied to the same account
+  you trade from.
+</Para>
+
+<H2 id="see">What you see</H2>
+<KeyValueGrid items={[
+  { k: "Your link", v: "Copy ready, with click and conversion stats." },
+  { k: "Current tier", v: "Bronze, Silver, Gold, Platinum, or Beast Mode. Plus the count of active monthly traders that earned it." },
+  { k: "Next tier", v: "How many more active monthly traders you need to reach the next rung. Updated live." },
+  { k: "Earnings", v: "Lifetime earnings, current pending balance, last payout, payout history." },
+  { k: "Active referrals", v: "Count of users who placed at least one fee generating trade this month. Updated live." },
+  { k: "Payout wallet", v: "Solana wallet that receives USDC payouts. Editable from the dashboard." },
+]} />
+
+<H2 id="updates">When it updates</H2>
+<Para>
+  Referrals appear in the dashboard as soon as a new signup ties to your
+  code. Earnings accrue continuously as your referrals trade. Tier
+  re-evaluation runs hourly. Payout balance updates as commissions settle.
+</Para>
+
+<Callout kind="lime" title="Always tied to your trading account">
+  The dashboard signs in with the same Telegram identity you use for Dale.
+  One account, one tier, one running tally. Switch wallets all you want for
+  payout; the program identity is the Telegram account.
+</Callout>
