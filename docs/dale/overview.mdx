@@ -51,13 +51,19 @@ import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site
 | Trailing stop | Live | Live | Live | Not offered | Live |
 | Tiered take profit | Live | Live | Live | Not offered | Live |
 | All three exits on one position | Live | Live | Live | Not offered | Live |
-| Correct exit sizing on auto armed buys | Live | Live | Live | Not offered | Live |
+| Correct exit sizing on auto armed buys | n/a | Live | Live | Not offered | n/a |
 | DCA | Live | Live | Live | Routing only | Not offered |
 | DCA proceeds auto return | Live | Live | Live | n/a | n/a |
 | Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) |
 | Honest terminal trade outcome | Live | Live | Live | Live | Live |
-| Signal buy protective arming | Live | Live | Live | Not offered | Live |
+| Signal buy protective arming | Live | Not offered | Not offered | Not offered | Not offered |
 | Convergence board routing | Live | Live | Live | Live | Live |
+
+<Para>
+  Correct exit sizing on auto armed buys covers the chains where an automated buy
+  arms an exit as part of the trade: BSC and Base. Signal buys run through Shotgun,
+  which is Ethereum only today.
+</Para>
 
 <H2 id="coming">What's coming</H2>
 <KeyValueGrid items={[
