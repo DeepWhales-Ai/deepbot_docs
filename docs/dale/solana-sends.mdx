@@ -1,0 +1,45 @@
+---
+title: "Sending on Solana"
+sidebar_label: "Sending on Solana"
+---
+
+{/* Source: Dale v2.1 refresh. New page for native SOL and standard SPL sends
+    from inside Dale. Token 2022 not yet supported anywhere in Dale.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, NumberedList } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Send SOL or any standard SPL token to any address, in one conversation, without leaving Dale."
+/>
+
+<H2 id="supported">What is supported</H2>
+<Para>
+  Native SOL and any standard SPL token in your wallet can be sent to any address
+  from inside Dale in one conversation.
+</Para>
+
+<H2 id="flow">Flow</H2>
+<NumberedList items={[
+  { title: "Say what you want", text: "Specify token, amount and destination." },
+  { title: "Confirm", text: "Confirm with PIN if the amount clears the threshold." },
+  { title: "Execute", text: "Dale executes. The confirmed result, including the transaction signature, returns to chat within seconds." },
+]} />
+
+<H2 id="precision">Precision</H2>
+<Para>
+  A percentage or "all" send reads the actual raw on chain balance before
+  calculating the amount. Precision beyond the token's allowed decimal places is
+  rejected before broadcast, not after. Chain errors are translated into plain
+  English before they reach you.
+</Para>
+
+<H2 id="token-2022">Token 2022</H2>
+<Para>
+  Token 2022 program assets are not offered anywhere in Dale, including screener,
+  trading and transfers. Standard SPL tokens are fully supported.
+</Para>
+<Callout kind="info" title="Token 2022">
+  Support for Token 2022 is planned.
+</Callout>

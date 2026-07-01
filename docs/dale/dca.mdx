@@ -1,0 +1,48 @@
+---
+title: "Dollar cost averaging"
+sidebar_label: "DCA"
+---
+
+{/* Source: Dale v2.1 refresh. New page for conversational DCA.
+    Chains: Ethereum, BSC, Base. Polygon routing only. Solana not in this
+    release. Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid, NumberedList } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Build an averaging strategy in conversation. Dale scans, funds it and runs it. No external interface."
+/>
+
+<H2 id="availability">Availability</H2>
+<Para>
+  DCA runs on Ethereum, BSC and Base. Polygon is integrated at the routing layer
+  but not active for strategies you set. Solana is not part of this release.
+</Para>
+
+<H2 id="flow">Flow</H2>
+<NumberedList items={[
+  { title: "Build the strategy", text: "Set the target token and your schedule in conversation." },
+  { title: "Safety scan", text: "Dale runs a safety scan on the target token before any money moves." },
+  { title: "Provision", text: "Dale provisions a dedicated deposit address for the strategy." },
+  { title: "Fund", text: "Dale funds it from your Dale wallet." },
+  { title: "Create", text: "Dale creates the strategy with your configuration. No external interface is involved." },
+]} />
+
+<H2 id="settlement">Settlement</H2>
+<Para>
+  Your destination wallet is registered at strategy creation, so there is no manual
+  withdrawal step. On completion, proceeds settle back to your Dale wallet,
+  typically within hours, as the chain's native token.
+</Para>
+
+<H2 id="safety">Safety</H2>
+<Para>
+  Every DCA buy target is scanned before creation. Malicious, unverified and scan
+  failed tokens are blocked before funds move. Sells are not gated, since exits are
+  always allowed.
+</Para>
+<Callout kind="lime" title="Held, not abandoned">
+  If a funding transfer fails or returns an ambiguous result, the position is held
+  and escalated rather than silently abandoned.
+</Callout>

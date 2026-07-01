@@ -46,6 +46,10 @@ const sidebars = {
         'dale/response-modes',
         'dale/emergency-sell',
         'dale/genesis-cohort',
+        'dale/screener',
+        'dale/auto-buy',
+        'dale/dca',
+        'dale/solana-sends',
       ],
     },
     {

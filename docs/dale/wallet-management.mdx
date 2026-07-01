@@ -8,7 +8,6 @@ sidebar_label: "Native wallets"
     export). Solana sends are queued; wallet management for Solana is live. */}
 
 import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatBubble } from '@site/src/components/primitives.jsx';
-import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <PageHead
   eyebrow="DALE · WALLETS"
@@ -106,7 +105,7 @@ Total · $5,215`}</ChatBubble>
 <KeyValueGrid items={[
   { k: "EVM sends (ETH, BSC, Base, Polygon)", v: <Lime>Live</Lime> },
   { k: "Solana wallet management (create, import, balance)", v: <Lime>Live</Lime> },
-  { k: "Solana on chain sends", v: <FeatureStatus id="solana_sends" /> },
+  { k: "Solana on chain sends", v: <><Lime>Live</Lime> · <a className="db-link" href="/dale/solana-sends">details →</a></> },
 ]} />
 
 <Callout kind="lime" title="One conversation, every chain">

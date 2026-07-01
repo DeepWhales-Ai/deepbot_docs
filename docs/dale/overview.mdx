@@ -37,10 +37,34 @@ import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site
   { sym: "◉", title: "Calm", body: "Same voice in onboarding as at midnight on a wild market day. Composure is the brand." },
 ]} />
 
+<H2 id="chains">Chain coverage</H2>
+<Para>
+  Where each capability stands per chain today.
+</Para>
+
+| Capability | ETH | BSC | Base | Polygon | Solana |
+|---|---|---|---|---|---|
+| Screener matching | Live | Live | Live | Not offered | Live |
+| Rich match card | Live | Live | Live | Not offered | Live |
+| Auto Buy on match | Live | Soon | Soon | Not offered | Soon |
+| Stop loss | Live | Live | Live | Not offered | Live |
+| Trailing stop | Live | Live | Live | Not offered | Live |
+| Tiered take profit | Live | Live | Live | Not offered | Live |
+| All three exits on one position | Live | Live | Live | Not offered | Live |
+| Correct exit sizing on auto armed buys | Live | Live | Live | Not offered | Live |
+| DCA | Live | Live | Live | Routing only | Not offered |
+| DCA proceeds auto return | Live | Live | Live | n/a | n/a |
+| Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) |
+| Honest terminal trade outcome | Live | Live | Live | Live | Live |
+| Signal buy protective arming | Live | Live | Live | Not offered | Live |
+| Convergence board routing | Live | Live | Live | Live | Live |
+
 <H2 id="coming">What's coming</H2>
 <KeyValueGrid items={[
+  { k: "Auto Buy on Base and BSC", v: "Base and BSC next, then Solana." },
+  { k: "Token 2022 support", v: "Planned across screener, trading and transfers." },
+  { k: "DCA on additional chains", v: "Expanding beyond Ethereum, BSC and Base." },
   { k: "Prediction markets", v: "Final integration steps in progress." },
   { k: "Hyperliquid perps", v: "In progress." },
   { k: "DeepBot LINK", v: "In build." },
-  { k: "More specialists and welcome wizard", v: "Rolling out." },
 ]} />

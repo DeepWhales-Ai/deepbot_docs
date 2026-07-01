@@ -1,0 +1,54 @@
+---
+title: "Auto Buy"
+sidebar_label: "Auto Buy"
+---
+
+{/* Source: Dale v2.1 refresh. New page documenting Auto Buy on screener
+    matches, the one token rule, entitlements, and availability.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="When a screener match arrives, Auto Buy takes the trade for you. No tap. No second window."
+/>
+
+<H2 id="what">What it does</H2>
+<Para>
+  When a screener match arrives, Auto Buy executes the trade through Dale without
+  further input. Configurable parameters are buy amount, slippage, per sweep cap
+  and daily spend cap.
+</Para>
+
+<H2 id="one-token">The one token rule</H2>
+<Para>
+  A given token can only ever be bought once through the screener per user, no
+  matter how many times it matches. This is permanent, by design.
+</Para>
+
+<H2 id="entitlements">Entitlements</H2>
+<Para>
+  Auto Buy is a Pro capability. Up to five armed strategies per user. Automated
+  exits armed as part of an auto buy count toward the same five strategy cap.
+</Para>
+
+<H2 id="availability">Availability</H2>
+<Para>
+  Live on Ethereum. Base and BSC land next, then Solana. Auto buy outcomes that
+  fail or need attention arrive inside Dale in the same chat as every other trade
+  result.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Ethereum", v: <Lime>Live</Lime> },
+  { k: "Base", v: "Soon" },
+  { k: "BSC", v: "Soon" },
+  { k: "Solana", v: "Soon" },
+]} />
+
+<Callout kind="lime" title="Set the criteria first">
+  Auto Buy fires on screener matches. Define what you are hunting for on the{' '}
+  <a className="db-link" href="/dale/screener">Screener</a> page, then arm Auto Buy
+  to take it.
+</Callout>

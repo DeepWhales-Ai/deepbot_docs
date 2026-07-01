@@ -20,31 +20,43 @@ import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@s
 
 <H2 id="pillars">The four pillars</H2>
 <Para>
-  Every token gets scored across four signals. Each pillar fills as evidence accumulates.
+  Every token score is a weighted blend of four pillars. Each pillar fills as
+  evidence accumulates.
 </Para>
 
 <FeatureGrid items={[
   {
     sym: "◢",
-    title: "Group signals",
-    body: "Community attention. When a token starts appearing across independent Telegram groups, something is converging.",
+    title: "Group score",
+    body: "From mentions and alert activity across an active network of monitored community groups.",
   },
   {
     sym: "◣",
-    title: "Router signals",
-    body: "Trader execution. When trades start flowing through aggregators like 1inch, Maestro, and others, real money is moving, not just chatter.",
+    title: "Router score",
+    body: "From bot and aggregator flow tracked across EVM and Solana routers.",
   },
   {
     sym: "◤",
-    title: "Onchain signals",
-    body: "Smart wallet movement and accumulation patterns. Wallets with track records position before crowds.",
+    title: "Onchain score",
+    body: "From on chain transaction patterns.",
   },
   {
     sym: "◥",
-    title: "Safety signals",
-    body: "Risk patterns. Honeypot detection, owner functions, tax mutability, liquidity concentration. The safety pillar can downgrade a score even when the others run hot.",
+    title: "Safety score",
+    body: "From Blockaid and safety scan signals. The safety pillar can downgrade a score even when the others run hot.",
   },
 ]} />
+
+<Para>
+  Infrastructure assets are excluded from the board. Stablecoins, wrapped natives,
+  LSTs, LP tokens and known router infrastructure never appear, so discovery tokens
+  are not buried under things everyone already holds.
+</Para>
+
+<Callout kind="info" title="Solana routing">
+  Solana addresses are handled with case preserved end to end, so a tap to trade
+  from the board routes to the correct token.
+</Callout>
 
 <H2 id="score">Reading the score</H2>
 <Para>
@@ -79,7 +91,7 @@ import { PageHead, Para, H2, Lime, Callout, FeatureGrid, KeyValueGrid } from '@s
 
 <H2 id="moat">What we don't tell you</H2>
 <Para>
-  Some details of how Bobby's network detects convergence stay private. That includes how
+  Some details of how the network detects convergence stay private. That includes how
   groups are weighted, how signal strength is measured, which routers we monitor, and which
   patterns we track. <Lime>This is the moat. The data is the product.</Lime>
 </Para>
