@@ -1,0 +1,70 @@
+---
+title: "Screener"
+sidebar_label: "Screener"
+---
+
+{/* Source: Dale v2.1 refresh. New page documenting the conversational
+    screener, its criteria, entitlements, match card, and pre-delivery
+    filtering. Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+
+<PageHead
+  eyebrow="DALE"
+  lede="Describe what you want to buy. Dale watches the live market for it and brings you the match."
+/>
+
+<H2 id="what">What it does</H2>
+<Para>
+  Define buying criteria in conversation. Dale evaluates the live market against
+  those criteria continuously and delivers a match by DM. The screener runs on
+  Ethereum, BSC, Base and Solana. Polygon is not part of this release.
+</Para>
+
+<H2 id="criteria">What you can screen for</H2>
+<Para>
+  Chain, minimum liquidity, minimum age, minimum holder count, maximum developer
+  wallet concentration, LP burn threshold, safety verdict tolerance. Create,
+  update, pause, resume, delete and view every screener through Dale. Ask Dale to
+  suggest criteria if you don't have a strategy in mind, then refine in
+  conversation.
+</Para>
+
+<H2 id="entitlements">Entitlements</H2>
+<Para>
+  Free accounts run one active screener. Pro accounts run up to five.
+</Para>
+
+<H2 id="match">What a match looks like</H2>
+<Para>
+  Every match DM carries everything needed to decide without leaving the message:
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Risk verdict", v: "Benign, warning, or malicious / unverified." },
+  { k: "Identity", v: "Ticker and full contract address." },
+  { k: "Valuation", v: "Market cap (or FDV where market cap is unavailable), price and liquidity in USD." },
+  { k: "Taxes", v: "Buy tax and sell tax." },
+  { k: "Supply health", v: "Holder count, burned LP percentage, locked LP percentage." },
+  { k: "Links", v: "Direct links to the block explorer and the pool chart." },
+  { k: "Tap to buy", v: "A control that opens Dale with the trade pre loaded." },
+]} />
+
+<H2 id="before">Before delivery</H2>
+<Para>
+  Matches are filtered before delivery, not after.
+</Para>
+<Para>
+  On EVM, every match clears a hard minimum LP burn floor of 90 percent from
+  Blockaid data. A token with missing or failed burn data is rejected, not passed
+  through.
+</Para>
+<Para>
+  On Solana, every match clears a developer wallet holding cap before delivery.
+</Para>
+
+<Callout kind="lime" title="Hands off the trade">
+  Want the match bought for you the moment it lands? See{' '}
+  <a className="db-link" href="/dale/auto-buy">Auto Buy</a> for the automated buy
+  path.
+</Callout>

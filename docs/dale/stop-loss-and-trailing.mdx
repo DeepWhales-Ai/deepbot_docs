@@ -1,102 +1,62 @@
 ---
-title: "Stop loss & trailing"
-sidebar_label: "Stop loss & trailing"
+title: "Exits: stop loss, trailing stop, take profit"
+sidebar_label: "Exits"
 ---
 
-{/* Source: new page documenting hard stop loss vs trailing stop loss.
-    Two scenario tables drive the explanation.
-    Three-tick confirmation noted. */}
+{/* Source: Dale v2.1 refresh. Rewritten from the former "Stop loss & trailing"
+    page. Slug stays /dale/stop-loss-and-trailing (no rename, no redirect).
+    Chains with automated exits: Ethereum, BSC, Base, Solana. Polygon does not
+    support automated exits. Voice: no em dashes, no hyphenated compounds. */}
 
-import { PageHead, Para, H2, H3, Lime, Mono } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
 
 <PageHead
   eyebrow="DALE"
-  lede="Two ways to protect a position. Hard stop loss locks the floor from entry. Trailing stop loss locks gains from the peak."
+  lede="Three ways to close a position on your terms. Set them in conversation. Dale watches the price and fires when the market gets there."
 />
 
-<H2 id="hard">Hard stop loss</H2>
+<H2 id="chains">Supported chains, every exit type</H2>
 <Para>
-  Fixed loss percentage from your entry price. Triggers once the token drops
-  that percentage below your entry. Sells the position.
+  Stop loss, trailing stop and tiered take profit run on Ethereum, BSC, Base and
+  Solana. Solana runs the same three exit types as the EVM chains.
 </Para>
+<Callout kind="info" title="Polygon">
+  Polygon does not currently support automated exits.
+</Callout>
+
+<H2 id="what">What each does</H2>
+<KeyValueGrid items={[
+  { k: "Stop loss", v: "Triggers a sell if price falls below a set level." },
+  { k: "Trailing stop", v: <>Follows the price upward and triggers if the trailed floor is broken. The trail percentage is set at arm time and evaluated against live prices every 30 seconds.</> },
+  { k: "Tiered take profit", v: "Places multiple price targets, each with its own exit size, on one position." },
+]} />
 <Para>
-  <Mono>Entry $1.00, hard stop loss 30%.</Mono><br />
-  <Mono>Threshold: $0.70.</Mono><br />
-  <Mono>Price drops to $0.70 or below → sells.</Mono>
-</Para>
-<Para>
-  The floor is fixed. It does not move with price.
+  All three can run on the same position at once, each managed independently.
 </Para>
 
-<H2 id="trailing">Trailing stop loss</H2>
+<H2 id="entitlements">Entitlements</H2>
 <Para>
-  Loss percentage from the highest price the token has reached since you
-  entered. The peak updates as the token climbs. The trigger threshold rides
-  up with it.
-</Para>
-<Para>
-  This protects gains automatically without you having to keep moving the
-  stop.
+  Automated exits are a Pro capability across the supported chains (Ethereum, BSC,
+  Base and Solana), whether set manually on a held position or armed automatically
+  as part of a buy. Up to five armed strategies per user.
 </Para>
 
-<H3>Scenario: price rises then crashes</H3>
+<H2 id="armed">Armed against the real position</H2>
 <Para>
-  50% trailing stop loss. Entry $1.00.
+  When an exit is armed by token name, Dale resolves the exact token from live
+  wallet holdings, not from cached reference. Exits are armed against what is
+  actually held.
 </Para>
 
-| Tick | Price | Peak | Threshold (peak × 0.5) | Trigger? |
-|------|-------|------|------------------------|----------|
-| 1 | $1.00 | $1.00 | $0.50 | No |
-| 2 | $1.50 | $1.50 | $0.75 | No |
-| 3 | $2.00 | $2.00 | $1.00 | No |
-| 4 | $1.80 | $2.00 | $1.00 | No |
-| 5 | $1.00 | $2.00 | $1.00 | Sell |
-
+<H2 id="fire">When the market gets there</H2>
 <Para>
-  Tick 5 fires because the peak was $2.00 and price has dropped 50% from that
-  peak. Even though $1.00 is your original entry price, the trigger is
-  calculated against the peak, not the entry.
+  Every exit is checked against real on chain holdings at fire time. If holdings
+  data is temporarily unavailable, the exit holds and retries rather than firing
+  on assumed state.
 </Para>
 
-<H3>Scenario: dip and recovery</H3>
+<H2 id="sizing">Correct sizing on auto armed exits</H2>
 <Para>
-  50% trailing stop loss. Entry $1.00.
-</Para>
-
-| Tick | Price | Peak | Threshold | Trigger? |
-|------|-------|------|-----------|----------|
-| 1 | $1.00 | $1.00 | $0.50 | No |
-| 2 | $3.00 | $3.00 | $1.50 | No |
-| 3 | $1.60 | $3.00 | $1.50 | No |
-| 4 | $1.50 | $3.00 | $1.50 | Sell |
-
-<Para>
-  Price tripled, then fell back to $1.50, exactly the 50% trailing threshold
-  off the $3.00 peak. <Lime>The trailing stop locks in the gain.</Lime> You
-  exit at $1.50 against an entry of $1.00, even though the peak was $3.00.
-</Para>
-
-<H2 id="confirmation">Confirmation behaviour</H2>
-<Para>
-  Trailing stops use a <Lime>three tick confirmation</Lime> before firing.
-  Price has to stay at or below the threshold for three consecutive checks.
-  Wick recoveries reset the count.
-</Para>
-<Para>
-  This protects against a single bad print triggering an unnecessary sell.
-</Para>
-
-<H2 id="how">How to use them</H2>
-<Para>
-  Hard stop loss works for any position where you have a clear "this trade is
-  invalidated below X" line.
-</Para>
-<Para>
-  Trailing stop loss works for trending positions where you want to ride the
-  move but lock gains automatically as price extends.
-</Para>
-<Para>
-  Both attach to Shotgun buys. Both can be set on manual buys through the{' '}
-  <Mono>/trade</Mono> panel. Dale conversational setup is part of the
-  standard exit toolkit.
+  When a buy on BSC or Base arms an exit automatically as part of the trade, the
+  exit is sized to the actual quantity bought.
 </Para>

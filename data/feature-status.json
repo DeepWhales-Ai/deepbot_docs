@@ -1,23 +1,21 @@
 {
-  "last_updated": "2026-06-01",
+  "last_updated": "2026-07-01",
   "launch_date": "2026-05-11",
   "currently_shipping": {
-    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across shipped + in_progress. Not a changelog. When a new item ships, remove the older / lower-impact one. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
+    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across now + next. Not a changelog. When a new item ships, remove the older / lower-impact one. Rotated-off ids stay in the `features` map. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
     "now": [
-      "affiliate_program",
-      "specialist_routing",
-      "dale_memory_layer",
-      "trade_safety_gate",
-      "onboarding_dale",
-      "blockaid_three_state",
-      "tool_surface_112"
+      "token_screener",
+      "auto_buy_engine",
+      "solana_exits_parity",
+      "dca_evm",
+      "solana_sends",
+      "convergence_solana_routing",
+      "category_scoped_notes"
     ],
     "next": [
-      "agg_prediction_markets",
-      "hyperliquid_integration",
-      "deepbot_link",
-      "coingecko_partnership",
-      "more_specialists_welcome_wizard"
+      "auto_buy_expansion",
+      "token_2022_support",
+      "agg_prediction_markets"
     ],
     "stealth": {
       "private_beta": 2,
@@ -124,11 +122,82 @@
       "where": ["dale/genesis-cohort"]
     },
     "solana_sends": {
-      "label": "Solana on-chain sends",
+      "label": "Solana sends (SOL and SPL)",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Native SOL and standard SPL sends from Dale chat. Raw balance precision, PIN gating, signature back to chat in seconds.",
+      "where": ["dale/solana-sends"]
+    },
+    "token_screener": {
+      "label": "Token screener",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Describe buying criteria in chat. Dale matches the live market on Ethereum, BSC, Base and Solana and delivers by DM.",
+      "where": ["dale/screener"]
+    },
+    "auto_buy_engine": {
+      "label": "Auto Buy engine",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Screener matches bought automatically through Dale. Live on Ethereum, with Base and BSC next, then Solana.",
+      "where": ["dale/auto-buy"]
+    },
+    "solana_exits_parity": {
+      "label": "Solana exits at parity",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Stop loss, trailing stop and tiered take profit on Solana, matching the EVM chains that support exits.",
+      "where": ["dale/stop-loss-and-trailing"]
+    },
+    "exit_sizing_auto_armed": {
+      "label": "Correct exit sizing on auto armed EVM buys",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "A buy on BSC or Base that arms an exit automatically sizes it to the actual quantity bought.",
+      "where": ["dale/stop-loss-and-trailing"]
+    },
+    "dca_evm": {
+      "label": "Dollar cost averaging",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Conversational DCA on Ethereum, BSC and Base. Safety scanned, funded and settled through your Dale wallet.",
+      "where": ["dale/dca"]
+    },
+    "convergence_solana_routing": {
+      "label": "Convergence board Solana routing",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Solana addresses handled with case preserved end to end, so a tap to trade from the board routes correctly.",
+      "where": ["convergence"]
+    },
+    "category_scoped_notes": {
+      "label": "Category scoped notes",
+      "status": "shipped",
+      "shipped_date": "2026-07-01",
+      "date_label": "Live",
+      "summary": "Categorised notes stored verbatim with the category preserved. Ask for Hunt notes, get Hunt notes only.",
+      "where": ["dale/memory"]
+    },
+    "auto_buy_expansion": {
+      "label": "Auto Buy on Base and BSC",
       "status": "in_progress",
-      "date_label": "Rolling out",
-      "summary": "Native SOL and SPL token sends from Dale chat.",
-      "where": ["dale/wallet-management"]
+      "date_label": "Soon",
+      "summary": "Auto Buy expanding to Base and BSC, then Solana.",
+      "where": ["dale/auto-buy"]
+    },
+    "token_2022_support": {
+      "label": "Token 2022 support",
+      "status": "in_progress",
+      "date_label": "Planned",
+      "summary": "Token 2022 program assets across screener, trading and transfers. Standard SPL is fully supported today.",
+      "where": ["dale/solana-sends"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
