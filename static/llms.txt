@@ -1,10 +1,10 @@
 # DeepBot
 
-> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro. You describe a trade in plain language and Dale executes it, non custodially, across five chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
+> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
 
 ## Core facts
 
-- Supported chains: Ethereum, BSC, Base, Polygon, Solana. Five chains, one wallet.
+- Supported chains: Ethereum, BSC, Base, Polygon, Solana, Robinhood Chain. Six chains, one wallet.
 - Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon) and 1.5% on Solana. Same router across every interface.
 - Custody: non custodial. Keys are user owned and encrypted with AES-256-GCM. DeepBot does not hold the key, even when Dale executes.
 - Interfaces: Dale in Telegram, the DeepBot Wallet bot, and DeepBot LINK on the web. All share one account, one wallet and one memory.
@@ -18,7 +18,7 @@
 
 ## Trading capabilities
 
-- Conversational buy and sell across all five chains.
+- Conversational buy and sell across all six chains.
 - Automated exits: stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base and Solana. Polygon does not support automated exits. Trailing floors are evaluated against live prices every 30 seconds. Pro capability, up to five armed strategies per user.
 - Emergency Sell: mempool rug protection, Ethereum only. Watches pending transactions for tokens you hold and front runs a detected rug with a 15 percent gas premium. On by default for every account.
 - Screener: define buying criteria in conversation, get matches by DM. Runs on Ethereum, BSC, Base and Solana. Free accounts run one screener, Pro accounts run five.
