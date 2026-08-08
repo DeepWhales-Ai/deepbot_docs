@@ -1,0 +1,77 @@
+---
+title: "Prediction markets"
+sidebar_label: "Overview"
+slug: /prediction-markets
+---
+
+{/* Aug canon sweep. Promoted from docs/dale/prediction-markets.mdx to a
+    top-level section. Trading is live: a full buy, hold, sell and cash round
+    trip is proven on a real position.
+    Scope limits held deliberately: no pagination behaviour, no exact fee or
+    net proceeds figures, no geographic availability promise.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Prediction markets"
+  description="Polymarket and Kalshi through Dale via AGG.market. Browse an event, take a position, close it for cash, in conversation."
+  slug="/prediction-markets"
+/>
+
+<PageHead
+  eyebrow="PREDICTION MARKETS"
+  lede="Polymarket and Kalshi through Dale. Browse an event, take a position, close it for cash, all in conversation."
+/>
+
+<H2 id="what">Can you trade prediction markets through Dale?</H2>
+<Para>
+  Yes. Dale connects to <Lime>AGG.market</Lime>, an aggregator that routes across
+  Polymarket and Kalshi, and the full round trip runs in conversation. You can browse
+  what is trading, take a position, hold it, and close it for cash without leaving the
+  chat. Ask what the odds are on an event and Dale answers from live venue data. Say
+  how much you want and on which side, and Dale places it. Positions sit alongside the
+  rest of your holdings and are funded from the DeepBot wallet you already use, so
+  there is no separate account to open and no separate balance to top up. Markets
+  cover politics, sports, crypto outcomes and world events. Kalshi is a regulated
+  venue and will route you through identity verification when a market requires it.
+  Polymarket does not ask for that. Access is geo fenced, so which markets you are
+  offered depends on where you are.
+</Para>
+
+<H2 id="how">How do you take a position?</H2>
+<Para>
+  Ask Dale what is trading on a topic, or name the event directly. Dale returns the
+  market with its current odds and liquidity. Tell Dale which side you want and how
+  much, and Dale shows you what the position costs to open before anything is placed.
+  You confirm, and the position opens. Closing works the same way: tell Dale to close
+  it and the proceeds settle back to your wallet.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Browse", v: "Ask what is trading on politics, sports, crypto or world events. Dale returns live markets with odds and liquidity." },
+  { k: "Open", v: "Name the side and the amount. Dale shows the cost to open before you confirm." },
+  { k: "Hold", v: "Open positions appear alongside your token holdings, not in a separate app." },
+  { k: "Close", v: "Close in conversation. Proceeds settle back to the DeepBot wallet that funded the position." },
+]} />
+
+<H2 id="cost">What does it cost?</H2>
+<Para>
+  Dale shows the cost to open a position before you confirm it. The prediction venues
+  charge their own fees on top of the market price, and those are set by the venue
+  rather than by DeepBot. Check the venue for a full fee breakdown if you need the
+  exact split on a given market.
+</Para>
+
+<H2 id="need">What do you need before you start?</H2>
+<KeyValueGrid items={[
+  { k: "A funded DeepBot wallet", v: "Positions are funded from the wallet you already trade with. No separate deposit." },
+  { k: "Identity verification, for Kalshi", v: "Kalshi is a regulated venue. Dale routes you through the verification flow when a market requires it." },
+  { k: "Nothing extra, for Polymarket", v: "Polymarket markets do not ask for identity verification." },
+]} />
+
+<Callout kind="info" title="Availability varies by location">
+  Prediction market access is geo fenced. Some markets will not be offered to you
+  depending on where you are, and that is enforced at the venue rather than by Dale.
+</Callout>

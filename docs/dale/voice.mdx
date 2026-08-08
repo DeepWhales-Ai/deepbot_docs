@@ -1,0 +1,69 @@
+---
+title: "Trading by voice"
+sidebar_label: "Voice"
+---
+
+{/* Aug canon sweep. New page. Voice is live prod wide.
+    Three things this page must never get wrong:
+      1. Inbound only. Dale does not speak back. Outbound voice is not live.
+      2. Voice PIN is opt in via /voicepin and defaults OFF. No copy may imply
+         it is on by default.
+      3. The confirmation step is described, not asserted as verified. The
+         restate accuracy test is still owed, so no accuracy claim here.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Trading by voice"
+  description="Send Dale a voice message and it trades the request. Inbound only, English, with an opt in voice PIN that is off by default."
+  slug="/dale/voice"
+/>
+
+<PageHead
+  eyebrow="DALE"
+  lede="Send a voice message. Dale trades it. The whole thing happens without taking the phone out of your hand."
+/>
+
+<H2 id="what">Can you trade by voice?</H2>
+<Para>
+  Yes. Send Dale a voice message and Dale acts on it the same way it acts on typed
+  text. Say what you want to buy, how much, and on which chain, and the request goes
+  through the same intent parsing, the same safety checks and the same routing as a
+  typed instruction. Voice runs on every account and works in English. It is
+  <Lime> inbound only</Lime>: you speak to Dale, and Dale answers in text. Dale does
+  not send voice messages back. Every voice trade goes through a confirmation step
+  before it executes, so nothing is signed straight off the audio. By default you
+  confirm that step with a tap. If you would rather authorize by voice instead, a
+  voice PIN is available and you switch it on yourself. It is off until you do.
+</Para>
+
+<H2 id="how">How do you send a voice trade?</H2>
+<Para>
+  Record a voice message in the chat the way you would to a person. Say the token, the
+  amount and the chain. Dale transcribes it, works out the intent, runs the safety
+  pipeline, and comes back with a confirmation before anything executes. If the audio
+  is unclear or the request is ambiguous, Dale asks rather than guessing.
+</Para>
+
+<H2 id="pin">Is voice PIN on by default?</H2>
+<Para>
+  No. Voice PIN is <Lime>off by default</Lime> and stays off until you turn it on with{' '}
+  <Mono>/voicepin</Mono>. Leaving it off does not remove the confirmation step. Tap PIN
+  and tap confirm are always available and are what you get out of the box. Turning
+  voice PIN on gives you a second way to authorize, not a replacement for the gate.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Direction", v: "Inbound only. You speak, Dale replies in text." },
+  { k: "Language", v: "English." },
+  { k: "Confirmation", v: "Every voice trade passes a confirmation step before execution." },
+  { k: "Voice PIN", v: <>Opt in via <Mono>/voicepin</Mono>. Off by default.</> },
+  { k: "Always available", v: "Tap PIN and tap confirm work whether or not voice PIN is enabled." },
+]} />
+
+<Callout kind="info" title="Dale does not talk back">
+  Dale reads voice messages. Dale does not send them. Replies, confirmations and trade
+  results all come back as text in the chat.
+</Callout>

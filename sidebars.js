@@ -1,6 +1,7 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, DeepBot Wallet, Shotgun, DeepBot LINK, Platform,
-// The Brain, Token, Affiliate Program, Revenue Sharing, Bobby, Investors, Team.
+// Top-level order: Start here, Dale, DeepBot Wallet, Shotgun, DeepBot LINK,
+// Prediction Markets, Platform, The Brain, Token, Affiliate Program,
+// Revenue Sharing, Bobby, Investors, Team.
 // Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -40,7 +41,7 @@ const sidebars = {
         'dale/trade-safety-gate',
         'dale/specialist-routing',
         'dale/stop-loss-and-trailing',
-        'dale/prediction-markets',
+        'dale/voice',
         'dale/autonomous',
         'dale/community-layer',
         'dale/response-modes',
@@ -78,6 +79,13 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: ['deepbot-link/overview'],
+    },
+    {
+      type: 'category',
+      label: 'Prediction Markets',
+      collapsible: true,
+      collapsed: true,
+      items: ['prediction-markets/overview'],
     },
     {
       type: 'category',

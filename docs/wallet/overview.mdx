@@ -123,7 +123,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 </Para>
 <KeyValueGrid items={[
   { k: "Self custody floor", v: "Private keys are generated and stored in encrypted isolation. Operators cannot move funds. The export flow is the only path keys leave the system." },
-  { k: <>PIN gate <FeatureStatus id="panic_pin" /></>, v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
+  { k: "PIN gate", v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
   { k: <>Private key export <FeatureStatus id="private_key_export" /></>, v: "Exportable through a deliberate, gated flow. The export is not casual. It is the keys to the kingdom and the flow respects that." },
   { k: "Reliability boundary", v: "Wallet runs on a separate bot from Dale. If one bot has a bad deploy, the other keeps working. Funds are never trapped behind a single uptime line." },
 ]} />

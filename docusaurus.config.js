@@ -59,6 +59,22 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl: undefined, // no "edit this page" link in v1
         },
+        // components-test is a dev harness, not a public page. It was being
+        // built and listed in sitemap.xml, which made it a published surface
+        // subject to the canon rules. Excluded from production builds only,
+        // so `npm start` still serves it for component work. The array
+        // reproduces GlobExcludeDefault from @docusaurus/utils, because
+        // supplying `exclude` replaces the plugin default rather than
+        // extending it.
+        pages: {
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+            ...(process.env.NODE_ENV === 'production' ? ['**/components-test.mdx'] : []),
+          ],
+        },
         blog: false,
         theme: {
           customCss: './src/css/custom.css',

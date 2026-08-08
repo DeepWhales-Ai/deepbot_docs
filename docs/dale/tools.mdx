@@ -7,10 +7,17 @@ sidebar_label: "Tools Dale uses"
 
 import { PageHead, FeatureGrid } from '@site/src/components/primitives.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Tools Dale uses"
+  description="The deterministic, audited tool suite Dale calls to quote, simulate, scan and execute trades."
+  slug="/dale/tools"
+/>
 
 <PageHead
   eyebrow="DALE"
-  lede="112 deterministic, audited tools. The model decides which to call. The tools never hallucinate."
+  lede="A deterministic, audited tool suite. The model decides which to call. The tools never hallucinate."
 />
 
 <FeatureGrid items={[
@@ -22,9 +29,9 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   { sym: "◤", title: "Holder scan", body: "Concentration, insider clusters, dev holdings, recent flow. Baked into every scan." },
   { sym: "◣", title: "Cross chain routers", body: "Bridge plus swap quoted as one decision. Across, LI.FI, native canonical bridges." },
   { sym: "◇", title: <>Bubblemaps holder map <FeatureStatus id="bubblemaps_holder_distribution" /></>, body: "Visual holder distribution and cluster overlap, surfaced inline on every scan." },
-  { sym: "◉", title: <>Sonar DCA expansion <FeatureStatus id="sonar_polygon_solana" /></>, body: "Sonar DCA execution layer expanding from EVM mainnets to Polygon and Solana." },
+  { sym: "◉", title: "Sonar DCA", body: "Averaging strategies built in conversation and run for you on Ethereum, BSC, Base and Solana." },
   { sym: "◰", title: "Chain switching in chat", body: "Switch the active chain by conversation. Ethereum, Solana, Base, BSC, Polygon. No menu hop." },
   { sym: "◱", title: "Slippage controls in chat", body: "Read and set slippage tolerance in conversation. Per trade or as your default." },
   { sym: "◲", title: "Gas preferences in chat", body: "Read and adjust gas preference in conversation. Fast, standard, set and forget." },
-  { sym: "◥", title: <>AGG prediction markets <FeatureStatus id="agg_prediction_markets" /></>, body: "Polymarket and Kalshi via AGG. Discovery first: browse markets, liquidity, and orderbooks. Order placement follows." },
+  { sym: "◥", title: "AGG prediction markets", body: "Polymarket and Kalshi via AGG. Browse markets, take a position, hold it, and close it, all in conversation." },
 ]} />

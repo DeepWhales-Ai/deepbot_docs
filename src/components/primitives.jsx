@@ -212,7 +212,7 @@ export const UnifiedPoolFunnel = () => {
     { sym: '▣', name: 'Wallet', line: 'Trading fees' },
     { sym: '◧', name: 'LINK', line: 'Trading + ad inventory' },
     { sym: 'B', name: 'Bobby', line: 'Ads, trending, qualification' },
-    { sym: '◎', name: '$DEEPAI DEX', line: '1% of routed volume' },
+    { sym: '◎', name: '$DEEPAI DEX', line: '1% EVM, 1.5% Solana of routed volume' },
     { sym: '◑', name: 'PRO subs', line: '$49 / month from non holders' },
     { sym: '◆', name: 'Team trading', line: '15% of realized profits' },
   ];

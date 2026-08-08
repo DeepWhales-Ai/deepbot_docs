@@ -3,7 +3,58 @@ title: "FAQ"
 sidebar_label: "FAQ"
 ---
 
+{/* Aug canon sweep. The Q and A arrays are declared once and used twice: once
+    by FaqSchema for the FAQPage JSON-LD, once by KeyValueGrid for the visible
+    page. Keep it that way. Every answer in the schema has to be visible on the
+    page or Google throws out the whole block, and one array is the only way to
+    guarantee that stays true. */}
+
 import { PageHead, Para, H2, Lime, Mono, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { ArticleSchema, FaqSchema } from '@site/src/components/Schema.jsx';
+
+export const basics = [
+  { k: "Who can be an affiliate?", v: "Every DeepBot user. There is no application. There is no minimum holding. There is no whitelist for the public tiers. Open the app, ask Dale for your link, share it." },
+  { k: "Do I need to hold $DEEPAI?", v: "No. Affiliate commissions are separate from the $DEEPAI revenue share. They do not require holding the token." },
+  { k: "How long does a referral last?", v: "Lifetime. A user who signs up through your link is tied to you for as long as they trade." },
+  { k: "Where do I see my link?", v: "Ask Dale, or open the dashboard at rewards.deepbot.pro." },
+];
+
+export const tiers = [
+  { k: "What counts as an active monthly trader?", v: "A referred user counts as active in a given calendar month if they execute at least one fee generating trade through DeepBot during that month." },
+  { k: "How often is my tier re-evaluated?", v: "Hourly. When your active monthly trader count crosses a tier threshold, the new rate takes effect on the next fee generating trade by any of your referrals." },
+  { k: "Can my tier drop?", v: "No. Once you reach a tier, you stay there. Tiers only ever go up." },
+  { k: "How do I reach Beast Mode?", v: "Beast Mode is an invite tier, assigned at owner discretion. It is not earned through volume." },
+  { k: "How do I get a KOL or custom rate?", v: "KOL and high volume rates are custom deals, always time boxed and assigned at platform discretion." },
+];
+
+export const commission = [
+  { k: "What does commission apply to?", v: "Platform fees on fee generating trades by your referrals. Every chain. Every product. Every interface." },
+  { k: "What is the rate locked to?", v: "Commission on a given trade is paid at your tier rate at the time the underlying trade fee was collected. Future tier moves apply to future trades." },
+  { k: "Does a referral's trading on a different chain still earn me commission?", v: "Yes. Every chain DeepBot supports is in scope." },
+  { k: "What about self referrals?", v: "You cannot refer yourself. The system detects circular attribution and excludes it from active counts and commission accrual." },
+];
+
+export const payouts = [
+  { k: "What stablecoin do I receive?", v: "USDC on Solana." },
+  { k: "What if I haven't set a payout wallet?", v: "Balance keeps accruing. The next scheduled settlement after you set the wallet clears the pending balance." },
+  { k: "Are there fees on payout?", v: "DeepBot covers Solana network fees on settlement. You receive the gross amount." },
+  { k: "Is there a minimum?", v: "Yes. The minimum payout threshold is published in the dashboard. Below the threshold, balance carries forward." },
+];
+
+export const rules = [
+  { k: "Can I run paid ads to my link?", v: "Yes, within the program's content guidelines. Misleading claims, impersonation of the platform, and fraudulent traffic patterns are out." },
+  { k: "Can I rebate part of my commission to my referrals?", v: "Yes. Rebates are between you and your referrals." },
+  { k: "What gets you removed from the program?", v: "Fraudulent traffic, fake account farming, impersonation of the platform, or anything else that abuses the attribution system. Removal is at platform discretion." },
+  { k: "Where do I report a problem?", v: "Ask Dale, or use the contact link in the dashboard." },
+];
+
+<ArticleSchema
+  headline="DeepBot affiliate program FAQ"
+  description="Common questions on the DeepBot affiliate program: eligibility, tiers, commission, payouts and program rules."
+  slug="/affiliate-program/faq"
+/>
+
+<FaqSchema groups={[basics, tiers, commission, payouts, rules]} />
 
 <PageHead
   eyebrow="AFFILIATE PROGRAM"
@@ -11,42 +62,16 @@ import { PageHead, Para, H2, Lime, Mono, KeyValueGrid } from '@site/src/componen
 />
 
 <H2 id="basics">The basics</H2>
-<KeyValueGrid items={[
-  { k: "Who can be an affiliate?", v: "Every DeepBot user. There is no application. There is no minimum holding. There is no whitelist for the public tiers. Open the app, ask Dale for your link, share it." },
-  { k: "Do I need to hold $DEEPAI?", v: "No. Affiliate commissions are separate from the $DEEPAI revenue share. They do not require holding the token." },
-  { k: "How long does a referral last?", v: "Lifetime. A user who signs up through your link is tied to you for as long as they trade." },
-  { k: "Where do I see my link?", v: "Ask Dale, or open the dashboard at rewards.deepbot.pro." },
-]} />
+<KeyValueGrid items={basics} />
 
 <H2 id="tiers">Tiers and active count</H2>
-<KeyValueGrid items={[
-  { k: "What counts as an active monthly trader?", v: "A referred user counts as active in a given calendar month if they execute at least one fee generating trade through DeepBot during that month." },
-  { k: "How often is my tier re-evaluated?", v: "Hourly. When your active monthly trader count crosses a tier threshold, the new rate takes effect on the next fee generating trade by any of your referrals." },
-  { k: "Can my tier drop?", v: "No. Once you reach a tier, you stay there. Tiers only ever go up." },
-  { k: "How do I reach Beast Mode?", v: "Beast Mode is an invite tier, assigned at owner discretion. It is not earned through volume." },
-  { k: "How do I get a KOL or custom rate?", v: "KOL and high volume rates are custom deals, always time boxed and assigned at platform discretion." },
-]} />
+<KeyValueGrid items={tiers} />
 
 <H2 id="commission">Commission detail</H2>
-<KeyValueGrid items={[
-  { k: "What does commission apply to?", v: "Platform fees on fee generating trades by your referrals. Every chain. Every product. Every interface." },
-  { k: "What is the rate locked to?", v: "Commission on a given trade is paid at your tier rate at the time the underlying trade fee was collected. Future tier moves apply to future trades." },
-  { k: "Does a referral's trading on a different chain still earn me commission?", v: "Yes. Every chain DeepBot supports is in scope." },
-  { k: "What about self referrals?", v: "You cannot refer yourself. The system detects circular attribution and excludes it from active counts and commission accrual." },
-]} />
+<KeyValueGrid items={commission} />
 
 <H2 id="payouts">Payouts</H2>
-<KeyValueGrid items={[
-  { k: "What stablecoin do I receive?", v: "USDC on Solana." },
-  { k: "What if I haven't set a payout wallet?", v: "Balance keeps accruing. The next scheduled settlement after you set the wallet clears the pending balance." },
-  { k: "Are there fees on payout?", v: "DeepBot covers Solana network fees on settlement. You receive the gross amount." },
-  { k: "Is there a minimum?", v: "Yes. The minimum payout threshold is published in the dashboard. Below the threshold, balance carries forward." },
-]} />
+<KeyValueGrid items={payouts} />
 
 <H2 id="rules">Program rules</H2>
-<KeyValueGrid items={[
-  { k: "Can I run paid ads to my link?", v: "Yes, within the program's content guidelines. Misleading claims, impersonation of the platform, and fraudulent traffic patterns are out." },
-  { k: "Can I rebate part of my commission to my referrals?", v: "Yes. Rebates are between you and your referrals." },
-  { k: "What gets you removed from the program?", v: "Fraudulent traffic, fake account farming, impersonation of the platform, or anything else that abuses the attribution system. Removal is at platform discretion." },
-  { k: "Where do I report a problem?", v: "Ask Dale, or use the contact link in the dashboard." },
-]} />
+<KeyValueGrid items={rules} />

@@ -29,7 +29,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   <div className="db-stream-card">
     <div className="db-stream-card__num">1</div>
     <div className="db-stream-card__name">Trading fees</div>
-    <div className="db-stream-card__source">1% per trade · 40% to pool</div>
+    <div className="db-stream-card__source">1% EVM, 1.5% Solana · 40% to pool</div>
     <div className="db-stream-card__tag">Primary stream</div>
   </div>
   <div className="db-stream-card">
@@ -58,16 +58,18 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <H2 id="trading">1 · Trading fees · 40%</H2>
 <Para>
-  The platform charges a 1% fee on every trade routed through the system. Forty percent of
-  every fee goes to the revenue share pool. The remaining ten percent funds community
-  incentives and competitions.
+  The platform charges a trade fee on every trade routed through the system. The rate is
+  <Lime>1% on the EVM chains</Lime> (Ethereum, BSC, Base and Polygon) and{' '}
+  <Lime>1.5% on Solana</Lime>. Forty percent of every fee goes to the revenue share pool.
+  The remaining ten percent funds community incentives and competitions.
 </Para>
 <Para>
   This applies across all four products: <Lime>Wallet, Trader, Link, and Bobby</Lime>.
-  Every interface. Every chain. Same router. Same fee. Same pool.
+  Every interface. Same router. Same pool. The rate is the one thing that varies, and it
+  varies by chain.
 </Para>
 <KeyValueGrid items={[
-  { k: "At $7M / month volume", v: "1% = $70,000 in fees. 40% to pool = $28,000 / month." },
+  { k: "Illustrative only", v: "Not a forecast. On the EVM chains, $100,000 of routed volume produces $1,000 in fees and $400 to the pool. The same volume on Solana produces $1,500 in fees and $600 to the pool." },
   { k: "Scaling driver", v: "Every new user, every new chain, every new product interface compounds this stream." },
 ]} />
 <Callout kind="lime" title="The primary stream">

@@ -12,7 +12,6 @@ import {
   UnifiedPoolFunnel, TwoEnginesDiagram
 } from '@site/src/components/primitives.jsx';
 import { Ethereum, Solana, Base, Polygon, BNB } from '@site/src/components/ChainLogos.jsx';
-import CounterWall from '@site/src/components/CounterWall.jsx';
 import ChainPulse from '@site/src/components/ChainPulse.jsx';
 import KillLog from '@site/src/components/KillLog.jsx';
 import Shouts from '@site/src/components/Shouts.jsx';
@@ -193,9 +192,6 @@ addendum §12 + LiveFeeds caught during the source read).
 
 ## Heavy interactives, animation timing critical (design brief §17.2)
 
-<H2 id="counter">CounterWall, 1400ms mount-anim, 1s drift, 30s cycle</H2>
-<CounterWall />
-
 <H2 id="convergence">ConvergenceField, 60ms tick, 108-tick cycle (~6.5s), four phases</H2>
 <ConvergenceField />
 
@@ -233,7 +229,7 @@ addendum §12 + LiveFeeds caught during the source read).
 ## Status system (addendum §4, §5, §6)
 
 <H2 id="featurestatus">FeatureStatus pills (inline)</H2>
-<Para>Live feature (renders nothing): Panic PIN <FeatureStatus id="panic_pin" /></Para>
+<Para>Live feature (renders nothing): Private key export <FeatureStatus id="private_key_export" /></Para>
 <Para>Building: PIN auto-delete <FeatureStatus id="pin_auto_delete" /></Para>
 <Para>Coming: Prediction markets <FeatureStatus id="agg_prediction_markets" /></Para>
 <Para>Planned: Eterna perpetuals <FeatureStatus id="eterna_perps" /></Para>
@@ -243,7 +239,7 @@ addendum §12 + LiveFeeds caught during the source read).
 <SectionStatus ids={["leagues_xp_ranks", "competitions_six_formats", "the_crown", "leaderboard_masked"]} />
 <Para>Above: rendered banner for the community-layer page (mostly post-launch).</Para>
 <Para>Below: empty when every id resolves to live, renders nothing.</Para>
-<SectionStatus ids={["panic_pin", "private_key_export"]} />
+<SectionStatus ids={["private_key_export"]} />
 
 <H2 id="lastupdated">LastUpdated</H2>
 <Para>Last updated: <LastUpdated /></Para>

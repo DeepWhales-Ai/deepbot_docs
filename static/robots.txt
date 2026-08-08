@@ -1,0 +1,54 @@
+# docs.deepbot.pro
+#
+# The documentation is public and meant to be read, by people and by answer
+# engines alike. General crawlers are allowed everywhere. The agents below are
+# named explicitly so that a future default-deny on any of these networks does
+# not silently drop the docs out of AI answers.
+
+User-agent: *
+Allow: /
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+
+# Google AI training and grounding
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://docs.deepbot.pro/sitemap.xml

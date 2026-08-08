@@ -5,7 +5,7 @@ sidebar_label: "Conversational trading"
 
 {/* Source: pages-dale.jsx -> PageConvTrading */}
 
-import { PageHead, Para, H2, Lime, ChatBlock, ChatBubble, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, Lime, Mono, ChatBlock, ChatBubble, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <PageHead
@@ -62,6 +62,8 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 
 <H2 id="voice">Voice in <FeatureStatus id="voice_messages_in" />, voice PIN <FeatureStatus id="voice_pin" /></H2>
 <Para>
-  PRO unlocks voice messages to Dale and voice authorized PIN. Speak the trade, speak the
-  PIN, hands free. Same routing layer, same safety pipeline, same audit log.
+  Send Dale a voice message on any account and speak the trade. Same routing layer,
+  same safety pipeline, same audit log. Dale replies in text. Voice PIN lets you speak
+  the authorization too, and it is off until you turn it on with <Mono>/voicepin</Mono>.
+  Full detail on <a href="/dale/voice" className="db-link">Trading by voice</a>.
 </Para>

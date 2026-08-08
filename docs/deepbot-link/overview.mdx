@@ -5,12 +5,24 @@ slug: /deepbot-link
 hide_title: true
 ---
 
-import { Para, Lede } from '@site/src/components/primitives.jsx';
+{/* Aug canon sweep. LINK is live at trade.deepbot.pro, so the COMING SOON
+    hero is retired. The no PIN on web ruling is stated plainly and must not
+    be softened into implied parity with the Telegram surface.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { Para, Lede, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 import HeroHeatmap from '@site/src/components/HeroHeatmap.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="DeepBot LINK"
+  description="The web surface at trade.deepbot.pro. Native charts, convergence feed, holdings and a Swap Box. Session authorized, with no PIN on web."
+  slug="/deepbot-link"
+/>
 
 <div className="db-principle db-principle--hero">
-  <div className="db-principle__kicker">COMING SOON</div>
+  <div className="db-principle__kicker">LIVE</div>
   <div className="db-principle__line">
     <DeepBot /> LINK
   </div>
@@ -33,8 +45,46 @@ import HeroHeatmap from '@site/src/components/HeroHeatmap.jsx';
   Type. Trade. Track. In a browser.
 </Lede>
 
+<H2 id="what">What is DeepBot LINK?</H2>
 <Para>
-  Same platform, new surface. The full product family on a web interface.
-  Native charts. Pulse and signal feeds. Portfolio. Alerts. Trading.
-  trade.deepbot.pro. Building now.
+  <DeepBot /> LINK is the web surface of the same platform Dale runs in Telegram,
+  live now at <a href="https://trade.deepbot.pro" className="db-link" target="_blank" rel="noopener"><Lime>trade.deepbot.pro</Lime></a>. It is a progressive web app you sign
+  into with Telegram, so the wallet, holdings and history you see are the ones you
+  already have. Once you are signed in you get native charts, the convergence signal
+  feed, a holdings view with a dust filter and wallet labels, and a Swap Box for
+  placing trades. Nothing needs to be recreated and nothing is copied across from a
+  separate account. The one thing that genuinely differs from Telegram is
+  authorization. Web trading is authorized by your session. There is no PIN prompt on
+  the web surface, no spend gate and no second authorization step before a trade
+  executes. The Telegram PIN surface is separate and unchanged. Treat the two as
+  different security models rather than one product in two windows.
+</Para>
+
+<H2 id="pin">Is there a PIN on the web?</H2>
+<Para>
+  No. Web trading is authorized by your session and nothing else. A trade placed
+  through the Swap Box executes without a PIN prompt, without a spend limit and
+  without asking you to authorize again. This is a deliberate design decision, not a
+  missing feature and not a gap waiting to be closed.
+</Para>
+<Callout kind="info" title="The two surfaces are not equivalent">
+  Telegram gates trades behind a PIN. The web does not. Anyone with access to a signed
+  in browser session can trade. Sign out when you are finished on a shared or
+  untrusted device.
+</Callout>
+
+<H2 id="what-you-get">What can you do on the web?</H2>
+<KeyValueGrid items={[
+  { k: "Native charts", v: "Price and pool charts rendered in the interface, not embedded from a third party." },
+  { k: "Convergence signal feed", v: "The same convergence output Dale reads, streamed to the browser as signals land." },
+  { k: "Holdings", v: "Full balance view with a dust filter to hide trivial positions and wallet labels so you know what you are looking at." },
+  { k: "Swap Box", v: "Place a trade directly. Same router and same fee schedule as every other interface." },
+  { k: "Sign in", v: "Telegram OAuth. No separate password and no separate account to create." },
+]} />
+
+<H2 id="fees">What does it cost to trade here?</H2>
+<Para>
+  The same as everywhere else on the platform. The trade fee is 1% on the EVM chains
+  and 1.5% on Solana, charged through the same router that serves Dale and the Wallet.
+  Using the web surface instead of Telegram does not change the rate.
 </Para>

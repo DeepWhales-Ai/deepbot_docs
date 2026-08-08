@@ -9,6 +9,13 @@ import { PageHead, Para, H2, Lime, Mono, Pull, Callout, KeyValueGrid, FeatureGri
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 import SectionStatus from '@site/src/components/SectionStatus.jsx';
 import { MemoryProgression } from '@site/src/components/DaleComponents.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Dale memory"
+  description="Dale remembers your style, portfolio and preferences per user rather than per chat, across chains, sessions and devices."
+  slug="/dale/memory"
+/>
 
 <PageHead
   eyebrow="DALE"
@@ -111,6 +118,23 @@ import { MemoryProgression } from '@site/src/components/DaleComponents.jsx';
   preserved. When you ask for Hunt notes, you get Hunt notes only. Categories are
   scoped on retrieval.
 </Para>
+
+<H2 id="tiers">What do Free and Pro each get?</H2>
+<Para>
+  Style personalization is live on <Lime>every tier</Lime>. Dale learns how you trade
+  and how you like to be spoken to whether you pay or not. The deeper recall layer,
+  where Dale holds long running context about you rather than just your current
+  preferences, is <Lime>Pro only</Lime>. The caps below are what differ in practice.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Style personalization", v: "Every tier. Free and Pro both get it." },
+  { k: "Deeper recall layer", v: "Pro only." },
+  { k: "Watchlist", v: "Free 5. Pro 100." },
+  { k: "Alerts", v: "Free 5. Pro 20." },
+  { k: "Saved notes", v: <>Pro caps <Mono>/remember</Mono> at 30.</> },
+  { k: "Forgetting", v: <><Mono>/forget</Mono> works on every tier, with no cap.</> },
+]} />
 
 <H2 id="language">Your language. Your voice. Your Dale.</H2>
 <Para>
