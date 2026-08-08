@@ -5,7 +5,7 @@
 ## Core facts
 
 - Supported chains: Ethereum, BSC, Base, Polygon, Solana, Robinhood Chain. Six chains, one wallet.
-- Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon) and 1.5% on Solana. Same router across every interface.
+- Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon, Robinhood Chain) and 1.5% on Solana. Same router across every interface.
 - Custody: non custodial. Keys are user owned and encrypted with AES-256-GCM. DeepBot does not hold the key, even when Dale executes.
 - Interfaces: Dale in Telegram, the DeepBot Wallet bot, and DeepBot LINK on the web. All share one account, one wallet and one memory.
 - Languages: Dale detects the language you write in and replies in it.
@@ -19,7 +19,7 @@
 ## Trading capabilities
 
 - Conversational buy and sell across all six chains.
-- Automated exits: stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base and Solana. Polygon does not support automated exits. Trailing floors are evaluated against live prices every 30 seconds. Pro capability, up to five armed strategies per user.
+- Automated exits: stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base, Solana and Robinhood Chain. Polygon does not support automated exits. Trailing floors are evaluated against live prices every 30 seconds. Pro capability, up to five armed strategies per user.
 - Emergency Sell: mempool rug protection, Ethereum only. Watches pending transactions for tokens you hold and front runs a detected rug with a 15 percent gas premium. On by default for every account.
 - Screener: define buying criteria in conversation, get matches by DM. Runs on Ethereum, BSC, Base and Solana. Free accounts run one screener, Pro accounts run five.
 - Auto Buy: takes a screener match automatically. Live on Ethereum. Base and BSC next. A given token can only be auto bought once per user, permanently.
