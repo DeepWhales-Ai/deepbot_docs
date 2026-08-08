@@ -8,7 +8,7 @@
 // the Aug canon sweep, which is why this is derived now.
 
 import React, { useEffect, useState } from 'react';
-import { Ethereum, Solana, Base, Polygon, BNB } from './ChainLogos.jsx';
+import { Ethereum, Solana, Base, Polygon, BNB, Robinhood } from './ChainLogos.jsx';
 
 const CHAINS = [
   { Logo: Ethereum, name: 'Ethereum' },
@@ -16,6 +16,7 @@ const CHAINS = [
   { Logo: Base, name: 'Base' },
   { Logo: Polygon, name: 'Polygon' },
   { Logo: BNB, name: 'BNB' },
+  { Logo: Robinhood, name: 'Robinhood' },
 ];
 
 const COUNT_WORD = ['ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT'];
