@@ -10,27 +10,36 @@ description: "What shipped recently across Dale, the Wallet, Shotgun and the pla
 
 import { PageHead, Lime, StatRow } from '@site/src/components/primitives.jsx';
 
+{/* Aug canon sweep. Refreshed from the stale April window. Every date below
+    is taken from a shipped_date in data/feature-status.json rather than
+    estimated, so this page and the status data cannot disagree. Shipped items
+    only: this is a changelog, not a roadmap. Nothing unreleased goes here. */}
+
 export const ENTRIES = [
-  { date: "Apr 24, 2026", tag: "platform", title: "DeepBot positioned as a platform", body: "Two products under one brand. Bobby on the project side. Dale on the trader side. Documentation rebuilt to match." },
-  { date: "Apr 22, 2026", tag: "major", title: "Reasoning model upgrade", body: "Dale's brain swapped for the strongest reasoning model available. Multi step trades collapse from three prompts to one." },
-  { date: "Apr 18, 2026", tag: "major", title: "Emergency Sell live on Ethereum", body: "Mempool grade rug protection. Detects and exits before attackers can land their block. Front runs with 15% higher gas. Confirmed working on real events. Ethereum only." },
-  { date: "Apr 15, 2026", tag: "fix", title: "Buy confirmation flow", body: "Long running edge case in the buy confirmation pipeline resolved. Trades now flow end to end without intermediate failure." },
-  { date: "Apr 12, 2026", tag: "major", title: "Wallet system unified", body: "Balances accurate and instant across Ethereum, Solana, Base, Polygon, BNB." },
-  { date: "Apr 09, 2026", tag: "major", title: "Personality framework locked", body: "108 rules across 19 sections. Voice consistency at scale." },
-  { date: "Apr 05, 2026", tag: "major", title: "Strategy layer live", body: "DCA, trailing stops, conditional exits. All expressible as sentences." },
-  { date: "Apr 02, 2026", tag: "improvement", title: "Holder scan in scans", body: "Concentration, top-10 share, insider clusters, recent flow. In every token scan." },
-  { date: "Mar 28, 2026", tag: "improvement", title: "Support load to 1%", body: "Dale handles 99% of inbound. Human support reserved for edge cases." },
+  { date: "Aug 08, 2026", tag: "major", title: "Robinhood Chain live", body: "The sixth chain. Conversational trading, automated exits, and the same 1% EVM trade fee. One private key now works across five EVM chains." },
+  { date: "Aug 08, 2026", tag: "major", title: "Token 2022 support live", body: "Token 2022 program assets supported across the screener, trading and transfers, alongside standard SPL. Dale resolves the program for you." },
+  { date: "Aug 04, 2026", tag: "major", title: "Prediction markets live", body: "Polymarket and Kalshi through AGG.market. Browse an event, take a position, hold it and close it for cash, all in conversation and funded from your DeepBot wallet." },
+  { date: "Aug 01, 2026", tag: "major", title: "Sonar DCA on Solana", body: "Averaging strategies now run on Solana alongside Ethereum, BSC and Base. Buy and sell. Not available on Polygon." },
+  { date: "Jul 09, 2026", tag: "major", title: "Voice trading live", body: "Send Dale a voice message and it trades the request, on every account, in English. Dale replies in text. Voice PIN is opt in via /voicepin and off by default." },
+  { date: "Jul 01, 2026", tag: "major", title: "Solana exits at parity", body: "Stop loss, trailing stop and tiered take profit on Solana, matching the EVM chains that support exits." },
+  { date: "Jul 01, 2026", tag: "major", title: "Token screener and Auto Buy", body: "Describe what you want to buy and Dale watches the live market for it. Auto Buy takes the match without a tap, on Ethereum." },
+  { date: "Jul 01, 2026", tag: "major", title: "Solana sends", body: "Native SOL and standard SPL tokens sent to any address from inside Dale, with SNS resolution and precision checked before broadcast." },
+  { date: "Jul 01, 2026", tag: "improvement", title: "Convergence board Solana routing", body: "Solana routed through the convergence board alongside the EVM chains." },
+  { date: "Jul 01, 2026", tag: "improvement", title: "Correct exit sizing on auto armed buys", body: "When a buy on BSC or Base arms an exit as part of the trade, the exit is sized to the actual quantity bought." },
 ];
 
 <PageHead
   title="Updates this month"
-  lede={<>Everything we shipped between <Lime>March 25 and April 25, 2026</Lime>.</>}
+  lede={<>Everything we shipped between <Lime>July 1 and August 8, 2026</Lime>.</>}
 />
 
+{/* Releases counts ENTRIES so the stat cannot drift from the list below it.
+    The old "Deployments: 14" stat is gone: it was tied to the April window
+    and there is nothing in this repo to recompute it from. A stat we cannot
+    prove is worse than one we do not show. */}
 <StatRow items={[
-  { num: "10", label: "Releases" },
-  { num: "5",  label: "Chains live" },
-  { num: "14", label: "Deployments" },
+  { num: String(ENTRIES.length), label: "Releases" },
+  { num: "6",  label: "Chains live" },
   { num: "1%", label: "Support load" },
 ]} />
 

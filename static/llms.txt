@@ -1,6 +1,6 @@
 # DeepBot
 
-> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
+> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, with DeepBot LINK, a web surface, in build. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
 
 ## Core facts
 
@@ -13,7 +13,7 @@
 ## Security model, and where it differs by surface
 
 - Telegram: trades are gated behind a PIN. The PIN is validated against a hashed record and auto deletes from chat after entry.
-- Web (trade.deepbot.pro): trading is authorized by your session. There is no PIN on the web surface, no spend gate and no second authorization step. This is deliberate. The two surfaces are not equivalent and should not be described as having the same gate.
+- Web (DeepBot LINK, in build, not yet available): when it launches, trading will be authorized by your session. There is no PIN on the web surface, no spend gate and no second authorization step. This is deliberate. The two surfaces are not equivalent and should not be described as having the same gate.
 - Identity reset uses three secret questions chosen by the user. Hashes only, all three required.
 
 ## Trading capabilities
@@ -74,6 +74,5 @@ $DEEPAI holders receive 40% of trading fees, plus 15% shares of team trading pro
 
 - Documentation: https://docs.deepbot.pro
 - Main site: https://www.deepbot.pro/
-- Web trading: https://trade.deepbot.pro
 - Dale on Telegram: https://t.me/traderdeepbot
 - Contact: https://t.me/krypt0nite8
