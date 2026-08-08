@@ -1,7 +1,9 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, DeepBot Wallet, Shotgun, DeepBot LINK,
+// Top-level order: Start here, Dale, DeepBot Wallet, DeepBot LINK, Shotgun,
 // Prediction Markets, Platform, The Brain, Token, Affiliate Program,
 // Revenue Sharing, Bobby, Investors, Team.
+// Wallet and LINK sit adjacent deliberately: they are the two surfaces a user
+// holds and trades on, so Shotgun moves below them.
 // Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -62,6 +64,13 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'DeepBot LINK',
+      collapsible: true,
+      collapsed: true,
+      items: ['deepbot-link/overview'],
+    },
+    {
+      type: 'category',
       label: 'Shotgun',
       collapsible: true,
       collapsed: true,
@@ -72,13 +81,6 @@ const sidebars = {
         'shotgun/smart-wallets',
         'shotgun/channels',
       ],
-    },
-    {
-      type: 'category',
-      label: 'DeepBot LINK',
-      collapsible: true,
-      collapsed: true,
-      items: ['deepbot-link/overview'],
     },
     {
       type: 'category',

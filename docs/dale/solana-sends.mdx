@@ -7,8 +7,8 @@ description: "Send native assets and standard tokens across the EVM chains and S
 {/* Aug canon sweep. Broadened from the Solana only page to cover conversational
     send across EVM and Solana. Slug stays /dale/solana-sends (no rename, no
     redirect), matching the precedent set by the Exits page.
-    The Token 2022 section is held exactly as it was: docs say not offered and
-    planned, which is the conservative state pending a ruling.
+    Token 2022 flipped to live on Krypt's ruling (Aug 08), replacing the
+    earlier "not offered, planned" state.
     Voice: no em dashes, no hyphenated compounds in body copy. */}
 
 import { PageHead, Para, H2, Lime, Mono, Callout, NumberedList, KeyValueGrid } from '@site/src/components/primitives.jsx';
@@ -62,11 +62,9 @@ import { ArticleSchema } from '@site/src/components/Schema.jsx';
   English before they reach you.
 </Para>
 
-<H2 id="token-2022">Token 2022</H2>
+<H2 id="token-2022">Are Token 2022 assets supported?</H2>
 <Para>
-  Token 2022 program assets are not offered anywhere in Dale, including screener,
-  trading and transfers. Standard SPL tokens are fully supported.
+  Yes. Token 2022 program assets are supported across the screener, trading and
+  transfers, alongside standard SPL tokens. You do not need to know which program a
+  token uses. Dale resolves it and handles the transfer semantics for you.
 </Para>
-<Callout kind="info" title="Token 2022">
-  Support for Token 2022 is planned.
-</Callout>

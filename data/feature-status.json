@@ -10,12 +10,12 @@
       "dca_evm",
       "solana_sends",
       "convergence_solana_routing",
-      "category_scoped_notes",
-      "agg_prediction_markets"
+      "agg_prediction_markets",
+      "token_2022_support"
     ],
     "next": [
       "auto_buy_expansion",
-      "token_2022_support"
+      "dale_strategy_studio"
     ],
     "stealth": {
       "private_beta": 2,
@@ -195,10 +195,18 @@
     },
     "token_2022_support": {
       "label": "Token 2022 support",
-      "status": "in_progress",
-      "date_label": "Planned",
-      "summary": "Token 2022 program assets across screener, trading and transfers. Standard SPL is fully supported today.",
+      "status": "shipped",
+      "shipped_date": "2026-08-08",
+      "date_label": "Live",
+      "summary": "Token 2022 program assets supported across screener, trading and transfers, alongside standard SPL.",
       "where": ["dale/solana-sends"]
+    },
+    "dale_strategy_studio": {
+      "label": "Dale Strategy Studio",
+      "status": "in_progress",
+      "date_label": "In progress",
+      "summary": "Building and managing trading strategies with Dale.",
+      "where": ["dale/overview"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
