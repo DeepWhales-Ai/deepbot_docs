@@ -16,8 +16,8 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatB
 />
 
 <ChatBlock>
-  <ChatBubble from="user">send 30% of my eth to 0xabc...123</ChatBubble>
-  <ChatBubble from="dale">Sending 30% of your ETH (0.45 ETH) on Ethereum to 0xabc...123. Gas $4.10. <Lime>Confirm to send →</Lime></ChatBubble>
+  <ChatBubble from="user">send 30% of my eth to vault.eth</ChatBubble>
+  <ChatBubble from="dale">Sending 30% of your ETH (0.45 ETH) on Ethereum to vault.eth. Gas $4.10. <Lime>Confirm to send →</Lime></ChatBubble>
 </ChatBlock>
 
 <H2 id="sending">Sending assets</H2>
@@ -28,7 +28,7 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatB
 
 <KeyValueGrid items={[
   { k: "By token and amount", v: <Mono>send 0.5 eth to my cold wallet</Mono> },
-  { k: "By percentage", v: <Mono>send 30% of my deepai to 0xabc...</Mono> },
+  { k: "By percentage", v: <Mono>send 30% of my deepai to vault.eth</Mono> },
   { k: "By USD value", v: <Mono>send $500 of ETH to Trading</Mono> },
   { k: "By wallet label", v: <Mono>send 100 USDC to my Sniper wallet</Mono> },
   { k: "To external address", v: <Mono>send 0.5 sol to [solana address]</Mono> },
@@ -36,12 +36,12 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatB
 
 <ChatBlock>
   <ChatBubble from="user">send $500 of eth to Trading</ChatBubble>
-  <ChatBubble from="dale">Resolving Trading wallet → 0x9f2...c41 on Ethereum. $500 = 0.073 ETH at current price. Gas $3.80. <Lime>Confirm to send →</Lime></ChatBubble>
+  <ChatBubble from="dale">Resolving Trading wallet on Ethereum. $500 = 0.073 ETH at current price. Gas $3.80. <Lime>Confirm to send →</Lime></ChatBubble>
 </ChatBlock>
 
 <ChatBlock>
   <ChatBubble from="user">send 100 usdc to my sniper wallet</ChatBubble>
-  <ChatBubble from="dale">Sniper resolves to your Base wallet 0x4ab...77e. Sending 100 USDC on Base. Gas $0.02. <Lime>Confirm to send →</Lime></ChatBubble>
+  <ChatBubble from="dale">Sniper resolves to your Base wallet. Sending 100 USDC on Base. Gas $0.02. <Lime>Confirm to send →</Lime></ChatBubble>
 </ChatBlock>
 
 <H2 id="creating">Creating wallets</H2>
@@ -54,7 +54,7 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid, ChatBlock, ChatB
 
 <ChatBlock>
   <ChatBubble from="user">create me a base wallet called Sniper</ChatBubble>
-  <ChatBubble from="dale">Created. Sniper · Base · 0x4ab...77e. Default chain set to Base for this wallet. <Lime>Fund to start trading →</Lime></ChatBubble>
+  <ChatBubble from="dale">Created. Sniper · Base. Default chain set to Base for this wallet. <Lime>Fund to start trading →</Lime></ChatBubble>
 </ChatBlock>
 
 <H2 id="importing">Importing private keys</H2>
