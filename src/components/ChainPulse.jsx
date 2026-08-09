@@ -37,7 +37,7 @@ export function ChainPulse() {
           const pulse = t % CHAINS.length === i;
           return (
             <div key={i} className={`db-chainpulse__node${pulse ? ' is-pulse' : ''}`}>
-              <span className="db-chainpulse__sym"><Logo size={32} /></span>
+              <span className="db-chainpulse__sym"><Logo size={26} /></span>
               <span className="db-chainpulse__name">{c.name}</span>
             </div>
           );
