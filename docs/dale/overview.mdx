@@ -6,6 +6,13 @@ sidebar_label: "What is Dale"
 {/* Source: pages-dale.jsx -> PageWhatDale */}
 
 import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="What is Dale"
+  description="Dale is DeepBot's conversational trader. Plain language in, executed trade out, across Ethereum, BSC, Base, Polygon and Solana."
+  slug="/dale/overview"
+/>
 
 <PageHead
   eyebrow="DALE"
@@ -16,12 +23,18 @@ import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site
   <div className="db-faded-box__line">If you can talk, you can <Lime>trade.</Lime></div>
 </div>
 
-<H2 id="is">What Dale is</H2>
+<H2 id="is">What is Dale?</H2>
 <Para>
-  Dale is the trader facing product of DeepBot. You ask Dale to swap. Dale checks the route,
-  surfaces fees, executes. You ask Dale to watch a launch. Dale watches and pings you. You
-  ask Dale to protect your bag from a rug. Dale watches the mempool and exits before the
-  attacker can.
+  Dale is the trader facing product of DeepBot, a conversational trader that runs
+  inside Telegram. You ask for a swap in plain language and Dale checks the route,
+  surfaces the fee, and executes. You ask it to watch a launch and it watches and pings
+  you. You ask it to protect a position from a rug and it watches the mempool and exits
+  ahead of the attacker. There are no commands to learn and no syntax to get right.
+  Dale trades across <Lime>six chains</Lime>: Ethereum, BSC, Base, Polygon, Solana and
+  Robinhood Chain, from one wallet whose keys you own. The trade fee is 1% on the EVM
+  chains and 1.5% on Solana. Behind every decision sits the convergence engine, which reads community
+  activity across the network and weighs it against on chain router behaviour.
+  Detection, not prediction. Dale surfaces what it sees and you decide when to move.
 </Para>
 
 <H2 id="feels">What Dale feels like</H2>
@@ -67,10 +80,7 @@ import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site
 
 <H2 id="coming">What's coming</H2>
 <KeyValueGrid items={[
-  { k: "Auto Buy on Base and BSC", v: "Base and BSC next, then Solana." },
-  { k: "Token 2022 support", v: "Planned across screener, trading and transfers." },
-  { k: "DCA on additional chains", v: "Expanding beyond Ethereum, BSC and Base." },
-  { k: "Prediction markets", v: "Final integration steps in progress." },
+  { k: "Auto Buy on Base and BSC", v: "Base and BSC next." },
+  { k: "Dale Strategy Studio", v: "In progress." },
   { k: "Hyperliquid perps", v: "In progress." },
-  { k: "DeepBot LINK", v: "In build." },
 ]} />

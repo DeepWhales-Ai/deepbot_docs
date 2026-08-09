@@ -1,26 +1,51 @@
 ---
-title: "Dollar cost averaging"
+title: "Sonar DCA"
 sidebar_label: "DCA"
+description: "Sonar DCA builds averaging strategies in conversation and runs them on Ethereum, BSC, Base and Solana. Buy and sell."
 ---
 
-{/* Source: Dale v2.1 refresh. New page for conversational DCA.
-    Chains: Ethereum, BSC, Base. Polygon routing only. Solana not in this
-    release. Voice: no em dashes, no hyphenated compounds in body copy. */}
+{/* Aug canon sweep. Expanded from the v2.1 DCA stub into the full Sonar DCA
+    page. Chains: Ethereum, BSC, Base, Solana. No Polygon for strategies.
+    Buy and sell both supported. The custodial deposit model is stated plainly
+    because a strategy does not execute in place on the Dale wallet.
+    Capability framing only, no internals, no results language.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
 
 import { PageHead, Para, H2, Lime, Callout, KeyValueGrid, NumberedList } from '@site/src/components/primitives.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Sonar DCA"
+  description="Averaging strategies built in conversation and run for you on Ethereum, BSC, Base and Solana. Buy and sell."
+  slug="/dale/dca"
+/>
 
 <PageHead
   eyebrow="DALE"
   lede="Build an averaging strategy in conversation. Dale scans, funds it and runs it. No external interface."
 />
 
-<H2 id="availability">Availability</H2>
+<H2 id="what">Can Dale run a DCA strategy for you?</H2>
 <Para>
-  DCA runs on Ethereum, BSC and Base. Polygon is integrated at the routing layer
-  but not active for strategies you set. Solana is not part of this release.
+  Yes. Sonar DCA lets you build an averaging strategy in conversation and then runs it
+  for you. Describe the token and the schedule, and Dale scans the target, provisions a
+  dedicated deposit address for the strategy, funds it from your Dale wallet, and
+  creates it. There is no external interface to sign into and no dashboard to
+  configure. You can average into a position and average out of one, so the same
+  engine handles both accumulation and scheduled selling. One thing to understand up
+  front: a strategy does not execute in place on your Dale wallet. Funds move to a
+  dedicated address that the strategy controls for its lifetime, and proceeds settle
+  back to your Dale wallet when it completes. Your destination wallet is registered at
+  creation, so there is no manual withdrawal step waiting for you at the end.
 </Para>
 
-<H2 id="flow">Flow</H2>
+<H2 id="availability">Which chains does DCA run on?</H2>
+<Para>
+  Sonar DCA runs on <Lime>Ethereum, BSC, Base and Solana</Lime>. Polygon is integrated
+  at the routing layer but is not active for strategies you set.
+</Para>
+
+<H2 id="flow">How do you set one up?</H2>
 <NumberedList items={[
   { title: "Build the strategy", text: "Set the target token and your schedule in conversation." },
   { title: "Safety scan", text: "Dale runs a safety scan on the target token before any money moves." },
@@ -29,14 +54,21 @@ import { PageHead, Para, H2, Lime, Callout, KeyValueGrid, NumberedList } from '@
   { title: "Create", text: "Dale creates the strategy with your configuration. No external interface is involved." },
 ]} />
 
-<H2 id="settlement">Settlement</H2>
+<H2 id="settlement">Where do the proceeds go?</H2>
 <Para>
   Your destination wallet is registered at strategy creation, so there is no manual
   withdrawal step. On completion, proceeds settle back to your Dale wallet,
   typically within hours, as the chain's native token.
 </Para>
 
-<H2 id="safety">Safety</H2>
+<KeyValueGrid items={[
+  { k: "Direction", v: "Buy and sell. Average into a position or average out of one." },
+  { k: "Custody during the strategy", v: "Funds sit at a dedicated deposit address for the life of the strategy, not on your Dale wallet." },
+  { k: "Settlement", v: "Back to your Dale wallet as the chain's native token, typically within hours of completion." },
+  { k: "Chains", v: "Ethereum, BSC, Base and Solana. Polygon is not available for strategies." },
+]} />
+
+<H2 id="safety">What stops a DCA into a bad token?</H2>
 <Para>
   Every DCA buy target is scanned before creation. Malicious, unverified and scan
   failed tokens are blocked before funds move. Sells are not gated, since exits are

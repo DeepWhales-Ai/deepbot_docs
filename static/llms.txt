@@ -1,0 +1,78 @@
+# DeepBot
+
+> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, with DeepBot LINK, a web surface, in build. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
+
+## Core facts
+
+- Supported chains: Ethereum, BSC, Base, Polygon, Solana, Robinhood Chain. Six chains, one wallet.
+- Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon, Robinhood Chain) and 1.5% on Solana. Same router across every interface.
+- Custody: non custodial. Keys are user owned and encrypted with AES-256-GCM. DeepBot does not hold the key, even when Dale executes.
+- Interfaces: Dale in Telegram, the DeepBot Wallet bot, and DeepBot LINK on the web. All share one account, one wallet and one memory.
+- Languages: Dale detects the language you write in and replies in it.
+
+## Security model, and where it differs by surface
+
+- Telegram: trades are gated behind a PIN. The PIN is validated against a hashed record and auto deletes from chat after entry.
+- Web (DeepBot LINK, in build, not yet available): when it launches, trading will be authorized by your session. There is no PIN on the web surface, no spend gate and no second authorization step. This is deliberate. The two surfaces are not equivalent and should not be described as having the same gate.
+- Identity reset uses three secret questions chosen by the user. Hashes only, all three required.
+
+## Trading capabilities
+
+- Conversational buy and sell across all six chains.
+- Automated exits: stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base, Solana and Robinhood Chain. Polygon does not support automated exits. Trailing floors are evaluated against live prices every 30 seconds. Pro capability, up to five armed strategies per user.
+- Emergency Sell: mempool rug protection, Ethereum only. Watches pending transactions for tokens you hold and front runs a detected rug with a 15 percent gas premium. On by default for every account.
+- Screener: define buying criteria in conversation, get matches by DM. Runs on Ethereum, BSC, Base and Solana. Free accounts run one screener, Pro accounts run five.
+- Auto Buy: takes a screener match automatically. Live on Ethereum. Base and BSC next. A given token can only be auto bought once per user, permanently.
+- Sonar DCA: averaging strategies built in conversation, buy and sell, on Ethereum, BSC, Base and Solana. Not available on Polygon. Funds move to a dedicated deposit address for the life of the strategy rather than executing in place on the Dale wallet.
+- Sending: native asset or standard tokens on the EVM chains, native SOL or standard SPL on Solana. ENS and SNS resolve.
+- Prediction markets: Polymarket and Kalshi through AGG.market. Browse, take a position, hold it and close it in conversation, funded from the DeepBot wallet. Access is geo fenced. Kalshi requires identity verification, Polymarket does not.
+
+## Autonomous Solana entry does not exist
+
+No automated lane buys into Solana. Whale, blue, trend and copy trade lanes are EVM only, and Auto Buy runs on Ethereum. Buying a Solana token is always a manual swap the user confirms. Selling and protective exits do run automatically on Solana. This is a deliberate design asymmetry, not a gap awaiting a fix.
+
+## Voice
+
+- Inbound only. You send Dale a voice message, Dale replies in text. Dale does not send voice messages.
+- English.
+- Every voice trade passes a confirmation step before execution.
+- Voice PIN is opt in via /voicepin and is off by default. Tap PIN and tap confirm are always available.
+
+## Safety pipeline
+
+- Blockaid scanning runs on every token before a trade and surfaces a verdict to the user: safe, warning, or malicious. It is a scan surfaced to the user, not an execution time block.
+- Honeypot pre check for hidden traps, freeze functions, blacklists and transfer restrictions.
+- Rugged dev refusal: wallets connected to past rug events are flagged before a trade builds.
+- Mempool monitoring covers 13 attack pattern categories and roughly 68 contract selectors.
+- Continuous monitoring after the buy: tax and fee mutations, liquidity changes and contract upgrades are watched for the whole time a position is held.
+
+## Memory
+
+Style personalization is live on every tier. The deeper recall layer is Pro only. Watchlist: Free 5, Pro 100. Alerts: Free 5, Pro 20. Saved notes via /remember are capped at 30 on Pro. /forget works on every tier with no cap. Memory is per user, not per chat, and persists across chains, sessions and devices.
+
+## Revenue sharing
+
+$DEEPAI holders receive 40% of trading fees, plus 15% shares of team trading profits, platform ad and trending revenue, and Pro subscription revenue from non holders. Paid in USDC. Minimum 100,000 $DEEPAI to be eligible, with a random snapshot and a seven day no sell condition.
+
+## Documentation map
+
+- Start: /new-to-crypto, /home, /quickstart, /three-products, /eight-reasons, /updates
+- Dale: /dale/overview, /dale/first-conversation, /dale/how-it-thinks, /dale/honesty, /dale/memory, /dale/multichain, /dale/conversational-trading, /dale/wallet-management, /dale/tools, /dale/trade-panel, /dale/safety, /dale/trade-safety-gate, /dale/specialist-routing, /dale/stop-loss-and-trailing, /dale/voice, /dale/autonomous, /dale/community-layer, /dale/response-modes, /dale/emergency-sell, /dale/genesis-cohort, /dale/screener, /dale/auto-buy, /dale/dca, /dale/solana-sends
+- Wallet: /wallet/overview
+- Shotgun: /shotgun/overview, /shotgun/blue, /shotgun/trend, /shotgun/smart-wallets, /shotgun/channels
+- DeepBot LINK: /deepbot-link
+- Prediction markets: /prediction-markets
+- Platform: /convergence, /platform/convergence, /platform/safety, /platform/multichain-stack, /platform/partnerships
+- The Brain: /brain/overview, /brain/layer-1-network, /brain/layer-2-routers, /brain/layer-3-safety, /brain/layer-4-rug, /brain/layer-5-convergence, /brain/layer-6-encoding
+- Token: /token/deepai
+- Affiliate program: /affiliate-program/overview, /affiliate-program/getting-started, /affiliate-program/commissions, /affiliate-program/dashboard, /affiliate-program/payouts, /affiliate-program/faq
+- Revenue sharing: /revshare/overview, /revshare/streams, /revshare/phases, /revshare/nfts, /revshare/eligibility, /revshare/calculator, /revshare/claiming
+- Investors: /investors/platform-pitch, /investors/launch-sequence, /investors/roadmap
+- Team: /team
+
+## Links
+
+- Documentation: https://docs.deepbot.pro
+- Main site: https://www.deepbot.pro/
+- Dale on Telegram: https://t.me/traderdeepbot
+- Contact: https://t.me/krypt0nite8

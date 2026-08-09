@@ -8,6 +8,13 @@ sidebar_label: "Safety and PIN"
 import { PageHead, Para, H2, Lime, Mono, Pull, Callout, NumberedList, KeyValueGrid, FeatureGrid, Asterisk } from '@site/src/components/primitives.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 import SectionStatus from '@site/src/components/SectionStatus.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Dale safety"
+  description="How DeepBot protects a trade: PIN gate, encryption, Blockaid scanning, honeypot pre checks and continuous monitoring after the buy."
+  slug="/dale/safety"
+/>
 
 <PageHead
   eyebrow="DALE"
@@ -151,14 +158,16 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
 
 <H2 id="voice-pin">Voice PIN <FeatureStatus id="voice_pin" /></H2>
 <Para>
-  Authorize a trade by voice. Same gate, different modality. PRO only at launch. Voice
-  message in, voice PIN out, signed transaction back. Useful when typing is not.
+  Authorize a trade by voice. Same gate, different modality. It is <Lime>off by
+  default</Lime> and you turn it on yourself with <Mono>/voicepin</Mono>. Tap PIN and
+  tap confirm stay available whether or not you enable it. See{' '}
+  <a href="/dale/voice" className="db-link">Trading by voice</a> for the full picture.
 </Para>
 
 <H2 id="encryption">How encryption works</H2>
 <KeyValueGrid items={[
   { k: "Key encryption", v: "Private keys encrypted with AES-256-GCM. The encryption layer is isolated from the trading code path." },
-  { k: "PIN with Panic PIN", v: "Every wallet is PIN-protected. A separate Panic PIN looks like a normal unlock and silently empties wallets to a cold address you set. Built for the moment a stranger forces your phone open." },
+  { k: "PIN gate", v: "Every wallet is PIN protected. The PIN is validated against a hashed record before any trade, send or swap builds. The hash is what we store." },
   { k: "PIN auto delete", v: "PIN deletes from chat history after entry. The sensitive number never sits in message history." },
   { k: "Three secret questions", v: "Identity reset uses three secret questions you choose yourself. Hashes only, all three required, no salesperson, no support backdoor." },
   { k: "Chain-first PIN gate", v: "PIN gate fires before chain branch. Same security on every chain, EVM and Solana, all three security levels." },
@@ -187,7 +196,7 @@ import SectionStatus from '@site/src/components/SectionStatus.jsx';
   { k: "Tax and fee mutations", v: "Watched on every chain Dale supports. A change that breaches your tolerance triggers a heads up before the next trade tries to land." },
   { k: "Liquidity changes", v: "LP additions and removals tracked. A sudden drop on a position you hold gets flagged in the moment." },
   { k: "Contract upgrades", v: "Proxy upgrades and ownership transfers reviewed against rug patterns. The position gets revalidated automatically." },
-  { k: "Cold wallet on demand", v: "One sentence. Move 80% of my ETH to cold. Dale routes to your designated cold address with the same PIN gate. Combined with Panic PIN, this is the user's protection layer." },
+  { k: "Cold wallet on demand", v: "One sentence. Move 80% of my ETH to cold. Dale routes to your designated cold address with the same PIN gate." },
 ]} />
 
 <Pull>

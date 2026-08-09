@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01",
+  "last_updated": "2026-08-08",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across now + next. Not a changelog. When a new item ships, remove the older / lower-impact one. Rotated-off ids stay in the `features` map. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
@@ -10,12 +10,12 @@
       "dca_evm",
       "solana_sends",
       "convergence_solana_routing",
-      "category_scoped_notes"
+      "agg_prediction_markets",
+      "token_2022_support"
     ],
     "next": [
       "auto_buy_expansion",
-      "token_2022_support",
-      "agg_prediction_markets"
+      "dale_strategy_studio"
     ],
     "stealth": {
       "private_beta": 2,
@@ -81,10 +81,11 @@
     },
     "agg_prediction_markets": {
       "label": "Prediction markets",
-      "status": "in_progress",
-      "date_label": "Final integration steps",
-      "summary": "Polymarket and Kalshi access through Dale. Discovery layer first. Trading flow follows.",
-      "where": ["dale/prediction-markets"]
+      "status": "shipped",
+      "shipped_date": "2026-08-04",
+      "date_label": "Live",
+      "summary": "Polymarket and Kalshi through AGG. Browse, take a position, hold it and close it, all in conversation.",
+      "where": ["prediction-markets/overview"]
     },
     "hyperliquid_integration": {
       "label": "Hyperliquid perps",
@@ -166,7 +167,7 @@
       "status": "shipped",
       "shipped_date": "2026-07-01",
       "date_label": "Live",
-      "summary": "Conversational DCA on Ethereum, BSC and Base. Safety scanned, funded and settled through your Dale wallet.",
+      "summary": "Conversational DCA on Ethereum, BSC, Base and Solana. Safety scanned, funded and settled through your Dale wallet.",
       "where": ["dale/dca"]
     },
     "convergence_solana_routing": {
@@ -189,15 +190,23 @@
       "label": "Auto Buy on Base and BSC",
       "status": "in_progress",
       "date_label": "Soon",
-      "summary": "Auto Buy expanding to Base and BSC, then Solana.",
+      "summary": "Auto Buy expanding to Base and BSC.",
       "where": ["dale/auto-buy"]
     },
     "token_2022_support": {
       "label": "Token 2022 support",
-      "status": "in_progress",
-      "date_label": "Planned",
-      "summary": "Token 2022 program assets across screener, trading and transfers. Standard SPL is fully supported today.",
+      "status": "shipped",
+      "shipped_date": "2026-08-08",
+      "date_label": "Live",
+      "summary": "Token 2022 program assets supported across screener, trading and transfers, alongside standard SPL.",
       "where": ["dale/solana-sends"]
+    },
+    "dale_strategy_studio": {
+      "label": "Dale Strategy Studio",
+      "status": "in_progress",
+      "date_label": "In progress",
+      "summary": "Building and managing trading strategies with Dale.",
+      "where": ["dale/overview"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
@@ -224,11 +233,6 @@
       "status": "building",
       "date_label": "Rolling out",
       "where": ["dale/safety"]
-    },
-    "panic_pin": {
-      "label": "Panic PIN",
-      "status": "live",
-      "where": ["dale/safety", "wallet/overview"]
     },
     "private_key_export": {
       "label": "Private key export",
@@ -265,16 +269,20 @@
       "where": ["wallet/overview"]
     },
     "voice_messages_in": {
-      "label": "Voice messages to Dale (PRO)",
-      "status": "coming",
-      "date_label": "In design",
-      "where": ["dale/conversational-trading"]
+      "label": "Voice messages to Dale",
+      "status": "shipped",
+      "shipped_date": "2026-07-09",
+      "date_label": "Live",
+      "summary": "Send Dale a voice message and it trades the request. Inbound only, English, on every account.",
+      "where": ["dale/voice", "dale/conversational-trading"]
     },
     "voice_pin": {
-      "label": "Voice PIN authorization (PRO)",
-      "status": "coming",
-      "date_label": "In design",
-      "where": ["dale/safety", "dale/conversational-trading"]
+      "label": "Voice PIN authorization",
+      "status": "shipped",
+      "shipped_date": "2026-07-09",
+      "date_label": "Live",
+      "summary": "Opt in voice authorization via /voicepin, off by default. Tap PIN and tap confirm remain available on every account.",
+      "where": ["dale/voice", "dale/safety", "dale/conversational-trading"]
     },
     "bobby_trending_channel": {
       "label": "Bobby Trending Channel (curated feed)",
@@ -298,10 +306,12 @@
       "where": ["dale/tools"]
     },
     "sonar_polygon_solana": {
-      "label": "Sonar DCA on Polygon and Solana",
-      "status": "coming",
-      "date_label": "Rolling out",
-      "where": ["dale/tools"]
+      "label": "Sonar DCA on Solana",
+      "status": "shipped",
+      "shipped_date": "2026-08-01",
+      "date_label": "Live",
+      "summary": "Sonar DCA execution on Solana, alongside Ethereum, BSC and Base. Polygon is not available for strategies.",
+      "where": ["dale/dca"]
     },
     "rev_share_calculator_three_engines": {
       "label": "Rev share calculator with Bobby + Wallet revenue inputs",

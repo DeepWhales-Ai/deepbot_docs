@@ -1,11 +1,13 @@
 ---
 title: "Exits: stop loss, trailing stop, take profit"
 sidebar_label: "Exits"
+description: "Stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base, Solana and Robinhood Chain. Polygon does not support automated exits."
 ---
 
 {/* Source: Dale v2.1 refresh. Rewritten from the former "Stop loss & trailing"
     page. Slug stays /dale/stop-loss-and-trailing (no rename, no redirect).
-    Chains with automated exits: Ethereum, BSC, Base, Solana. Polygon does not
+    Chains with automated exits: Ethereum, BSC, Base, Solana, Robinhood Chain.
+    Polygon does not
     support automated exits. Voice: no em dashes, no hyphenated compounds. */}
 
 import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
@@ -17,8 +19,9 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src
 
 <H2 id="chains">Supported chains, every exit type</H2>
 <Para>
-  Stop loss, trailing stop and tiered take profit run on Ethereum, BSC, Base and
-  Solana. Solana runs the same three exit types as the EVM chains.
+  Stop loss, trailing stop and tiered take profit run on Ethereum, BSC, Base,
+  Solana and Robinhood Chain. Solana runs the same three exit types as the EVM
+  chains.
 </Para>
 <Callout kind="info" title="Polygon">
   Polygon does not currently support automated exits.
@@ -37,7 +40,7 @@ import { PageHead, Para, H2, Lime, Mono, Callout, KeyValueGrid } from '@site/src
 <H2 id="entitlements">Entitlements</H2>
 <Para>
   Automated exits are a Pro capability across the supported chains (Ethereum, BSC,
-  Base and Solana), whether set manually on a held position or armed automatically
+  Base, Solana and Robinhood Chain), whether set manually on a held position or armed automatically
   as part of a buy. Up to five armed strategies per user.
 </Para>
 
