@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-08-08",
+  "last_updated": "2026-08-10",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across now + next. Not a changelog. When a new item ships, remove the older / lower-impact one. Rotated-off ids stay in the `features` map. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
     "now": [
+      "deepbot_link",
+      "auto_buy_expansion",
       "token_screener",
       "auto_buy_engine",
       "solana_exits_parity",
       "dca_evm",
       "solana_sends",
-      "convergence_solana_routing",
       "agg_prediction_markets",
       "token_2022_support"
     ],
     "next": [
-      "auto_buy_expansion",
       "dale_strategy_studio"
     ],
     "stealth": {
@@ -95,10 +95,11 @@
       "where": []
     },
     "deepbot_link": {
-      "label": "DeepBot LINK",
-      "status": "in_progress",
-      "date_label": "In build",
-      "summary": "Type. Trade. Track. In a browser.",
+      "label": "DeepBot LINK (beta)",
+      "status": "shipped",
+      "shipped_date": "2026-08-10",
+      "date_label": "Live · Beta",
+      "summary": "The web surface, live in beta at trade.deepbot.pro. Native charts, convergence feed, holdings and a Swap Box. Session authorized, no PIN on web.",
       "where": ["deepbot-link"]
     },
     "coingecko_partnership": {
@@ -143,7 +144,7 @@
       "status": "shipped",
       "shipped_date": "2026-07-01",
       "date_label": "Live",
-      "summary": "Screener matches bought automatically through Dale. Live on Ethereum, with Base and BSC next, then Solana.",
+      "summary": "Screener matches bought automatically through Dale. Live on Ethereum, Base and BSC. Auto Buy does not fire on Solana by design.",
       "where": ["dale/auto-buy"]
     },
     "solana_exits_parity": {
@@ -188,9 +189,10 @@
     },
     "auto_buy_expansion": {
       "label": "Auto Buy on Base and BSC",
-      "status": "in_progress",
-      "date_label": "Soon",
-      "summary": "Auto Buy expanding to Base and BSC.",
+      "status": "shipped",
+      "shipped_date": "2026-08-10",
+      "date_label": "Live",
+      "summary": "Auto Buy takes screener matches on Base and BSC, alongside Ethereum.",
       "where": ["dale/auto-buy"]
     },
     "token_2022_support": {

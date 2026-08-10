@@ -1,7 +1,7 @@
 ---
 title: "Auto Buy"
 sidebar_label: "Auto Buy"
-description: "Auto Buy takes a screener match for you without a tap. Live on Ethereum, with a permanent one buy per token rule."
+description: "Auto Buy takes a screener match for you without a tap. Live on Ethereum, Base and BSC, with a permanent one buy per token rule."
 ---
 
 {/* Source: Dale v2.1 refresh. New page documenting Auto Buy on screener
@@ -36,19 +36,20 @@ import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/compo
 
 <H2 id="availability">Availability</H2>
 <Para>
-  Live on Ethereum. Base and BSC land next. Auto buy outcomes that fail or need
+  Live on Ethereum, Base and BSC. Auto buy outcomes that fail or need
   attention arrive inside Dale in the same chat as every other trade result.
 </Para>
 
 <KeyValueGrid items={[
   { k: "Ethereum", v: <Lime>Live</Lime> },
-  { k: "Base", v: "Next" },
-  { k: "BSC", v: "Next" },
+  { k: "Base", v: <Lime>Live</Lime> },
+  { k: "BSC", v: <Lime>Live</Lime> },
 ]} />
 
 <Callout kind="info" title="Auto Buy does not fire on Solana">
   Screener matches on Solana are delivered for you to buy manually. Auto Buy itself
-  runs on Ethereum. Selling and protective exits do run automatically on Solana.
+  runs on Ethereum, Base and BSC. Selling and protective exits do run automatically
+  on Solana.
 </Callout>
 
 <Callout kind="lime" title="Set the criteria first">

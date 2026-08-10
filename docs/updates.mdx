@@ -16,6 +16,8 @@ import { PageHead, Lime, StatRow } from '@site/src/components/primitives.jsx';
     only: this is a changelog, not a roadmap. Nothing unreleased goes here. */}
 
 export const ENTRIES = [
+  { date: "Aug 10, 2026", tag: "major", title: "DeepBot LINK live in beta", body: "The web surface is open at trade.deepbot.pro. Sign in with Telegram and get native charts, the convergence signal feed, holdings with a dust filter, and a Swap Box on the same wallet and history you already have. Web trading is authorized by your session: there is no PIN on the web surface. It is a beta, and the Telegram surface remains the complete one." },
+  { date: "Aug 10, 2026", tag: "major", title: "Auto Buy on Base and BSC", body: "Auto Buy takes screener matches on Base and BSC alongside Ethereum. Same one buy per token rule, same five armed strategy cap. Auto Buy still does not fire on Solana, by design." },
   { date: "Aug 08, 2026", tag: "major", title: "Robinhood Chain live", body: "The sixth chain. Conversational trading, automated exits, and the same 1% EVM trade fee. One private key now works across five EVM chains." },
   { date: "Aug 08, 2026", tag: "major", title: "Token 2022 support live", body: "Token 2022 program assets supported across the screener, trading and transfers, alongside standard SPL. Dale resolves the program for you." },
   { date: "Aug 04, 2026", tag: "major", title: "Prediction markets live", body: "Polymarket and Kalshi through AGG.market. Browse an event, take a position, hold it and close it for cash, all in conversation and funded from your DeepBot wallet." },
@@ -30,7 +32,7 @@ export const ENTRIES = [
 
 <PageHead
   title="Updates this month"
-  lede={<>Everything we shipped between <Lime>July 1 and August 8, 2026</Lime>.</>}
+  lede={<>Everything we shipped between <Lime>July 1 and August 10, 2026</Lime>.</>}
 />
 
 {/* Releases counts ENTRIES so the stat cannot drift from the list below it.
