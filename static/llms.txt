@@ -1,6 +1,6 @@
 # DeepBot
 
-> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, with DeepBot LINK, a web surface, in build. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
+> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro, live in beta. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
 
 ## Core facts
 
@@ -13,7 +13,7 @@
 ## Security model, and where it differs by surface
 
 - Telegram: trades are gated behind a PIN. The PIN is validated against a hashed record and auto deletes from chat after entry.
-- Web (DeepBot LINK, in build, not yet available): when it launches, trading will be authorized by your session. There is no PIN on the web surface, no spend gate and no second authorization step. This is deliberate. The two surfaces are not equivalent and should not be described as having the same gate.
+- Web (DeepBot LINK at trade.deepbot.pro, live in beta): trading is authorized by your session. There is no PIN on the web surface, no spend gate and no second authorization step. This is deliberate. The two surfaces are not equivalent and should not be described as having the same gate.
 - Identity reset uses three secret questions chosen by the user. Hashes only, all three required.
 
 ## Trading capabilities
@@ -22,14 +22,14 @@
 - Automated exits: stop loss, trailing stop and tiered take profit, live on Ethereum, BSC, Base, Solana and Robinhood Chain. Polygon does not support automated exits. Trailing floors are evaluated against live prices every 30 seconds. Pro capability, up to five armed strategies per user.
 - Emergency Sell: mempool rug protection, Ethereum only. Watches pending transactions for tokens you hold and front runs a detected rug with a 15 percent gas premium. On by default for every account.
 - Screener: define buying criteria in conversation, get matches by DM. Runs on Ethereum, BSC, Base and Solana. Free accounts run one screener, Pro accounts run five.
-- Auto Buy: takes a screener match automatically. Live on Ethereum. Base and BSC next. A given token can only be auto bought once per user, permanently.
+- Auto Buy: takes a screener match automatically. Live on Ethereum, Base and BSC. Not offered on Solana. A given token can only be auto bought once per user, permanently.
 - Sonar DCA: averaging strategies built in conversation, buy and sell, on Ethereum, BSC, Base and Solana. Not available on Polygon. Funds move to a dedicated deposit address for the life of the strategy rather than executing in place on the Dale wallet.
 - Sending: native asset or standard tokens on the EVM chains, native SOL or standard SPL on Solana. ENS and SNS resolve.
 - Prediction markets: Polymarket and Kalshi through AGG.market. Browse, take a position, hold it and close it in conversation, funded from the DeepBot wallet. Access is geo fenced. Kalshi requires identity verification, Polymarket does not.
 
 ## Autonomous Solana entry does not exist
 
-No automated lane buys into Solana. Whale, blue, trend and copy trade lanes are EVM only, and Auto Buy runs on Ethereum. Buying a Solana token is always a manual swap the user confirms. Selling and protective exits do run automatically on Solana. This is a deliberate design asymmetry, not a gap awaiting a fix.
+No automated lane buys into Solana. Whale, blue, trend and copy trade lanes are EVM only, and Auto Buy runs on Ethereum, Base and BSC. Buying a Solana token is always a manual swap the user confirms. Selling and protective exits do run automatically on Solana. This is a deliberate design asymmetry, not a gap awaiting a fix.
 
 ## Voice
 
@@ -74,5 +74,6 @@ $DEEPAI holders receive 40% of trading fees, plus 15% shares of team trading pro
 
 - Documentation: https://docs.deepbot.pro
 - Main site: https://www.deepbot.pro/
+- Web trading (DeepBot LINK, beta): https://trade.deepbot.pro
 - Dale on Telegram: https://t.me/traderdeepbot
 - Contact: https://t.me/krypt0nite8
