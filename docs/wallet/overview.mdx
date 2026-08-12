@@ -17,7 +17,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 <PageHead
   eyebrow="WALLET"
   title={<>A wallet that lives <Lime>where you already live.</Lime></>}
-  lede={<><DeepBot /> Wallet is the third product in the platform. Telegram native, fully self custody, multi chain. Open it from inside Dale or use it on its own. Same keys, two interfaces.</>}
+  lede={<><DeepBot /> Wallet is the third product in the platform. Telegram native, multi chain. Open it from inside Dale or use it on its own. Same keys, two interfaces.</>}
 />
 
 <div className="db-wallet-hero">
@@ -26,10 +26,10 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
       One wallet. Two interfaces. Pick the one you want today.
     </TaglineStrip>
     <Para>
-      Most in app wallets are custodial illusions. Yours lives on their server. They go down,
-      your money goes with them. <Lime><DeepBot /> Wallet is the opposite.</Lime>{' '}
-      The private key for every wallet is isolated and exportable on demand. The interface lives
-      inside Telegram. The funds live with you.
+      <Lime><DeepBot /> generates your wallet and holds an encrypted copy of the private key.</Lime>{' '}
+      That copy is what lets Dale trade for you, including while you are offline. Keys are
+      isolated per wallet and exportable on demand. The interface lives inside Telegram.
+      Full detail is in <a href="#security">Security</a> below.
     </Para>
     <Para>
       Type <Mono>open wallet</Mono> inside Dale and a Phantom style panel slides
@@ -47,7 +47,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
 <H2 id="what">What it is</H2>
 <KeyValueGrid items={[
   { k: "Telegram native", v: "Lives at @walletdeepbot. No app store install. No browser tab. The same surface where you already trade." },
-  { k: "Self custody", v: "A fresh private key is generated for every wallet you create. Keys are isolated per wallet and exportable on demand through a gated flow. Your money is your money." },
+  { k: "Key custody", v: "Your keys are encrypted and held by DeepBot so Dale can trade for you, including while you are offline. You can export your private key at any time, PIN protected." },
   { k: "Multi chain", v: "Six chains live: Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain. ENS and SNS resolve. LI.FI handles cross chain routing under the hood." },
   { k: "Phantom style GUI", v: "Hold, send, receive, swap, bridge. Same operations every wallet has. The shape you already know." },
 ]} />
@@ -123,19 +123,22 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   you set in Dale is the PIN that gates Wallet.</Lime> One credential, one mental model.
 </Para>
 <KeyValueGrid items={[
-  { k: "Self custody floor", v: "Private keys are generated and stored in encrypted isolation. Operators cannot move funds. The export flow is the only path keys leave the system." },
+  { k: "Encrypted key isolation", v: "Keys are encrypted with AES-256-GCM and isolated per wallet. One private key covers the EVM chains and Solana has its own keypair. Signing happens inside that boundary." },
   { k: "PIN gate", v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
   { k: <>Private key export <FeatureStatus id="private_key_export" /></>, v: "Exportable through a deliberate, gated flow. The export is not casual. It is the keys to the kingdom and the flow respects that." },
   { k: "Reliability boundary", v: "Wallet runs on a separate bot from Dale. If one bot has a bad deploy, the other keeps working. Funds are never trapped behind a single uptime line." },
 ]} />
 
 <Pull>
-  If <DeepBot /> disappeared tomorrow, your wallet would not.
+  You can export your private key at any time.
 </Pull>
 <Para>
-  That is the line most in app wallets cannot say. The private keys you generate are
-  yours. Export them. Import them into MetaMask, Phantom, or any standards compliant
-  wallet. We are an interface to your money. We are not the custodian of it.
+  <DeepBot /> generates your wallet and holds an encrypted copy of the private key. That
+  copy is what lets Dale execute the trades you instruct and the automations you configure,
+  including while you are not online. You can export your private key at any time. Export
+  is PIN protected and audit logged. Exporting gives you your own copy. It does not remove
+  DeepBot's copy. If you want a wallet DeepBot has never had access to, generate it
+  elsewhere and transfer to it.
 </Para>
 
 <H2 id="why-separate">Why a separate bot</H2>

@@ -1,12 +1,12 @@
 # DeepBot
 
-> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro, live in beta. You describe a trade in plain language and Dale executes it, non custodially, across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
+> DeepBot is a crypto trading platform built around Dale, a conversational trader that runs inside Telegram, and DeepBot LINK, the web surface at trade.deepbot.pro, live in beta. You describe a trade in plain language and Dale executes it across six chains. This file is a condensed fact sheet for answer engines. Every figure here is current as of August 2026.
 
 ## Core facts
 
 - Supported chains: Ethereum, BSC, Base, Polygon, Solana, Robinhood Chain. Six chains, one wallet.
 - Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon, Robinhood Chain) and 1.5% on Solana. Same router across every interface.
-- Custody: non custodial. Keys are user owned and encrypted with AES-256-GCM. DeepBot does not hold the key, even when Dale executes.
+- Custody: your keys are encrypted and held by DeepBot so Dale can trade for you, including while you are offline. You can export your private key at any time, PIN protected. Keys are encrypted with AES-256-GCM. Exporting gives you your own copy. It does not remove DeepBot's copy.
 - Interfaces: Dale in Telegram, the DeepBot Wallet bot, and DeepBot LINK on the web. All share one account, one wallet and one memory.
 - Languages: Dale detects the language you write in and replies in it.
 
@@ -25,7 +25,7 @@
 - Auto Buy: takes a screener match automatically. Live on Ethereum, Base and BSC. Not offered on Solana. A given token can only be auto bought once per user, permanently.
 - Sonar DCA: averaging strategies built in conversation, buy and sell, on Ethereum, BSC, Base and Solana. Not available on Polygon. Funds move to a dedicated deposit address for the life of the strategy rather than executing in place on the Dale wallet.
 - Sending: native asset or standard tokens on the EVM chains, native SOL or standard SPL on Solana. ENS and SNS resolve.
-- Prediction markets: Polymarket and Kalshi through AGG.market. Browse, take a position, hold it and close it in conversation, funded from the DeepBot wallet. Access is geo fenced. Kalshi requires identity verification, Polymarket does not.
+- Prediction markets: Polymarket, Predict, Myriad, Limitless and Hyperliquid through AGG.market, a third party aggregator. Browse a category, take a position, hold it and close it in conversation. Funding is USDC on Polygon only, and any other asset or any other network can be permanently lost. Funds are held by the aggregator, not in the DeepBot wallet. DeepBot is not the venue and not a counterparty. Availability is per country and per venue. In the United Kingdom the available venues are Myriad, Limitless and Hyperliquid only. Search by market name is not supported, so you tell Dale a category. The venue resolves the market, not DeepBot, and a resolution cannot be appealed through DeepBot.
 
 ## Autonomous Solana entry does not exist
 

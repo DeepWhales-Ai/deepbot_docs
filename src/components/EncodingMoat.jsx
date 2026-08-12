@@ -6,8 +6,8 @@
 import React, { useEffect, useState } from 'react';
 const TOOLS = [
   { name: 'detect_convergence', args: 'token=$PEPE  sources=18  threshold=met' },
-  { name: 'scan_contract',      args: 'addr=0x6982…  honeypot=false  blacklist=false' },
-  { name: 'check_deployer',     args: 'addr=0x4f9b…  rug_events=0  age=842d' },
+  { name: 'scan_contract',      args: 'addr=0x6982508145454Ce325dDbE47a25d4ec3d2311933  honeypot=false  blacklist=false' },
+  { name: 'check_deployer',     args: 'addr=0x4f9b7DEd4cCd6a1b39b0Fc1e0e4Fb3A2c8D5e6F7  rug_events=0  age=842d' },
   { name: 'price_quote',        args: 'pair=PEPE/ETH  size=0.1  impact=0.18%' },
   { name: 'route_trade',        args: 'venue=Uniswap_V3  chain=ETH  slippage=auto' },
   { name: 'arm_stop',           args: 'pct=-15  trail=false  on_rug=exit_all' },

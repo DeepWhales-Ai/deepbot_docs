@@ -84,7 +84,7 @@
       "status": "shipped",
       "shipped_date": "2026-08-04",
       "date_label": "Live",
-      "summary": "Polymarket and Kalshi through AGG. Browse, take a position, hold it and close it, all in conversation.",
+      "summary": "Polymarket, Predict, Myriad, Limitless and Hyperliquid through AGG. Browse a category, take a position, hold it and close it, all in conversation. Funding is USDC on Polygon only.",
       "where": ["prediction-markets/overview"]
     },
     "hyperliquid_integration": {
