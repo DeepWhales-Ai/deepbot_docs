@@ -1,6 +1,6 @@
 # DeepBot Gitbook: Master Design Brief
 
-For: Claude Design
+For: Design
 Source: Krypt (Rob McGrail), DeepBot
 Date: May 3, 2026
 Version: 2 (Wallet section added, three-product framing locked, six-stream rev share updated, private key terminology corrected)
@@ -38,7 +38,7 @@ Three products. One brain. One revenue pool. One token.
 
 **Bobby** is the intelligence network. Five years of data across thousands of crypto Telegram project communities. Bobby sees what's happening in crypto Telegram before anyone else, because Bobby is already inside crypto Telegram. When a project applies for our trending or ad slots, Bobby has already scanned them. We don't need their pitch. We have their data.
 
-**Dale** is the AI trading partner. Launched April 3, 2026. Built on Claude Sonnet 4.6. 50+ tools. Multi-chain (Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain live). Dale doesn't feel like software. Dale feels like a sharp friend who trades for a living. You ask Dale to swap. Dale checks the route, surfaces fees, executes. You ask Dale what's happening with a token. Dale knows because Dale has Bobby's intelligence underneath.
+**Dale** is the AI trading partner. Launched April 3, 2026. 50+ tools. Multi-chain (Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain live). Dale doesn't feel like software. Dale feels like a sharp friend who trades for a living. You ask Dale to swap. Dale checks the route, surfaces fees, executes. You ask Dale what's happening with a token. Dale knows because Dale has Bobby's intelligence underneath.
 
 **DeepBot Wallet** is the third product. A Telegram-native wallet bot at @walletdeepbot. Phantom-style GUI. Multi-chain. Built on the same wallet stack Dale executes against, with the same security floor and the same private key. The wallet is where you hold. Dale is where you trade. Bobby is where the intelligence lives. All three share one wallet underneath, one revenue pool above, one token across.
 
@@ -83,7 +83,7 @@ Three modes. The gitbook uses two of them.
 ## Hard voice rules (apply everywhere)
 
 - **No em dashes anywhere.** Periods, commas, colons, restructure.
-- **No "Built with Claude" or AI-vendor mentions in public copy.** Lead with outcomes. Claude attribution reserved for investor surfaces, hiring, and Anthropic BD.
+- **No AI vendor mentions anywhere.** No model names, no vendor attribution, on any surface including investor and hiring material. Lead with outcomes.
 - **No network-size numbers in public copy.** 25K groups, 677K audience, 2.28M alerts: internal context only. Public uses *The intelligence network crypto Telegram runs on.*
 - **No "trending" as our claim word.** Co-opted by paid slot products. Use "intelligence," "convergence," "detection."
 - **No "AI-powered" prefix on everything.** Used too widely to mean anything.
@@ -213,7 +213,6 @@ You should be at or above these.
 - **Linear docs.** Restraint, narrative, white space.
 - **Resend docs.** Modern product docs done right. Read this one.
 - **Vercel docs.** Component design, sticky nav patterns.
-- **Anthropic docs.** Strong content patterns.
 - **Tailwind docs.** Density that still reads.
 - **Supabase docs.** Code-heavy patterns, dark theme done right.
 - **Mercury changelog.** Tone reference for quiet confidence.
@@ -223,7 +222,7 @@ We are louder than all of them in voice and color. We are equal or better in IA,
 ## What absolutely cannot be on this site
 
 - Network-size numbers in public copy (internal only)
-- "Built with Claude" or AI-vendor mentions
+- AI vendor mentions or model attribution
 - Bobby↔Dale cross-links from inside user-flow copy
 - Em dashes anywhere
 - "Trending" as our claim
@@ -562,7 +561,7 @@ We don't predict. We detect.
 
 - No em dashes
 - No public network-size numbers
-- No "Built with Claude"
+- No AI vendor mentions
 - *We don't predict. We detect.* closes every variant
 - Six chains listed: Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain
 - The unified pool thesis lands in body
@@ -1588,7 +1587,7 @@ Honesty is the brand. Better to publish less in full truth than more in optimist
 Final summary of every constraint scattered through this brief.
 
 - No network-size numbers in public copy
-- No "Built with Claude" or AI-vendor mentions
+- No AI vendor mentions or model attribution
 - No Bobby↔Dale cross-links from inside user-flow copy (platform overview and rev share are the only exceptions)
 - No em dashes anywhere
 - No "trending" as our claim
