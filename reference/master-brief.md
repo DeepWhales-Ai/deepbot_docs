@@ -3,8 +3,12 @@
 For: Design
 Source: Krypt (Rob McGrail), DeepBot
 Date: May 3, 2026
-Version: 2 (Wallet section added, three-product framing locked, six-stream rev share updated, private key terminology corrected)
+Last amended: Aug 12, 2026
+Version: 3 (custody language corrected to an encrypted copy held by DeepBot, chain count to six with Robinhood Chain, Panic PIN removed as a retired claim, AI vendor mentions removed)
+Version 2: Wallet section added, three-product framing locked, six-stream rev share updated, private key terminology corrected
 Supersedes: all prior individual briefs and v1 master brief
+
+Sections dated in the past, such as the Live as of May 7 snapshot and the phased revenue projections, are historical records and are deliberately not updated to current state.
 
 This document is the single source of truth for the DeepBot gitbook redesign. Read it end to end before starting. Every page-level brief from the prior session is consolidated here. Where prior briefs conflicted, this document wins.
 
