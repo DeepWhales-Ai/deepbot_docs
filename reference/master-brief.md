@@ -38,7 +38,7 @@ Three products. One brain. One revenue pool. One token.
 
 **Bobby** is the intelligence network. Five years of data across thousands of crypto Telegram project communities. Bobby sees what's happening in crypto Telegram before anyone else, because Bobby is already inside crypto Telegram. When a project applies for our trending or ad slots, Bobby has already scanned them. We don't need their pitch. We have their data.
 
-**Dale** is the AI trading partner. Launched April 3, 2026. Built on Claude Sonnet 4.6. 50+ tools. Multi-chain (Ethereum, Solana, Base, Polygon, BNB live). Dale doesn't feel like software. Dale feels like a sharp friend who trades for a living. You ask Dale to swap. Dale checks the route, surfaces fees, executes. You ask Dale what's happening with a token. Dale knows because Dale has Bobby's intelligence underneath.
+**Dale** is the AI trading partner. Launched April 3, 2026. Built on Claude Sonnet 4.6. 50+ tools. Multi-chain (Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain live). Dale doesn't feel like software. Dale feels like a sharp friend who trades for a living. You ask Dale to swap. Dale checks the route, surfaces fees, executes. You ask Dale what's happening with a token. Dale knows because Dale has Bobby's intelligence underneath.
 
 **DeepBot Wallet** is the third product. A Telegram-native wallet bot at @walletdeepbot. Phantom-style GUI. Multi-chain. Built on the same wallet stack Dale executes against, with the same security floor and the same private key. The wallet is where you hold. Dale is where you trade. Bobby is where the intelligence lives. All three share one wallet underneath, one revenue pool above, one token across.
 
@@ -154,7 +154,7 @@ If existing copy has bled, swap with these.
 |---------------------|----------------------------------|-----------------------------------|--------------------------------------|
 | *We don't predict. We detect.* | *Talk. Trade. Done.* | *A wallet that lives where you already live.* | *Three products. One brain. One pool.* |
 | *The intelligence network crypto TG runs on.* | *The trading partner you talk to in plain English.* | *Multi-chain. Telegram-native. Built where you already are.* | *Three products. One brain. One pool.* |
-| *Watching across thousands of groups...* | *Executing across five chains...* | *Holding across five chains...* | *One platform that detects, executes, and holds.* |
+| *Watching across thousands of groups...* | *Executing across six chains...* | *Holding across six chains...* | *One platform that detects, executes, and holds.* |
 | *We've already scanned your project.* | *Tell me what you want. I'll handle the rest.* | *Your wallet, wherever you already are.* | *Three engines. One pool. One token.* |
 | 3D bull illustration | Dale character avatar | Type only or clean wallet UI mockup | Type only, no character asset |
 
@@ -274,7 +274,7 @@ DeepBot
 │   ├── First conversation
 │   ├── Tools Dale uses (overview)
 │   ├── Memory ⭐
-│   ├── Multi-chain (Ethereum, Solana, Base, Polygon, BNB)
+│   ├── Multi-chain (Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain)
 │   ├── Safety and PIN security ⭐
 │   ├── Trading
 │   │   ├── Conversational trading
@@ -294,7 +294,7 @@ DeepBot
 ├── Wallet ⭐ (NEW — @walletdeepbot)
 │   ├── What is DeepBot Wallet
 │   ├── How it relates to Dale
-│   ├── Multi-chain (5 chains)
+│   ├── Multi-chain (6 chains)
 │   ├── Send and receive
 │   ├── Swaps
 │   ├── NFT view
@@ -429,7 +429,7 @@ DEEPBOT PLATFORM
 
 We have been watching crypto Telegram for five years. We know
 what is real before the market does. We built a trading partner
-that can act on it in five chains, in plain English, and a
+that can act on it in six chains, in plain English, and a
 wallet that lives where you already live. We made
 the connection between all three impossible to replicate.
 
@@ -453,12 +453,12 @@ execution.
 DeepBot Wallet is the vault. Telegram-native.
 Phantom-style GUI. Same wallet Dale executes against, same
 keys, same security floor. Hold, send, receive, swap
-across five chains without leaving the app you already use.
+across six chains without leaving the app you already use.
 
 Bobby earns from project ad slots and editorial qualification.
 Dale earns from trading fees across Ethereum, Solana, Base,
 Polygon, and BNB. The wallet earns from swaps and held
-balances across the same five chains. All three flow into
+balances across the same six chains. All three flow into
 one revenue pool. $DEEPAI holders capture a share of every
 fee, every month.
 
@@ -494,7 +494,7 @@ design. Coordination is what matters.
 Dale is the trading partner. You tell Dale what you want the
 way you would tell a sharp friend who trades for a living.
 Dale checks the route, the safety, the fees, executes.
-Ethereum, Solana, Base, Polygon, BNB. Fifty tools. One
+Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain. Fifty tools. One
 conversation.
 
 DeepBot Wallet is the vault. Phantom-style
@@ -532,7 +532,7 @@ Dale is the execution engine. A trading partner you talk to in
 plain English across Ethereum, Solana, Base, Polygon, and BNB.
 
 DeepBot Wallet is the custody engine. A wallet
-that lives in Telegram. Phantom-style GUI. Same five chains.
+that lives in Telegram. Phantom-style GUI. Same six chains.
 Keys encrypted and held by DeepBot, exportable any time.
 
 The three engines scale on different inputs. Bobby grows when
@@ -563,7 +563,7 @@ We don't predict. We detect.
 - No public network-size numbers
 - No "Built with Claude"
 - *We don't predict. We detect.* closes every variant
-- Five chains listed: Ethereum, Solana, Base, Polygon, BNB
+- Six chains listed: Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain
 - The unified pool thesis lands in body
 - All three products named on the same page (this is platform overview, not user flow)
 
@@ -754,12 +754,6 @@ If you cannot answer the secret questions either, the team handles it. Dale flag
 
 PULL QUOTE: Easy for the real user, expensive for an attacker, impossible for an attacker without your hint, your three answers, and the team's verification.
 
-## Panic PIN
-
-Set a second PIN at any time. You type it the same way you would type your real PIN. Dale will appear to unlock. Behind the scenes, your funds silently move to the cold wallet address you set in advance. The attacker sees nothing unusual. You walk away with your wallet intact.
-
-Most products have nothing for this scenario. Dale has Panic PIN.
-
 ## Runtime safety
 
 Every token Dale touches is scanned by Blockaid before any transaction builds. Honeypots, tax traps, mint authorities, blacklists, reflection schemes, the full known taxonomy of contract-level scams. If a token fails the scan, Dale tells you why and refuses to build the trade.
@@ -801,7 +795,7 @@ Security is the floor. We built the rest of the platform on top of it.
 - No checkmark icons, no shield icons, no security badges.
 - No numbered steps. The walkthroughs are prose.
 - Section dividers between major blocks. Subtle horizontal rules.
-- Lime accent reserved for the closing line and the Panic PIN section header. Nothing else.
+- Lime accent reserved for the closing line. Nothing else.
 - Pull quote treatment for *Dale prepares. The security layer signs.* and *Confirmation is not a rubber stamp. It is the last gate.*
 
 ---
@@ -829,7 +823,7 @@ The mental model: Dale is a trading partner who knows what's in your wallet. Dee
 
 ## What it does
 
-**Holds your assets.** Tokens, NFTs, native chain assets. Across Ethereum, Solana, Base, Polygon, BNB. One wallet, every chain you use.
+**Holds your assets.** Tokens, NFTs, native chain assets. Across Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain. One wallet, every chain you use.
 
 **Send and receive.** Address book. QR scan. ENS and SNS resolution. The basics done right.
 
@@ -865,7 +859,7 @@ Both work. Both share the wallet. Both share the security floor.
 
 ## Multi-chain
 
-Five chains live: Ethereum, Solana, Base, Polygon, BNB. Same address derivation across EVM chains. Solana with its own derivation. The wallet bot handles the chain switch invisibly.
+Six chains live: Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain. Same address derivation across EVM chains. Solana with its own derivation. The wallet bot handles the chain switch invisibly.
 
 Move funds between chains via LI.FI bridging, the same integration Dale uses.
 
@@ -873,7 +867,7 @@ ENS resolves on Ethereum and EVM chains. SNS resolves on Solana. Send to a name,
 
 ## Security
 
-Same architecture as Dale. Same PIN. Same Panic PIN. Same three-tier recovery (hint word, three secret questions, team-verified reset). Same auto-delete on PIN messages. Same continuous safety monitoring on tokens you hold.
+Same architecture as Dale. Same PIN. Same three-tier recovery (hint word, three secret questions, team-verified reset). Same auto-delete on PIN messages. Same continuous safety monitoring on tokens you hold.
 
 DeepBot generates your wallet and holds an encrypted copy of the private key. That copy is what lets Dale execute the trades you instruct and the automations you configure, including while you are not online. You can export your private key at any time. Export is PIN protected and audit logged. Exporting gives you your own copy. It does not remove DeepBot's copy. If you want a wallet DeepBot has never had access to, generate it elsewhere and transfer to it.
 
@@ -905,7 +899,7 @@ The shared wallet stack is not a roadmap item. It is already true today. Both bo
 
 ## What lives in the wallet today
 
-- Multi-chain balance view (Ethereum, Solana, Base, Polygon, BNB)
+- Multi-chain balance view (Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain)
 - Send and receive with QR scan
 - ENS and SNS resolution
 - Direct token swaps
@@ -1392,7 +1386,7 @@ Enter your wallet balance. Pick your NFTs. See your personalised numbers across 
 
 ## Closing line
 
-DeepBot is one platform with three products. Bobby decides what crosses the threshold from noise into signal across thousands of communities. Dale executes for traders across five chains and 50+ tools. The wallet holds, sends, and swaps for every user across the same five chains. All three feed the same revenue pool. Hold $DEEPAI and you participate in every fee Bobby earns, every trade Dale executes, and every swap the wallet processes. One pool. One token. Three products that scale independently.
+DeepBot is one platform with three products. Bobby decides what crosses the threshold from noise into signal across thousands of communities. Dale executes for traders across six chains and 50+ tools. The wallet holds, sends, and swaps for every user across the same six chains. All three feed the same revenue pool. Hold $DEEPAI and you participate in every fee Bobby earns, every trade Dale executes, and every swap the wallet processes. One pool. One token. Three products that scale independently.
 ```
 
 ### Visual treatment
@@ -1537,14 +1531,13 @@ Most of what this brief describes is **shipped or about to ship**. A few items a
 - `rewards.deepbot.pro` dashboard
 - $DEEPAI 40% trading fee distribution
 - **@walletdeepbot bot live with multi-chain balance view**
-- **Wallet send and receive across 5 chains**
+- **Wallet send and receive across 6 chains**
 - **Shared wallet stack between Dale and @walletdeepbot via Go API**
 
 ### Pending (held until ship, then publish)
 
 - PIN auto-delete from chat
 - Three secret questions identity reset
-- Panic PIN on all chains
 - Pattern-matched memory warnings ("this is bigger than you usually take")
 - "What do you remember about me" introspection
 - Forget-specific-token / reset memory tools
@@ -1582,7 +1575,7 @@ The marketing argument for the first option: revealing the full map is part of w
 
 These four pages should NOT publish in present tense unless the corresponding feature ships:
 
-1. **Safety and PIN page.** The PIN auto-delete + 3 secret questions + Panic PIN paragraphs depend on shipped behavior. If unshipped, hold the page.
+1. **Safety and PIN page.** The PIN auto-delete and three secret questions paragraphs depend on shipped behavior. If unshipped, hold the page.
 2. **Dale Memory page.** The pattern-matched warnings and introspection tools paragraphs are the killer features. If unshipped, the page should hold.
 3. **Prediction Markets page.** AGG.market integration is not yet live. Either hold the page entirely, or ship a one-line teaser instead.
 4. **Wallet page.** The export pull quote depends on private key export being live. Confirm before publishing. Do not restore the retired "If DeepBot disappeared tomorrow your wallet would not" line: it asserts self custody and is false.
