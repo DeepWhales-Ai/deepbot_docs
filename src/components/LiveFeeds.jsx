@@ -23,7 +23,7 @@ const DALE_TRADES = [
   { dir: 'BUY',   amt: '1.2 SOL',    token: 'MOG',   src: 'convo' },
   { dir: 'EXIT',  amt: '100%',       token: 'TURBO', src: 'rug event' },
   { dir: 'BUY',   amt: '0.05 ETH',   token: 'BRETT', src: 'voice' },
-  { dir: 'SCAN',  amt: '...',        token: '0xb74…',src: 'convo' },
+  { dir: 'SCAN',  amt: 'contract',   token: 'NRG',   src: 'convo' },
 ];
 
 export function LiveFeeds() {

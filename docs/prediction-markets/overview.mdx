@@ -2,14 +2,15 @@
 title: "Prediction markets"
 sidebar_label: "Overview"
 slug: /prediction-markets
-description: "Polymarket and Kalshi through Dale via AGG.market. Browse an event, take a position, close it for cash, in conversation."
+description: "Prediction markets through Dale via a third party aggregator. Browse a category, take a position, close it for cash, in conversation. Funding is USDC on Polygon only."
 ---
 
-{/* Aug canon sweep. Promoted from docs/dale/prediction-markets.mdx to a
-    top-level section. Trading is live: a full buy, hold, sell and cash round
-    trip is proven on a real position.
+{/* Aug canon sweep, custody correction pass. Promoted from
+    docs/dale/prediction-markets.mdx to a top-level section. Trading is live: a
+    full buy, hold, sell and cash round trip is proven on a real position.
     Scope limits held deliberately: no pagination behaviour, no exact fee or
-    net proceeds figures, no geographic availability promise.
+    net proceeds figures, no market name search claim.
+    Venue list and per country availability are per Legal, authoritative.
     Voice: no em dashes, no hyphenated compounds in body copy. */}
 
 import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
@@ -17,62 +18,105 @@ import { ArticleSchema } from '@site/src/components/Schema.jsx';
 
 <ArticleSchema
   headline="Prediction markets"
-  description="Polymarket and Kalshi through Dale via AGG.market. Browse an event, take a position, close it for cash, in conversation."
+  description="Prediction markets through Dale via a third party aggregator. Browse a category, take a position, close it for cash, in conversation. Funding is USDC on Polygon only."
   slug="/prediction-markets"
 />
 
 <PageHead
   eyebrow="PREDICTION MARKETS"
-  lede="Polymarket and Kalshi through Dale. Browse an event, take a position, close it for cash, all in conversation."
+  lede="Prediction markets through Dale. Browse a category, take a position, close it for cash, all in conversation."
 />
+
+<Callout kind="alert" title="Funding is USDC on Polygon only">
+  Any other asset or any other network can be permanently lost. Not USDT. Not mainnet
+  USDC. Not the gas token. Send USDC on Polygon and nothing else.
+</Callout>
 
 <H2 id="what">Can you trade prediction markets through Dale?</H2>
 <Para>
-  Yes. Dale connects to <Lime>AGG.market</Lime>, an aggregator that routes across
-  Polymarket and Kalshi, and the full round trip runs in conversation. You can browse
-  what is trading, take a position, hold it, and close it for cash without leaving the
-  chat. Ask what the odds are on an event and Dale answers from live venue data. Say
-  how much you want and on which side, and Dale places it. Positions sit alongside the
-  rest of your holdings and are funded from the DeepBot wallet you already use, so
-  there is no separate account to open and no separate balance to top up. Markets
-  cover politics, sports, crypto outcomes and world events. Kalshi is a regulated
-  venue and will route you through identity verification when a market requires it.
-  Polymarket does not ask for that. Access is geo fenced, so which markets you are
-  offered depends on where you are.
+  Yes. Dale connects to <Lime>AGG.market</Lime>, a third party aggregator that routes
+  across several prediction venues, and the full round trip runs in conversation. You can
+  browse what is trading, take a position, hold it, and close it for cash without leaving
+  the chat. Tell Dale a category and Dale answers from live venue data. Say how much you
+  want and on which side, and Dale places it. Markets cover politics, sports, crypto
+  outcomes and world events.
 </Para>
 
-<H2 id="how">How do you take a position?</H2>
+<H2 id="custody">Who holds the funds</H2>
 <Para>
-  Ask Dale what is trading on a topic, or name the event directly. Dale returns the
-  market with its current odds and liquidity. Tell Dale which side you want and how
-  much, and Dale shows you what the position costs to open before anything is placed.
-  You confirm, and the position opens. Closing works the same way: tell Dale to close
-  it and the proceeds settle back to your wallet.
+  <Lime>Funds are held by the aggregator, not in your DeepBot wallet.</Lime> This is a
+  different arrangement from the rest of your trading. When you fund a prediction market
+  position, the money leaves the DeepBot wallet and sits with the aggregator for the life
+  of the position. DeepBot is not the venue and not a counterparty to your position.
+  DeepBot routes the instruction and shows you the result.
 </Para>
 
 <KeyValueGrid items={[
-  { k: "Browse", v: "Ask what is trading on politics, sports, crypto or world events. Dale returns live markets with odds and liquidity." },
-  { k: "Open", v: "Name the side and the amount. Dale shows the cost to open before you confirm." },
-  { k: "Hold", v: "Open positions appear alongside your token holdings, not in a separate app." },
-  { k: "Close", v: "Close in conversation. Proceeds settle back to the DeepBot wallet that funded the position." },
+  { k: "Funding asset", v: "USDC on Polygon only. Any other asset or any other network can be permanently lost." },
+  { k: "Who holds it", v: "The aggregator holds the funds for the life of the position, not the DeepBot wallet." },
+  { k: "DeepBot's role", v: "DeepBot is not the venue and not a counterparty. It routes your instruction to the aggregator." },
+  { k: "Where positions show", v: "Open positions appear alongside your holdings so you can see them in one place." },
 ]} />
+
+<H2 id="venues">Which venues you reach</H2>
+<Para>
+  The aggregator routes across <Lime>Polymarket, Predict, Myriad, Limitless and
+  Hyperliquid</Lime>. Availability is per country and per venue, both. A venue that is
+  open to one country may be closed to another, and being in a supported country does not
+  mean every venue is offered to you.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Routed venues", v: "Polymarket, Predict, Myriad, Limitless, Hyperliquid." },
+  { k: "United Kingdom", v: "Myriad, Limitless and Hyperliquid only." },
+  { k: "How it is enforced", v: "Availability is enforced at the venue, per country and per venue." },
+]} />
+
+<Callout kind="warn" title="No circumvention">
+  Using a VPN or any other method to reach a venue that is not available to you is not
+  supported and not endorsed.
+</Callout>
+
+<H2 id="how">How do you take a position?</H2>
+<Para>
+  Tell Dale a category and Dale returns markets that are trading in it. Dale shows the
+  market with its current odds and liquidity. Tell Dale which side you want and how much,
+  and Dale shows you what the position costs to open before anything is placed. You
+  confirm, and the position opens. Closing works the same way: tell Dale to close it and
+  the proceeds settle back through the aggregator.
+</Para>
+
+<Callout kind="info" title="Search by market name is not supported">
+  You cannot ask for a specific market by its name. Tell Dale a category, such as politics
+  or sports, and Dale returns what is trading in it.
+</Callout>
+
+<KeyValueGrid items={[
+  { k: "Browse", v: "Tell Dale a category such as politics, sports, crypto or world events. Dale returns live markets with odds and liquidity." },
+  { k: "Open", v: "Name the side and the amount. Dale shows the cost to open before you confirm." },
+  { k: "Hold", v: "Open positions appear alongside your holdings, not in a separate app." },
+  { k: "Close", v: "Close in conversation. Proceeds settle back through the aggregator that holds the position." },
+]} />
+
+<H2 id="resolution">How markets resolve</H2>
+<Para>
+  <Lime>The venue resolves the market, not DeepBot.</Lime> Each venue runs its own
+  resolution process and decides the outcome. A resolution cannot be appealed through
+  DeepBot. If you disagree with how a market resolved, that is a matter for the venue that
+  resolved it.
+</Para>
 
 <H2 id="cost">What does it cost?</H2>
 <Para>
   Dale shows the cost to open a position before you confirm it. The prediction venues
-  charge their own fees on top of the market price, and those are set by the venue
-  rather than by DeepBot. Check the venue for a full fee breakdown if you need the
-  exact split on a given market.
+  charge their own fees on top of the market price, and those are set by the venue rather
+  than by DeepBot. Check the venue for a full fee breakdown if you need the exact split on
+  a given market.
 </Para>
 
 <H2 id="need">What do you need before you start?</H2>
 <KeyValueGrid items={[
-  { k: "A funded DeepBot wallet", v: "Positions are funded from the wallet you already trade with. No separate deposit." },
-  { k: "Identity verification, for Kalshi", v: "Kalshi is a regulated venue. Dale routes you through the verification flow when a market requires it." },
-  { k: "Nothing extra, for Polymarket", v: "Polymarket markets do not ask for identity verification." },
+  { k: "USDC on Polygon", v: "Funding is USDC on Polygon only. Any other asset or any other network can be permanently lost." },
+  { k: "A supported country and venue", v: "Availability is per country and per venue. Dale offers you what is available where you are." },
+  { k: "A category in mind", v: "Search by market name is not supported. Tell Dale a category and Dale returns what is trading." },
 ]} />
-
-<Callout kind="info" title="Availability varies by location">
-  Prediction market access is geo fenced. Some markets will not be offered to you
-  depending on where you are, and that is enforced at the venue rather than by Dale.
-</Callout>
