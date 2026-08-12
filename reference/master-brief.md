@@ -728,7 +728,7 @@ Trade like a sharp friend who trades for a living, on infrastructure that assume
 
 Your keys never leave the platform. Wallets are generated inside an isolated security layer with encryption keys the trading layer cannot read. Every transaction Dale prepares is signed inside that boundary, returned as a signed payload, and broadcast to chain.
 
-PULL QUOTE: Dale executes. Dale never holds.
+PULL QUOTE: Dale prepares. The security layer signs.
 
 ## What happens when you press PIN
 
@@ -877,9 +877,9 @@ Same architecture as Dale. Same PIN. Same Panic PIN. Same three-tier recovery (h
 
 DeepBot generates your wallet and holds an encrypted copy of the private key. That copy is what lets Dale execute the trades you instruct and the automations you configure, including while you are not online. You can export your private key at any time. Export is PIN protected and audit logged. Exporting gives you your own copy. It does not remove DeepBot's copy. If you want a wallet DeepBot has never had access to, generate it elsewhere and transfer to it.
 
-**Do not write this as self custody, and do not write that DeepBot cannot read or move funds. Both are false.** The keys are encrypted and the PIN gates user initiated actions, but DeepBot holds a usable copy and signs with it server side. That is how automated exits and Auto Buy fire while the user is asleep. There is no revoke path.
-
 PULL QUOTE: You can export your private key at any time.
+
+INTERNAL NOTE, NOT COPY: do not write this section as self custody, and do not write that DeepBot cannot read the key or cannot move funds. Both are false. The keys are encrypted and the PIN gates user initiated actions, but DeepBot holds a usable copy and signs with it server side. That is how automated exits and Auto Buy fire while the user is asleep. There is no revoke path. The paragraph above is the approved wording; use it verbatim.
 
 ## Why a separate bot
 
