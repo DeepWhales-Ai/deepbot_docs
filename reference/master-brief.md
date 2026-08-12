@@ -1532,7 +1532,7 @@ Most of what this brief describes is **shipped or about to ship**. A few items a
 - `rewards.deepbot.pro` dashboard
 - $DEEPAI 40% trading fee distribution
 - **@walletdeepbot bot live with multi-chain balance view**
-- **Wallet send and receive across 6 chains**
+- **Wallet send and receive across 5 chains**
 - **Shared wallet stack between Dale and @walletdeepbot via Go API**
 
 ### Pending (held until ship, then publish)
