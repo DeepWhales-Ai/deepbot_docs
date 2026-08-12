@@ -802,7 +802,7 @@ Security is the floor. We built the rest of the platform on top of it.
 - No numbered steps. The walkthroughs are prose.
 - Section dividers between major blocks. Subtle horizontal rules.
 - Lime accent reserved for the closing line and the Panic PIN section header. Nothing else.
-- Pull quote treatment for *Dale executes. Dale never holds.* and *Confirmation is not a rubber stamp. It is the last gate.*
+- Pull quote treatment for *Dale prepares. The security layer signs.* and *Confirmation is not a rubber stamp. It is the last gate.*
 
 ---
 
