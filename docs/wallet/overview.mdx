@@ -123,7 +123,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   you set in Dale is the PIN that gates Wallet.</Lime> One credential, one mental model.
 </Para>
 <KeyValueGrid items={[
-  { k: "Encrypted key isolation", v: "Keys are encrypted with AES-256-GCM and isolated per wallet, with a separate keypair per chain. Signing happens inside that boundary." },
+  { k: "Encrypted key isolation", v: "Keys are encrypted with AES-256-GCM and isolated per wallet. One private key covers the EVM chains and Solana has its own keypair. Signing happens inside that boundary." },
   { k: "PIN gate", v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
   { k: <>Private key export <FeatureStatus id="private_key_export" /></>, v: "Exportable through a deliberate, gated flow. The export is not casual. It is the keys to the kingdom and the flow respects that." },
   { k: "Reliability boundary", v: "Wallet runs on a separate bot from Dale. If one bot has a bad deploy, the other keeps working. Funds are never trapped behind a single uptime line." },
