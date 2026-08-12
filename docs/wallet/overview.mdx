@@ -27,9 +27,9 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
     </TaglineStrip>
     <Para>
       <Lime><DeepBot /> generates your wallet and holds an encrypted copy of the private key.</Lime>{' '}
-      That copy is what lets Dale execute the trades you instruct and the automations you
-      configure, including while you are not online. The private key for every wallet is
+      That copy is what lets Dale trade for you, including while you are offline. Keys are
       isolated per wallet and exportable on demand. The interface lives inside Telegram.
+      Full detail is in <a href="#security">Security</a> below.
     </Para>
     <Para>
       Type <Mono>open wallet</Mono> inside Dale and a Phantom style panel slides
@@ -123,7 +123,7 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   you set in Dale is the PIN that gates Wallet.</Lime> One credential, one mental model.
 </Para>
 <KeyValueGrid items={[
-  { k: "Key custody", v: "Your keys are encrypted and held by DeepBot so Dale can trade for you, including while you are offline. You can export your private key at any time, PIN protected." },
+  { k: "Encrypted key isolation", v: "Keys are encrypted with AES-256-GCM and isolated per wallet, with a separate keypair per chain. Signing happens inside that boundary." },
   { k: "PIN gate", v: "Every send, swap, and bridge requires the same PIN you set in Dale. Auto deletes from chat after entry." },
   { k: <>Private key export <FeatureStatus id="private_key_export" /></>, v: "Exportable through a deliberate, gated flow. The export is not casual. It is the keys to the kingdom and the flow respects that." },
   { k: "Reliability boundary", v: "Wallet runs on a separate bot from Dale. If one bot has a bad deploy, the other keeps working. Funds are never trapped behind a single uptime line." },
