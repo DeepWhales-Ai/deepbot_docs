@@ -457,7 +457,7 @@ across six chains without leaving the app you already use.
 
 Bobby earns from project ad slots and editorial qualification.
 Dale earns from trading fees across Ethereum, Solana, Base,
-Polygon, and BNB. The wallet earns from swaps and held
+Polygon, BNB, and Robinhood Chain. The wallet earns from swaps and held
 balances across the same six chains. All three flow into
 one revenue pool. $DEEPAI holders capture a share of every
 fee, every month.
@@ -529,7 +529,8 @@ inside the room. Detection across thousands of communities. The
 network projects pay to be seen by, when they qualify.
 
 Dale is the execution engine. A trading partner you talk to in
-plain English across Ethereum, Solana, Base, Polygon, and BNB.
+plain English across Ethereum, Solana, Base, Polygon, BNB, and
+Robinhood Chain.
 
 DeepBot Wallet is the custody engine. A wallet
 that lives in Telegram. Phantom-style GUI. Same six chains.
@@ -920,7 +921,7 @@ A wallet that lives where you already live. Multi-chain.
 - Hero is type-only. The wallet doesn't have a character mascot.
 - A clean sample of the wallet UI. Render a single mockup of the Mini App showing balances across chains. One screen, not three. Lime accent on the user's net worth or active balance.
 - The "one wallet, two interfaces" diagram. Two boxes (Dale chat / DeepBot Wallet GUI) both pointing down to one shared box (the encrypted wallet, the keys, the balance). Lime accent on the shared box because that's the load-bearing concept.
-- Chain coverage row. Five small chain icons (ETH, SOL, Base, Polygon, BNB). Restrained.
+- Chain coverage row. Six small chain icons (ETH, SOL, Base, Polygon, BNB, Robinhood). Restrained.
 - Lime accent reserved for two elements. The closing line *A wallet that lives where you already live* and the "shared wallet" box in the architecture diagram.
 - No address bars, no fake transaction screenshots, no hex strings as decoration.
 
