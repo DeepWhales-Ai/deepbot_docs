@@ -32,7 +32,7 @@ The brief has six parts:
 
 ## What DeepBot actually is
 
-You are designing the documentation site for the most powerful crypto trading platform on earth. Not "a crypto bot." Not "a Telegram trading tool." A platform with a five-year intelligence network, an AI trading partner with 50+ tools that thinks like a trader, and a self-custody wallet that lives where users already live.
+You are designing the documentation site for the most powerful crypto trading platform on earth. Not "a crypto bot." Not "a Telegram trading tool." A platform with a five-year intelligence network, an AI trading partner with 50+ tools that thinks like a trader, and a wallet that lives where users already live.
 
 Three products. One brain. One revenue pool. One token.
 
@@ -40,7 +40,7 @@ Three products. One brain. One revenue pool. One token.
 
 **Dale** is the AI trading partner. Launched April 3, 2026. Built on Claude Sonnet 4.6. 50+ tools. Multi-chain (Ethereum, Solana, Base, Polygon, BNB live). Dale doesn't feel like software. Dale feels like a sharp friend who trades for a living. You ask Dale to swap. Dale checks the route, surfaces fees, executes. You ask Dale what's happening with a token. Dale knows because Dale has Bobby's intelligence underneath.
 
-**DeepBot Wallet** is the third product. A Telegram-native, self-custody wallet bot at @walletdeepbot. Phantom-style GUI. Multi-chain. Built on the same wallet stack Dale executes against, with the same security floor and the same private key you own. The wallet is where you hold. Dale is where you trade. Bobby is where the intelligence lives. All three share one wallet underneath, one revenue pool above, one token across.
+**DeepBot Wallet** is the third product. A Telegram-native wallet bot at @walletdeepbot. Phantom-style GUI. Multi-chain. Built on the same wallet stack Dale executes against, with the same security floor and the same private key. The wallet is where you hold. Dale is where you trade. Bobby is where the intelligence lives. All three share one wallet underneath, one revenue pool above, one token across.
 
 The connection between them is the moat. **Most products are one of: wallet, trader, or signal source. We are all three, fused. That is a category of one.**
 
@@ -103,7 +103,7 @@ The bleed problem. Bobby and Dale collapsed into each other in earlier design pa
 
 If a sentence on the site says "watch," "see," "detect," "spot," "notice" — it is talking about Bobby.
 If a sentence on the site says "swap," "buy," "sell," "execute," "scan a contract" — it is talking about Dale.
-If a sentence on the site says "hold," "send," "receive," "store," "your keys," "self-custody" — it is talking about Wallet.
+If a sentence on the site says "hold," "send," "receive," "store," or "your keys" — it is talking about Wallet. Never write "self-custody"; see the custody section.
 
 When the design mixes these verbs, it is mixing the products.
 
@@ -111,12 +111,12 @@ When the design mixes these verbs, it is mixing the products.
 
 | | Bobby | Dale | Wallet |
 |---|---|---|---|
-| What | Intelligence network | AI trading copilot | Self-custody wallet |
+| What | Intelligence network | AI trading copilot | Multi-chain wallet |
 | Who serves | Project owners, group admins, curious users | Traders | Holders, senders, all users |
 | What produces | Detection, convergence-scored signals | Trades, routes, safety scans, exit strategies | Multi-chain custody, sends, swaps |
 | Does NOT do | Trade, hold wallets, execute swaps | Surveil community groups, sell ad slots | Make trading decisions, surface signals |
 | Surface | Bobby's gitbook, Bobby in groups, Bobby on X | DeepBot's gitbook, Dale in `@traderdeepbot`, Dale on the platform | `@walletdeepbot`, the wallet section, the Mini App |
-| Personality | Restrained, editorial, confident through understatement | Sharp, useful, conversational, like a trading partner | Calm, structural, self-custody-forward |
+| Personality | Restrained, editorial, confident through understatement | Sharp, useful, conversational, like a trading partner | Calm, structural, custody-honest |
 | Asset | 3D bull | Dale character avatar | No character, type-only and clean GUI |
 
 ## The four taglines
@@ -153,9 +153,9 @@ If existing copy has bled, swap with these.
 | If the page says... | And it's a Dale page, swap to... | And it's a Wallet page, swap to... | And it's a platform page, swap to... |
 |---------------------|----------------------------------|-----------------------------------|--------------------------------------|
 | *We don't predict. We detect.* | *Talk. Trade. Done.* | *A wallet that lives where you already live.* | *Three products. One brain. One pool.* |
-| *The intelligence network crypto TG runs on.* | *The trading partner you talk to in plain English.* | *Self-custody. Multi-chain. Telegram-native.* | *Three products. One brain. One pool.* |
+| *The intelligence network crypto TG runs on.* | *The trading partner you talk to in plain English.* | *Multi-chain. Telegram-native. Built where you already are.* | *Three products. One brain. One pool.* |
 | *Watching across thousands of groups...* | *Executing across five chains...* | *Holding across five chains...* | *One platform that detects, executes, and holds.* |
-| *We've already scanned your project.* | *Tell me what you want. I'll handle the rest.* | *Your keys. Your wallet. Yours.* | *Three engines. One pool. One token.* |
+| *We've already scanned your project.* | *Tell me what you want. I'll handle the rest.* | *Your wallet, wherever you already are.* | *Three engines. One pool. One token.* |
 | 3D bull illustration | Dale character avatar | Type only or clean wallet UI mockup | Type only, no character asset |
 
 ## A short test for any page
@@ -299,7 +299,7 @@ DeepBot
 │   ├── Swaps
 │   ├── NFT view
 │   ├── Bridging
-│   ├── Security and self-custody
+│   ├── Security and key custody
 │   └── Private key export
 │
 ├── The Social Layer ⭐ (parent section)
@@ -380,7 +380,7 @@ DeepBot
 5. Dale Safety and PIN
 6. Dale Multi-chain
 7. **What is DeepBot Wallet** (NEW)
-8. **Wallet security and self-custody** (NEW)
+8. **Wallet security and key custody** (NEW)
 9. What is Bobby
 10. Convergence engine
 11. $DEEPAI overview
@@ -430,7 +430,7 @@ DEEPBOT PLATFORM
 We have been watching crypto Telegram for five years. We know
 what is real before the market does. We built a trading partner
 that can act on it in five chains, in plain English, and a
-self-custody wallet that lives where you already live. We made
+wallet that lives where you already live. We made
 the connection between all three impossible to replicate.
 
 The token captures every fee the platform earns.
@@ -450,9 +450,9 @@ product that can act on it. You ask Dale to swap, hedge,
 bridge, or hold. Dale handles route, safety, fees, PIN,
 execution.
 
-DeepBot Wallet is the vault. Self-custody. Telegram-native.
+DeepBot Wallet is the vault. Telegram-native.
 Phantom-style GUI. Same wallet Dale executes against, same
-keys you own, same security floor. Hold, send, receive, swap
+keys, same security floor. Hold, send, receive, swap
 across five chains without leaving the app you already use.
 
 Bobby earns from project ad slots and editorial qualification.
@@ -479,7 +479,7 @@ DEEPBOT PLATFORM
 
 Three products. One brain. One token. The intelligence network
 crypto Telegram actually runs on, bonded to a trading partner
-that thinks like one, paired with a self-custody wallet that
+that thinks like one, paired with a wallet that
 lives where you already live. Five years of detection. Five
 chains of execution. One revenue pool that captures every fee
 the platform earns.
@@ -497,8 +497,8 @@ Dale checks the route, the safety, the fees, executes.
 Ethereum, Solana, Base, Polygon, BNB. Fifty tools. One
 conversation.
 
-DeepBot Wallet is the vault. Self-custody. Phantom-style
-visual interface. Same five chains. Same private key you own.
+DeepBot Wallet is the vault. Phantom-style
+visual interface. Same chains. Same private key.
 The wallet you use AND the wallet you trust, in the same app.
 
 Then the part nobody else has.
@@ -531,9 +531,9 @@ network projects pay to be seen by, when they qualify.
 Dale is the execution engine. A trading partner you talk to in
 plain English across Ethereum, Solana, Base, Polygon, and BNB.
 
-DeepBot Wallet is the custody engine. A self-custody wallet
+DeepBot Wallet is the custody engine. A wallet
 that lives in Telegram. Phantom-style GUI. Same five chains.
-Your keys, exportable any time.
+Keys encrypted and held by DeepBot, exportable any time.
 
 The three engines scale on different inputs. Bobby grows when
 projects pay for visibility. Dale grows when traders execute.
@@ -728,7 +728,7 @@ Trade like a sharp friend who trades for a living, on infrastructure that assume
 
 Your keys never leave the platform. Wallets are generated inside an isolated security layer with encryption keys the trading layer cannot read. Every transaction Dale prepares is signed inside that boundary, returned as a signed payload, and broadcast to chain.
 
-PULL QUOTE: Dale executes. Dale never holds.
+PULL QUOTE: Dale prepares. The security layer signs.
 
 ## What happens when you press PIN
 
@@ -742,7 +742,7 @@ If the PIN is right but the route became unsafe between when you asked and when 
 
 PULL QUOTE: Confirmation is not a rubber stamp. It is the last gate.
 
-Same flow on the trade panel. Same flow on every chain. Same flow on Emergency Sell, with a tighter timeout. The PIN is the only path through, and the key never leaves the layer that protects it.
+Same flow on the trade panel. Same flow on every chain. Same flow on Emergency Sell, with a tighter timeout. The PIN is the only path through, and signing happens inside the encrypted layer that holds the key.
 
 ## What happens when you forget your PIN
 
@@ -802,7 +802,7 @@ Security is the floor. We built the rest of the platform on top of it.
 - No numbered steps. The walkthroughs are prose.
 - Section dividers between major blocks. Subtle horizontal rules.
 - Lime accent reserved for the closing line and the Panic PIN section header. Nothing else.
-- Pull quote treatment for *Dale executes. Dale never holds.* and *Confirmation is not a rubber stamp. It is the last gate.*
+- Pull quote treatment for *Dale prepares. The security layer signs.* and *Confirmation is not a rubber stamp. It is the last gate.*
 
 ---
 
@@ -815,13 +815,13 @@ Path: `/wallet`
 
 There is the wallet you use, and the wallet you trust. For most traders, those are different wallets. The hot one for trading lives inside whichever app they happen to be using. The cold one for holding lives somewhere else entirely. Bridging between them is friction. Switching apps is friction. Remembering which wallet had what is friction.
 
-DeepBot Wallet is the wallet you use AND the wallet you trust. Built into Telegram. Self-custody. Phantom-style GUI. Yours.
+DeepBot Wallet is the wallet you use AND the wallet you trust. Built into Telegram. Phantom-style GUI.
 
 PULL QUOTE: A wallet that lives where you already live.
 
 ## What it is
 
-A Telegram-native, self-custody wallet bot at @walletdeepbot. Visual interface. Multi-chain. Send, receive, swap, hold. Same security floor as Dale. Same wallet, same private key, same balance.
+A Telegram-native wallet bot at @walletdeepbot. Visual interface. Multi-chain. Send, receive, swap, hold. Same security floor as Dale. Same wallet, same private key, same balance.
 
 You can use DeepBot Wallet without ever talking to Dale. You can use Dale without ever opening DeepBot Wallet. Most users use both, because both run on the same wallet underneath.
 
@@ -837,9 +837,9 @@ The mental model: Dale is a trading partner who knows what's in your wallet. Dee
 
 **Swap directly.** Quick swaps without going through a trade decision.
 
-**Self-custody, end to end.** Private keys held in the same encrypted security layer that protects your trades through Dale. Even DeepBot cannot read your key. You can export your private key any time. Your wallet remains yours if every server we run goes offline tomorrow.
+**Key custody, stated plainly.** DeepBot generates your wallet and holds an encrypted copy of the private key, in the same encrypted security layer that protects your trades through Dale. That copy is what lets Dale trade for you, including while you are offline. You can export your private key at any time, PIN protected.
 
-PULL QUOTE: Self-custody. Multi-chain. Telegram-native. Yours.
+PULL QUOTE: Multi-chain. Telegram-native. Built where you already are.
 
 ## How it relates to Dale
 
@@ -875,11 +875,11 @@ ENS resolves on Ethereum and EVM chains. SNS resolves on Solana. Send to a name,
 
 Same architecture as Dale. Same PIN. Same Panic PIN. Same three-tier recovery (hint word, three secret questions, team-verified reset). Same auto-delete on PIN messages. Same continuous safety monitoring on tokens you hold.
 
-Self-custody is the floor. Your private key is yours from day one. You can export, back up, transfer to another wallet at any time. **DeepBot cannot read your private key. DeepBot cannot move your funds without your PIN.**
+DeepBot generates your wallet and holds an encrypted copy of the private key. That copy is what lets Dale execute the trades you instruct and the automations you configure, including while you are not online. You can export your private key at any time. Export is PIN protected and audit logged. Exporting gives you your own copy. It does not remove DeepBot's copy. If you want a wallet DeepBot has never had access to, generate it elsewhere and transfer to it.
 
-If DeepBot disappeared tomorrow, you would still have your wallet. You would import the private key into Phantom, MetaMask, Rabby, or any other wallet that handles the same chains. Your assets would be there. **That is what self-custody means, and that is what most "in-app wallets" do not deliver.**
+PULL QUOTE: You can export your private key at any time.
 
-PULL QUOTE: If DeepBot disappeared tomorrow, your wallet would not.
+INTERNAL NOTE, NOT COPY: do not write this section as self custody, and do not write that DeepBot cannot read the key or cannot move funds. Both are false. The keys are encrypted and the PIN gates user initiated actions, but DeepBot holds a usable copy and signs with it server side. That is how automated exits and Auto Buy fire while the user is asleep. There is no revoke path. The paragraph above is the approved wording; use it verbatim.
 
 ## Why a separate bot
 
@@ -914,11 +914,11 @@ The shared wallet stack is not a roadmap item. It is already true today. Both bo
 - LI.FI bridging
 - Address book
 - PIN gate on every signed transaction
-- Self-custody private key export
+- Private key export
 
 ## Closing line
 
-A wallet that lives where you already live. Self-custody. Multi-chain. Yours.
+A wallet that lives where you already live. Multi-chain.
 ```
 
 ### Visual treatment
@@ -933,9 +933,9 @@ A wallet that lives where you already live. Self-custody. Multi-chain. Yours.
 ### Cross-surface pull quotes
 
 - Platform overview: *One wallet. Two interfaces. Pick the one you want today.*
-- Marketing surface: *If DeepBot disappeared tomorrow, your wallet would not.*
+- Marketing surface: *You can export your private key at any time.*
 
-The other two (*A wallet that lives where you already live* and *Self-custody. Multi-chain. Telegram-native. Yours.*) live on this section.
+The other two (*A wallet that lives where you already live* and *Multi-chain. Telegram-native. Built where you already are.*) live on this section.
 
 ---
 
@@ -1552,7 +1552,7 @@ Most of what this brief describes is **shipped or about to ship**. A few items a
 - Voice messages in / Voice PIN
 - Dale website widget
 - Bobby Trending Channel
-- **Private key export from @walletdeepbot (CONFIRM SHIPPED — load-bearing for self-custody page)**
+- **Private key export from @walletdeepbot (CONFIRM SHIPPED — load-bearing for the custody section)**
 - **Wallet Mini App launching from Dale via inline keyboard (Phase 2 unification)**
 - **Unified Mini App architecture (Phase 3)**
 
@@ -1585,7 +1585,7 @@ These four pages should NOT publish in present tense unless the corresponding fe
 1. **Safety and PIN page.** The PIN auto-delete + 3 secret questions + Panic PIN paragraphs depend on shipped behavior. If unshipped, hold the page.
 2. **Dale Memory page.** The pattern-matched warnings and introspection tools paragraphs are the killer features. If unshipped, the page should hold.
 3. **Prediction Markets page.** AGG.market integration is not yet live. Either hold the page entirely, or ship a one-line teaser instead.
-4. **Wallet page.** The "If DeepBot disappeared tomorrow your wallet would not" pull quote depends on private key export being live. Confirm before publishing or soften to "your keys are isolated and exportable through the recovery flow" if export is post-launch.
+4. **Wallet page.** The export pull quote depends on private key export being live. Confirm before publishing. Do not restore the retired "If DeepBot disappeared tomorrow your wallet would not" line: it asserts self custody and is false.
 
 Honesty is the brand. Better to publish less in full truth than more in optimistic tense.
 
