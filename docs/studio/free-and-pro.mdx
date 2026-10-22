@@ -1,15 +1,17 @@
 ---
 title: "Free and PRO"
 sidebar_label: "Free and PRO"
-sidebar_position: 4
+sidebar_position: 6
 description: "What Strategy Studio includes on Free and on PRO. PRO is $69 a month."
 ---
 
-{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
-    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
     Voice: no em dashes, no hyphenated compounds in body copy. */}
 
-import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 import { ArticleSchema } from '@site/src/components/Schema.jsx';
 
@@ -21,18 +23,28 @@ import { ArticleSchema } from '@site/src/components/Schema.jsx';
 
 <PageHead
   eyebrow="STRATEGY STUDIO"
-  lede={<>Paper test for free. Go live, copy shared hunts and let Dale build for you on PRO.</>}
+  lede={<>Test on paper for free. Go live, edit, share and ask Dale on PRO.</>}
 />
 
 | | Free | PRO |
 |---|---|---|
-| Paper hunts | Up to 3 | 5 per chain |
-| Live buying with stop loss and take profit | | ✓ |
-| Copy any shared hunt | | ✓ |
-| Ask Dale to build hunts for you | | ✓ |
-| Leagues and competitions | ✓ | ✓ |
+| Build hunts and trade them on paper | ✓ | ✓ |
+| Number of hunts | Up to 3, across all chains | 5 per chain |
+| Edit, pause, resume, renew and share hunts | | ✓ |
+| Go live with real money, with stop loss and take profit | | ✓ |
+| Clone a shared hunt | | ✓ |
+| Ask Dale inside Studio | | ✓ |
+| Real results | | ✓ |
+| Community, The Board, Leagues and Activity | | ✓ |
 | The Winners Room | | ✓ |
 
 <Para>
-  <strong>PRO is $69 a month</strong> (5,300 Telegram Stars). Upgrade from the /trade panel in Dale.
+  On Free, filters and exits are read only. You can build a hunt, watch it trade on paper,
+  close paper positions, keep a hunt on paper and delete hunts.
+</Para>
+
+<H2 id="price">PRO</H2>
+<Para>
+  <strong>PRO is $69 a month</strong> (5,300 Telegram Stars). Upgrade from the /trade panel
+  in Dale, or press <strong>Upgrade to PRO</strong> wherever it appears in Studio.
 </Para>

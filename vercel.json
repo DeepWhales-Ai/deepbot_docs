@@ -1,4 +1,16 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/shotgun",
+      "destination": "/studio/overview",
+      "permanent": true
+    },
+    {
+      "source": "/shotgun/:path*",
+      "destination": "/studio/overview",
+      "permanent": true
+    }
+  ]
 }

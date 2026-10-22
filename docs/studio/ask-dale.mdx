@@ -1,0 +1,54 @@
+---
+title: "Ask Dale in Studio"
+sidebar_label: "Ask Dale"
+sidebar_position: 5
+description: "On PRO, Dale explains filters, exits and tokens inside Studio, checks a draft hunt and suggests changes. You apply any change yourself."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Ask Dale in Studio"
+  description="On PRO, Dale explains filters, exits and tokens inside Studio, checks a draft hunt and suggests changes. You apply any change yourself."
+  slug="/studio/ask-dale"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Dale advises inside Studio. You stay in control.</>}
+/>
+
+<Para>
+  Asking Dale inside Studio is a PRO feature. Press <strong>Ask Dale</strong> at the top,
+  or <strong>Ask Dale about this hunt</strong> on a hunt page.
+</Para>
+
+<H2 id="what">What Dale can do</H2>
+<ul className="db-list">
+  <li>Explain filters, exits, tokens and the market.</li>
+  <li>Check a draft with "Check this hunt before I save".</li>
+  <li>Answer questions like "Why did this trade lose?" or "What does liquidity locked mean?"</li>
+  <li>Look at your own hunts and their results, and suggest changes in the direction you want, safer or bolder.</li>
+</ul>
+
+<H2 id="limits">You apply the changes</H2>
+<Para>
+  Inside Studio, Dale offers advice and can't apply changes. Use the controls on your Hunts
+  page to build, pause, edit or delete a hunt, and the hunt's Real money controls to go
+  live or stop live. Dale never turns live trading on for you, and he can't see your
+  wallets, balances or other people's accounts.
+</Para>
+
+<H2 id="telegram">Settings that live in Telegram</H2>
+<Para>
+  The amount per buy, slippage and daily cap are set with Dale on Telegram. Prompts marked
+  <strong> Do it on Telegram</strong> open Dale there.
+</Para>

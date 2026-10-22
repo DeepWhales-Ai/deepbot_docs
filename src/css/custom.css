@@ -4476,3 +4476,6 @@ article.markdown h3,
 /* A featured product that spans the full row under the product grid. */
 .db-product-grid__wide { grid-column: 1 / -1; display: grid; }
 .db-product-grid__wide .db-product { border-color: rgba(204, 255, 0, 0.32); }
+/* Six chains live: one row of six on desktop, 3 x 2 on narrower screens (no orphan tile). */
+.db-chains { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 980px) { .db-chains { grid-template-columns: repeat(3, 1fr); } }

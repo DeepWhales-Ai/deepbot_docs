@@ -2,64 +2,87 @@
 title: "Strategy Studio"
 sidebar_label: "Strategy Studio"
 sidebar_position: 1
-description: "Build hunts that watch new tokens around the clock and act the moment one matches your rules. Paper first, live on PRO."
+description: "Build a hunt, an automatic trading plan that watches every new token on a chain, and watch it trade on paper before you risk any money."
 ---
 
-{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
-    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
     Voice: no em dashes, no hyphenated compounds in body copy. */}
 
-import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 import { ArticleSchema } from '@site/src/components/Schema.jsx';
 
 <ArticleSchema
   headline="Strategy Studio"
-  description="Build hunts that watch new tokens around the clock and act the moment one matches your rules. Paper first, live on PRO."
+  description="Build a hunt, an automatic trading plan that watches every new token on a chain, and watch it trade on paper before you risk any money."
   slug="/studio/overview"
 />
 
 <PageHead
   eyebrow="STRATEGY STUDIO"
-  lede={<>Strategy Studio is where you build <strong>hunts</strong>. A hunt watches new tokens around the clock and acts the moment one matches your rules.</>}
+  lede={<>Build an automatic trading plan, which Studio calls a <strong>hunt</strong>, and watch it trade before you risk any money.</>}
 />
 
 <Para>
-  It lives inside <DeepBot /> LINK, at <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener">trade.deepbot.pro/studio</a>.
+  Strategy Studio lives inside <DeepBot /> LINK, at <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener">trade.deepbot.pro/studio</a>.
 </Para>
 
-<H2 id="three-questions">Build a hunt in three questions</H2>
-<ol className="db-list db-list--numbered">
-  <li>Which chain?</li>
-  <li>How much risk?</li>
-  <li>How fast in and out?</li>
-</ol>
+<H2 id="hunt">What a hunt does</H2>
 <Para>
-  That's it. Your hunt starts watching straight away.
+  A hunt watches every new token that launches on the chain you pick. When a token passes
+  all of your rules (Studio calls them <strong>filters</strong> or <strong>gates</strong>),
+  the hunt buys it. It then sells on your <strong>exit plan</strong>: your take profit
+  levels, your stop loss and, if you add one, a trailing stop.
 </Para>
 
-<H2 id="paper">Paper first</H2>
+<H2 id="three-steps">Three steps</H2>
+<KeyValueGrid items={[
+  { k: "01 Build", v: "Set the rules: chain, filters, exits. Answer three questions, or set every filter yourself." },
+  { k: "02 Paper", v: "It trades on paper. Simulated buys, real market. Every new hunt starts here." },
+  { k: "03 Live (PRO)", v: "Go real, up to your plan's live hunt limit per chain, shown in Studio." },
+]} />
+
+<H2 id="paper-live">Paper and live</H2>
 <Para>
-  Every hunt can run on paper: it records the trades it <em>would</em> make, at real
-  prices, with no money moving. Watch how it performs, then decide.
+  <strong>Paper</strong> means pretend money. Paper trades use live market prices, so you
+  can see how your hunt would have done, but nothing real is bought or sold.
+</Para>
+<Para>
+  <strong>Live</strong> means real money. When you go live with a hunt, it buys with real
+  money from your wallet every time a token passes its filters. Live buying is on PRO, on
+  Ethereum, BNB Chain, Base and Solana. Robinhood Chain hunts run on paper for now.
 </Para>
 
-<H2 id="live">Live when you're ready (PRO)</H2>
+<H2 id="chains">Chains</H2>
 <Para>
-  On PRO a hunt can buy for real on Ethereum, BNB Chain, Base and Solana, with automatic
-  stop loss and take profit on every position. Robinhood Chain hunts run on paper for now.
-</Para>
-
-<H2 id="chains">Works on 5 chains</H2>
-<Para>
-  Ethereum, BNB Chain, Base, Solana and Robinhood Chain.
+  Studio runs hunts on 5 chains: Ethereum, BNB Chain, Base, Solana and Robinhood Chain.
+  One hunt watches one chain.
 </Para>
 
 <H2 id="dale">Dale and the Studio work together</H2>
 <Para>
-  Ask Dale in Telegram to build a hunt for you, explain why a hunt bought (or didn't), or
-  tune its settings.
+  On PRO, ask Dale to build a hunt for you, explain why a hunt bought (or didn't), or
+  suggest changes. Inside Studio, Dale advises and you apply any change yourself. 
+  <a href="/studio/ask-dale" className="db-link">Asking Dale →</a>
 </Para>
+
+<H2 id="first-visit">Your first visit</H2>
+<Para>
+  The first time you open Studio you see a short notice called <strong>Before you
+  start</strong>. Tick <strong>I understand and accept these risks</strong> and press
+  <strong> Continue</strong>. Ticking the box only records that you have read the notice.
+  It does not turn anything on, make anything live or spend any money. A short guided tour
+  follows on most pages, and you can replay it any time with <strong>Show me around</strong>.
+</Para>
+
+<Callout kind="info" title="Trading carries risk">
+  Prices can move quickly and you could lose some or all of the money you trade. Stop loss
+  and take profit help you manage risk, but they are not guaranteed. Paper results do not
+  predict real ones. Nothing in Strategy Studio is financial advice.
+</Callout>
 
 <Para>
   <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener"><Lime>Build your first hunt →</Lime></a>

@@ -2,49 +2,80 @@
 title: "Paper and live"
 sidebar_label: "Paper and live"
 sidebar_position: 3
-description: "Paper mode records every trade a hunt would make at real prices with no money moving. Live mode on PRO buys for real with automatic stop loss and take profit."
+description: "Every hunt starts on paper, with simulated buys at live prices. On PRO, go live and the hunt buys with real money from your wallet."
 ---
 
-{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
-    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
     Voice: no em dashes, no hyphenated compounds in body copy. */}
 
-import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 import { ArticleSchema } from '@site/src/components/Schema.jsx';
 
 <ArticleSchema
   headline="Paper and live"
-  description="Paper mode records every trade a hunt would make at real prices with no money moving. Live mode on PRO buys for real with automatic stop loss and take profit."
+  description="Every hunt starts on paper, with simulated buys at live prices. On PRO, go live and the hunt buys with real money from your wallet."
   slug="/studio/paper-and-live"
 />
 
 <PageHead
   eyebrow="STRATEGY STUDIO"
-  lede={<>Test on paper. Go live on PRO.</>}
+  lede={<>Every hunt starts on paper. On PRO, go live when you're ready.</>}
 />
 
-<H2 id="paper">Paper mode</H2>
+<H2 id="paper">Paper testing</H2>
 <Para>
-  <strong>Paper mode</strong> records every trade a hunt would make, at the real market
-  price, with no money moving. Use it to see how a hunt behaves before trusting it with
-  funds.
+  Paper trading uses simulated money at live prices. Your hunt follows the same rules as a
+  live hunt, but nothing real moves. Paper uses a fixed trade size per chain and can't show
+  real slippage, fees or a failed swap, so real results can differ.
+</Para>
+<KeyValueGrid items={[
+  { k: "Paper page", v: "Pick a hunt to see its paper state, trade size, open positions and closed trades with their result." },
+  { k: "Results page (PRO)", v: "Day, Week, Month or All, a win rate ring, return on closed trades and a By hunt table." },
+  { k: "Close by hand", v: "On the Paper page, press Close at current price, then Yes, close." },
+  { k: "Reset paper stats", v: "Start your paper totals fresh. Your trades stay, and real results don't change." },
+  { k: "Keep on paper", v: "Holds a hunt on paper. Release removes the hold." },
+]} />
+<Para>
+  Only closed trades count towards your win rate and P&L.
 </Para>
 
-<H2 id="live">Live mode (PRO)</H2>
+<H2 id="live">Going live with real money (PRO)</H2>
 <Para>
-  <strong>Live mode (PRO)</strong> buys for real from your <DeepBot /> wallet, on the
-  hunt's chain, using the buy size you set. Positions carry automatic stop loss and take
-  profit.
+  Live hunts buy on Ethereum, BNB Chain, Base and Solana, up to your plan's live hunt limit
+  per chain, shown in Studio. Robinhood Chain hunts run on paper for now. Where live
+  trading isn't open yet, the button reads <strong>Live trading opens soon</strong>.
 </Para>
+<H3>Before you go live</H3>
+<ul className="db-list">
+  <li>The hunt must be running. Resume or renew it first if it is paused or expired.</li>
+  <li>You need a wallet and a buy size for that chain, set with Dale.</li>
+  <li>Watch the hunt on paper first.</li>
+</ul>
+<H3>How to go live</H3>
+<ol className="db-list db-list--numbered">
+  <li>Open the hunt and find the <strong>Real money</strong> panel.</li>
+  <li>Press <strong>Go live (real money)</strong>.</li>
+  <li>Check the confirmation: amount per buy, slippage, wallet, the safety ratings it buys and the exit plan.</li>
+  <li>Press <strong>Confirm and go live</strong>. The card turns lime and reads <strong>LIVE · real money</strong>.</li>
+</ol>
 <Para>
-  Live hunts use the same trade safety gate as Dale. Before any live buy, the token is
-  checked for common traps, and anything that fails is skipped.
+  Going live takes over the chain's real auto buy slot. If your own auto buy was on for
+  that chain, going live replaces it, and it comes back when you stop live trading.
 </Para>
 
-<H2 id="solana">Solana and Token 2022</H2>
+<H2 id="safety">Safety on every live buy</H2>
 <Para>
-  On Solana, hunts handle both standard tokens and Token 2022 tokens. Token 2022 tokens
-  with risky settings (such as transfer fees or an active freeze authority) are always
-  skipped.
+  Live hunts use the same trade safety gate as Dale. Tokens the scan marks malicious are
+  never bought. On Solana, hunts handle standard tokens and safe Token 2022 tokens, and
+  Token 2022 tokens with risky settings are always skipped.
+</Para>
+
+<H2 id="stop">Stop live</H2>
+<Para>
+  Press <strong>Stop live</strong> on the hunt page and confirm. Open positions keep their
+  exits and still sell automatically. The hunt keeps running on paper.
 </Para>

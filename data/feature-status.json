@@ -217,14 +217,14 @@
       "status": "in_progress",
       "date_label": "Rolling out",
       "summary": "Conversational Shotgun configuration via Dale. ETH alert channels first.",
-      "where": ["shotgun/overview"]
+      "where": []
     },
     "shotgun_smart_wallets": {
       "label": "Shotgun Smart Wallets",
       "status": "in_progress",
       "date_label": "Returning via convergence",
       "summary": "Auto buy from smart wallet activity, weighted through the convergence engine.",
-      "where": ["shotgun/smart-wallets"]
+      "where": []
     },
     "pin_auto_delete": {
       "label": "PIN auto-delete from chat",

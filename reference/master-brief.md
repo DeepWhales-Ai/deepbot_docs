@@ -88,7 +88,8 @@ Three modes. The gitbook uses two of them.
 
 - **No em dashes anywhere.** Periods, commas, colons, restructure.
 - **No AI vendor mentions anywhere.** No model names, no vendor attribution, on any surface including investor and hiring material. Lead with outcomes.
-- **No network-size numbers in public copy.** 25K groups, 677K audience, 2.28M alerts: internal context only. Public uses *The intelligence network crypto Telegram runs on.*
+- **Network figures (updated Oct 23 2026):** public copy may use the rounded figures from bobbybuybot.com/advertise: "over 2 million users", "33,000+ groups", "millions of alerts every month". Never exact live counters. Bobby and Dale now cross paths in the open. Shotgun is retired; Strategy Studio replaces it.
+- **Superseded (kept for history): No network-size numbers in public copy.** 25K groups, 677K audience, 2.28M alerts: internal context only. Public uses *The intelligence network crypto Telegram runs on.*
 - **No "trending" as our claim word.** Co-opted by paid slot products. Use "intelligence," "convergence," "detection."
 - **No "AI-powered" prefix on everything.** Used too widely to mean anything.
 - **Retire "DeepAI Bot" and "Toolkit"** — 2024 framing. Replace with "platform" and "products."

@@ -56,28 +56,27 @@ import DeepBot from '@site/src/components/DeepBot.jsx';
   Where each capability stands per chain today.
 </Para>
 
-| Capability | ETH | BSC | Base | Polygon | Solana |
-|---|---|---|---|---|---|
-| Trading in Dale and LINK | Live | Live | Live | Live | Live |
-| Screener matching | Live | Live | Live | Not offered | Live |
-| Rich match card | Live | Live | Live | Not offered | Live |
-| Auto Buy on match | Live | Live | Live | Not offered | Live |
-| Stop loss | Live | Live | Live | Not offered | Live |
-| Trailing stop | Live | Live | Live | Not offered | Live |
-| Tiered take profit | Live | Live | Live | Not offered | Live |
-| All three exits on one position | Live | Live | Live | Not offered | Live |
-| Correct exit sizing on auto armed buys | n/a | Live | Live | Not offered | n/a |
-| DCA | Live | Live | Live | Routing only | Not offered |
-| DCA proceeds auto return | Live | Live | Live | n/a | n/a |
-| Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) |
-| Honest terminal trade outcome | Live | Live | Live | Live | Live |
-| Signal buy protective arming | Live | Not offered | Not offered | Not offered | Not offered |
-| Convergence board routing | Live | Live | Live | Live | Live |
+| Capability | ETH | BSC | Base | Polygon | Solana | Robinhood |
+|---|---|---|---|---|---|---|
+| Trading in Dale and LINK | Live | Live | Live | Live | Live | Live |
+| Screener matching | Live | Live | Live | Not offered | Live | Not offered |
+| Rich match card | Live | Live | Live | Not offered | Live | Not offered |
+| Auto Buy on match | Live | Live | Live | Not offered | Live | Paper only |
+| Stop loss | Live | Live | Live | Not offered | Live | Live |
+| Trailing stop | Live | Live | Live | Not offered | Live | Live |
+| Tiered take profit | Live | Live | Live | Not offered | Live | Live |
+| All three exits on one position | Live | Live | Live | Not offered | Live | Live |
+| Correct exit sizing on auto armed buys | n/a | Live | Live | Not offered | n/a | n/a |
+| DCA | Live | Live | Live | Routing only | Not offered | Not offered |
+| DCA proceeds auto return | Live | Live | Live | n/a | n/a | n/a |
+| Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) | Live |
+| Honest terminal trade outcome | Live | Live | Live | Live | Live | Live |
+| Convergence board routing | Live | Live | Live | Live | Live | Live |
 
 <Para>
   Correct exit sizing on auto armed buys covers the chains where an automated buy
-  arms an exit as part of the trade: BSC and Base. Signal buys run through Shotgun,
-  which is Ethereum only today.
+  arms an exit as part of the trade: BSC and Base. Robinhood Chain hunts in Strategy
+  Studio run on paper for now.
 </Para>
 <Para>
   Trading in Dale and <DeepBot /> LINK is live on all six chains, including Robinhood

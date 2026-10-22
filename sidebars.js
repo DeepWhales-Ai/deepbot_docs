@@ -1,9 +1,10 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, DeepBot Wallet, DeepBot LINK, Strategy Studio, Shotgun,
+// Top-level order: Start here, Dale, DeepBot Wallet, DeepBot LINK, Strategy Studio,
 // Prediction Markets, Platform, The Brain, Token, Affiliate Program,
 // Revenue Sharing, Bobby, Investors, Team.
 // Wallet and LINK sit adjacent deliberately: they are the two surfaces a user
-// holds and trades on, so Shotgun moves below them.
+// holds and trades on. Strategy Studio follows LINK, where it lives.
+// Shotgun was retired in Oct 2026; /shotgun/* redirects to /studio/overview.
 // Within each section, items reflect a reading order (not source order).
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -78,22 +79,12 @@ const sidebars = {
         'studio/overview',
         'studio/build-a-hunt',
         'studio/paper-and-live',
+        'studio/manage-your-hunts',
+        'studio/ask-dale',
         'studio/free-and-pro',
-        'studio/leagues',
+        'studio/community',
         'studio/deep-dive-saga',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Shotgun',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        'shotgun/overview',
-        'shotgun/blue',
-        'shotgun/trend',
-        'shotgun/smart-wallets',
-        'shotgun/channels',
+        'studio/faq',
       ],
     },
     {

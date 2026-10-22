@@ -6,6 +6,7 @@ sidebar_label: "Multi chain stack"
 {/* Source: pages-rest.jsx -> PageMultiChainStack */}
 
 import { PageHead, Para, ChainRow, Mono } from '@site/src/components/primitives.jsx';
+import { Ethereum, Solana, Base, Polygon, BNB, Robinhood } from '@site/src/components/ChainLogos.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
 
 <PageHead
@@ -15,11 +16,12 @@ import DeepBot from '@site/src/components/DeepBot.jsx';
 />
 
 <ChainRow items={[
-  { sym: "SOL",   name: "Solana" },
-  { sym: "ETH",   name: "Ethereum" },
-  { sym: "BASE",  name: "Base" },
-  { sym: "BNB",   name: "BNB Chain" },
-  { sym: "MATIC", name: "Polygon" },
+  { sym: <Ethereum size={28} />, name: "Ethereum" },
+  { sym: <Solana size={28} />, name: "Solana" },
+  { sym: <Base size={28} />, name: "Base" },
+  { sym: <BNB size={28} />, name: "BNB Chain" },
+  { sym: <Polygon size={28} />, name: "Polygon" },
+  { sym: <Robinhood size={28} />, name: "Robinhood Chain" },
 ]} />
 
 <Para>
