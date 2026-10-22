@@ -1,0 +1,47 @@
+---
+title: "Deep Dive Saga"
+sidebar_label: "Deep Dive Saga"
+sidebar_position: 8
+description: "Deep Dive Saga is the game inside Strategy Studio. A daily dive, a weekly season and badges. No money involved."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Deep Dive Saga"
+  description="Deep Dive Saga is the game inside Strategy Studio. A daily dive, a weekly season and badges. No money involved."
+  slug="/studio/deep-dive-saga"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>The game inside Strategy Studio.</>}
+/>
+
+<Para>
+  Deep Dive Saga is the game inside Strategy Studio. Each dive puts you in a fast market
+  moment: read the signals, choose when to act, and clear the level.
+</Para>
+
+<KeyValueGrid items={[
+  { k: "Daily challenge", v: "A new dive every day." },
+  { k: "Weekly season", v: "Climb the weekly table." },
+  { k: "Badges", v: "Earn badges for first clears, three star runs and streaks." },
+  { k: "Share your result", v: "Show off a result. Shared results never include wallets or money amounts." },
+]} />
+
+<Para>
+  You play anonymously by default. No money is involved; it's a game.
+</Para>
+
+<Para>
+  <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener"><Lime>Play in Strategy Studio →</Lime></a>
+</Para>

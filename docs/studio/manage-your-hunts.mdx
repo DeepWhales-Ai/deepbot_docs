@@ -1,0 +1,86 @@
+---
+title: "Manage your hunts"
+sidebar_label: "Manage your hunts"
+sidebar_position: 4
+description: "Check a hunt is running, read its card, edit it on PRO, pause, renew or delete it, and find out why it hasn't bought."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Manage your hunts"
+  description="Check a hunt is running, read its card, edit it on PRO, pause, renew or delete it, and find out why it hasn't bought."
+  slug="/studio/manage-your-hunts"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Check, edit, pause, renew or delete a hunt.</>}
+/>
+
+<H2 id="cards">Hunt cards</H2>
+<KeyValueGrid items={[
+  { k: "Status", v: "Paper running, Paper starts soon, Paused or Expired." },
+  { k: "Summary and tags", v: "A one line summary plus market cap, liquidity, take profit steps and the stop loss." },
+  { k: "Paper strip (PRO)", v: "Paper results and win rate, number of trades and how many are open." },
+  { k: "Live band", v: "LIVE · real money, with the buy size and the wallet it spends from." },
+]} />
+
+<H2 id="running">Is my hunt running?</H2>
+<Para>
+  The card reads <strong>Paper running</strong>, or <strong>LIVE · real money</strong> if
+  it is live. The hunt page Activity section lists the latest buys and sells. Nothing yet
+  means it hasn't bought anything.
+</Para>
+
+<H2 id="edit">Editing a hunt (PRO)</H2>
+<Para>
+  Open the hunt and press <strong>Edit</strong>, <strong>Edit filters</strong> or
+  <strong> Edit exits</strong>, then <strong>Save changes</strong>. Changes apply from the
+  next token that matches. The chain can't be changed. Stop live or resume a paused hunt
+  before you save. Free accounts can't edit.
+</Para>
+
+<H2 id="pause">Pause, renew and expiry (PRO)</H2>
+<Para>
+  <strong>Pause</strong> stops a hunt matching new tokens; open positions still follow the
+  exit plan. Pause is for hunts that aren't live; a live hunt uses <strong>Stop live</strong>.
+  Hunts expire a set time after they were created or last renewed. Press
+  <strong> Renew</strong> to run one again. It comes back on paper, not live.
+</Para>
+
+<H2 id="delete">Deleting a hunt</H2>
+<Para>
+  On the hunt page, press <strong>Delete</strong>. The hunt stops, its results leave your
+  hunts and a shared hunt leaves Community. There is no undo. A live hunt shows
+  <strong> Stop live and delete</strong>. Deleting an active hunt frees a slot.
+</Para>
+
+<H2 id="nothing">Why has it bought nothing?</H2>
+<ul className="db-list">
+  <li>The filters are too tight. This is the most common reason.</li>
+  <li>It is paused or expired.</li>
+  <li>It says Paper starts soon.</li>
+  <li>The buy window is under 10 minutes on Ethereum, BNB Chain or Base.</li>
+  <li>A Solana hunt has Safe Token 2022 turned off.</li>
+  <li>Unscored tokens is set to Skip while you have a convergence floor.</li>
+</ul>
+<Para>
+  A real buy can also be refused by the safety check, a missing setup in Dale, a used up
+  daily cap, or not enough balance in the buying wallet. Paper trades ignore balance and caps.
+</Para>
+
+<H2 id="alerts">Alerts and results (PRO)</H2>
+<KeyValueGrid items={[
+  { k: "Match alerts", v: "New match cards arrive in Telegram from @traderdeepbot, with a Buy button. Turn them off per hunt." },
+  { k: "Activity", v: "Your paper trades and the hunts that are live now, newest first." },
+  { k: "Real results", v: "Your real money trades from live hunts, one card per chain in that chain's own coin, never mixed with paper." },
+]} />

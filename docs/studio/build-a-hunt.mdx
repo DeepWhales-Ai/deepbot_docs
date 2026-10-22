@@ -1,0 +1,115 @@
+---
+title: "Build a hunt"
+sidebar_label: "Build a hunt"
+sidebar_position: 2
+description: "Press New hunt and answer three questions: which chain, how much risk, and how fast in and out. Or set every gate yourself in Advanced mode."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Build a hunt"
+  description="Press New hunt and answer three questions: which chain, how much risk, and how fast in and out. Or set every gate yourself in Advanced mode."
+  slug="/studio/build-a-hunt"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Press <strong>+ New hunt</strong>. Answer three questions, or set every gate yourself.</>}
+/>
+
+<H2 id="ways">Ways to start</H2>
+<KeyValueGrid items={[
+  { k: "Answer three questions", v: "Pick a chain, how much risk and how fast. Studio sets every filter for you." },
+  { k: "Set every filter yourself", v: "Opens Advanced mode, with market cap, liquidity, tax, holders and a full exit ladder." },
+  { k: "Clone a shared hunt (PRO)", v: "Start from a hunt another trader shared in Community." },
+  { k: "Ask Dale to build one (PRO)", v: "Describe what you want and Dale drafts it." },
+]} />
+
+<Para>
+  On the right of the builder sits your <strong>ticket</strong>, a live summary of what the
+  hunt <strong>Buys when</strong>, what it <strong>Sells</strong>, and its name. When you
+  are happy, press <strong>Save and start paper</strong>. Every new hunt starts on paper.
+</Para>
+
+<H2 id="guided">Guided mode: three questions</H2>
+<H3>01 Which chain?</H3>
+<Para>
+  Ethereum, BNB Chain, Base, Solana or Robinhood Chain. Your hunt watches every new launch
+  on that chain.
+</Para>
+
+<H3>02 How much risk?</H3>
+
+| Choice | What it sets |
+|---|---|
+| **Careful** | Bigger tokens with more liquidity and holders. Market cap $150k to $1.5M, at least $25k liquidity, tax no more than 3%, at least 200 holders, liquidity locked (EVM chains), stop loss at 10%. |
+| **Balanced** | Mid size tokens. Market cap up to $500k, at least $8k liquidity, tax no more than 6%, at least 80 holders, liquidity locked (EVM chains), stop loss at 10%. |
+| **Aggressive** | Tiny fresh launches. Market cap up to $150k, at least $1k liquidity, tax no more than 10%, at least 20 holders, no liquidity lock check on Ethereum, BNB Chain, Base and Robinhood Chain, stop loss at 10%. |
+
+<Para>
+  All three block tokens the safety scan marks as malicious. On Solana there is no
+  liquidity lock setting: every level applies the dev holding floor and the token program
+  guard instead. On Robinhood Chain the tax and holder limits are not offered.
+</Para>
+
+<H3>03 How fast in and out?</H3>
+
+| Choice | Buy window | Take profit | Trailing stop |
+|---|---|---|---|
+| **Quick flips** (minutes) | First 10 minutes on Solana and Robinhood Chain, 30 on Base, 60 on Ethereum and BNB Chain | Sell 50% at a 25% gain, 50% at a 60% gain | 8% gap, from a 30% gain |
+| **Steady** (hours) | First hour | Sell 25% at a 50% gain, 25% at a 100% gain, 50% at a 200% gain | 15% gap, from a 100% gain |
+| **Patient** (days) | First day | Sell 33% at a 100% gain, 33% at a 300% gain, 34% at a 600% gain | 25% gap, from a 200% gain |
+| **Established** (30 days) | Tokens up to 30 days old that already trade | Same as Patient | Same as Patient |
+
+<Para>
+  Press <strong>See every gate this sets</strong> to open Advanced mode with your answers
+  loaded. Advanced mode always shows the exact numbers. These are settings, not expected
+  results.
+</Para>
+
+<H2 id="advanced">Advanced mode: entry gates</H2>
+<Para>
+  A token must pass <strong>every</strong> gate before your hunt buys it.
+</Para>
+<KeyValueGrid items={[
+  { k: "Buy window", v: "How soon after launch it can buy, up to 30 days. On Ethereum, BNB Chain and Base the shortest choice is 10 minutes." },
+  { k: "Safety rating", v: "What the Blockaid token scan says. New hunts allow Benign only. Tokens marked malicious are never bought." },
+  { k: "Market cap", v: "How big the token is when you buy. Set a minimum and a maximum." },
+  { k: "Min. liquidity", v: "Money in the pool, so you can get out." },
+  { k: "Min. holders", v: "Wallets already in. Set it to Any for no minimum." },
+  { k: "Buy tax and sell tax", v: "The most the token may take on each buy or sell." },
+  { k: "Liquidity locked", v: "Ethereum, BNB Chain, Base and Robinhood Chain. Burned or locked, so the dev can't pull the pool." },
+  { k: "Solana only", v: "Dev holding floor, token program guard, and Safe Token 2022 (on by default) for Token 2022 tokens with no fee, no freeze authority and no risky extensions." },
+  { k: "Min. convergence", v: "The board score, 0 to 100. A higher score means more signals agree on the token." },
+  { k: "Min. sources", v: "How many independent sources scored it: group, on chain, router and Telegram." },
+  { k: "Optional limits", v: "Max. liquidity, max. holders, min. age and max. dev holding. Not offered on Robinhood Chain." },
+]} />
+
+<H2 id="exits">Advanced mode: exit plan</H2>
+<KeyValueGrid items={[
+  { k: "Take profit", v: "At is the gain from your entry price. Sell is the share of your position sold there. Levels go up in order and together sell no more than 100%." },
+  { k: "Stop loss", v: "The loss from your entry price at which it sells everything, from 1% to 95%." },
+  { k: "Trailing stop", v: "From is the gain where the trail starts. Gap is how far below the peak it sells." },
+]} />
+
+<H2 id="buy-size">Buy size</H2>
+<Para>
+  You don't set the amount per buy in the builder. Your buy size, slippage and daily cap
+  are set per chain with Dale on Telegram. Paper trades use a fixed trade size per chain.
+</Para>
+
+<H2 id="quiet">Tight settings can mean no buys for hours</H2>
+<Para>
+  Every gate removes tokens. A very short buy window with high liquidity, many holders and
+  a high convergence score can mean nothing matches for hours, or even days. If a hunt is
+  quiet, loosen one gate at a time, starting with the buy window or the convergence score.
+</Para>

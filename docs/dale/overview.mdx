@@ -7,16 +7,17 @@ sidebar_label: "What is Dale"
 
 import { PageHead, Para, H2, Lime, Pull, FeatureGrid, KeyValueGrid } from '@site/src/components/primitives.jsx';
 import { ArticleSchema } from '@site/src/components/Schema.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 
 <ArticleSchema
   headline="What is Dale"
-  description="Dale is DeepBot's conversational trader. Plain language in, executed trade out, across Ethereum, BSC, Base, Polygon and Solana."
+  description="Dale is DeepBot's conversational trader. Plain language in, executed trade out, across Ethereum, BSC, Base, Polygon, Solana and Robinhood Chain."
   slug="/dale/overview"
 />
 
 <PageHead
   eyebrow="DALE"
-  lede={<>Dale is built to make crypto trading effortless for anyone. No commands. No syntax. Plain English in. Trade out. Multi chain execution across Ethereum, Solana, Base, BNB, and Polygon. Powered by the convergence engine. The longest running community intelligence in the category behind every decision. Detection, not prediction. You move when you decide.</>}
+  lede={<>Dale is built to make crypto trading effortless for anyone. No commands. No syntax. Plain English in. Trade out. Type it, or send Dale a voice note. Multi chain execution across Ethereum, Solana, Base, BNB, Polygon and Robinhood Chain. Powered by the convergence engine. The longest running community intelligence in the category behind every decision. Detection, not prediction. You move when you decide.</>}
 />
 
 <div className="db-faded-box">
@@ -30,6 +31,8 @@ import { ArticleSchema } from '@site/src/components/Schema.jsx';
   surfaces the fee, and executes. You ask it to watch a launch and it watches and pings
   you. You ask it to protect a position from a rug and it watches the mempool and exits
   ahead of the attacker. There are no commands to learn and no syntax to get right.
+  Type it, or send Dale a voice note.{' '}
+  <a href="/dale/voice" className="db-link">Trading by voice →</a>
   Dale trades across <Lime>six chains</Lime>: Ethereum, BSC, Base, Polygon, Solana and
   Robinhood Chain, from one wallet. The trade fee is 1% on the EVM
   chains and 1.5% on Solana. Behind every decision sits the convergence engine, which reads community
@@ -55,31 +58,39 @@ import { ArticleSchema } from '@site/src/components/Schema.jsx';
   Where each capability stands per chain today.
 </Para>
 
-| Capability | ETH | BSC | Base | Polygon | Solana |
-|---|---|---|---|---|---|
-| Screener matching | Live | Live | Live | Not offered | Live |
-| Rich match card | Live | Live | Live | Not offered | Live |
-| Auto Buy on match | Live | Live | Live | Not offered | Not offered |
-| Stop loss | Live | Live | Live | Not offered | Live |
-| Trailing stop | Live | Live | Live | Not offered | Live |
-| Tiered take profit | Live | Live | Live | Not offered | Live |
-| All three exits on one position | Live | Live | Live | Not offered | Live |
-| Correct exit sizing on auto armed buys | n/a | Live | Live | Not offered | n/a |
-| DCA | Live | Live | Live | Routing only | Not offered |
-| DCA proceeds auto return | Live | Live | Live | n/a | n/a |
-| Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) |
-| Honest terminal trade outcome | Live | Live | Live | Live | Live |
-| Signal buy protective arming | Live | Not offered | Not offered | Not offered | Not offered |
-| Convergence board routing | Live | Live | Live | Live | Live |
+| Capability | ETH | BSC | Base | Polygon | Solana | Robinhood |
+|---|---|---|---|---|---|---|
+| Trading in Dale and LINK | Live | Live | Live | Live | Live | Live |
+| Screener matching | Live | Live | Live | Not offered | Live | Not offered |
+| Rich match card | Live | Live | Live | Not offered | Live | Not offered |
+| Auto Buy on match | Live | Live | Live | Not offered | Live | Paper only |
+| Stop loss | Live | Live | Live | Not offered | Live | Live |
+| Trailing stop | Live | Live | Live | Not offered | Live | Live |
+| Tiered take profit | Live | Live | Live | Not offered | Live | Live |
+| All three exits on one position | Live | Live | Live | Not offered | Live | Live |
+| Correct exit sizing on auto armed buys | n/a | Live | Live | Not offered | n/a | n/a |
+| DCA | Live | Live | Live | Routing only | Not offered | Not offered |
+| DCA proceeds auto return | Live | Live | Live | n/a | n/a | n/a |
+| Native and token sends | Live | Live | Live | Live | Live (SOL + SPL) | Live |
+| Honest terminal trade outcome | Live | Live | Live | Live | Live | Live |
+| Convergence board routing | Live | Live | Live | Live | Live | Live |
 
 <Para>
   Correct exit sizing on auto armed buys covers the chains where an automated buy
-  arms an exit as part of the trade: BSC and Base. Signal buys run through Shotgun,
-  which is Ethereum only today.
+  arms an exit as part of the trade: BSC and Base. Robinhood Chain hunts in Strategy
+  Studio run on paper for now.
 </Para>
+<Para>
+  Trading in Dale and <DeepBot /> LINK is live on all six chains, including Robinhood
+  Chain.
+</Para>
+
+<H2 id="new">New with Dale</H2>
+<KeyValueGrid items={[
+  { k: "Strategy Studio", v: <>Ask Dale to build, explain or tune a hunt (PRO). <a href="/studio/overview" className="db-link">See Strategy Studio →</a></> },
+]} />
 
 <H2 id="coming">What's coming</H2>
 <KeyValueGrid items={[
-  { k: "Dale Strategy Studio", v: "In progress." },
   { k: "Hyperliquid perps", v: "In progress." },
 ]} />

@@ -10,6 +10,7 @@ import {
   TaglineStrip, KeyValueGrid, ChainRow, Pill,
 } from '@site/src/components/primitives.jsx';
 import DeepBot from '@site/src/components/DeepBot.jsx';
+import Heading from '@theme/Heading';
 import { Ethereum, Solana, Base, Polygon, BNB, Robinhood } from '@site/src/components/ChainLogos.jsx';
 import WalletMock from '@site/src/components/WalletMock.jsx';
 import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
@@ -100,6 +101,17 @@ import FeatureStatus from '@site/src/components/FeatureStatus.jsx';
   { k: <>Bridge <Pill status="Coming">Coming</Pill></>, v: "Cross chain via LI.FI. Quote includes the bridge, the swap, the gas, the time estimate. One tap, one signature." },
   { k: "History", v: "Every transaction across every chain. Filter by token, by direction, by date. Every line links to the explorer." },
 ]} />
+
+<Heading as="h2" id="fund" className="db-h2">Fund your wallet</Heading>
+<Para>
+  Your <DeepBot /> wallet has one address per network. To fund it, send from an exchange
+  or another wallet to your <DeepBot /> address, <strong>on the same network</strong>.
+</Para>
+<ul className="db-list">
+  <li>Ask Dale "what's my wallet address?" or open <Mono>@walletdeepbot</Mono> and tap <strong>Receive</strong>.</li>
+  <li>Check the network before you send. Sending the wrong token or using the wrong network can mean the funds are lost.</li>
+  <li>Any small amount is enough to start.</li>
+</ul>
 
 <H2 id="multichain">Multi chain</H2>
 <Para>

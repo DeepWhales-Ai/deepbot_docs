@@ -6,18 +6,20 @@ sidebar_label: "Multi chain"
 {/* Source: pages-dale.jsx -> PageMultiChain */}
 
 import { PageHead, Para, H2, Pull, KeyValueGrid, ChainRow } from '@site/src/components/primitives.jsx';
+import { Ethereum, Solana, Base, Polygon, BNB, Robinhood } from '@site/src/components/ChainLogos.jsx';
 
 <PageHead
   eyebrow="DALE"
-  lede="Solana, Ethereum, Base, BNB, Polygon. One conversation. One position view. Native asset handling per chain."
+  lede="Solana, Ethereum, Base, BNB, Polygon, Robinhood Chain. One conversation. One position view. Native asset handling per chain."
 />
 
 <ChainRow items={[
-  { sym: "SOL",   name: "Solana" },
-  { sym: "ETH",   name: "Ethereum" },
-  { sym: "BASE",  name: "Base" },
-  { sym: "BNB",   name: "BNB Chain" },
-  { sym: "MATIC", name: "Polygon" },
+  { sym: <Ethereum size={28} />, name: "Ethereum" },
+  { sym: <Solana size={28} />, name: "Solana" },
+  { sym: <Base size={28} />, name: "Base" },
+  { sym: <BNB size={28} />, name: "BNB Chain" },
+  { sym: <Polygon size={28} />, name: "Polygon" },
+  { sym: <Robinhood size={28} />, name: "Robinhood Chain" },
 ]} />
 
 <H2 id="solana">Solana coverage</H2>

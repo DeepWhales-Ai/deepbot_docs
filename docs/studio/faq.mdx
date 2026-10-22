@@ -1,0 +1,49 @@
+---
+title: "Studio FAQ"
+sidebar_label: "FAQ"
+sidebar_position: 9
+description: "Answers to common Strategy Studio questions: making a hunt real, quiet hunts, live money, settings, limits and paper versus real results."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Source of truth: the Studio user guide in
+    trade-deepbot-pro (src/lib/studio/guide/studio-guide.md). The DOCS-HANDOFF
+    text is used only where the guide is silent. Keep this page in step with
+    the guide when Studio changes.
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, H3, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Studio FAQ"
+  description="Answers to common Strategy Studio questions: making a hunt real, quiet hunts, live money, settings, limits and paper versus real results."
+  slug="/studio/faq"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Quick answers to common questions.</>}
+/>
+
+<KeyValueGrid items={[
+  { k: "It says paper. How do I make it real?", v: "Upgrade to PRO. Set a buy size and a wallet for that chain with Dale. Then open the hunt, press Go live (real money), check the details and press Confirm and go live." },
+  { k: "It has bought nothing in 3 hours.", v: "Usually the filters are too tight. Widen the buy window or lower the convergence score. See Manage your hunts." },
+  { k: "Is live real money?", v: "Yes. LIVE · real money means it buys from your wallet. A hunt that isn't live never spends real money." },
+  { k: "Where are my settings?", v: "Filters and exits are on the hunt page. Buy size, slippage, daily cap and wallet are set with Dale on Telegram." },
+  { k: "I can't press Pause on my live hunt.", v: "Use Stop live instead. Its open positions keep their exits." },
+  { k: "Save changes is refused.", v: "Stop live or resume the hunt first." },
+  { k: "It says I'm at my limit.", v: "Free counts active hunts across all chains, so delete one to add another. PRO has a limit per chain, so pause or delete a hunt on that chain." },
+  { k: "Paper results look great. Will real results match?", v: "Not necessarily. Real trades pay network gas and face slippage and fast markets." },
+]} />
+
+<H2 id="risk">A calm word on risk</H2>
+<Para>
+  Crypto is volatile, and new tokens are the most volatile of all. Paper results show how a
+  plan would have done. They don't predict how it will do. Stop loss and take profit help,
+  but they are not guaranteed, and a sale can happen at a worse price than expected.
+</Para>
+<Para>
+  Nothing in Strategy Studio, or anything Dale says, is financial advice. Start small, test
+  on paper first, and only trade what you can afford to lose.
+</Para>

@@ -4460,3 +4460,22 @@ article.markdown h3,
   }
 }
 
+
+/* ===== Oct 2026: Strategy Studio docs ===== */
+/* Body lists, matched to .db-para so they read as part of the same text. */
+.db-list {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--fg-2);
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+.db-list li { margin: 0 0 6px; padding-left: 4px; }
+.db-list li::marker { color: var(--lime); }
+.db-list--numbered li::marker { font-weight: 700; }
+/* A featured product that spans the full row under the product grid. */
+.db-product-grid__wide { grid-column: 1 / -1; display: grid; }
+.db-product-grid__wide .db-product { border-color: rgba(204, 255, 0, 0.32); }
+/* Six chains live: one row of six on desktop, 3 x 2 on narrower screens (no orphan tile). */
+.db-chains { grid-template-columns: repeat(6, 1fr); }
+@media (max-width: 980px) { .db-chains { grid-template-columns: repeat(3, 1fr); } }
