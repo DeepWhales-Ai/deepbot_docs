@@ -2,22 +2,9 @@
   "last_updated": "2026-10-23",
   "launch_date": "2026-05-11",
   "currently_shipping": {
-    "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across now + next. Not a changelog. When a new item ships, remove the older / lower-impact one. Rotated-off ids stay in the `features` map. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
-    "now": [
-      "dale_strategy_studio",
-      "deepbot_link",
-      "auto_buy_expansion",
-      "token_screener",
-      "auto_buy_engine",
-      "solana_exits_parity",
-      "dca_evm",
-      "solana_sends",
-      "agg_prediction_markets",
-      "token_2022_support"
-    ],
-    "next": [
-      "hyperliquid_integration"
-    ],
+    "_comment": "Source of truth for the home-page CurrentlyShipping strip: two balanced columns, SHIPPED (now) and BUILDING (next), six items each. Each id references a key in `features`; label and summary both render. Public copy rules: no dates, no limits, no figures in summaries. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md.",
+    "now": ["dale_strategy_studio", "six_chain_trading", "studio_leagues", "studio_winners_room", "deep_dive_saga", "instant_token_scanning"],
+    "next": ["card_funding", "pro_rewards_trading", "hunts_of_the_week", "archive_hunts", "bobby_group_broadcasts", "deeper_token_safety"],
     "stealth": {
       "private_beta": 2,
       "stealth_design": 1
@@ -209,8 +196,8 @@
       "status": "shipped",
       "shipped_date": "2026-10-23",
       "date_label": "Live",
-      "summary": "Build a hunt in three questions. Watches new tokens 24/7 on five chains. Paper test free, go live on PRO.",
-      "where": ["studio/overview", "dale/overview"]
+      "summary": "Build a hunt in three questions; it watches new tokens 24/7. Paper test free, go live on PRO.",
+      "where": ["studio/overview"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",
@@ -388,6 +375,88 @@
       "status": "coming",
       "date_label": "Rolling out",
       "where": ["dale/community-layer"]
+    },
+    "six_chain_trading": {
+      "label": "Trade on 6 chains in Dale and LINK",
+      "status": "shipped",
+      "summary": "Ethereum, BNB Chain, Base, Polygon, Solana and Robinhood Chain.",
+      "where": ["dale/multichain"],
+      "date_label": "Live",
+      "shipped_date": "2026-10-23"
+    },
+    "studio_leagues": {
+      "label": "Leagues and weekly competitions",
+      "status": "shipped",
+      "summary": "Share a hunt and climb the table, ranked by median return.",
+      "where": ["studio/community"],
+      "date_label": "Live",
+      "shipped_date": "2026-10-23"
+    },
+    "studio_winners_room": {
+      "label": "Winners Room and Community",
+      "status": "shipped",
+      "summary": "A room for PRO traders with top strategies, and clone shared hunts to your own.",
+      "where": ["studio/community"],
+      "date_label": "Live",
+      "shipped_date": "2026-10-23"
+    },
+    "deep_dive_saga": {
+      "label": "Deep Dive Saga",
+      "status": "shipped",
+      "summary": "The daily challenge game inside the Studio.",
+      "where": ["studio/deep-dive-saga"],
+      "date_label": "Live",
+      "shipped_date": "2026-10-23"
+    },
+    "instant_token_scanning": {
+      "label": "Instant new token scanning",
+      "status": "shipped",
+      "summary": "On Ethereum, Base and BNB Chain, plus Token 2022 support on Solana.",
+      "where": ["studio/build-a-hunt"],
+      "date_label": "Live",
+      "shipped_date": "2026-10-23"
+    },
+    "card_funding": {
+      "label": "Buy crypto with a card",
+      "status": "building",
+      "summary": "Fund your wallet straight from Dale and LINK.",
+      "where": [],
+      "date_label": "Building"
+    },
+    "pro_rewards_trading": {
+      "label": "PRO rewards for trading",
+      "status": "building",
+      "summary": "Earn PRO time as you trade.",
+      "where": [],
+      "date_label": "Building"
+    },
+    "hunts_of_the_week": {
+      "label": "Hunts of the week",
+      "status": "building",
+      "summary": "The best hunts, featured every Monday.",
+      "where": [],
+      "date_label": "Building"
+    },
+    "archive_hunts": {
+      "label": "Archive hunts",
+      "status": "building",
+      "summary": "Retire a hunt and keep its history.",
+      "where": [],
+      "date_label": "Building"
+    },
+    "bobby_group_broadcasts": {
+      "label": "Bobby group broadcasts",
+      "status": "building",
+      "summary": "Reach every Bobby community in one message.",
+      "where": [],
+      "date_label": "Building"
+    },
+    "deeper_token_safety": {
+      "label": "Deeper token safety checks",
+      "status": "building",
+      "summary": "More on chain checks on every new token before a hunt buys.",
+      "where": [],
+      "date_label": "Building"
     }
   }
 }

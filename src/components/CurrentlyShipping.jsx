@@ -1,4 +1,5 @@
-// Currently shipping strip: three columns NOW · NEXT · STEALTH.
+// Currently shipping strip: two balanced columns, SHIPPED (now) and BUILDING (next),
+// each row showing the label and its one line summary, with a stealth counter footer.
 // Source of truth: /data/feature-status.json (currently_shipping block
 // indexes into the features dict). Update workflow:
 // /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md.
@@ -20,6 +21,7 @@ const STATUS_DISPLAY = {
   testing: 'TESTING',
   design: 'DESIGN',
   in_progress: 'IN PROGRESS',
+  building: 'BUILDING',
 };
 
 const STEALTH_LABELS = {
@@ -61,12 +63,28 @@ function Label({ label, summary, href }) {
 export function CurrentlyShipping() {
   const cs = featureStatus.currently_shipping || { now: [], next: [], stealth: {} };
   const updated = featureStatus.last_updated || '';
-  const nowItems = lookupItems(cs.now);
-  const nextItems = lookupItems(cs.next);
+  const shipped = lookupItems(cs.now);
+  const building = lookupItems(cs.next);
   const stealth = cs.stealth || {};
+  const stealthEntries = Object.entries(stealth);
+
+  const Column = ({ title, kind, items }) => (
+    <div className={`db-shipping__col db-shipping__col--${kind}`}>
+      <div className="db-shipping__colhead">
+        <span className={`db-shipping__dot db-shipping__dot--${kind}`} />
+        {title}
+      </div>
+      {items.map((x) => (
+        <div key={x.id} className="db-shipping__item">
+          <Label label={x.label} summary={x.summary} href={x.href} />
+          {x.summary && <div className="db-shipping__summary">{x.summary}</div>}
+        </div>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="db-shipping">
+    <div className="db-shipping db-shipping--v2">
       <div className="db-shipping__head">
         <div className="db-shipping__title">
           <span className="db-shipping__pulse" />
@@ -76,48 +94,20 @@ export function CurrentlyShipping() {
       </div>
 
       <div className="db-shipping__cols">
-        <div className="db-shipping__col">
-          <div className="db-shipping__colhead">NOW</div>
-          {nowItems.map((x) => (
-            <div key={x.id} className="db-shipping__row">
-              <span className={`db-shipping__status db-shipping__status--${x.status.replace(/_/g, '-')}`}>
-                {x.statusDisplay}
-              </span>
-              <Label label={x.label} summary={x.summary} href={x.href} />
-              <span className="db-shipping__since">{x.dateLabel}</span>
-            </div>
-          ))}
-        </div>
+        <Column title="SHIPPED" kind="shipped" items={shipped} />
+        <Column title="BUILDING" kind="building" items={building} />
+      </div>
 
-        <div className="db-shipping__col">
-          <div className="db-shipping__colhead">NEXT</div>
-          {nextItems.map((x) => (
-            <div key={x.id} className="db-shipping__row">
-              <span className={`db-shipping__status db-shipping__status--${x.status.replace(/_/g, '-')}`}>
-                {x.statusDisplay}
-              </span>
-              <Label label={x.label} summary={x.summary} href={x.href} />
-              <span className="db-shipping__window">{x.dateLabel}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="db-shipping__col">
-          <div className="db-shipping__colhead">STEALTH</div>
-          <div className="db-shipping__stealth-block">
-            {Object.entries(stealth).map(([key, count]) => (
-              <div key={key} className="db-shipping__row db-shipping__row--stealth">
-                <span className="db-shipping__redacted">{'█'.repeat(18 + (key.length % 6))}</span>
-              </div>
-            ))}
-          </div>
-          <div className="db-shipping__counter">
-            {Object.entries(stealth).map(([key, count]) => (
+      {stealthEntries.length > 0 && (
+        <div className="db-shipping__foot">
+          <span className="db-shipping__redacted" aria-hidden="true">{'█'.repeat(14)}</span>
+          <span className="db-shipping__counter">
+            {stealthEntries.map(([key, count]) => (
               <span key={key}><b>{count}</b> {STEALTH_LABELS[key] || key.replace(/_/g, ' ')}</span>
             ))}
-          </div>
+          </span>
         </div>
-      </div>
+      )}
     </div>
   );
 };
