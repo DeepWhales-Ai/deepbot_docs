@@ -1,0 +1,66 @@
+---
+title: "Strategy Studio"
+sidebar_label: "Strategy Studio"
+sidebar_position: 1
+description: "Build hunts that watch new tokens around the clock and act the moment one matches your rules. Paper first, live on PRO."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
+    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Strategy Studio"
+  description="Build hunts that watch new tokens around the clock and act the moment one matches your rules. Paper first, live on PRO."
+  slug="/studio/overview"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Strategy Studio is where you build <strong>hunts</strong>. A hunt watches new tokens around the clock and acts the moment one matches your rules.</>}
+/>
+
+<Para>
+  It lives inside <DeepBot /> LINK, at <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener">trade.deepbot.pro/studio</a>.
+</Para>
+
+<H2 id="three-questions">Build a hunt in three questions</H2>
+<ol className="db-list db-list--numbered">
+  <li>Which chain?</li>
+  <li>How much risk?</li>
+  <li>How fast in and out?</li>
+</ol>
+<Para>
+  That's it. Your hunt starts watching straight away.
+</Para>
+
+<H2 id="paper">Paper first</H2>
+<Para>
+  Every hunt can run on paper: it records the trades it <em>would</em> make, at real
+  prices, with no money moving. Watch how it performs, then decide.
+</Para>
+
+<H2 id="live">Live when you're ready (PRO)</H2>
+<Para>
+  On PRO a hunt can buy for real on Ethereum, BNB Chain, Base and Solana, with automatic
+  stop loss and take profit on every position. Robinhood Chain hunts run on paper for now.
+</Para>
+
+<H2 id="chains">Works on 5 chains</H2>
+<Para>
+  Ethereum, BNB Chain, Base, Solana and Robinhood Chain.
+</Para>
+
+<H2 id="dale">Dale and the Studio work together</H2>
+<Para>
+  Ask Dale in Telegram to build a hunt for you, explain why a hunt bought (or didn't), or
+  tune its settings.
+</Para>
+
+<Para>
+  <a href="https://trade.deepbot.pro/studio" className="db-link" target="_blank" rel="noopener"><Lime>Build your first hunt →</Lime></a>
+</Para>

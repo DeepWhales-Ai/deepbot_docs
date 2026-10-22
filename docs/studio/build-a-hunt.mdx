@@ -1,0 +1,50 @@
+---
+title: "Build a hunt"
+sidebar_label: "Build a hunt"
+sidebar_position: 2
+description: "Open Strategy Studio, press New hunt and answer three questions: which chain, how much risk, and how fast in and out."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
+    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Build a hunt"
+  description="Open Strategy Studio, press New hunt and answer three questions: which chain, how much risk, and how fast in and out."
+  slug="/studio/build-a-hunt"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Open Strategy Studio and press <strong>New hunt</strong>. Answer three questions.</>}
+/>
+
+| Question | What it sets |
+|---|---|
+| **Which chain?** | Which network the hunt watches. One hunt watches one chain. |
+| **How much risk?** | Careful, balanced or aggressive. Sets the safety rating, market cap, liquidity, tax and holders filters, and a stop loss. |
+| **How fast in and out?** | Minutes, hours, days or 30 days. Sets the buy window, profit targets and trailing stop. |
+
+<Para>
+  You can open <strong>Advanced</strong> to fine tune the filters (buy window, safety
+  rating, market cap, liquidity, holders, taxes and more), or leave the defaults.
+</Para>
+
+<H2 id="next">What happens next</H2>
+<ul className="db-list">
+  <li>The hunt starts scanning immediately and keeps going 24/7.</li>
+  <li>When a token matches, the hunt records a paper trade (or, on PRO with live mode on, buys it).</li>
+  <li>Every open position has a stop loss and take profit, and the hunt exits for you.</li>
+  <li>Your hunt card shows its results and win rate as trades close.</li>
+</ul>
+
+<H2 id="manage">Pause, edit or delete</H2>
+<Para>
+  Pause a hunt at any time; nothing new is bought while paused. Edit its settings, or
+  delete it. Its history stays with you.
+</Para>

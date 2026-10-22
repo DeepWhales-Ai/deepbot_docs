@@ -1,9 +1,10 @@
 {
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-10-23",
   "launch_date": "2026-05-11",
   "currently_shipping": {
     "_comment": "Source of truth for the home-page CurrentlyShipping strip. Each id below references a key in `features`. Curated rolling window of about 10 entries across now + next. Not a changelog. When a new item ships, remove the older / lower-impact one. Rotated-off ids stay in the `features` map. See /docs-internal/CURRENTLY_SHIPPING_UPDATE_WORKFLOW.md for the cadence.",
     "now": [
+      "dale_strategy_studio",
       "deepbot_link",
       "auto_buy_expansion",
       "token_screener",
@@ -15,7 +16,7 @@
       "token_2022_support"
     ],
     "next": [
-      "dale_strategy_studio"
+      "hyperliquid_integration"
     ],
     "stealth": {
       "private_beta": 2,
@@ -204,11 +205,12 @@
       "where": ["dale/solana-sends"]
     },
     "dale_strategy_studio": {
-      "label": "Dale Strategy Studio",
-      "status": "in_progress",
-      "date_label": "In progress",
-      "summary": "Building and managing trading strategies with Dale.",
-      "where": ["dale/overview"]
+      "label": "Strategy Studio",
+      "status": "shipped",
+      "shipped_date": "2026-10-23",
+      "date_label": "Live",
+      "summary": "Build a hunt in three questions. Watches new tokens 24/7 on five chains. Paper test free, go live on PRO.",
+      "where": ["studio/overview", "dale/overview"]
     },
     "dale_shotgun_setup": {
       "label": "Dale Shotgun setup",

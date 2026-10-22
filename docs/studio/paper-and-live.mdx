@@ -1,0 +1,50 @@
+---
+title: "Paper and live"
+sidebar_label: "Paper and live"
+sidebar_position: 3
+description: "Paper mode records every trade a hunt would make at real prices with no money moving. Live mode on PRO buys for real with automatic stop loss and take profit."
+---
+
+{/* Strategy Studio docs, Oct 23 2026. Text from DOCS-HANDOFF-2026-10-23 Part B,
+    corrected only where it differed from the live app (trade-deepbot-pro @ 08c06e5).
+    Voice: no em dashes, no hyphenated compounds in body copy. */}
+
+import { PageHead, Para, H2, Lime, Callout, KeyValueGrid } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
+import { ArticleSchema } from '@site/src/components/Schema.jsx';
+
+<ArticleSchema
+  headline="Paper and live"
+  description="Paper mode records every trade a hunt would make at real prices with no money moving. Live mode on PRO buys for real with automatic stop loss and take profit."
+  slug="/studio/paper-and-live"
+/>
+
+<PageHead
+  eyebrow="STRATEGY STUDIO"
+  lede={<>Test on paper. Go live on PRO.</>}
+/>
+
+<H2 id="paper">Paper mode</H2>
+<Para>
+  <strong>Paper mode</strong> records every trade a hunt would make, at the real market
+  price, with no money moving. Use it to see how a hunt behaves before trusting it with
+  funds.
+</Para>
+
+<H2 id="live">Live mode (PRO)</H2>
+<Para>
+  <strong>Live mode (PRO)</strong> buys for real from your <DeepBot /> wallet, on the
+  hunt's chain, using the buy size you set. Positions carry automatic stop loss and take
+  profit.
+</Para>
+<Para>
+  Live hunts use the same trade safety gate as Dale. Before any live buy, the token is
+  checked for common traps, and anything that fails is skipped.
+</Para>
+
+<H2 id="solana">Solana and Token 2022</H2>
+<Para>
+  On Solana, hunts handle both standard tokens and Token 2022 tokens. Token 2022 tokens
+  with risky settings (such as transfer fees or an active freeze authority) are always
+  skipped.
+</Para>

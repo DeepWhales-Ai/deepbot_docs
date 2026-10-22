@@ -1,5 +1,5 @@
 // DeepBot docs sidebar.
-// Top-level order: Start here, Dale, DeepBot Wallet, DeepBot LINK, Shotgun,
+// Top-level order: Start here, Dale, DeepBot Wallet, DeepBot LINK, Strategy Studio, Shotgun,
 // Prediction Markets, Platform, The Brain, Token, Affiliate Program,
 // Revenue Sharing, Bobby, Investors, Team.
 // Wallet and LINK sit adjacent deliberately: they are the two surfaces a user
@@ -68,6 +68,20 @@ const sidebars = {
       collapsible: true,
       collapsed: true,
       items: ['deepbot-link/overview'],
+    },
+    {
+      type: 'category',
+      label: 'Strategy Studio',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'studio/overview',
+        'studio/build-a-hunt',
+        'studio/paper-and-live',
+        'studio/free-and-pro',
+        'studio/leagues',
+        'studio/deep-dive-saga',
+      ],
     },
     {
       type: 'category',

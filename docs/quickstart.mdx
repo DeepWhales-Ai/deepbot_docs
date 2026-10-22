@@ -6,6 +6,7 @@ sidebar_label: "Quickstart for traders"
 {/* Source: pages-start.jsx -> PageQuickstart */}
 
 import { PageHead, NumberedList, Callout } from '@site/src/components/primitives.jsx';
+import DeepBot from '@site/src/components/DeepBot.jsx';
 
 <PageHead
   title="Quickstart for traders"
@@ -16,7 +17,8 @@ import { PageHead, NumberedList, Callout } from '@site/src/components/primitives
   { title: "Open Telegram, find @traderdeepbot", text: "Search for @traderdeepbot or open the t.me link from deepbot.pro. Hit Start. That is the entire install step." },
   { title: "Set your PIN", text: "Four to six digits. Auto deletes from chat after entry. Required on every trade by default." },
   { title: "Wallets are provisioned automatically", text: "One wallet per chain. Ethereum, Solana, Base, Polygon, BNB, Robinhood Chain. Each gets its own private key. You will never see a key unless you choose to export." },
-  { title: "Fund with fiat or crypto", text: "Built in fiat onramp for card funding, or paste an address from another wallet. Dale tells you when funds land." },
+  { title: "Fund your wallet", text: <>Send crypto from an exchange or another wallet to your <DeepBot /> address, on the same network. Dale tells you when funds land. <a href="/wallet/overview#fund" className="db-link">How to fund your wallet →</a></> },
+  { title: "Build a paper hunt", text: <>Open Strategy Studio and build a hunt in three questions. It runs on paper first, so you can watch how it behaves before any money moves. <a href="/studio/build-a-hunt" className="db-link">Build a hunt →</a></> },
   { title: "Tell Dale what you want", text: '"buy 0.1 eth of pepe". "watch base launches with 14+ smart money buys". "DCA $50 into eth weekly."' },
 ]} />
 
