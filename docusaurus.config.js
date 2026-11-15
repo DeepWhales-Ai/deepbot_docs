@@ -9,12 +9,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'DeepBot',
   tagline: "We don't predict. We detect.",
-  // Multi-resolution favicon generated from dale-character.png (the lime
-  // ring + dark center we use as the brand mark elsewhere on the site).
-  // Pillow rasterizes the 1563x1563 source into 16/32/48/64/96/192/512
-  // PNGs plus a multi-resolution .ico. The lime ring is the recognizable
-  // element at 16x16 — interior detail compresses to a blob, which is
-  // the intended outcome.
+  // Full-bleed square favicon (11-15): the brandkit mascot
+  // (deepbot.pro/brandkit, deepbot-mascot.png) lifted out of its lime ring
+  // onto solid black, mascot box at 92% of the square. Google crops every
+  // result icon to its own circle, so an icon that is already a ringed
+  // circle shrank inside that crop. 16/32/48/64/96/192/512 PNGs plus a
+  // 16/32/48 .ico, all from the same render.
   favicon: 'favicon.ico',
 
   url: 'https://docs.deepbot.pro',
@@ -138,6 +138,19 @@ const config = {
     {
       tagName: 'meta',
       attributes: { name: 'theme-color', content: '#0A0A0A' },
+    },
+    // The company and its logo, for the icon Google shows beside a result.
+    // Constants only; the logo is the full-bleed 512 above.
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'DeepBot',
+        url: 'https://deepbot.pro',
+        logo: 'https://docs.deepbot.pro/img/favicon-512.png',
+      }),
     },
   ],
 
