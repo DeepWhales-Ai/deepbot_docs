@@ -9,12 +9,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'DeepBot',
   tagline: "We don't predict. We detect.",
-  // Full-bleed square favicon (11-15): the brandkit mascot
-  // (deepbot.pro/brandkit, deepbot-mascot.png) lifted out of its lime ring
-  // onto solid black, mascot box at 92% of the square. Google crops every
-  // result icon to its own circle, so an icon that is already a ringed
-  // circle shrank inside that crop. 16/32/48/64/96/192/512 PNGs plus a
-  // 16/32/48 .ico, all from the same render.
+  // Favicon option A (Krypt 11-16, the same art as trade.deepbot.pro #576):
+  // the official ringed mascot. Tab icons (.ico 16/32/48, favicon-16..96)
+  // keep transparent corners; apple-touch-icon and favicon-192/512 sit on
+  // solid black, because iOS and manifest icons must be opaque. Replaces
+  // the 11-15 full-bleed square render.
   favicon: 'favicon.ico',
 
   url: 'https://docs.deepbot.pro',
