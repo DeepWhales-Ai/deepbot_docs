@@ -106,11 +106,17 @@ const config = {
   // records under the same site name; the dashboard trims to the
   // real domain after the CNAME flip. Privacy-first, no cookies,
   // GDPR-clean — matches the brand voice.
+  //
+  // SELF-HOSTED (BOSS, 2026-11-17: a third party script host was poisoned to push wallet popups). The script is
+  // a pinned copy in static/js/plausible.js, served from this origin; only the event POST goes to plausible.io
+  // (data-api), and that is data, never code. vercel.json's Content-Security-Policy allows scripts from this
+  // origin only. To update the script, replace the file deliberately and read the diff.
   scripts: [
     {
-      src: 'https://plausible.io/js/script.js',
+      src: '/js/plausible.js',
       defer: true,
       'data-domain': 'docs.deepbot.pro',
+      'data-api': 'https://plausible.io/api/event',
     },
   ],
 
