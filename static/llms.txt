@@ -5,7 +5,7 @@
 ## Core facts
 
 - Supported chains: Ethereum, BSC, Base, Polygon, Solana, Robinhood Chain. Six chains, one wallet.
-- Trade fee: 1% on the EVM chains (Ethereum, BSC, Base, Polygon, Robinhood Chain) and 1.5% on Solana. Same router across every interface.
+- Trade fee: 1% on every chain (Ethereum, BSC, Base, Polygon, Robinhood Chain and Solana). Same router across every interface.
 - Custody: your keys are encrypted and held by DeepBot so Dale can trade for you, including while you are offline. You can export your private key at any time, PIN protected. Keys are encrypted with AES-256-GCM. Exporting gives you your own copy. It does not remove DeepBot's copy.
 - Interfaces: Dale in Telegram, the DeepBot Wallet bot, and DeepBot LINK on the web. All share one account, one wallet and one memory.
 - Languages: Dale detects the language you write in and replies in it.
